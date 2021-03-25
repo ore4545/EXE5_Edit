@@ -1225,11 +1225,19 @@
         </td>
         <td colspan ="3">
           <br>総合ステータス</br>
-
+          パラメーター</br>
           HP<textarea cols="10" rows="1" id="hp_result" readonly></textarea>
           Attack<textarea cols="10" rows="1" id="attack_result" readonly></textarea>
           Rapid<textarea cols="10" rows="1" id="rapid_result" readonly></textarea>
           Charge<textarea cols="10" rows="1" id="charge_result" readonly></textarea>
+          <br>
+          Custom<textarea cols="10" rows="1" id="custom_result" readonly></textarea>
+          MegaFolder<textarea cols="10" rows="1" id="m_folder_result" readonly></textarea>
+          GigaFolder<textarea cols="10" rows="1" id="g_folder_result" readonly></textarea>
+
+          <br>アビリティ
+          <textarea cols="40" rows="9" id="ablity_result" readonly></textarea>
+
         </td>
       </tr>
       <script type="text/javascript">
@@ -1270,7 +1278,7 @@
        {name:'ロール',id:'1F',flag:"0200128E:00"+"\n"+"0200614A:43",mb:40,hp:"-5%",b_cs:"チップ破壊",f_barier:"バリア",battle_hp_bug:"off"} ,
        {name:'ガッツマン',id:'20',flag:"0200128F:00"+"\n"+"0200614B:43",mb:35,hp:"+300",under_shirt:"on",f_barier:"バリアoff"} ,
        {name:'ファイアマン',id:'21',flag:"02001290:00"+"\n"+"0200614C:43",mb:43,hp:"+30%",body:"Fbody",cs_add:"off",b_cs:"Fアーム"} ,
-       {name:'フォルテ',id:'22',flag:"02001291:00"+"\n"+"0200614D:43",mb:45,hp:"200",attack:"+5",rapid:"+5",charge:"+5",soultime:"-2"} ,
+       {name:'フォルテ',id:'22',flag:"02001291:00"+"\n"+"0200614D:43",mb:45,hp:"+200",attack:"+5",rapid:"+5",charge:"+5",soultime:"-2"} ,
        {name:'クイックマン',id:'23',flag:"02001292:00"+"\n"+"0200614E:43",mb:38,hp:"-10%",rapid:"+5",charge:"+5",gage:"Quick"} ,
        {name:'スネークマン',id:'24',flag:"02001293:00"+"\n"+"0200614F:43",mb:40,hp:"+25%",body:"Wbody",mode:"ミリオネア"} ,
        {name:'バブルマン',id:'25',flag:"02001294:00"+"\n"+"02006150:43",mb:37,hp:"-50%",body:"Abody",f_barier:"バブルラップ",mode:"シノビダッシュ"} ,
@@ -1361,6 +1369,16 @@
       let attack_math = 0;
       let rapid_math = 0;
       let charge_math = 0;
+      let custom_math = 0;
+      let m_folder_math = 0;
+      let g_folder_math = 0;
+
+      //総合アビリティ
+      let b_button_result ;
+      let b_left_result ;
+      let b_cs_result ;
+      let cs_add_result;
+
 
       //毎回導入
       valc[1] = document.getElementById("kaizo_1").value;
@@ -1383,6 +1401,10 @@
       //計算結果を挿入
         document.getElementById('megabite').value = mega_math;
         document.getElementById('megabite_use').value = mega_use;
+
+        //アビリティリザルト初期化
+        document.getElementById("ablity_result").value = "";
+
 
 
 //パラメーター表示
@@ -1413,9 +1435,6 @@ for(let i = 1 ; i<=10;i++){
     document.getElementById('parametor_'+[i]).value += "A" + members[parseInt(valc[i], 10)].attack+"\n";
 
     attack_pow = members[parseInt(valc[i], 10)].attack;
-
-    console.log( parseInt(attack_pow));
-
     //アタック二倍のときは非数判定,それ以外は普通に計算
     if(isNaN(parseInt(attack_pow))){
       attack_math = attack_math * 2;
@@ -1453,6 +1472,11 @@ if(members[parseInt(valc[i], 10)].custom==undefined){
   document.getElementById("parametor_"+[i]).value += "";
 }else{
 document.getElementById('parametor_'+[i]).value += "Custom" + members[parseInt(valc[i], 10)].custom+"\n";
+
+custom_pow = members[parseInt(valc[i], 10)].custom;
+//総合ステータスにカスタムを加算
+custom_math += parseInt(custom_pow);
+
 }
 
 //メガフォルダ
@@ -1460,6 +1484,10 @@ if(members[parseInt(valc[i], 10)].m_folder==undefined){
   document.getElementById("parametor_"+[i]).value += "";
 }else{
 document.getElementById('parametor_'+[i]).value += "Mega" + members[parseInt(valc[i], 10)].m_folder+"\n";
+
+m_folder_pow = members[parseInt(valc[i], 10)].m_folder;
+//総合ステータスにメガを加算
+m_folder_math += parseInt(m_folder_pow);
 }
 
 //ギガフォルダ
@@ -1467,6 +1495,11 @@ if(members[parseInt(valc[i], 10)].g_folder==undefined){
   document.getElementById("parametor_"+[i]).value += "";
 }else{
 document.getElementById('parametor_'+[i]).value += "Giga" + members[parseInt(valc[i], 10)].g_folder+"\n";
+
+g_folder_pow = members[parseInt(valc[i], 10)].g_folder;
+//総合ステータスにギガを加算
+g_folder_math += parseInt(g_folder_pow);
+
 }
 
 //ソウルタイム
@@ -1484,6 +1517,7 @@ if(members[parseInt(valc[i], 10)].b_button==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "B" + members[parseInt(valc[i], 10)].b_button+"\n";
+b_button_result= "B" + members[parseInt(valc[i], 10)].b_button;
 }
 
 //B左
@@ -1491,6 +1525,7 @@ if(members[parseInt(valc[i], 10)].b_left==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "B←" + members[parseInt(valc[i], 10)].b_left+"\n";
+b_left_result= "B←" + members[parseInt(valc[i], 10)].b_left;
 }
 
 //CS
@@ -1498,6 +1533,7 @@ if(members[parseInt(valc[i], 10)].b_cs==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "CS" + members[parseInt(valc[i], 10)].b_cs+"\n";
+b_cs_result = "CS" + members[parseInt(valc[i], 10)].b_cs;
 }
 
 //CS追加効果
@@ -1505,6 +1541,7 @@ if(members[parseInt(valc[i], 10)].cs_add==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "CSに" + members[parseInt(valc[i], 10)].cs_add+"\n";
+cs_add_result = "CSに" + members[parseInt(valc[i], 10)].cs_add;
 }
 
 //アンダーシャツ装備
@@ -1673,8 +1710,17 @@ document.getElementById('ablity_'+[i]).value += "バグストッパー" + member
 document.getElementById('attack_result').value = attack_math;
 document.getElementById('rapid_result').value = rapid_math;
 document.getElementById('charge_result').value = charge_math;
+document.getElementById('custom_result').value = custom_math;
+document.getElementById('m_folder_result').value = m_folder_math;
+document.getElementById('g_folder_result').value = g_folder_math;
 
   }
+
+//アビリティ登録
+document.getElementById('ablity_result').value += b_button_result +"\n";
+document.getElementById('ablity_result').value += b_left_result +"\n";
+document.getElementById('ablity_result').value += b_cs_result +"\n";
+document.getElementById('ablity_result').value += cs_add_result +"\n";
 
 
 
