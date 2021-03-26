@@ -15,15 +15,67 @@
     お知らせ
     <li>現在β版による試作テスト中です。</li>
     <li>機能の改修及び、要望はオレまでお願いします。</li>
-    <li>残りメガバイト及び、使用メガバイトの表示</li>
+    <li>絞り込み実装</li>
     <br>
     今後付けたい機能
-    <li>改造カードの予想アビリティの表示(実装途中)</li>
-    <li>絞り込み機能</li>
-    <li>改造カードピックアップ</li>
+    <li>改造カードの予想アビリティの表示(ほぼ完成)</li>
+    <li>絞り込み機能(テスト中)</li>
+    <li>改造カードピックアップ(メガバイト以下のみ表示)</li>
 
     <br>
     </div>
+
+    絞り込み（入力した言葉と一致するカードに絞り込みます。ひらがな可）<br>
+    <script language="javascript" type="text/javascript">
+    var TEST_OBJECT = {
+       onSearchFieldChange : function(value){
+
+         for(let x = 1;x<=10;x++){
+
+          var selectBox = document.getElementById("kaizo_"+[x]);
+          var items = selectBox.children;
+          if (value === "") {
+             for(var i=items.length-1; i>=0; i--){
+                items[i].style.display = "";
+             }
+          }
+
+          var reg = new RegExp(".*"+value+".*","i");
+
+          //ひらがなからカタカナ変換
+          var str="";
+          value.replace(/[\u3042-\u3093]/g, function(match) {
+          　　　var chr = match.charCodeAt(0) + 0x60;
+          　　str += String.fromCharCode(chr);
+           　});
+           //空白だった場合同じ文字列&例外文字
+           if(str===""){str=value;}else if(str==="ノ"){str=value;}
+           //検索用語に入れる
+           var reg2 = new RegExp(".*"+str+".*","i");
+
+           console.log(reg2)
+           console.log(reg)
+
+          for(var i=items.length-1; i>=0; i--){
+             if ((items[i].textContent.match(reg2))||(items[i].textContent.match(reg))){
+                items[i].style.display = "";
+             } else {
+                items[i].style.display = "none";
+             }
+          }
+       }
+     }
+    }
+
+
+
+
+
+
+
+    </script>
+   <input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 140px;" /><br/>
+
     <table border="1">
       <form name="indv"></form>
       <tbody>
@@ -1223,9 +1275,11 @@
           <br>
           <textarea cols="40" rows="16" id="ans" readonly></textarea>
         </td>
-        <td colspan ="3">
+        <td colspan ="2">
           <br>総合ステータス</br>
           パラメーター</br>
+          body<textarea cols="10" rows="1" id="body_result" readonly></textarea>
+          <br>
           HP<textarea cols="10" rows="1" id="hp_result" readonly></textarea>
           Attack<textarea cols="10" rows="1" id="attack_result" readonly></textarea>
           Rapid<textarea cols="10" rows="1" id="rapid_result" readonly></textarea>
@@ -1239,8 +1293,36 @@
           <textarea cols="40" rows="9" id="ablity_result" readonly></textarea>
 
         </td>
+        <td colspan="1">
+          <br>基礎能力(現在の能力値を入れてください)</br>
+          HP<textarea cols="5" rows="1" id="hp_nav"onchange="mega()">1000</textarea>
+          <br>
+          Attack<textarea cols="3" rows="1" id="attack_nav"onchange="mega()">1</textarea>
+          Rapid<textarea cols="3" rows="1" id="rapid_nav" onchange="mega()">1</textarea>
+          Charge<textarea cols="3" rows="1" id="charge_nav" onchange="mega()">1</textarea>
+          <br>
+          Custom<textarea cols="3" rows="1" id="custom_nav" onchange="mega()">5</textarea>
+          MegaFolder<textarea cols="3" rows="1" id="m_folder_nav" onchange="mega()">5</textarea>
+          GigaFolder<textarea cols="3" rows="1" id="g_folder_nav" onchange="mega()">1</textarea>
+        </td>
       </tr>
+
+      <select id="card_list" size="20" style="width: 200px;"onchange="select_card_list()">
+      </select>
       <script type="text/javascript">
+
+      //セッション開始時に読み込み
+      window.onload = function() {
+        mega();
+      };
+
+      //選択したカードを検索ボックスに入れる
+      function select_card_list(){
+        var selectBox = document.getElementById("card_list").value;
+        document.getElementById('sarch_input').value = selectBox;
+        TEST_OBJECT.onSearchFieldChange(selectBox);
+
+      }
 
       //改造カードのデータベース
       let members =[
@@ -1256,12 +1338,12 @@
        {name:'キャンデービル',id:'09',flag:"02001278:00"+"\n"+"02006134:43",mb:9,body:"Fbody",b_left:"off",self_recovery:"on"} ,
        {name:'ダイジャン',id:'0A',flag:"02001279:00"+"\n"+"02006135:43",mb:12,hp:"+130",body:"Wbody",rash:"off",beat:"off",tango:"off"} ,
        {name:'チャマッシュ',id:'0B',flag:"0200127A:00"+"\n"+"02006136:43",mb:15,body:"Wbody",cs_add:"混乱",move_bug:"on"} ,
-       {name:'ガルー',id:'0C',flag:"0200127B:00"+"\n"+"02006137:43",mb:6,body:"Fbody",rapid:"-1",charge:"-1",b_cs:"ヒートS"} ,
+       {name:'ガルー',id:'0C',flag:"0200127B:00"+"\n"+"02006137:43",mb:6,body:"Fbody",rapid:"-1",charge:"-1",cd_add:"ヒートS"} ,
        {name:'バジリコ',id:'0D',flag:"0200127C:00"+"\n"+"02006138:43",mb:16,body:"Wbody",b_cs:"シールド",battle_hp_bug:"Lv4"} ,
        {name:'ヨーヨット',id:'0E',flag:"0200127D:00"+"\n"+"02006139:43",mb:17,hp:"+30",b_left:"off"} ,
        {name:'カーズ',id:'0F',flag:"0200127E:00"+"\n"+"0200613A:43",mb:18,hp:"-50",b_left:"カースS"} ,
-       {name:'ヌール',id:'10',flag:"0200127F:00"+"\n"+"0200613B:43",mb:13,hp:150,body:"Abody",super_armor:"on",b_cs:"チャージS",self_recovery:"on"} ,
-       {name:'フデロー',id:'11',flag:"02001280:00"+"\n"+"0200613C:43",mb:19,hp:"-30%",cs_add:"毒沼",move_panel:"ホーリー(12%)"} ,
+       {name:'ヌール',id:'10',flag:"0200127F:00"+"\n"+"0200613B:43",mb:13,hp:"+150",body:"Abody",super_armor:"on",b_cs:"チャージS",self_recovery:"on"} ,
+       {name:'フデロー',id:'11',flag:"02001280:00"+"\n"+"0200613C:43",mb:19,hp:"-30%",buster_add:"毒沼",move_panel:"ホーリー(12%)"} ,
        {name:'ドリームビット',id:'12',flag:"02001281:00"+"\n"+"0200613D:43",mb:20,custom:"-1",f_barier:"バリア100",custom_damage:"200"} ,
        {name:'スーンハーク',id:'13',flag:"02001282:00"+"\n"+"0200613E:43",mb:17,hp:"+120",b_cs:"スイコミ",gage:"Heavy"} ,
        {name:'キラーズアイ',id:'14',flag:"02001283:00"+"\n"+"0200613F:43",mb:21,body:"Ebody",cs_add:"マヒ",battle_hp_bug:"Lv4"} ,
@@ -1273,11 +1355,11 @@
        {name:'ザエモン',id:'1A',flag:"02001289:00"+"\n"+"02006145:43",mb:20,hp:"+60",b_cs:"サムライS",baster_blank:"からうち(25%),CS(12%)"} ,
        {name:'キャタック',id:'1B',flag:"0200128A:00"+"\n"+"02006146:43",mb:20,hp:"+100",super_armor:"on",air:"off"} ,
        {name:'チャンプル',id:'1C',flag:"0200128B:00"+"\n"+"02006147:43",mb:15,hp:"+100",body:"Fbody",rapid:"+1",charge:"+1",cs_add:"off"} ,
-       {name:'ウズリム',id:'1D',flag:"0200128C:00"+"\n"+"02006148:43",mb:20,hp:"+80",body:"Abody",b_button:"みず",move_panel:"水(25%)"} ,
+       {name:'ウズリム',id:'1D',flag:"0200128C:00"+"\n"+"02006148:43",mb:20,hp:"+80",body:"Abody",buster_add:"みず",move_panel:"水(25%)"} ,
        {name:'サボテコロン',id:'1E',flag:"0200128D:00"+"\n"+"02006149:43",mb:16,hp:"+60",body:"Wbody",super_armor:"on",float:"off"} ,
-       {name:'ロール',id:'1F',flag:"0200128E:00"+"\n"+"0200614A:43",mb:40,hp:"-5%",b_cs:"チップ破壊",f_barier:"バリア",battle_hp_bug:"off"} ,
+       {name:'ロール',id:'1F',flag:"0200128E:00"+"\n"+"0200614A:43",mb:40,hp:"-5%",cs_add:"チップ破壊",f_barier:"バリア",battle_hp_bug:"off"} ,
        {name:'ガッツマン',id:'20',flag:"0200128F:00"+"\n"+"0200614B:43",mb:35,hp:"+300",under_shirt:"on",f_barier:"バリアoff"} ,
-       {name:'ファイアマン',id:'21',flag:"02001290:00"+"\n"+"0200614C:43",mb:43,hp:"+30%",body:"Fbody",cs_add:"off",b_cs:"Fアーム"} ,
+       {name:'ファイアマン',id:'21',flag:"02001290:00"+"\n"+"0200614C:43",mb:43,hp:"+30%",body:"Fbody",buster_add:"off",b_cs:"Fアーム"} ,
        {name:'フォルテ',id:'22',flag:"02001291:00"+"\n"+"0200614D:43",mb:45,hp:"+200",attack:"+5",rapid:"+5",charge:"+5",soultime:"-2"} ,
        {name:'クイックマン',id:'23',flag:"02001292:00"+"\n"+"0200614E:43",mb:38,hp:"-10%",rapid:"+5",charge:"+5",gage:"Quick"} ,
        {name:'スネークマン',id:'24',flag:"02001293:00"+"\n"+"0200614F:43",mb:40,hp:"+25%",body:"Wbody",mode:"ミリオネア"} ,
@@ -1296,11 +1378,11 @@
        {name:'アネッタのカスタマイズ',id:'31',flag:"020012A0:00"+"\n"+"0200615C:43",mb:47,hp:"+30%",body:"Wbody"} ,
        {name:'コオリスキーのカスタマイズ',id:'32',flag:"020012A1:00"+"\n"+"0200615D:43",mb:47,hp:"+30%",body:"Abody"} ,
        {name:'カブタンク',id:'33',flag:"020012A2:00"+"\n"+"0200615E:43",mb:7,hp:"+80",b_cs:"ミニボム",custom_damage:"50"} ,
-       {name:'ポワルド',id:'34',flag:"020012A3:00"+"\n"+"0200615F:43",mb:10,hp:"+50",b_cs:"あな",kokoro_bug:"on"} ,
+       {name:'ポワルド',id:'34',flag:"020012A3:00"+"\n"+"0200615F:43",mb:10,hp:"+50",cs_add:"あな",kokoro_bug:"on"} ,
        {name:'フロシェル',id:'35',flag:"020012A4:00"+"\n"+"02006160:43",mb:16,hp:"+140",b_button:"ミニボム",f_barier:"バリアoff"} ,
        {name:'ハルドボルズ',id:'36',flag:"020012A5:00"+"\n"+"02006161:43",mb:10,b_cs:"ボウガン",kokoro_bug:"off"} ,
        {name:'クモンペ',id:'37',flag:"020012A6:00"+"\n"+"02006162:43",mb:10,body:"Abody",super_armor:"off",custom_damage:"off",custom_hp_bug:"off"} ,
-       {name:'ガイアント',id:'38',flag:"020012A7:00"+"\n"+"02006163:43",mb:15,hp:"+100",float:"off",air:"off",b_button:"ひび"} ,
+       {name:'ガイアント',id:'38',flag:"020012A7:00"+"\n"+"02006163:43",mb:15,hp:"+100",float:"off",air:"off",buster_add:"ひび"} ,
        {name:'ミノゴロモン',id:'39',flag:"020012A8:00"+"\n"+"02006164:43",mb:20,body:"Wbody",chip_recovery:"30",move_panel:"草むら(12%)"} ,
        {name:'ファンカー',id:'3A',flag:"020012A9:00"+"\n"+"02006165:43",mb:15,hp:"-50",b_cs:"トルネード"} ,
        {name:'チクリート',id:'3B',flag:"020012AA:00"+"\n"+"02006166:43",mb:18,hp:"-80",chip_recovery:"20",battle_hp_bug:"off"} ,
@@ -1308,24 +1390,24 @@
        {name:'ラビリー',id:'3D',flag:"020012AC:00"+"\n"+"02006168:43",mb:8,body:"Ebody",super_armor:"off",status_guard:"off",b_cs:"ラビリング"} ,
        {name:'フレイボー',id:'3E',flag:"020012AD:00"+"\n"+"02006169:43",mb:20,hp:"+160",body:"Fbody",b_button:"クラック",move_panel:"あな(50%)"} ,
        {name:'エビロン',id:'3F',flag:"020012AE:00"+"\n"+"0200616A:43",mb:10,body:"Abody",attack:"-1",b_cs:"バブルS"} ,
-       {name:'ＵＦＯサニー',id:'40',flag:"020012AF:00"+"\n"+"0200616B:43",mb:20,b_cs:"チップ破壊",chip_recovery:"off",move_bug:"off"} ,
+       {name:'ＵＦＯサニー',id:'40',flag:"020012AF:00"+"\n"+"0200616B:43",mb:20,cs_add:"チップ破壊",chip_recovery:"off",move_bug:"off"} ,
        {name:'ゲニン',id:'41',flag:"020012B0:00"+"\n"+"0200616C:43",mb:18,hp:"-10%",b_cs:"クナイ",mode:"シノビダッシュ"} ,
        {name:'マグマドラゴン',id:'42',flag:"020012B1:00"+"\n"+"0200616D:43",mb:20,hp:"+150",body:"Fbody",air:"on",f_barier:"バリアoff",move_panel:"あな(25%)"} ,
        {name:'プロテクト',id:'43',flag:"020012B2:00"+"\n"+"0200616E:43",mb:23,g_folder:"+1",under_shirt:"off",b_cs:"チャージS",b_left:"off"} ,
-       {name:'ドゴーン',id:'44',flag:"020012B3:00"+"\n"+"0200616F:43",mb:20,body:"Fbody",attack:"+1",rapid:"-3",b_cs:"あな"} ,
+       {name:'ドゴーン',id:'44',flag:"020012B3:00"+"\n"+"0200616F:43",mb:20,body:"Fbody",attack:"+1",rapid:"-3",cs_add:"あな"} ,
        {name:'コリペン',id:'45',flag:"020012B4:00"+"\n"+"02006170:43",mb:18,hp:"+150",body:"Abody",move_panel:"こおり(38%)"} ,
        {name:'スパークビー',id:'46',flag:"020012B5:00"+"\n"+"02006171:43",mb:20,body:"Ebody",b_cs:"チャージS",cs_add:"盲目",f_barier:"バリアoff"} ,
        {name:'プロトバグ',id:'47',flag:"020012B6:00"+"\n"+"02006172:43",mb:16,chip_recovery:"60",battle_hp_bug:"Lv2"} ,
        {name:'Ｎ．Ｏ',id:'48',flag:"020012B7:00"+"\n"+"02006173:43",mb:13,hp:"+100",self_recovery:"on",battle_hp_bug:"off",status_bug:"Lv1"} ,
-       {name:'パラボール',id:'49',flag:"020012B8:00"+"\n"+"02006174:43",mb:14,body:"Ebody",float:"on",cs_add:"off",mode:"バッテリー"} ,
+       {name:'パラボール',id:'49',flag:"020012B8:00"+"\n"+"02006174:43",mb:14,body:"Ebody",float:"on",buster_add:"off",mode:"バッテリー"} ,
        {name:'ダーマ',id:'4A',flag:"020012B9:00"+"\n"+"02006175:43",mb:22,hp:"-15%",under_shirt:"on",b_cs:"Aホッケー"} ,
-       {name:'ウェザース',id:'4B',flag:"020012BA:00"+"\n"+"02006176:43",mb:19,b_button:"クサムラ",b_cs:"マグマ",move_panel:"こおり(50%)"} ,
-       {name:'エレンプラ',id:'4C',flag:"020012BB:00"+"\n"+"02006177:43",mb:20,cs_add:"off",b_cs:"毒沼"} ,
+       {name:'ウェザース',id:'4B',flag:"020012BA:00"+"\n"+"02006176:43",mb:19,buster_add:"クサムラ",cs_add:"マグマ",move_panel:"こおり(50%)"} ,
+       {name:'エレンプラ',id:'4C',flag:"020012BB:00"+"\n"+"02006177:43",mb:20,buster_add:"off",cs_add:"毒沼"} ,
        {name:'サーキラー',id:'4D',flag:"020012BC:00"+"\n"+"02006178:43",mb:18,b_cs:"サークルG",move_bug:"on"} ,
        {name:'ドリクロール',id:'4E',flag:"020012BD:00"+"\n"+"02006179:43",mb:17,rapid:"+3",charge:"+3",b_cs:"ドリルA",damage_bug:"混乱"} ,
        {name:'パルスバット',id:'4F',flag:"020012BE:00"+"\n"+"0200617A:43",mb:25,hp:"-5%",air:"on",b_cs:"パルスB"} ,
        {name:'アップルサム',id:'50',flag:"020012BF:00"+"\n"+"0200617B:43",mb:24,body:"Wbody",status_guard:"on",baster_blank:"からうち(6%)CS(12%)",kokoro_bug:"on"} ,
-       {name:'ウッドマン',id:'51',flag:"020012C0:00"+"\n"+"0200617C:43",mb:45,hp:"+25%",body:"Wbody",status_guard:"on",cs_add:"off",b_cs:"チャージS"} ,
+       {name:'ウッドマン',id:'51',flag:"020012C0:00"+"\n"+"0200617C:43",mb:45,hp:"+25%",body:"Wbody",status_guard:"on",buster_add:"off",b_cs:"チャージS"} ,
        {name:'エレキマン',id:'52',flag:"020012C1:00"+"\n"+"0200617D:43",mb:35,hp:"+200",body:"Ebody",b_left:"off",self_recovery:"on"} ,
        {name:'ブルース',id:'53',flag:"020012C2:00"+"\n"+"0200617E:43",mb:45,hp:"+100",b_cs:"ワイドS",b_left:"シールド"} ,
        {name:'ボンバーマン',id:'54',flag:"020012C3:00"+"\n"+"0200617F:43",mb:43,hp:"+150",body:"Fbody",custom:"-1",b_cs:"ブラックボム"} ,
@@ -1358,39 +1440,55 @@
        {name:'フォルテクロスロックマン',id:'6F',flag:"020012DE:00"+"\n"+"0200619A:43",mb:70,hp:"+200",body:"Nbody",m_folder:"-2",super_armor:"on",b_button:"トリプルバスター",b_cs:"Sバスター"} ,
     ];
 
+    //残りメガ数
+    let mega_math = 0;
+
+    //カードのピックアップ
+    function cardlist(){
+
+      //消去
+      for(let i = 1; i<members.length;i++){
+      var select = document.getElementById("card_list");
+      select.remove(0);
+    }
+
+      //生成
+      for(let i = 1; i<members.length;i++){
+        if(members[i].mb<=mega_math){
+      var select = document.getElementById("card_list");
+      var option = document.createElement("option");
+      option.text = members[i].mb+"MB/"+members[i].name;
+      option.value = members[i].name;
+      select.appendChild(option);
+    }
+    }
+
+
+    }
+
       //読み込んだ改造カード格納用配列
       var valc=[];
-
 
     //選択するたびに実行される関数
     function mega(){
 
       //総合ステータス用
-      let attack_math = 0;
-      let rapid_math = 0;
-      let charge_math = 0;
-      let custom_math = 0;
-      let m_folder_math = 0;
-      let g_folder_math = 0;
+      let body_math = "Nbody";
+      let hp_math = parseInt(document.getElementById('hp_nav').value);
+      let attack_math = parseInt(document.getElementById('attack_nav').value);
+      let rapid_math = parseInt(document.getElementById('rapid_nav').value);
+      let charge_math = parseInt(document.getElementById('charge_nav').value);
+      let custom_math = parseInt(document.getElementById('custom_nav').value);
+      let m_folder_math = parseInt(document.getElementById('m_folder_nav').value);
+      let g_folder_math = parseInt(document.getElementById('g_folder_nav').value);
 
-      //総合アビリティ
-      let b_button_result ;
-      let b_left_result ;
-      let b_cs_result ;
-      let cs_add_result;
-
+      //アビリティ結果用
+        let ability_box=[];
 
       //毎回導入
-      valc[1] = document.getElementById("kaizo_1").value;
-      valc[2] = document.getElementById("kaizo_2").value;
-      valc[3] = document.getElementById("kaizo_3").value;
-      valc[4] = document.getElementById("kaizo_4").value;
-      valc[5] = document.getElementById("kaizo_5").value;
-      valc[6] = document.getElementById("kaizo_6").value;
-      valc[7] = document.getElementById("kaizo_7").value;
-      valc[8] = document.getElementById("kaizo_8").value;
-      valc[9] = document.getElementById("kaizo_9").value;
-      valc[10] = document.getElementById("kaizo_10").value;
+      for(i=1;i<=10;i++){
+      valc[i] = document.getElementById("kaizo_"+[i]).value;
+    }
 
       //メガバイトの計算（かなり回りくどいことしてます。正直forでなんとかなる）
       mega_use =(members[parseInt(valc[1], 10)].mb + members[parseInt(valc[2], 10)].mb + members[parseInt(valc[3], 10)].mb + members[parseInt(valc[4], 10)].mb+ members[parseInt(valc[5], 10)].mb + members[parseInt(valc[6], 10)].mb+ members[parseInt(valc[7], 10)].mb+ members[parseInt(valc[8], 10)].mb+ members[parseInt(valc[9], 10)].mb+ members[parseInt(valc[10], 10)].mb);
@@ -1405,6 +1503,9 @@
         //アビリティリザルト初期化
         document.getElementById("ablity_result").value = "";
 
+        //カード生成関数の発動
+        cardlist();
+
 
 
 //パラメーター表示
@@ -1418,14 +1519,32 @@ for(let i = 1 ; i<=10;i++){
         document.getElementById("parametor_"+[i]).value += "";
       }else{
       document.getElementById('parametor_'+[i]).value += "HP" + members[parseInt(valc[i], 10)].hp +"\n";
+
+      //総合HP表示用
+      hp_calc = members[parseInt(valc[i], 10)].hp
+
+
+      //パーセンテージを含んだ時の処理
+      if(hp_calc.match(/%/)){
+        console.log("%");
+        //割合を計算
+        parcent = (100 + parseInt(hp_calc, 10))/100;
+        hp_math = hp_math * parcent;
+
+      }else{
+      //HPを計算
+      hp_math +=  parseInt(hp_calc, 10);
+    }
     }
 
     //ボディ表示
-
     if(members[parseInt(valc[i], 10)].body==undefined){
       document.getElementById("parametor_"+[i]).value += "";
     }else{
     document.getElementById('parametor_'+[i]).value += "" + members[parseInt(valc[i], 10)].body +"\n";
+
+    //最終ボディ表示
+     body_math =  members[parseInt(valc[i], 10)].body;
   }
 
     //アタック表示
@@ -1517,7 +1636,10 @@ if(members[parseInt(valc[i], 10)].b_button==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "B" + members[parseInt(valc[i], 10)].b_button+"\n";
-b_button_result= "B" + members[parseInt(valc[i], 10)].b_button;
+
+ability_box[0]= "B" +members[parseInt(valc[i], 10)].b_button;
+
+
 }
 
 //B左
@@ -1525,7 +1647,7 @@ if(members[parseInt(valc[i], 10)].b_left==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "B←" + members[parseInt(valc[i], 10)].b_left+"\n";
-b_left_result= "B←" + members[parseInt(valc[i], 10)].b_left;
+ability_box[1]= "B←" + members[parseInt(valc[i], 10)].b_left;
 }
 
 //CS
@@ -1533,7 +1655,7 @@ if(members[parseInt(valc[i], 10)].b_cs==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "CS" + members[parseInt(valc[i], 10)].b_cs+"\n";
-b_cs_result = "CS" + members[parseInt(valc[i], 10)].b_cs;
+ability_box[2]= "CS " + members[parseInt(valc[i], 10)].b_cs;
 }
 
 //CS追加効果
@@ -1541,14 +1663,25 @@ if(members[parseInt(valc[i], 10)].cs_add==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "CSに" + members[parseInt(valc[i], 10)].cs_add+"\n";
-cs_add_result = "CSに" + members[parseInt(valc[i], 10)].cs_add;
+ability_box[3] = "CSに" + members[parseInt(valc[i], 10)].cs_add;
 }
+
+//バスター追加効果
+if(members[parseInt(valc[i], 10)].buster_add==undefined){
+  document.getElementById("ablity_"+[i]).value += "";
+}else{
+document.getElementById('ablity_'+[i]).value += "バスター" + members[parseInt(valc[i], 10)].buster_add+"\n";
+ability_box[4] = "バスター" + members[parseInt(valc[i], 10)].buster_add;
+}
+
+
 
 //アンダーシャツ装備
 if(members[parseInt(valc[i], 10)].under_shirt==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "Ushirt_" + members[parseInt(valc[i], 10)].under_shirt + "\n";
+ability_box[5] = "アンダーシャツ" + members[parseInt(valc[i], 10)].under_shirt;
 }
 
 //スーパーアーマー装備
@@ -1556,6 +1689,7 @@ if(members[parseInt(valc[i], 10)].super_armor==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "S_Armor_" + members[parseInt(valc[i], 10)].super_armor + "\n";
+ability_box[6] = "スーパーアーマー" + members[parseInt(valc[i], 10)].super_armor;
 }
 
 //ステータスガード
@@ -1563,6 +1697,7 @@ if(members[parseInt(valc[i], 10)].status_guard==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "S_Guard_" + members[parseInt(valc[i], 10)].status_guard + "\n";
+ability_box[7] = "ステータスガード" + members[parseInt(valc[i], 10)].status_guard;
 }
 
 //フロート装備
@@ -1570,6 +1705,7 @@ if(members[parseInt(valc[i], 10)].float==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "float_" + members[parseInt(valc[i], 10)].float+"\n";
+ability_box[8] = "フロート" + members[parseInt(valc[i], 10)].float;
 }
 
 //エアーシューズ装備
@@ -1577,6 +1713,7 @@ if(members[parseInt(valc[i], 10)].air==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "air_" + members[parseInt(valc[i], 10)].air+"\n";
+ability_box[9] = "エアーシューズ" + members[parseInt(valc[i], 10)].air;
 }
 
 //ゲージ
@@ -1584,6 +1721,7 @@ if(members[parseInt(valc[i], 10)].gage==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  members[parseInt(valc[i], 10)].gage+"Gage\n";
+ability_box[10] = members[parseInt(valc[i], 10)].gage + "ゲージ";
 }
 
 //ファーストバリア及びオーラ
@@ -1591,6 +1729,7 @@ if(members[parseInt(valc[i], 10)].f_barier==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "F"+members[parseInt(valc[i], 10)].f_barier+"\n";
+ability_box[11] = "ファースト"+members[parseInt(valc[i], 10)].f_barier ;
 }
 
 //ラッシュサポート装備
@@ -1598,6 +1737,7 @@ if(members[parseInt(valc[i], 10)].rash==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "rash_" + members[parseInt(valc[i], 10)].rash + "\n";
+ability_box[12] = "ラッシュサポート"+members[parseInt(valc[i], 10)].rash ;
 }
 
 //ビートサポート装備
@@ -1605,6 +1745,7 @@ if(members[parseInt(valc[i], 10)].beat==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "beat_" + members[parseInt(valc[i], 10)].beat + "\n";
+ability_box[13] = "ビートサポート"+members[parseInt(valc[i], 10)].beat ;
 }
 
 //タンゴサポート装備
@@ -1612,6 +1753,7 @@ if(members[parseInt(valc[i], 10)].tango==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "tango_" + members[parseInt(valc[i], 10)].tango + "\n";
+ability_box[14] = "タンゴサポート"+members[parseInt(valc[i], 10)].tango ;
 }
 
 //移動による効果
@@ -1619,6 +1761,7 @@ if(members[parseInt(valc[i], 10)].move_panel==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "移動で" + members[parseInt(valc[i], 10)].move_panel+"\n";
+ability_box[15] = "移動で"+members[parseInt(valc[i], 10)].move_panel ;
 }
 
 //チップリカバリー
@@ -1626,6 +1769,7 @@ if(members[parseInt(valc[i], 10)].chip_recovery==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "ChipRecovery_" + members[parseInt(valc[i], 10)].chip_recovery+"\n";
+ability_box[16] = "チップリカバリー"+members[parseInt(valc[i], 10)].chip_recovery ;
 }
 
 //セルフリカバリー（）
@@ -1633,6 +1777,7 @@ if(members[parseInt(valc[i], 10)].self_recovery==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "SelfRecovery_" + members[parseInt(valc[i], 10)].self_recovery+"\n";
+ability_box[17] = "セルフリカバリー"+members[parseInt(valc[i], 10)].self_recovery ;
 }
 
 //ココロバグ
@@ -1640,13 +1785,15 @@ if(members[parseInt(valc[i], 10)].kokoro_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "ココロバグ" + members[parseInt(valc[i], 10)].kokoro_bug+"\n";
+ability_box[18] = "ココロバグ"+members[parseInt(valc[i], 10)].kokoro_bug ;
 }
 
 //バスター空打ち
 if(members[parseInt(valc[i], 10)].baster_blank==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "空打ち" + members[parseInt(valc[i], 10)].baster_blank+"\n";
+document.getElementById('ablity_'+[i]).value += "バスター" + members[parseInt(valc[i], 10)].baster_blank+"\n";
+ability_box[19] = "バスター"+members[parseInt(valc[i], 10)].baster_blank ;
 }
 
 //移動バグ
@@ -1654,6 +1801,7 @@ if(members[parseInt(valc[i], 10)].move_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "移動バグ" + members[parseInt(valc[i], 10)].move_bug+"\n";
+ability_box[20] = "移動バグ"+members[parseInt(valc[i], 10)].move_bug ;
 }
 
 //ダメージ状態異常バグ
@@ -1661,6 +1809,7 @@ if(members[parseInt(valc[i], 10)].damage_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "ダメージ" + members[parseInt(valc[i], 10)].damage_bug+"\n";
+ability_box[21] = "ダメージ"+members[parseInt(valc[i], 10)].damage_bug ;
 }
 
 //バトルHPバグ
@@ -1668,6 +1817,7 @@ if(members[parseInt(valc[i], 10)].battle_hp_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "バトルHPバグ" + members[parseInt(valc[i], 10)].battle_hp_bug+"\n";
+ability_box[22] = "バトルHPバグ"+members[parseInt(valc[i], 10)].battle_hp_bug ;
 }
 
 //カスタムHPバグ
@@ -1675,6 +1825,7 @@ if(members[parseInt(valc[i], 10)].custom_hp_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "カスタムHPバグ" + members[parseInt(valc[i], 10)].custom_hp_bug+"\n";
+ability_box[23] = "カスタムHPバグ"+members[parseInt(valc[i], 10)].custom_hp_bug ;
 }
 
 //カスタムダメージ
@@ -1682,6 +1833,7 @@ if(members[parseInt(valc[i], 10)].custom_damage==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "カスタムダメージ" + members[parseInt(valc[i], 10)].custom_damage+"\n";
+ability_box[24] = "カスタムダメージ"+members[parseInt(valc[i], 10)].custom_damage ;
 }
 
 //ステータスバグ
@@ -1689,6 +1841,7 @@ if(members[parseInt(valc[i], 10)].status_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "ステータスバグ" + members[parseInt(valc[i], 10)].status_bug+"\n";
+ability_box[25] = "ステータスバグ"+members[parseInt(valc[i], 10)].status_bug;
 }
 
 //ウイルス遭遇関係のプログラム（ミリオネアもここに当たる）
@@ -1696,6 +1849,7 @@ if(members[parseInt(valc[i], 10)].mode==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "mode_" + members[parseInt(valc[i], 10)].mode+"\n";
+ability_box[26] = "モード"+members[parseInt(valc[i], 10)].mode;
 }
 
 //バグストッパー
@@ -1703,10 +1857,13 @@ if(members[parseInt(valc[i], 10)].bug_stoper==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "バグストッパー" + members[parseInt(valc[i], 10)].bug_stoper+"\n";
+ability_box[27] = "バグストッパー"+members[parseInt(valc[i], 10)].bug_stoper;
 }
 
 
 //総合ステータス書き出し
+document.getElementById('body_result').value = body_math;
+document.getElementById('hp_result').value = hp_math;
 document.getElementById('attack_result').value = attack_math;
 document.getElementById('rapid_result').value = rapid_math;
 document.getElementById('charge_result').value = charge_math;
@@ -1717,14 +1874,15 @@ document.getElementById('g_folder_result').value = g_folder_math;
   }
 
 //アビリティ登録
-document.getElementById('ablity_result').value += b_button_result +"\n";
-document.getElementById('ablity_result').value += b_left_result +"\n";
-document.getElementById('ablity_result').value += b_cs_result +"\n";
-document.getElementById('ablity_result').value += cs_add_result +"\n";
 
+for(let i =0;i<ability_box.length;i++){
 
+if(ability_box[i]==undefined){
+}else{
+document.getElementById('ablity_result').value += ability_box[i]+"\n";
+}
 
-
+}
 
 }
 
