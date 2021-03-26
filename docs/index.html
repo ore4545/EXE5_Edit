@@ -1416,7 +1416,6 @@
           b_cs_pick = document.getElementById("b_cs_list").value;
           cs_add_pick = document.getElementById("cs_add_list").value;
           buster_add_pick = document.getElementById("buster_add_list").value;
-
           document.getElementById("pick_tag").value = b_cs_pick + cs_add_pick + buster_add_pick;
 
           cardlist();
@@ -1977,15 +1976,21 @@ document.getElementById('g_folder_result').value = g_folder_math;
   }
 
 //アビリティ登録
-
 for(let i =0;i<ability_box.length;i++){
-
 if(ability_box[i]==undefined){
 }else{
 document.getElementById('ablity_result').value += ability_box[i]+"\n";
 }
-
 }
+
+//検索欄を初期化
+document.getElementById('sarch_input').value = "";
+TEST_OBJECT.onSearchFieldChange("");
+b_cs_pick = "";
+cs_add_pick = "";
+buster_add_pick = "";
+document.getElementById("pick_tag").value = b_cs_pick + cs_add_pick + buster_add_pick;
+cardlist();
 
 }
 
