@@ -53,9 +53,6 @@
            //検索用語に入れる
            var reg2 = new RegExp(".*"+str+".*","i");
 
-           console.log(reg2)
-           console.log(reg)
-
           for(var i=items.length-1; i>=0; i--){
              if ((items[i].textContent.match(reg2))||(items[i].textContent.match(reg))){
                 items[i].style.display = "";
@@ -1309,12 +1306,102 @@
 
       <select id="card_list" size="20" style="width: 200px;"onchange="select_card_list()">
       </select>
+      <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+      </select>
+      <select id="cs_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+      </select>
+      <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+      </select>
+      <br>ピックアップ<textarea cols="10" rows="1" id="pick_tag" readonly>未設定</textarea>
       <script type="text/javascript">
 
       //セッション開始時に読み込み
       window.onload = function() {
         mega();
+        generat_list();
       };
+
+      function generat_list(){
+
+        //CS選択欄
+        //消去
+        for(let i = 1; i<members.length;i++){
+        var select = document.getElementById("b_cs_list");
+        select.remove(0);
+        }
+        //選択解除の欄を追加
+        var select = document.getElementById("b_cs_list");
+        var option = document.createElement("option");
+        option.text = "未選択";
+        option.value = "";
+        select.appendChild(option);
+        //csリスト生成生成
+        for(let i = 1; i<members.length;i++){
+        if(members[i].b_cs==undefined){
+        }else{
+          if(members[i].mb<=mega_math){
+        var select = document.getElementById("b_cs_list");
+        var option = document.createElement("option");
+        option.text = "CS "+members[i].b_cs;
+        option.value = members[i].b_cs;
+        select.appendChild(option);
+      }
+      }
+      }
+
+      //CS_add欄
+      //消去
+      for(let i = 1; i<members.length;i++){
+      var select = document.getElementById("cs_add_list");
+      select.remove(0);
+      }
+      //選択解除の欄を追加
+      var select = document.getElementById("cs_add_list");
+      var option = document.createElement("option");
+      option.text = "未選択";
+      option.value = "";
+      select.appendChild(option);
+      //csリスト生成生成
+      for(let i = 1; i<members.length;i++){
+      if(members[i].cs_add==undefined){
+      }else{
+        if(members[i].mb<=mega_math){
+      var select = document.getElementById("cs_add_list");
+      var option = document.createElement("option");
+      option.text = "CS"+members[i].cs_add;
+      option.value = members[i].cs_add;
+      select.appendChild(option);
+    }
+    }
+    }
+
+    //buster_add欄
+    //消去
+    for(let i = 1; i<members.length;i++){
+    var select = document.getElementById("buster_add_list");
+    select.remove(0);
+    }
+    //選択解除の欄を追加
+    var select = document.getElementById("buster_add_list");
+    var option = document.createElement("option");
+    option.text = "未選択";
+    option.value = "";
+    select.appendChild(option);
+    //csリスト生成生成
+    for(let i = 1; i<members.length;i++){
+    if(members[i].buster_add==undefined){
+    }else{
+      if(members[i].mb<=mega_math){
+    var select = document.getElementById("buster_add_list");
+    var option = document.createElement("option");
+    option.text = "バスター"+members[i].buster_add;
+    option.value = members[i].buster_add;
+    select.appendChild(option);
+  }
+  }
+  }
+
+      }
 
       //選択したカードを検索ボックスに入れる
       function select_card_list(){
@@ -1324,9 +1411,20 @@
 
       }
 
+      //選択したカアビリティリスト
+      function select_ability_list(){
+          b_cs_pick = document.getElementById("b_cs_list").value;
+          cs_add_pick = document.getElementById("cs_add_list").value;
+          buster_add_pick = document.getElementById("buster_add_list").value;
+
+          document.getElementById("pick_tag").value = b_cs_pick + cs_add_pick + buster_add_pick;
+
+          cardlist();
+      }
+
       //改造カードのデータベース
       let members =[
-       {name:'noneカード',id:'',flag:"",mb:0} ,
+       {name:'noneカード',id:'',flag:"",mb:0,} ,
        {name:'メットール',id:'01',flag:"02001270:00"+"\n"+"0200612C:43",mb:7,hp:"+40",b_left:"メットG",float:"off"} ,
        {name:'ボルケギア',id:'02',flag:"02001271:00"+"\n"+"0200612D:43",mb:12,hp:"+60",body:"Fbody",attack:"+1",baster_blank:"off"} ,
        {name:'ゴースラー',id:'03',flag:"02001272:00"+"\n"+"0200612E:43",mb:15,hp:"-80",float:"on",b_cs:"インビジ"} ,
@@ -1442,9 +1540,15 @@
 
     //残りメガ数
     let mega_math = 0;
+    //CSピックアップ用の変数
+    var b_cs_pick = "";
+    var cs_add_pick = "";
+    var buster_add_pick = "";
 
     //カードのピックアップ
     function cardlist(){
+
+      generat_list();
 
       //消去
       for(let i = 1; i<members.length;i++){
@@ -1454,7 +1558,7 @@
 
       //生成
       for(let i = 1; i<members.length;i++){
-        if(members[i].mb<=mega_math){
+        if(members[i].mb<=mega_math&&(members[i].b_cs==b_cs_pick||""==b_cs_pick)&&(members[i].cs_add==cs_add_pick||""==cs_add_pick)&&(members[i].buster_add==buster_add_pick||""==buster_add_pick)){
       var select = document.getElementById("card_list");
       var option = document.createElement("option");
       option.text = members[i].mb+"MB/"+members[i].name;
@@ -1462,7 +1566,6 @@
       select.appendChild(option);
     }
     }
-
 
     }
 
