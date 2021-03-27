@@ -1307,6 +1307,8 @@
       </select>
       <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
       </select>
+      <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+      </select>
       <br>ピックアップ<textarea cols="40" rows="1" id="pick_tag" readonly>未設定</textarea>
       <script type="text/javascript">
 
@@ -1341,7 +1343,7 @@
         for(let i = 1; i<members.length;i++){
         if(members[i].b_cs==undefined){
         }else{
-          if(members[i].mb<=mega_math&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])){
+          if(members[i].mb<=mega_math&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])){
         var select = document.getElementById("b_cs_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1389,7 +1391,7 @@
       for(let i = 1; i<members.length;i++){
       if(members[i].cs_add==undefined){
       }else{
-        if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])){
+        if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])){
       var select = document.getElementById("cs_add_list");
       var option = document.createElement("option");
 
@@ -1438,7 +1440,7 @@
     for(let i = 1; i<members.length;i++){
     if(members[i].buster_add==undefined){
     }else{
-      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])){
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])){
     var select = document.getElementById("buster_add_list");
     var option = document.createElement("option");
     //ダブリ用変数
@@ -1461,7 +1463,56 @@
         }
   }
   }
+
+  //b左欄
+  //消去
+  for(let i = 1; i<members.length;i++){
+  var select = document.getElementById("b_left_list");
+  select.remove(0);
   }
+  //選択解除の欄を追加
+  var select = document.getElementById("b_left_list");
+  var option = document.createElement("option");
+  option.text = "ピックアップ解除";
+  option.value = "pick_solve_4";
+  select.appendChild(option);
+  //上書きさせない
+  var select = document.getElementById("b_left_list");
+  var option = document.createElement("option");
+  option.text = "B←を上書きさせない";
+  option.value = "上書きさせない";
+  select.appendChild(option);
+
+  //bleftリスト生成生成
+  for(let i = 1; i<members.length;i++){
+  if(members[i].b_left==undefined){
+  }else{
+    if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])){
+  var select = document.getElementById("b_left_list");
+  var option = document.createElement("option");
+  //ダブリ用変数
+  var items = select.children;
+  var items_daburi = 0;
+  //子の数だけ繰り返す
+    for(let z=1;z<items.length;z++){
+       if(!(items[z].value == members[i].b_left)){
+          option.text = "B←"+members[i].b_left;
+          option.value = members[i].b_left;
+          select.appendChild(option);
+        }else if(items[z].value == members[i].b_left){
+          //ダブり数をカウント
+           items_daburi +=1;
+         }
+         //２回以上ダブったら消去
+         if(items_daburi>1){
+           select.remove(z);
+         }
+      }
+  }
+  }
+
+  }
+}
 
       }
 
@@ -1481,6 +1532,7 @@
           select_ability_box[0] = document.getElementById("b_cs_list").value;
           select_ability_box[1] = document.getElementById("cs_add_list").value;
           select_ability_box[2] = document.getElementById("buster_add_list").value;
+          select_ability_box[3] = document.getElementById("b_left_list").value;
           document.getElementById("pick_tag").value ="";
 
           //選択したアビリティを検索させる
@@ -1640,7 +1692,7 @@
       //生成
       //for(let z = 0; z<pick_up_box.length;z++){}
       for(let i = 1; i<members.length;i++){
-        if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])){
+        if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])){
       var select = document.getElementById("card_list");
       var option = document.createElement("option");
       option.text = members[i].mb+"MB/"+members[i].name;
@@ -2069,10 +2121,11 @@ document.getElementById('ablity_result').value += ability_box[i]+"\n";
 //検索欄を初期化
 document.getElementById('sarch_input').value = "";
 TEST_OBJECT.onSearchFieldChange("");
-pick_up_box[0] = "";
-pick_up_box[1] = "";
-pick_up_box[2] = "";
-document.getElementById("pick_tag").value = pick_up_box[0] + pick_up_box[1] + pick_up_box[2];
+
+for(let i =0;i<23;i++){pick_up_box[i] = "";}
+
+
+document.getElementById("pick_tag").value = pick_up_box[0] + pick_up_box[1] + pick_up_box[2]+pick_up_box[3];
 cardlist();
 
 }
