@@ -15,12 +15,12 @@
     お知らせ
     <li>現在β版による試作テスト中です。</li>
     <li>機能の改修及び、要望はオレまでお願いします。</li>
-    <li>絞り込みの複数選択</li>
+    <li>レイアウトの微調整</li>
     <br>
     今後付けたい機能
-    <li>改造カードの予想アビリティの表示(ほぼ完成)</li>
-    <li>絞り込み機能(テスト中)</li>
-    <li>改造カードピックアップ(メガバイト以下のみ表示)</li>
+    <li>改造カードの予想アビリティの表示(誤字脱字の確認中)</li>
+    <li>絞り込み機能(アビリティでの絞りを検討)</li>
+    <li>改造カードピックアップ(ほぼ完成)</li>
 
     <br>
     </div>
@@ -64,7 +64,7 @@
     </script>
 
 
-   <table border="1">
+   <table border="1" style="border-collapse: collapse">
      <tbody>
 
        <tr>
@@ -114,7 +114,7 @@
        <tr>
          <tr>
            <td colspan="3">
-          ピックアップ<textarea cols="40" rows="1" id="pick_tag" readonly>未設定</textarea>
+          ピックアップ<textarea cols="40" rows="1" id="pick_tag" readonly>未設定</textarea><input type="reset" value="リセット"onclick="mega();"　>
         </td>
         <td rowspan="2">
           スーパーアーマー<br>
@@ -137,22 +137,36 @@
           </select>
          </td>
         </tr>
-        <td colspan="3">
-           残り使用可能カード<br>
+        <td colspan="3" style="vertical-align:top">
+<div style="float:left;">
+      残り使用可能カード<br>
       <select id="card_list" size="20" style="width: 200px;"onchange="select_card_list()">
       </select>
-
-      パラメータ<textarea id="kaizo_parametor" rows="10" cols="20"></textarea>
-          アビリティ<textarea id="kaizo_ability" rows="10" cols="30"></textarea>
-    </td>
+</div>
+<div style="float:left; padding-left:20px">
+      パラメータ<br><textarea id="kaizo_parametor" rows="5" cols="23" style="font-size:20pt;"></textarea><br>
+          アビリティ<br><textarea id="kaizo_ability" rows="5" cols="23" style="font-size:20pt;"></textarea>
+</div>
+        </td>
     </tr>
  </tbody>
  </table>
  絞り込み（入力した言葉と一致するカードに絞り込みます。ひらがな可）<br>
-<input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 200px;" /><br/>
+<input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 200px;font-size:15pt;" /><br/>
     <table border="1">
       <form name="indv"></form>
       <tbody>
+        <tr>
+          <td colspan="2">
+            残りメガバイト
+            <textarea cols="1" rows="1" id="megabite"  style="font-size:20pt;" readonly >80</textarea>
+            /80
+          </td>
+          <td colspan="2">
+            使用メガバイト
+              <textarea cols="1" rows="1" id="megabite_use" style="font-size:20pt;"  readonly >0</textarea>
+          </td>
+        </tr>
       <tr>
         <td>1枚目<select id="kaizo_1" onchange="mega()">
           <option value="00">未選択</option>
@@ -1332,52 +1346,41 @@
       </td>
       </tr>
       <tr>
-        <td colspan="2">
-          残りメガバイト
-          <textarea cols="3" rows="1" id="megabite" readonly >80</textarea>
-          /80
-        </td>
-        <td colspan="2">
-          使用メガバイト
-            <textarea cols="3" rows="1" id="megabite_use" readonly >0</textarea>
-        </td>
-      </tr>
-      <tr>
         <td colspan ="2">
           <input type="button" value="コード出力" name="gen" onclick="generate()">
-          <input type="reset" value="リセット">
+          <input type="reset" value="リセット"onclick="mega();">
           <br>
           <textarea cols="40" rows="16" id="ans" readonly></textarea>
         </td>
         <td colspan ="2">
           <br>総合ステータス</br>
           パラメーター</br>
-          body<textarea cols="10" rows="1" id="body_result" readonly></textarea>
+          body<textarea cols="10" rows="1" id="body_result" style="font-size:17pt;" readonly></textarea>
           <br>
-          HP<textarea cols="10" rows="1" id="hp_result" readonly></textarea>
-          Attack<textarea cols="10" rows="1" id="attack_result" readonly></textarea>
-          Rapid<textarea cols="10" rows="1" id="rapid_result" readonly></textarea>
-          Charge<textarea cols="10" rows="1" id="charge_result" readonly></textarea>
+          HP<textarea cols="5" rows="1" id="hp_result" style="font-size:17pt;" readonly></textarea>
+          Attack<textarea cols="1" rows="1" id="attack_result" style="font-size:17pt;" readonly></textarea>
+          Rapid<textarea cols="1" rows="1" id="rapid_result" style="font-size:17pt;" readonly></textarea>
+          Charge<textarea cols="1" rows="1" id="charge_result" style="font-size:17pt;" readonly></textarea>
           <br>
-          Custom<textarea cols="10" rows="1" id="custom_result" readonly></textarea>
-          MegaFolder<textarea cols="10" rows="1" id="m_folder_result" readonly></textarea>
-          GigaFolder<textarea cols="10" rows="1" id="g_folder_result" readonly></textarea>
+          Custom<textarea cols="1" rows="1" id="custom_result" style="font-size:17pt;" readonly></textarea>
+          MegaFolder<textarea cols="1" rows="1" id="m_folder_result" style="font-size:17pt;" readonly></textarea>
+          GigaFolder<textarea cols="1" rows="1" id="g_folder_result" style="font-size:17pt;" readonly></textarea>
 
-          <br>アビリティ
-          <textarea cols="40" rows="9" id="ablity_result" readonly></textarea>
+          <p>アビリティ
+          <textarea cols="40" rows="9" id="ablity_result" style="font-size:13pt;" readonly></textarea>
 
         </td>
         <td colspan="1">
           <br>基礎能力(現在の能力値を入れてください)</br>
-          HP<textarea cols="5" rows="1" id="hp_nav"onchange="mega()">1000</textarea>
+          HP<textarea cols="5" rows="1" id="hp_nav" style="font-size:15pt;" onchange="mega()">1000</textarea>
           <br>
-          Attack<textarea cols="3" rows="1" id="attack_nav"onchange="mega()">1</textarea>
-          Rapid<textarea cols="3" rows="1" id="rapid_nav" onchange="mega()">1</textarea>
-          Charge<textarea cols="3" rows="1" id="charge_nav" onchange="mega()">1</textarea>
+          Attack<textarea cols="1" rows="1" id="attack_nav" style="font-size:15pt;" onchange="mega()">1</textarea>
+          Rapid<textarea cols="1" rows="1" id="rapid_nav"  style="font-size:15pt;" onchange="mega()">1</textarea>
+          Charge<textarea cols="1" rows="1" id="charge_nav"  style="font-size:15pt;" onchange="mega()">1</textarea>
           <br>
-          Custom<textarea cols="3" rows="1" id="custom_nav" onchange="mega()">5</textarea>
-          MegaFolder<textarea cols="3" rows="1" id="m_folder_nav" onchange="mega()">5</textarea>
-          GigaFolder<textarea cols="3" rows="1" id="g_folder_nav" onchange="mega()">1</textarea>
+          Custom<textarea cols="1" rows="1" id="custom_nav"  style="font-size:15pt;" onchange="mega()">5</textarea>
+          MegaFolder<textarea cols="1" rows="1" id="m_folder_nav"  style="font-size:15pt;" onchange="mega()">5</textarea>
+          GigaFolder<textarea cols="1" rows="1" id="g_folder_nav"  style="font-size:15pt;" onchange="mega()">1</textarea>
         </td>
       </tr>
 
@@ -2157,7 +2160,7 @@
       let members =[
        {name:'noneカード',id:'',flag:"",mb:0,} ,
        {name:'メットール',id:'01',flag:"02001270:00"+"\n"+"0200612C:43",mb:7,hp:"+40",b_left:"メットG",float:"off"} ,
-       {name:'ボルケギア',id:'02',flag:"02001271:00"+"\n"+"0200612D:43",mb:12,hp:"+60",body:"Fbody",attack:"+1",baster_blank:"off"} ,
+       {name:'ボルケルギア',id:'02',flag:"02001271:00"+"\n"+"0200612D:43",mb:12,hp:"+60",body:"Fbody",attack:"+1",baster_blank:"off"} ,
        {name:'ゴースラー',id:'03',flag:"02001272:00"+"\n"+"0200612E:43",mb:15,hp:"-80",float:"on",b_cs:"インビジ"} ,
        {name:'スウォーディン',id:'04',flag:"02001273:00"+"\n"+"0200612F:43",mb:10,attack:"-1",rapid:"-1",charge:"-1",b_cs:"ロングS"} ,
        {name:'キオルシン',id:'05',flag:"02001274:00"+"\n"+"02006130:43",mb:18,float:"on",air:"on",move_bug:"on"} ,
@@ -2720,7 +2723,11 @@ TEST_OBJECT.onSearchFieldChange("");
 
 for(let i =0;i<23;i++){pick_up_box[i] = "";}
 
-for(let i =0;i<14;i++){document.getElementById("pick_tag").value += pick_up_box[i];}
+//ピックアップの初期化
+for(let i =0;i<14;i++){document.getElementById("pick_tag").value = pick_up_box[i];}
+//カード説明文初期化
+document.getElementById('kaizo_parametor').value = "";
+document.getElementById('kaizo_ability').value = "";
 
 cardlist();
 
@@ -2843,7 +2850,7 @@ cardlist();
               if(members[parseInt(card_id, 10)].attack==undefined){
                 document.getElementById("kaizo_parametor").value += "";
               }else{
-              document.getElementById('kaizo_parametor').value += "A" + members[parseInt(card_id, 10)].attack+"\n";
+              document.getElementById('kaizo_parametor').value += "アタック" + members[parseInt(card_id, 10)].attack+"\n";
 
 
             }
@@ -2852,13 +2859,13 @@ cardlist();
               if(members[parseInt(card_id, 10)].rapid==undefined){
               document.getElementById("kaizo_parametor").value += "";
               }else{
-                document.getElementById('kaizo_parametor').value += "R" + members[parseInt(card_id, 10)].rapid+"\n";
+                document.getElementById('kaizo_parametor').value += "ラピッド" + members[parseInt(card_id, 10)].rapid+"\n";
               }
               //チャージ表示
               if(members[parseInt(card_id, 10)].charge==undefined){
                 document.getElementById("kaizo_parametor").value += "";
               }else{
-                document.getElementById('kaizo_parametor').value += "C" + members[parseInt(card_id, 10)].charge+"\n";
+                document.getElementById('kaizo_parametor').value += "チャージ" + members[parseInt(card_id, 10)].charge+"\n";
 
               }
 
@@ -2891,7 +2898,7 @@ cardlist();
               if(members[parseInt(card_id, 10)].soultime==undefined){
             document.getElementById("kaizo_parametor").value += "";
             }else{
-              document.getElementById('kaizo_parametor').value += "SoulTime" + members[parseInt(card_id, 10)].soultime+"\n";
+              document.getElementById('kaizo_parametor').value += "ソウルタイム" + members[parseInt(card_id, 10)].soultime+"\n";
             }
 
             //アビリティ関係
