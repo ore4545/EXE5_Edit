@@ -15,7 +15,7 @@
     お知らせ
     <li>現在β版による試作テスト中です。</li>
     <li>機能の改修及び、要望はオレまでお願いします。</li>
-    <li>絞り込み実装</li>
+    <li>絞り込みの複数選択</li>
     <br>
     今後付けたい機能
     <li>改造カードの予想アビリティの表示(ほぼ完成)</li>
@@ -63,12 +63,6 @@
        }
      }
     }
-
-
-
-
-
-
 
     </script>
    <input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 140px;" /><br/>
@@ -1304,6 +1298,7 @@
         </td>
       </tr>
 
+      残り使用可能カード
       <select id="card_list" size="20" style="width: 200px;"onchange="select_card_list()">
       </select>
       <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
@@ -1312,7 +1307,7 @@
       </select>
       <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
       </select>
-      <br>ピックアップ<textarea cols="10" rows="1" id="pick_tag" readonly>未設定</textarea>
+      <br>ピックアップ<textarea cols="40" rows="1" id="pick_tag" readonly>未設定</textarea>
       <script type="text/javascript">
 
       //セッション開始時に読み込み
@@ -1332,19 +1327,41 @@
         //選択解除の欄を追加
         var select = document.getElementById("b_cs_list");
         var option = document.createElement("option");
-        option.text = "未選択";
-        option.value = "";
+        option.text = "ピックアップ解除";
+        option.value = "pick_solve_1";
         select.appendChild(option);
+        //上書きさせない
+        var select = document.getElementById("b_cs_list");
+        var option = document.createElement("option");
+        option.text = "CSを上書きさせない";
+        option.value = "上書きさせない";
+        select.appendChild(option);
+
         //csリスト生成生成
         for(let i = 1; i<members.length;i++){
         if(members[i].b_cs==undefined){
         }else{
-          if(members[i].mb<=mega_math){
+          if(members[i].mb<=mega_math&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])){
         var select = document.getElementById("b_cs_list");
         var option = document.createElement("option");
-        option.text = "CS "+members[i].b_cs;
-        option.value = members[i].b_cs;
-        select.appendChild(option);
+        //ダブリ用変数
+        var items = select.children;
+        var items_daburi = 0;
+        //子の数だけ繰り返す
+          for(let z=1;z<items.length;z++){
+             if(!(items[z].value == members[i].b_cs)){
+                option.text = "CS"+members[i].b_cs;
+                option.value = members[i].b_cs;
+                select.appendChild(option);
+              }else if(items[z].value == members[i].b_cs){
+                //ダブり数をカウント
+                 items_daburi +=1;
+               }
+               //２回以上ダブったら消去
+               if(items_daburi>1){
+                 select.remove(z);
+               }
+            }
       }
       }
       }
@@ -1358,21 +1375,44 @@
       //選択解除の欄を追加
       var select = document.getElementById("cs_add_list");
       var option = document.createElement("option");
-      option.text = "未選択";
-      option.value = "";
+      option.text = "ピックアップ解除";
+      option.value = "pick_solve_2";
       select.appendChild(option);
+      //上書きさせない
+      var select = document.getElementById("cs_add_list");
+      var option = document.createElement("option");
+      option.text = "CS追加効果を上書きさせない";
+      option.value = "上書きさせない";
+      select.appendChild(option);
+
       //csリスト生成生成
       for(let i = 1; i<members.length;i++){
       if(members[i].cs_add==undefined){
       }else{
-        if(members[i].mb<=mega_math){
+        if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])){
       var select = document.getElementById("cs_add_list");
       var option = document.createElement("option");
-      option.text = "CS"+members[i].cs_add;
-      option.value = members[i].cs_add;
-      select.appendChild(option);
-    }
-    }
+
+      //ダブリ用変数
+      var items = select.children;
+      var items_daburi = 0;
+      //子の数だけ繰り返す
+        for(let z=1;z<items.length;z++){
+           if(!(items[z].value == members[i].cs_add)){
+              option.text = "CSに"+members[i].cs_add;
+              option.value = members[i].cs_add;
+              select.appendChild(option);
+            }else if(items[z].value == members[i].cs_add){
+              //ダブり数をカウント
+               items_daburi +=1;
+             }
+             //２回以上ダブったら消去
+             if(items_daburi>1){
+               select.remove(z);
+             }
+          }
+        }
+      }
     }
 
     //buster_add欄
@@ -1384,19 +1424,41 @@
     //選択解除の欄を追加
     var select = document.getElementById("buster_add_list");
     var option = document.createElement("option");
-    option.text = "未選択";
-    option.value = "";
+    option.text = "ピックアップ解除";
+    option.value = "pick_solve_3";
     select.appendChild(option);
+    //上書きさせない
+    var select = document.getElementById("buster_add_list");
+    var option = document.createElement("option");
+    option.text = "バスター追加効果を上書きさせない";
+    option.value = "上書きさせない";
+    select.appendChild(option);
+
     //csリスト生成生成
     for(let i = 1; i<members.length;i++){
     if(members[i].buster_add==undefined){
     }else{
-      if(members[i].mb<=mega_math){
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])){
     var select = document.getElementById("buster_add_list");
     var option = document.createElement("option");
-    option.text = "バスター"+members[i].buster_add;
-    option.value = members[i].buster_add;
-    select.appendChild(option);
+    //ダブリ用変数
+    var items = select.children;
+    var items_daburi = 0;
+    //子の数だけ繰り返す
+      for(let z=1;z<items.length;z++){
+         if(!(items[z].value == members[i].buster_add)){
+            option.text = "バスター"+members[i].buster_add;
+            option.value = members[i].buster_add;
+            select.appendChild(option);
+          }else if(items[z].value == members[i].buster_add){
+            //ダブり数をカウント
+             items_daburi +=1;
+           }
+           //２回以上ダブったら消去
+           if(items_daburi>1){
+             select.remove(z);
+           }
+        }
   }
   }
   }
@@ -1411,13 +1473,35 @@
 
       }
 
-      //選択したカアビリティリスト
+      //選択したカアビリティリストをピックアップに入れる関数
       function select_ability_list(){
-          b_cs_pick = document.getElementById("b_cs_list").value;
-          cs_add_pick = document.getElementById("cs_add_list").value;
-          buster_add_pick = document.getElementById("buster_add_list").value;
-          document.getElementById("pick_tag").value = b_cs_pick + cs_add_pick + buster_add_pick;
 
+        let select_ability_box=[];
+
+          select_ability_box[0] = document.getElementById("b_cs_list").value;
+          select_ability_box[1] = document.getElementById("cs_add_list").value;
+          select_ability_box[2] = document.getElementById("buster_add_list").value;
+          document.getElementById("pick_tag").value ="";
+
+          //選択したアビリティを検索させる
+          for(let i =0;i<select_ability_box.length;i++){
+            if(select_ability_box[i] == ""){
+            }else if(select_ability_box[i]=="pick_solve_"+[i+1]){
+              select_ability_box[i] = "";
+              pick_up_box[i] = select_ability_box[i];
+            }else if(select_ability_box[i]=="上書きさせない"){
+
+              pick_up_box[i]=undefined;
+            }else{
+              pick_up_box[i] = select_ability_box[i];
+
+            }
+            //ピックアップの表示
+            document.getElementById("pick_tag").value += pick_up_box[i]+"/";
+          }
+
+
+          //カード生成プロセス
           cardlist();
       }
 
@@ -1540,9 +1624,7 @@
     //残りメガ数
     let mega_math = 0;
     //CSピックアップ用の変数
-    var b_cs_pick = "";
-    var cs_add_pick = "";
-    var buster_add_pick = "";
+    let pick_up_box = []
 
     //カードのピックアップ
     function cardlist(){
@@ -1556,8 +1638,9 @@
     }
 
       //生成
+      //for(let z = 0; z<pick_up_box.length;z++){}
       for(let i = 1; i<members.length;i++){
-        if(members[i].mb<=mega_math&&(members[i].b_cs==b_cs_pick||""==b_cs_pick)&&(members[i].cs_add==cs_add_pick||""==cs_add_pick)&&(members[i].buster_add==buster_add_pick||""==buster_add_pick)){
+        if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])){
       var select = document.getElementById("card_list");
       var option = document.createElement("option");
       option.text = members[i].mb+"MB/"+members[i].name;
@@ -1986,10 +2069,10 @@ document.getElementById('ablity_result').value += ability_box[i]+"\n";
 //検索欄を初期化
 document.getElementById('sarch_input').value = "";
 TEST_OBJECT.onSearchFieldChange("");
-b_cs_pick = "";
-cs_add_pick = "";
-buster_add_pick = "";
-document.getElementById("pick_tag").value = b_cs_pick + cs_add_pick + buster_add_pick;
+pick_up_box[0] = "";
+pick_up_box[1] = "";
+pick_up_box[2] = "";
+document.getElementById("pick_tag").value = pick_up_box[0] + pick_up_box[1] + pick_up_box[2];
 cardlist();
 
 }
