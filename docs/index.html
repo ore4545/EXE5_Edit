@@ -24,8 +24,6 @@
 
     <br>
     </div>
-
-    絞り込み（入力した言葉と一致するカードに絞り込みます。ひらがな可）<br>
     <script language="javascript" type="text/javascript">
     var TEST_OBJECT = {
        onSearchFieldChange : function(value){
@@ -63,10 +61,54 @@
        }
      }
     }
-
     </script>
-   <input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 140px;" /><br/>
 
+
+   <table border="1">
+     <tbody>
+
+       <tr>
+         <td>
+           Bためうちリスト<br>
+           <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+         </td>
+         <td>
+           CS追加効果リスト<br>
+           <select id="cs_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+         </td>
+         <td>
+           バスター追加効果リスト<br>
+           <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+         </td>
+         <td>
+           B←リスト<br>
+         <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+         </select>
+       </td>
+       </tr>
+       <tr>
+         <tr>
+           <td colspan="4">
+          ピックアップ<textarea cols="40" rows="1" id="pick_tag" readonly>未設定</textarea>
+        </td>
+        </tr>
+        <td colspan="4">
+           残り使用可能カード<br>
+      <select id="card_list" size="20" style="width: 200px;"onchange="select_card_list()">
+      </select>
+
+      パラメータ<textarea id="kaizo_parametor" rows="10" cols="20"></textarea>
+          アビリティ<textarea id="kaizo_ability" rows="10" cols="30"></textarea>
+
+    </div>
+    </tr>
+ </tbody>
+ </table>
+ 絞り込み（入力した言葉と一致するカードに絞り込みます。ひらがな可）<br>
+<input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 200px;" /><br/>
     <table border="1">
       <form name="indv"></form>
       <tbody>
@@ -1298,18 +1340,7 @@
         </td>
       </tr>
 
-      残り使用可能カード
-      <select id="card_list" size="20" style="width: 200px;"onchange="select_card_list()">
-      </select>
-      <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-      </select>
-      <select id="cs_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-      </select>
-      <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-      </select>
-      <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-      </select>
-      <br>ピックアップ<textarea cols="40" rows="1" id="pick_tag" readonly>未設定</textarea>
+
       <script type="text/javascript">
 
       //セッション開始時に読み込み
@@ -1483,7 +1514,7 @@
   option.value = "上書きさせない";
   select.appendChild(option);
 
-  //bleftリスト生成生成
+  //B_leftリスト生成生成
   for(let i = 1; i<members.length;i++){
   if(members[i].b_left==undefined){
   }else{
@@ -1521,6 +1552,7 @@
         var selectBox = document.getElementById("card_list").value;
         document.getElementById('sarch_input').value = selectBox;
         TEST_OBJECT.onSearchFieldChange(selectBox);
+        kaizo_parametor_upper();
 
       }
 
@@ -1546,7 +1578,6 @@
               pick_up_box[i]=undefined;
             }else{
               pick_up_box[i] = select_ability_box[i];
-
             }
             //ピックアップの表示
             document.getElementById("pick_tag").value += pick_up_box[i]+"/";
@@ -1876,7 +1907,6 @@ document.getElementById('ablity_'+[i]).value += "B" + members[parseInt(valc[i], 
 
 ability_box[0]= "B" +members[parseInt(valc[i], 10)].b_button;
 
-
 }
 
 //B左
@@ -1910,7 +1940,6 @@ if(members[parseInt(valc[i], 10)].buster_add==undefined){
 document.getElementById('ablity_'+[i]).value += "バスター" + members[parseInt(valc[i], 10)].buster_add+"\n";
 ability_box[4] = "バスター" + members[parseInt(valc[i], 10)].buster_add;
 }
-
 
 
 //アンダーシャツ装備
@@ -2209,6 +2238,294 @@ cardlist();
 
 
           }
+
+
+
+          //改造カードのパラメーターを選択時に表示
+        function kaizo_parametor_upper(){
+
+
+            document.getElementById("kaizo_parametor").value = "";
+            document.getElementById("kaizo_ability").value = "";
+              var selectBox = document.getElementById("card_list").value;
+              var card_id = 0;
+
+              for(let i=0;i<members.length;i++){
+                 if(members[i].name==selectBox){
+                   card_id =parseInt(members[i].id,16);
+                 }
+              }
+
+              //体力表示
+                if(members[parseInt(card_id, 10)].hp==undefined){
+                  document.getElementById("kaizo_parametor").value += "";
+                }else{
+                document.getElementById('kaizo_parametor').value += "HP" + members[parseInt(card_id, 10)].hp +"\n";
+
+              }
+
+              //ボディ表示
+              if(members[parseInt(card_id, 10)].body==undefined){
+                document.getElementById("kaizo_parametor").value += "";
+              }else{
+              document.getElementById('kaizo_parametor').value += "" + members[parseInt(card_id, 10)].body +"\n";
+
+            }
+
+              //アタック表示
+              if(members[parseInt(card_id, 10)].attack==undefined){
+                document.getElementById("kaizo_parametor").value += "";
+              }else{
+              document.getElementById('kaizo_parametor').value += "A" + members[parseInt(card_id, 10)].attack+"\n";
+
+
+            }
+
+            //ラピッド表示
+              if(members[parseInt(card_id, 10)].rapid==undefined){
+              document.getElementById("kaizo_parametor").value += "";
+              }else{
+                document.getElementById('kaizo_parametor').value += "R" + members[parseInt(card_id, 10)].rapid+"\n";
+              }
+              //チャージ表示
+              if(members[parseInt(card_id, 10)].charge==undefined){
+                document.getElementById("kaizo_parametor").value += "";
+              }else{
+                document.getElementById('kaizo_parametor').value += "C" + members[parseInt(card_id, 10)].charge+"\n";
+
+              }
+
+              //カスタム
+              if(members[parseInt(card_id, 10)].custom==undefined){
+            document.getElementById("kaizo_parametor").value += "";
+            }else{
+              document.getElementById('kaizo_parametor').value += "Custom" + members[parseInt(card_id, 10)].custom+"\n";
+
+
+
+            }
+
+            //メガフォルダ
+              if(members[parseInt(card_id, 10)].m_folder==undefined){
+            document.getElementById("kaizo_parametor").value += "";
+            }else{
+              document.getElementById('kaizo_parametor').value += "Mega" + members[parseInt(card_id, 10)].m_folder+"\n";
+
+            }
+
+            //ギガフォルダ
+              if(members[parseInt(card_id, 10)].g_folder==undefined){
+            document.getElementById("kaizo_parametor").value += "";
+            }else{
+              document.getElementById('kaizo_parametor').value += "Giga" + members[parseInt(card_id, 10)].g_folder+"\n";
+            }
+
+            //ソウルタイム
+              if(members[parseInt(card_id, 10)].soultime==undefined){
+            document.getElementById("kaizo_parametor").value += "";
+            }else{
+              document.getElementById('kaizo_parametor').value += "SoulTime" + members[parseInt(card_id, 10)].soultime+"\n";
+            }
+
+            //アビリティ関係
+            //Bボタン
+            if(members[parseInt(card_id, 10)].b_button==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "B" + members[parseInt(card_id, 10)].b_button+"\n";
+            }
+
+            //B左
+            if(members[parseInt(card_id, 10)].b_left==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "B←" + members[parseInt(card_id, 10)].b_left+"\n";
+            }
+
+            //CS
+            if(members[parseInt(card_id, 10)].b_cs==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "CS" + members[parseInt(card_id, 10)].b_cs+"\n";
+            }
+
+            //CS追加効果
+            if(members[parseInt(card_id, 10)].cs_add==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "CS追加効果" + members[parseInt(card_id, 10)].cs_add+"\n";
+            }
+
+            //バスター追加効果
+            if(members[parseInt(card_id, 10)].buster_add==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "バスター追加効果" + members[parseInt(card_id, 10)].buster_add+"\n";
+            }
+
+
+            //アンダーシャツ装備
+            if(members[parseInt(card_id, 10)].under_shirt==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value +=  "アンダーシャツ" + members[parseInt(card_id, 10)].under_shirt + "\n";
+            }
+
+            //スーパーアーマー装備
+            if(members[parseInt(card_id, 10)].super_armor==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value +=  "スーパーアーマー" + members[parseInt(card_id, 10)].super_armor + "\n";
+            }
+
+            //ステータスガード
+            if(members[parseInt(card_id, 10)].status_guard==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value +=  "ステータスガード" + members[parseInt(card_id, 10)].status_guard + "\n";
+            }
+
+            //フロート装備
+            if(members[parseInt(card_id, 10)].float==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "フロートシューズ" + members[parseInt(card_id, 10)].float+"\n";
+            }
+
+            //エアーシューズ装備
+            if(members[parseInt(card_id, 10)].air==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "エアーシューズ" + members[parseInt(card_id, 10)].air+"\n";
+            }
+
+            //ゲージ
+            if(members[parseInt(card_id, 10)].gage==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value +=  members[parseInt(card_id, 10)].gage+"Gage\n";
+            }
+
+            //ファーストバリア及びオーラ
+            if(members[parseInt(card_id, 10)].f_barier==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value +=  "F"+members[parseInt(card_id, 10)].f_barier+"\n";
+
+            }
+
+            //ラッシュサポート装備
+            if(members[parseInt(card_id, 10)].rash==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value +=  "ラッシュサポート" + members[parseInt(card_id, 10)].rash + "\n";
+            }
+
+            //ビートサポート装備
+            if(members[parseInt(card_id, 10)].beat==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value +=  "ビートサポート" + members[parseInt(card_id, 10)].beat + "\n";
+            }
+
+            //タンゴサポート装備
+            if(members[parseInt(card_id, 10)].tango==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value +=  "タンゴサポート" + members[parseInt(card_id, 10)].tango + "\n";
+            }
+
+            //移動による効果
+            if(members[parseInt(card_id, 10)].move_panel==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "移動で" + members[parseInt(card_id, 10)].move_panel+"\n";
+            }
+
+            //チップリカバリー
+            if(members[parseInt(card_id, 10)].chip_recovery==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "チップリカバリー_" + members[parseInt(card_id, 10)].chip_recovery+"\n";
+            }
+
+            //セルフリカバリー（）
+            if(members[parseInt(card_id, 10)].self_recovery==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "セルフリカバリー_" + members[parseInt(card_id, 10)].self_recovery+"\n";
+            }
+
+            //ココロバグ
+            if(members[parseInt(card_id, 10)].kokoro_bug==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "ココロバグ" + members[parseInt(card_id, 10)].kokoro_bug+"\n";
+            }
+
+            //バスター空打ち
+            if(members[parseInt(card_id, 10)].baster_blank==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "バスター" + members[parseInt(card_id, 10)].baster_blank+"\n";
+            }
+
+            //移動バグ
+            if(members[parseInt(card_id, 10)].move_bug==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "移動バグ" + members[parseInt(card_id, 10)].move_bug+"\n";
+            }
+
+            //ダメージ状態異常バグ
+            if(members[parseInt(card_id, 10)].damage_bug==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "ダメージ" + members[parseInt(card_id, 10)].damage_bug+"\n";
+            }
+
+            //バトルHPバグ
+            if(members[parseInt(card_id, 10)].battle_hp_bug==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "バトルHPバグ" + members[parseInt(card_id, 10)].battle_hp_bug+"\n";
+            }
+
+            //カスタムHPバグ
+            if(members[parseInt(card_id, 10)].custom_hp_bug==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "カスタムHPバグ" + members[parseInt(card_id, 10)].custom_hp_bug+"\n";
+            }
+
+            //カスタムダメージ
+            if(members[parseInt(card_id, 10)].custom_damage==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "カスタムダメージ" + members[parseInt(card_id, 10)].custom_damage+"\n";
+            }
+
+            //ステータスバグ
+            if(members[parseInt(card_id, 10)].status_bug==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "ステータスバグ" + members[parseInt(card_id, 10)].status_bug+"\n";
+            }
+
+            //ウイルス遭遇関係のプログラム（ミリオネアもここに当たる）
+            if(members[parseInt(card_id, 10)].mode==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "モード" + members[parseInt(card_id, 10)].mode+"\n";
+            }
+
+            //バグストッパー
+            if(members[parseInt(card_id, 10)].bug_stoper==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "バグストッパー" + members[parseInt(card_id, 10)].bug_stoper+"\n";
+            }
+        }
       </script>
       </tbody>
       </table>
