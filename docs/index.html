@@ -1429,7 +1429,7 @@
         //子の数だけ繰り返す
           for(let z=1;z<items.length;z++){
              if(!(items[z].value == members[i].b_cs)){
-                option.text = "CS"+members[i].b_cs;
+                option.text = "ためうち"+members[i].b_cs;
                 option.value = members[i].b_cs;
                 select.appendChild(option);
               }else if(items[z].value == members[i].b_cs){
@@ -2191,7 +2191,7 @@
        {name:'サボテコロン',id:'1E',flag:"0200128D:00"+"\n"+"02006149:43",mb:16,hp:"+60",body:"Wbody",super_armor:"on",float:"off"} ,
        {name:'ロール',id:'1F',flag:"0200128E:00"+"\n"+"0200614A:43",mb:40,hp:"-5%",cs_add:"チップ破壊",f_barier:"バリア",battle_hp_bug:"off"} ,
        {name:'ガッツマン',id:'20',flag:"0200128F:00"+"\n"+"0200614B:43",mb:35,hp:"+300",under_shirt:"on",f_barier:"バリアoff"} ,
-       {name:'ファイアマン',id:'21',flag:"02001290:00"+"\n"+"0200614C:43",mb:43,hp:"+30%",body:"Fbody",buster_add:"off",b_cs:"Fアーム"} ,
+       {name:'ファイアマン',id:'21',flag:"02001290:00"+"\n"+"0200614C:43",mb:43,hp:"+30%",body:"Fbody",buster_add:"off",b_cs:"ファイアアーム"} ,
        {name:'フォルテ',id:'22',flag:"02001291:00"+"\n"+"0200614D:43",mb:45,hp:"+200",attack:"+5",rapid:"+5",charge:"+5",soultime:"-2"} ,
        {name:'クイックマン',id:'23',flag:"02001292:00"+"\n"+"0200614E:43",mb:38,hp:"-10%",rapid:"+5",charge:"+5",gage:"Quick"} ,
        {name:'スネークマン',id:'24',flag:"02001293:00"+"\n"+"0200614F:43",mb:40,hp:"+25%",body:"Wbody",mode:"ミリオネア"} ,
@@ -2252,7 +2252,7 @@
        {name:'アクアマン',id:'5B',flag:"020012CA:00"+"\n"+"02006186:43",mb:40,hp:"+170",body:"Abody",under_shirt:"off",b_cs:"オーシャンS"} ,
        {name:'ウインドマン',id:'5C',flag:"020012CB:00"+"\n"+"02006187:43",mb:46,hp:"+120",attack:"-2",air:"on",cs_add:"バリアけし"} ,
        {name:'レーザーマン',id:'5D',flag:"020012CC:00"+"\n"+"02006188:43",mb:47,hp:"+250",soultime:"-1",cs_add:"ナビカスオフ"} ,
-       {name:'カーネル',id:'5E',flag:"020012CD:00"+"\n"+"02006189:43",mb:42,hp:"+280",b_cs:"Cキャノン"} ,
+       {name:'カーネル',id:'5E',flag:"020012CD:00"+"\n"+"02006189:43",mb:42,hp:"+280",b_cs:"ｶｰﾈﾙキャノン"} ,
        {name:'トマホークマン',id:'5F',flag:"020012CE:00"+"\n"+"0200618A:43",mb:40,hp:"+200",body:"Wbody",attack:"+3",m_folder:"-1",super_armor:"on"} ,
        {name:'熱斗のカスタマイズ',id:'60',flag:"020012CF:00"+"\n"+"0200618B:43",mb:25,body:"Nbody",m_folder:"+2",b_button:"バスター",b_cs:"チャージS"} ,
        {name:'デカオのカスタマイズ',id:'61',flag:"020012D0:00"+"\n"+"0200618C:43",mb:40,hp:"+150",attack:"+5"} ,
@@ -2266,10 +2266,10 @@
        {name:'フォルテＧＳ',id:'69',flag:"020012D8:00"+"\n"+"02006194:43",mb:59,hp:"+300",cd_add:"HPバグ",status_bug:"Lv2"} ,
        {name:'デューオ',id:'6A',flag:"020012D9:00"+"\n"+"02006195:43",mb:70,hp:"+40%",m_folder:"+1",g_folder:"+1"} ,
        {name:'フォルテＸＸ',id:'6B',flag:"020012DA:00"+"\n"+"02006196:43",mb:70,hp:"+400",float:"on",air:"on",f_barier:"バリア200",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
-       {name:'ネビュラグレイ',id:'6C',flag:"020012DB:00"+"\n"+"02006197:43",mb:70,hp:"-30%",b_cs:"ダークS",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
+       {name:'ネビュラグレイ',id:'6C',flag:"020012DB:00"+"\n"+"02006197:43",mb:70,hp:"-30%",b_cs:"ダークソード",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
        {name:'パパのしゅうせいプログラム',id:'6D',flag:"020012DC:00"+"\n"+"02006198:43",mb:50,bug_stoper:"on"} ,
        {name:'光彩斗',id:'6E',flag:"020012DD:00"+"\n"+"02006199:43",mb:80,hp:"-50%",attack:"×2",custom:"+3",m_folder:"+2",g_folder:"+1"} ,
-       {name:'フォルテクロスロックマン',id:'6F',flag:"020012DE:00"+"\n"+"0200619A:43",mb:70,hp:"+200",body:"Nbody",m_folder:"-2",super_armor:"on",b_button:"トリプルバスター",b_cs:"Sバスター"} ,
+       {name:'フォルテクロスロックマン',id:'6F',flag:"020012DE:00"+"\n"+"0200619A:43",mb:70,hp:"+200",body:"Nbody",m_folder:"-2",super_armor:"on",b_button:"トリプルバスター",b_cs:"ｼｭｰﾃｨﾝｸﾞバスター"} ,
     ];
 
     //残りメガ数
@@ -2492,7 +2492,7 @@ if(members[parseInt(valc[i], 10)].b_cs==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "CS" + members[parseInt(valc[i], 10)].b_cs+"\n";
-ability_box[2]= "CS " + members[parseInt(valc[i], 10)].b_cs;
+ability_box[2]= "ためうち" + members[parseInt(valc[i], 10)].b_cs;
 }
 
 //CS追加効果
@@ -2920,7 +2920,7 @@ cardlist();
             if(members[parseInt(card_id, 10)].b_cs==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "CS" + members[parseInt(card_id, 10)].b_cs+"\n";
+            document.getElementById("kaizo_ability").value += "ためうち" + members[parseInt(card_id, 10)].b_cs+"\n";
             }
 
             //CS追加効果
