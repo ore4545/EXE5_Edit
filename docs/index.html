@@ -64,58 +64,59 @@
     </script>
 
 
-   <table border="1" style="border-collapse: collapse">
+   <table style="width:50%; border-collapse: collapse; border:3px solid #777">
      <tbody>
-
+       <th style="background:#f99; border-right:3px solid #777" colspan="1">パラメーター</th>
+       <th style="background:#9f9; border-left:3px solid #777" colspan="4">アビリティ</th>
        <tr>
-         <td>
+         <td style="border-right:3px solid #777">
            HPリスト<br>
            <select id="HP_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td>
+         <td style="border-right:1px solid #595">
            Bためうちリスト<br>
            <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td>
+         <td style="border-right:1px solid #595">
            CS追加効果リスト<br>
            <select id="cs_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td>
+         <td style="border-right:1px solid #595">
            バスター追加効果リスト<br>
            <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td>
+         <td style="border-right:1px solid #595">
             B←リスト<br>
             <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
             </select>
           </td>
        </tr>
        <tr>
-         <td rowspan="2">
+         <td style="border-right:3px solid #777" rowspan="2">
            body<br>
            <select id="body_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td>
+         <td style="border-right:1px solid #595">
            Bボタン変更リスト<br>
            <select id="b_button_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td>
+         <td style="border-right:1px solid #595">
            移動で効果リスト<br>
            <select id="move_panel_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td>
+         <td style="border-right:1px solid #595">
            チップリカバリーリスト<br>
            <select id="chip_recovery_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td>
+         <td style="border-right:1px solid #595">
             バスター空打ちリスト<br>
             <select id="baster_blank_list" size="5" style="width: 200px;"onchange="select_ability_list()">
             </select>
@@ -123,7 +124,7 @@
        </tr>
        <tr>
          <tr>
-           <td rowspan="2">
+           <td style="border-right:3px solid #777" rowspan="2">
              アタック<br>
               <select id="attack_list" size="3" style="width: 200px;"onchange="select_ability_list()">
               </select>
@@ -143,8 +144,8 @@
              <select id="g_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
              </select>
             </td>
-           <td colspan="3">
-          ピックアップ<textarea cols="50" rows="1" id="pick_tag" readonly>未設定</textarea><input type="reset" value="リセット"onclick="mega();"　>
+           <td colspan="3" style="border-top:3px solid #777; border-right:3px solid #777">
+          ピックアップ<textarea cols="50" rows="1" id="pick_tag" style="vertical-align:middle; resize:none;" readonly>未設定</textarea><input type="reset" value="リセット"onclick="mega();"　>
         </td>
         <td rowspan="2">
           スーパーアーマー<br>
@@ -174,8 +175,9 @@
       </select>
 </div>
 <div style="float:left; padding-left:20px">
-      パラメータ<br><textarea id="kaizo_parametor" rows="5" cols="23" style="font-size:20pt;"></textarea><br>
-          アビリティ<br><textarea id="kaizo_ability" rows="5" cols="23" style="font-size:20pt;"></textarea>
+  パラメーター/アビリティを名前で絞り込み<br><input id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br>
+      <p style="margin-bottom:0; background-color:#f99">パラメータ</p><textarea id="kaizo_parametor" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea><br>
+          <p style="margin-bottom:0; background-color:#9f9">アビリティ</p><textarea id="kaizo_ability" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea>
 </div>
         </td>
     </tr>
@@ -192,18 +194,18 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       <form name="indv"></form>
       <tbody>
         <tr>
-          <td colspan="2">
+          <td colspan="1">
             残りメガバイト
             <input cols="1" rows="1" id="megabite"  style="font-size:20pt;width: 30px;" readonly ></input>
             /80
           </td>
-          <td colspan="2">
+          <td colspan="4">
             使用メガバイト
               <input cols="1" rows="1" id="megabite_use"  style="font-size:20pt;width: 40px;" readonly ></input>
           </td>
         </tr>
       <tr>
-        <td>1枚目<select id="kaizo_1" onchange="mega()">
+        <td style="min-width:320px">1枚目<select id="kaizo_1" onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -320,7 +322,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           <br>パラメータ<textarea id="parametor_1" rows="4" cols="6"></textarea>
               アビリティ<textarea id="ablity_1" rows="4" cols="8"></textarea></br>
         </td>
-        <td>2枚目<select id="kaizo_2"onchange="mega()">
+        <td style="min-width:320px">2枚目<select id="kaizo_2"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -437,7 +439,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_2" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_2" rows="4" cols="8"></textarea></br>
       </td>
-        <td>3枚目<select id="kaizo_3"onchange="mega()">
+        <td style="min-width:320px">3枚目<select id="kaizo_3"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -555,7 +557,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_3" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_3" rows="4" cols="8"></textarea></br>
       </td>
-        <td>4枚目<select id="kaizo_4"onchange="mega()">
+        <td style="min-width:320px">4枚目<select id="kaizo_4"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -672,7 +674,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_4" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_4" rows="4" cols="8"></textarea></br>
           </td>
-        <td>5枚目<select id="kaizo_5"onchange="mega()">
+        <td style="min-width:350px">5枚目<select id="kaizo_5"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -1376,19 +1378,20 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           <option value="111">70MB/フォルテクロスロックマン</option>
 
         </select>
-        <br>パラメータ<textarea id="parametor_10" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_10" rows="4" cols="8"></textarea></br>
+        <br>パラメータ<textarea id="parametor_10" rows="4" cols="6" readonly></textarea>
+            アビリティ<textarea id="ablity_10" rows="4" cols="8" readonly></textarea></br>
       </td>
       </tr>
       <tr>
-        <td colspan ="2">
+        <td colspan ="1" style="vertical-align:top"><br>
           <input type="button" value="コード出力" name="gen" onclick="generate()">
           <input type="reset" value="リセット"onclick="mega();">
           <br>
           <textarea cols="40" rows="16" id="ans" readonly></textarea>
         </td>
-        <td colspan ="2">
+        <td colspan ="3 " style="vertical-align:top">
           <br>総合ステータス</br>
+<div style="float:left;">
           パラメーター</br>
           body<input id="body_result" style="font-size:17pt;width: 100px;" readonly></input>
           <br>
@@ -1400,12 +1403,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           Custom<input id="custom_result" style="font-size:17pt;width: 30px" readonly></input>
           MegaFolder<input id="m_folder_result" style="font-size:17pt;width: 30px" readonly></input>
           GigaFolder<input id="g_folder_result" style="font-size:17pt;width: 30px" readonly></input>
-
-          <p>アビリティ
+</div>
+<div style="float:left; padding-left:20px">
+          アビリティ<br>
           <textarea cols="40" rows="9" id="ablity_result" style="font-size:13pt;" readonly></textarea>
-
+</div>
         </td>
-        <td colspan="1">
+        <td colspan="1" style="vertical-align:top">
           <br>基礎能力(現在の能力値を入れてください)</br>
           HP<textarea cols="5" rows="1" id="hp_nav" style="font-size:15pt;" onchange="mega()">1000</textarea>
           <br>
