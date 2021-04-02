@@ -1385,6 +1385,8 @@
       </tr>
 
 
+
+
       <script type="text/javascript">
 
       //セッション開始時に読み込み
@@ -2214,7 +2216,7 @@
        {name:'フロシェル',id:'35',flag:"020012A4:00"+"\n"+"02006160:43",mb:16,hp:"+140",b_button:"ミニボム",f_barier:"バリアoff"} ,
        {name:'ハルドボルズ',id:'36',flag:"020012A5:00"+"\n"+"02006161:43",mb:10,b_cs:"ボウガン",kokoro_bug:"off"} ,
        {name:'クモンペ',id:'37',flag:"020012A6:00"+"\n"+"02006162:43",mb:10,body:"Abody",super_armor:"off",custom_damage:"off",custom_hp_bug:"off"} ,
-       {name:'ガイアント',id:'38',flag:"020012A7:00"+"\n"+"02006163:43",mb:15,hp:"+100",float:"off",air:"off",buster_add:"ひび"} ,
+       {name:'ガイアント',id:'38',flag:"020012A7:00"+"\n"+"02006163:43",mb:15,hp:"+100",float:"off",air:"off",buster_add:"ヒビ"} ,
        {name:'ミノゴロモン',id:'39',flag:"020012A8:00"+"\n"+"02006164:43",mb:20,body:"Wbody",chip_recovery:"30",move_panel:"草むら(12%)"} ,
        {name:'ファンカー',id:'3A',flag:"020012A9:00"+"\n"+"02006165:43",mb:15,hp:"-50",b_cs:"トルネード"} ,
        {name:'チクリート',id:'3B',flag:"020012AA:00"+"\n"+"02006166:43",mb:18,hp:"-80",chip_recovery:"20",battle_hp_bug:"off"} ,
@@ -2309,6 +2311,11 @@
 
     //選択するたびに実行される関数
     function mega(){
+
+                //検索ログの表示
+                  document.getElementById("kaizo_parametor").value = "検索中";
+                  document.getElementById("kaizo_ability").value = "検索中";
+                  setTimeout(function() {
 
       //総合ステータス用
       let body_math = "Nbody";
@@ -2730,6 +2737,8 @@ document.getElementById('kaizo_parametor').value = "";
 document.getElementById('kaizo_ability').value = "";
 
 cardlist();
+
+},1);
 
 }
 
