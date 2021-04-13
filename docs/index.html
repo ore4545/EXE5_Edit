@@ -183,7 +183,7 @@
       </select>
 </div>
 <div style="float:left; padding-left:20px">
-  パラメーター/アビリティを名前で絞り込み<br><input id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br>
+  アビリティ名で絞り込み<br><input onchange= "ability_sarch_process();"id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br>
       <p style="margin-bottom:0; background-color:#f99">パラメータ</p><textarea id="kaizo_parametor" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea><br>
           <p style="margin-bottom:0; background-color:#9f9">アビリティ</p><textarea id="kaizo_ability" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea>
 </div>
@@ -191,7 +191,7 @@
     </tr>
  </tbody>
  </table>
- 絞り込み（入力した言葉と一致するカードに絞り込みます。ひらがな可）<br>
+ 絞り込み（↓入力した言葉と一致するカードに絞り込みます。ひらがな可）<br>
 <input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 320px;font-size:16pt;" />
 <input type="reset" value="クリア" onclick="clere_sarch_input();"><br/>
 <script>
@@ -213,7 +213,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           </td>
         </tr>
       <tr>
-        <td>1枚目/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
+        <td id="kaizo_ran_1">1枚目/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
           <select id="kaizo_1" onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -331,7 +331,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           <br>パラメータ<textarea id="parametor_1" rows="4" cols="6"></textarea>
               アビリティ<textarea id="ablity_1" rows="4" cols="8"></textarea></br>
         </td>
-        <td>2枚目/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
+        <td id="kaizo_ran_2">2枚目/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
           <select id="kaizo_2"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -449,7 +449,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_2" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_2" rows="4" cols="8"></textarea></br>
       </td>
-      <td>3枚目/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
+      <td id="kaizo_ran_3">3枚目/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
         <select id="kaizo_3"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -568,7 +568,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_3" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_3" rows="4" cols="8"></textarea></br>
       </td>
-        <td>4枚目/<input type="reset" value="未選択"onclick="select_solve(4);"><br>
+        <td id="kaizo_ran_4">4枚目/<input type="reset" value="未選択"onclick="select_solve(4);"><br>
           <select id="kaizo_4"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -686,7 +686,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_4" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_4" rows="4" cols="8"></textarea></br>
           </td>
-        <td>5枚目/<input type="reset" value="未選択"onclick="select_solve(5);"><br>
+        <td id="kaizo_ran_5">5枚目/<input type="reset" value="未選択"onclick="select_solve(5);"><br>
           <select id="kaizo_5"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -806,7 +806,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       </td>
       </tr>
       <tr>
-        <td>6枚目/<input type="reset" value="未選択"onclick="select_solve(6);"><br>
+        <td id="kaizo_ran_6">6枚目/<input type="reset" value="未選択"onclick="select_solve(6);"><br>
           <select id="kaizo_6"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -924,7 +924,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_6" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_6" rows="4" cols="8"></textarea></br>
       </td>
-        <td>7枚目/<input type="reset" value="未選択"onclick="select_solve(7);"><br>
+        <td id="kaizo_ran_7">7枚目/<input type="reset" value="未選択"onclick="select_solve(7);"><br>
           <select id="kaizo_7"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -1043,7 +1043,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_7" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_7" rows="4" cols="8"></textarea></br>
       </td>
-        <td>8枚目/<input type="reset" value="未選択"onclick="select_solve(8);"><br>
+        <td id="kaizo_ran_8">8枚目/<input type="reset" value="未選択"onclick="select_solve(8);"><br>
           <select id="kaizo_8"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -1162,7 +1162,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_8" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_8" rows="4" cols="8"></textarea></br>
       </td>
-        <td>9枚目/<input type="reset" value="未選択"onclick="select_solve(9);"><br>
+        <td id="kaizo_ran_9">9枚目/<input type="reset" value="未選択"onclick="select_solve(9);"><br>
           <select id="kaizo_9"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -1280,7 +1280,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_9" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_9" rows="4" cols="8"></textarea></br>
       </td>
-        <td>10枚目/<input type="reset" value="未選択"onclick="select_solve(10);"><br>
+        <td id="kaizo_ran_10">10枚目/<input type="reset" value="未選択"onclick="select_solve(10);"><br>
           <select id="kaizo_10"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -2697,6 +2697,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       function reset_botton(){
         for(let i = 1;i<=10;i++){
         document.getElementById('kaizo_'+[i]).value = "00";
+        document.getElementById('ability_sarch').value = "";
         }
       mega();
       }
@@ -2875,6 +2876,135 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //CSピックアップ用の変数
     let pick_up_box = []
 
+    //サーチした結果保存
+    let sarch_result =[];
+
+    //アビリティサーチ用
+    function ability_sarch_process(){
+      let sarch_letter = document.getElementById("ability_sarch").value;
+      sarch_result = members.filter(function(x){
+        if(sarch_letter=="")return;
+        //存在が確認できたら検索開始を行う
+        if(x.b_cs){
+            if(x.b_cs.includes(sarch_letter)==true)return x.b_cs.includes(sarch_letter)
+            let font ="ためうち";
+            if(font.includes(sarch_letter)==true)return x.b_cs;
+      }  if(x.cs_add){
+            if(x.cs_add.includes(sarch_letter)==true)return x.cs_add.includes(sarch_letter)
+            let font ="CSに";
+            if(font.includes(sarch_letter)==true)return x.cs_add;
+      }  if(x.buster_add){
+            if(x.buster_add.includes(sarch_letter)==true)return x.buster_add.includes(sarch_letter)
+            let font ="バスター追加効果";
+            if(font.includes(sarch_letter)==true)return x.buster_add;
+      }  if(x.b_left){
+            if(x.b_left.includes(sarch_letter)==true)return x.b_left.includes(sarch_letter)
+            let font ="B←B左";
+            if(font.includes(sarch_letter)==true)return x.b_left;
+      }  if(x.b_button){
+            if(x.b_button.includes(sarch_letter)==true)return x.b_button.includes(sarch_letter)
+            let font ="バスターBボタン";
+            if(font.includes(sarch_letter)==true)return x.b_button;
+      }  if(x.move_panel){
+            if(x.move_panel.includes(sarch_letter)==true)return x.move_panel.includes(sarch_letter)
+            let font ="移動でいどうで";
+            if(font.includes(sarch_letter)==true)return x.move_panel;
+      }  if(x.baster_blank){
+            if(x.baster_blank.includes(sarch_letter)==true)return x.baster_blank.includes(sarch_letter)
+            let font ="バスター空打ち";
+            if(font.includes(sarch_letter)==true)return x.baster_blank;
+      }  if(x.under_shirt){
+            if(x.under_shirt.includes(sarch_letter)==true)return x.under_shirt.includes(sarch_letter)
+            let font ="アンダーシャツシャツ";
+            if(font.includes(sarch_letter)==true)return x.under_shirt;
+      }  if(x.super_armor){
+            if(x.super_armor.includes(sarch_letter)==true)return x.super_armor.includes(sarch_letter)
+            let font ="スーパーアーマー";
+            if(font.includes(sarch_letter)==true)return x.super_armor;
+      }  if(x.status_guard){
+            if(x.status_guard.includes(sarch_letter)==true)return x.status_guard.includes(sarch_letter)
+            let font ="ステータスガード";
+            if(font.includes(sarch_letter)==true)return x.status_guard;
+      }  if(x.float){
+            if(x.float.includes(sarch_letter)==true)return x.float.includes(sarch_letter)
+            let font ="フロートシューズ";
+            if(font.includes(sarch_letter)==true)return x.float;
+      }  if(x.air){
+            if(x.air.includes(sarch_letter)==true)return x.air.includes(sarch_letter)
+            let font ="エアーシューズエアシューズ";
+            if(font.includes(sarch_letter)==true)return x.air;
+      }  if(x.gage){
+            if(sarch_letter.includes("クイック"))sarch_letter="Quick"
+            if(sarch_letter.includes("ヘビー"))sarch_letter="Heavy"
+            if(sarch_letter.includes("ノーマル"))sarch_letter="Normal"
+            if(x.gage.includes(sarch_letter)==true)return x.gage.includes(sarch_letter)
+            let font ="ゲージ";
+            if(font.includes(sarch_letter)==true)return x.gage;
+      }  if(x.f_barier){
+            if(x.f_barier.includes(sarch_letter)==true)return x.f_barier.includes(sarch_letter)
+            let font ="Fバリアファーストバリア";
+            if(font.includes(sarch_letter)==true)return x.f_barier;
+      }  if(x.rash){
+            if(x.rash.includes(sarch_letter)==true)return x.rash.includes(sarch_letter)
+            let font ="ラッシュrash";
+            if(font.includes(sarch_letter)==true)return x.rash;
+      }  if(x.beat){
+            if(x.beat.includes(sarch_letter)==true)return x.beat.includes(sarch_letter)
+            let font ="ビートbeat";
+            if(font.includes(sarch_letter)==true)return x.beat;
+      }  if(x.tango){
+            if(x.tango.includes(sarch_letter)==true)return x.tango.includes(sarch_letter)
+            let font ="タンゴtango";
+            if(font.includes(sarch_letter)==true)return x.tango;
+      }   if(x.chip_recovery){
+            if(x.chip_recovery.includes(sarch_letter)==true)return x.chip_recovery.includes(sarch_letter)
+            let font ="チップリカバリー";
+            if(font.includes(sarch_letter)==true)return x.chip_recovery;
+      }  if(x.self_recovery){
+            if(x.self_recovery.includes(sarch_letter)==true)return x.self_recovery.includes(sarch_letter)
+            let font ="セルフリカバリー";
+            if(font.includes(sarch_letter)==true)return x.self_recovery;
+      }  if(x.kokoro_bug){
+            if(x.kokoro_bug.includes(sarch_letter)==true)return x.kokoro_bug.includes(sarch_letter)
+            let font ="ココロバグ";
+            if(font.includes(sarch_letter)==true)return x.kokoro_bug;
+      }  if(x.move_bug){
+            if(x.move_bug.includes(sarch_letter)==true)return x.move_bug.includes(sarch_letter)
+            let font ="移動バグいどうバグ";
+            if(font.includes(sarch_letter)==true)return x.move_bug;
+      }  if(x.damage_bug){
+            if(x.damage_bug.includes(sarch_letter)==true)return x.damage_bug.includes(sarch_letter)
+            let font ="ダメージバグ";
+            if(font.includes(sarch_letter)==true)return x.damage_bug;
+      }  if(x.battle_hp_bug){
+            if(x.battle_hp_bug.includes(sarch_letter)==true)return x.battle_hp_bug.includes(sarch_letter)
+            let font ="バトルHPバグ";
+            if(font.includes(sarch_letter)==true)return x.battle_hp_bug;
+      }  if(x.custom_hp_bug){
+            if(x.custom_hp_bug.includes(sarch_letter)==true)return x.custom_hp_bug.includes(sarch_letter)
+            let font ="カスタムHPバグ";
+            if(font.includes(sarch_letter)==true)return x.custom_hp_bug;
+      }  if(x.custom_damage){
+            if(x.custom_damage.includes(sarch_letter)==true)return x.custom_damage.includes(sarch_letter)
+            let font ="カスタムダメージ";
+            if(font.includes(sarch_letter)==true)return x.custom_damage;
+      }  if(x.status_bug){
+            if(x.status_bug.includes(sarch_letter)==true)return x.status_bug.includes(sarch_letter)
+            let font ="ステータスバグ";
+            if(font.includes(sarch_letter)==true)return x.status_bug;
+      }  if(x.mode){
+            if(x.mode.includes(sarch_letter)==true)return x.mode.includes(sarch_letter)
+            let font ="モードmode";
+            if(font.includes(sarch_letter)==true)return x.mode;
+      }  if(x.bug_stoper){
+            if(x.bug_stoper.includes(sarch_letter)==true)return x.bug_stoper.includes(sarch_letter)
+            let font ="バグストッパー";
+            if(font.includes(sarch_letter)==true)return x.bug_stoper;
+      }
+      })
+      cardlist();
+    }
+
     //カードのピックアップ
     function cardlist(){
 
@@ -2885,7 +3015,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       var select = document.getElementById("card_list");
       select.remove(0);
     }
-
+console.log(sarch_result.length)
       //生成
       //for(let z = 0; z<pick_up_box.length;z++){}
       for(let i = 1; i<members.length;i++){
@@ -2894,13 +3024,27 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
         &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
         &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+         if(sarch_result.length>0){
+            for(let z = 0; z<sarch_result.length;z++){
+              if(members[i].id == sarch_result[z].id){
+            var select = document.getElementById("card_list");
+            var option = document.createElement("option");
+            option.text = members[i].mb+"MB/"+members[i].name;
+            option.value = members[i].name;
+            select.appendChild(option); }}
+          }else{
       var select = document.getElementById("card_list");
       var option = document.createElement("option");
       option.text = members[i].mb+"MB/"+members[i].name;
       option.value = members[i].name;
       select.appendChild(option);
+
+          }
     }
     }
+
+    //改造カード入力の色
+    kaizo_ran_asist();
 
     }
 
@@ -3324,6 +3468,7 @@ document.getElementById('ablity_result').value += ability_box[i]+"\n";
 
 //検索欄を初期化
 document.getElementById('sarch_input').value = "";
+document.getElementById('ability_sarch').value = "";
 TEST_OBJECT.onSearchFieldChange("");
 
 for(let i =0;i<23;i++){pick_up_box[i] = "";}
@@ -3334,8 +3479,7 @@ for(let i =0;i<23;i++){document.getElementById("pick_tag").value = pick_up_box[i
 document.getElementById('kaizo_parametor').value = "";
 document.getElementById('kaizo_ability').value = "";
 
-cardlist();
-
+ability_sarch_process();
 },1);
 
 }
@@ -3431,6 +3575,29 @@ cardlist();
 
           }
 
+          //改造カード入力の色変える
+          function kaizo_ran_asist(){
+          //改造カードリストを読み込む
+          var select_2 = document.getElementById("card_list");
+            for(let i =1;i<=10;i++){
+              var select = document.getElementById("kaizo_ran_"+[i]);
+            select.style.background = '#d6d6d6'
+          }
+            for(let i =1;i<=10;i++){
+              //改造カード内が何も含まれていなかった場合、色を選択
+              if(valc[i]==0){
+                //残りカードが0の場合塗らない
+                if(select_2.length>0){
+                  var select = document.getElementById("kaizo_ran_"+[i]);
+                  select.style.background = '#ccfff6'
+              }
+                break;
+              }else{
+                var select = document.getElementById("kaizo_ran_"+[i]);
+                select.style.background = '#ccdeff'
+              }
+            }
+          }
 
 
           //改造カードのパラメーターを選択時に表示
