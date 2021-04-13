@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>ロックマンエグゼ5チートコードジェネレーターVer.B(β)</title>
-    <style>
-    body {background-image:url("D:/User/yuuki/Desktop")}
-  </style>
   </head>
   <body>
+    <style>
+    #HP_list option[selected] {
+      background: #CCC;
+    }
+  </style>
     <h1>ロックマンエグゼ5チートコードジェネレーターVer.B(β)</h1>
     <div class="Overview">
     <h2>概要</h2>
@@ -18,7 +20,7 @@
     お知らせ
     <li>現在β版による試作テスト中です。</li>
     <li>機能の改修及び、要望はオレまでお願いします。</li>
-    <li>検索中の表示</li>
+    <li>軽量化の実施</li>
     <br>
     今後付けたい機能
     <li>改造カードの予想アビリティの表示(誤字脱字の確認中)</li>
@@ -178,7 +180,7 @@
       </select>
 </div>
 <div style="float:left; padding-left:20px">
-  <!-- パラメーター/アビリティを名前で絞り込み<br><input id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br> -->
+  パラメーター/アビリティを名前で絞り込み<br><input id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br>
       <p style="margin-bottom:0; background-color:#f99">パラメータ</p><textarea id="kaizo_parametor" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea><br>
           <p style="margin-bottom:0; background-color:#9f9">アビリティ</p><textarea id="kaizo_ability" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea>
 </div>
@@ -208,7 +210,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           </td>
         </tr>
       <tr>
-        <td style="min-width:320px">1枚目<select id="kaizo_1" onchange="mega()">
+        <td>1枚目/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
+          <select id="kaizo_1" onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -325,7 +328,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           <br>パラメータ<textarea id="parametor_1" rows="4" cols="6"></textarea>
               アビリティ<textarea id="ablity_1" rows="4" cols="8"></textarea></br>
         </td>
-        <td style="min-width:320px">2枚目<select id="kaizo_2"onchange="mega()">
+        <td>2枚目/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
+          <select id="kaizo_2"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -442,7 +446,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_2" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_2" rows="4" cols="8"></textarea></br>
       </td>
-        <td style="min-width:320px">3枚目<select id="kaizo_3"onchange="mega()">
+      <td>3枚目/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
+        <select id="kaizo_3"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -560,7 +565,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_3" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_3" rows="4" cols="8"></textarea></br>
       </td>
-        <td style="min-width:320px">4枚目<select id="kaizo_4"onchange="mega()">
+        <td>4枚目/<input type="reset" value="未選択"onclick="select_solve(4);"><br>
+          <select id="kaizo_4"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -677,7 +683,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_4" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_4" rows="4" cols="8"></textarea></br>
           </td>
-        <td style="min-width:350px">5枚目<select id="kaizo_5"onchange="mega()">
+        <td>5枚目/<input type="reset" value="未選択"onclick="select_solve(5);"><br>
+          <select id="kaizo_5"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -796,7 +803,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       </td>
       </tr>
       <tr>
-        <td>6枚目<select id="kaizo_6"onchange="mega()">
+        <td>6枚目/<input type="reset" value="未選択"onclick="select_solve(6);"><br>
+          <select id="kaizo_6"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -913,7 +921,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_6" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_6" rows="4" cols="8"></textarea></br>
       </td>
-        <td>7枚目<select id="kaizo_7"onchange="mega()">
+        <td>7枚目/<input type="reset" value="未選択"onclick="select_solve(7);"><br>
+          <select id="kaizo_7"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -1031,7 +1040,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_7" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_7" rows="4" cols="8"></textarea></br>
       </td>
-        <td>8枚目<select id="kaizo_8"onchange="mega()">
+        <td>8枚目/<input type="reset" value="未選択"onclick="select_solve(8);"><br>
+          <select id="kaizo_8"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -1149,7 +1159,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_8" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_8" rows="4" cols="8"></textarea></br>
       </td>
-        <td>9枚目<select id="kaizo_9"onchange="mega()">
+        <td>9枚目/<input type="reset" value="未選択"onclick="select_solve(9);"><br>
+          <select id="kaizo_9"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -1266,7 +1277,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_9" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_9" rows="4" cols="8"></textarea></br>
       </td>
-        <td>10枚目<select id="kaizo_10"onchange="mega()">
+        <td>10枚目/<input type="reset" value="未選択"onclick="select_solve(10);"><br>
+          <select id="kaizo_10"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
           <option value="02">12MB/ボルケルギア</option>
@@ -1388,7 +1400,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       <tr>
         <td colspan ="1" style="vertical-align:top"><br>
           <input type="button" value="コード出力" name="gen" onclick="generate()">
-          <input type="reset" value="リセット"onclick="mega();">
+          <input type="reset" value="リセット"onclick="reset_botton();">
           <br>
           <textarea cols="40" rows="16" id="ans" readonly></textarea>
         </td>
@@ -1434,7 +1446,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       //セッション開始時に読み込み
       window.onload = function() {
         mega();
-        generat_list();
+        //generat_list();
       };
 
       function generat_list(){
@@ -1459,6 +1471,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         option.text = "hpを変化させない";
         option.value = "上書きさせない";
         select.appendChild(option);
+        //選択時色を変更する
+        if(pick_up_box[14]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
         //hpリスト生成生成
         for(let i = 1; i<members.length;i++){
@@ -1492,6 +1506,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
+        //選択がなくなったら色を変化させる
+          if(select.length==2){select.style.background = '#d6d6d6';}
         //
 
         //body選択欄
@@ -1512,6 +1528,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         option.text = "bodyを上書きさせない";
         option.value = "上書きさせない";
         select.appendChild(option);
+        //選択時色を変更する
+        if(pick_up_box[15]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
         //bodyリスト生成生成
         for(let i = 1; i<members.length;i++){
@@ -1545,6 +1563,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
+        //選択がなくなったら色を変化させる
+          if(select.length==2){select.style.background = '#d6d6d6';}
         //
 
         //attack選択欄
@@ -1559,6 +1579,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         option.text = "ピックアップ解除";
         option.value = "pick_solve_17";
         select.appendChild(option);
+        //選択時色を変更する
+        if(pick_up_box[16]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
         //attackリスト生成生成
         for(let i = 0; i<members.length;i++){
@@ -1592,6 +1614,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
+        //選択がなくなったら色を変化させる
+          if(select.length==1){select.style.background = '#d6d6d6';}
         //
 
         //rapid選択欄
@@ -1606,6 +1630,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         option.text = "ピックアップ解除";
         option.value = "pick_solve_18";
         select.appendChild(option);
+        //選択時色を変更する
+        if(pick_up_box[17]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
         //rapidリスト生成生成
         for(let i = 0; i<members.length;i++){
@@ -1639,6 +1665,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
+        //選択がなくなったら色を変化させる
+          if(select.length==1){select.style.background = '#d6d6d6';}
         //
 
         //charge選択欄
@@ -1653,6 +1681,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         option.text = "ピックアップ解除";
         option.value = "pick_solve_19";
         select.appendChild(option);
+        //選択時色を変更する
+        if(pick_up_box[18]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
 
         //chargeリスト生成生成
@@ -1687,6 +1717,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
+        //選択がなくなったら色を変化させる
+          if(select.length==1){select.style.background = '#d6d6d6';}
         //
 
         //custom選択欄
@@ -1701,6 +1733,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         option.text = "ピックアップ解除";
         option.value = "pick_solve_20";
         select.appendChild(option);
+        //選択時色を変更する
+        if(pick_up_box[19]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
 
         //customリスト生成生成
@@ -1735,6 +1769,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
+        //選択がなくなったら色を変化させる
+          if(select.length==1){select.style.background = '#d6d6d6';}
         //
 
         //m_folder選択欄
@@ -1749,6 +1785,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         option.text = "ピックアップ解除";
         option.value = "pick_solve_21";
         select.appendChild(option);
+        //選択時色を変更する
+        if(pick_up_box[20]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
         //m_folderリスト生成生成
         for(let i = 0; i<members.length;i++){
@@ -1782,6 +1820,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
+        //選択がなくなったら色を変化させる
+          if(select.length==1){select.style.background = '#d6d6d6';}
         //
 
         //g_folder選択欄
@@ -1796,6 +1836,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         option.text = "ピックアップ解除";
         option.value = "pick_solve_22";
         select.appendChild(option);
+        //選択時色を変更する
+        if(pick_up_box[21]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
 
         //g_folderリスト生成生成
@@ -1830,6 +1872,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
+        //選択がなくなったら色を変化させる
+          if(select.length==1){select.style.background = '#d6d6d6';}
         //
 
         //アビリティ関係
@@ -1848,9 +1892,12 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //上書きさせない
         var select = document.getElementById("b_cs_list");
         var option = document.createElement("option");
-        option.text = "CSを上書きさせない";
+        option.text = "Bためを上書きさせない";
         option.value = "上書きさせない";
         select.appendChild(option);
+
+        //選択時色を変更する
+        if(pick_up_box[0]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
         //csリスト生成生成
         for(let i = 1; i<members.length;i++){
@@ -1884,6 +1931,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       }
       }
       }
+      //選択がなくなったら色を変化させる
+        if(select.length==2){select.style.background = '#d6d6d6';}
 
       //CS_add欄
       //消去
@@ -1903,6 +1952,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       option.text = "CS追加効果を上書きさせない";
       option.value = "上書きさせない";
       select.appendChild(option);
+
+      //選択時色を変更する
+      if(pick_up_box[1]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
       //csリスト生成生成
       for(let i = 1; i<members.length;i++){
@@ -1937,6 +1989,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
       }
     }
+    //選択がなくなったら色を変化させる
+      if(select.length==2){select.style.background = '#d6d6d6';}
+
 
     //buster_add欄
     //消去
@@ -1956,6 +2011,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     option.text = "バスター追加効果を上書きさせない";
     option.value = "上書きさせない";
     select.appendChild(option);
+    //選択時色を変更する
+    if(pick_up_box[2]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
     //csリスト生成生成
     for(let i = 1; i<members.length;i++){
@@ -1988,6 +2045,10 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
   }
   }
+}
+  console.log(select.length);
+  //選択がなくなったら色を変化させる
+  if(select.length==2){select.style.background = '#d6d6d6';}
 
   //b左欄
   //消去
@@ -2007,6 +2068,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "B←を上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[3]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //B_leftリスト生成生成
   for(let i = 1; i<members.length;i++){
@@ -2040,6 +2103,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
+//
 
   //Bボタン欄
   //消去
@@ -2059,6 +2125,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "Bを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[4]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //B_ボタンリスト生成生成
   for(let i = 1; i<members.length;i++){
@@ -2092,6 +2160,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
 
   //move_panel欄
@@ -2112,6 +2182,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "移動でを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[5]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //move_panelリスト生成生成
   for(let i = 1; i<members.length;i++){
@@ -2145,6 +2217,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
 
   //チップリカバリー欄
@@ -2165,6 +2239,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "チップリカバリを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[6]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //チップリカバリーリスト生成生成
   for(let i = 1; i<members.length;i++){
@@ -2198,6 +2274,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
 
   //バスター空打ち欄
@@ -2218,6 +2296,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "からうちを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[7]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //からうちリスト生成生成
   for(let i = 1; i<members.length;i++){
@@ -2251,6 +2331,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
 
   //スーパーアーマー欄
@@ -2271,6 +2353,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "アーマーを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[8]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //アーマーリスト生成生成
   for(let i = 1; i<members.length;i++){
@@ -2304,6 +2388,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
 
   //アンダーシャツ欄
@@ -2324,6 +2410,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "シャツを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[9]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //アーマーリスト生成生成
   for(let i = 1; i<members.length;i++){
@@ -2357,6 +2445,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
   //ステータスガード欄
   //消去
@@ -2376,6 +2466,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "ステガを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[10]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //フロートシューズ生成生成
   for(let i = 1; i<members.length;i++){
@@ -2409,6 +2501,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
   //フロートシューズ欄
   //消去
@@ -2428,6 +2522,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "フロートを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[11]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //フロートシューズ生成生成
   for(let i = 1; i<members.length;i++){
@@ -2461,6 +2557,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
 
   //エアシューズ欄
@@ -2481,6 +2579,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "エアを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[12]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //フロートシューズ生成生成
   for(let i = 1; i<members.length;i++){
@@ -2514,6 +2614,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
 
   //ココロバグ欄
@@ -2534,6 +2636,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   option.text = "ココロを上書きさせない";
   option.value = "上書きさせない";
   select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[13]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
   //フロートシューズ生成生成
   for(let i = 1; i<members.length;i++){
@@ -2567,9 +2671,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   }
   }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
   ///
-
-}
       }
 
       //選択したカードを検索ボックスに入れる
@@ -2579,6 +2683,20 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         TEST_OBJECT.onSearchFieldChange(selectBox);
         kaizo_parametor_upper();
 
+      }
+
+      //未選択を選択したとき、選択を解除
+      function select_solve(select_number){
+        document.getElementById('kaizo_'+[select_number]).value = "00";
+        mega();
+      }
+
+      //全体リセットボタン用
+      function reset_botton(){
+        for(let i = 1;i<=10;i++){
+        document.getElementById('kaizo_'+[i]).value = "00";
+        }
+      mega();
       }
 
       //選択したカアビリティリストをピックアップに入れる関数
