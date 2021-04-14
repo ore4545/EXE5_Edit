@@ -27,7 +27,7 @@
     <br>
     今後付けたい機能
     <li>改造カードの予想アビリティの表示(誤字脱字の確認中)</li>
-    <li>絞り込み機能(パラメーター実装)</li>
+    <li>絞り込み機能(パラメーター、バグ実装)</li>
     <li>改造カードピックアップ(インターフェースの調整)</li>
 
     <br>
@@ -76,105 +76,136 @@
      <tbody>
        <th style="background:#f99; border-right:3px solid #777" colspan="1">パラメーター</th>
        <th style="background:#9f9; border-left:3px solid #777" colspan="4">アビリティ</th>
+       <th style="background:#d399ff; border-left:3px solid #777" colspan="1">バグ</th>
        <tr>
          <td style="border-right:3px solid #777">
-           HPリスト<br>
+           HPリスト/<input id="HP_list_result" style="font-size:10pt;width: 15px;" readonly></input><br>
            <select id="HP_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           Bためうちリスト<br>
+           Bためうちリスト/<input id="b_cs_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           CS追加効果リスト<br>
+           CS追加効果リスト/<input id="cs_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="cs_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           バスター追加効果リスト<br>
+           バスター追加効果ﾘｽﾄ/<input id="buster_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td style="border-right:1px solid #595">
-            B←リスト<br>
+         <td style="border-right:3px solid #777">
+            B←リスト/<input id="b_left_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
             <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
             </select>
           </td>
+          <td style="border-right:1px solid #595">
+             バスター空打ちリスト/<input id="baster_blank_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+             <select id="baster_blank_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+             </select>
+           </td>
        </tr>
        <tr>
          <td style="border-right:3px solid #777" rowspan="2">
-           body<br>
+           ボディリスト/<input id="body_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="body_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           Bボタン変更リスト<br>
+           Bボタン変更リスト/<input id="b_button_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="b_button_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           移動で効果リスト<br>
+           移動で効果リスト/<input id="move_panel_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="move_panel_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           チップリカバリーリスト<br>
+           チップリカバリーﾘｽﾄ/<input id="chip_recovery_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="chip_recovery_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
-         <td style="border-right:1px solid #595">
-            バスター空打ちリスト<br>
-            <select id="baster_blank_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+         <td style="border-right:3px solid #777">
+            Fバリアーリスト/<input id="f_barier_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="f_barier_list" size="5" style="width: 200px;"onchange="select_ability_list()">
             </select>
           </td>
+          <td style="border-right:1px solid #595">
+             ココロバグ/<input id="kokoro_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+             <select id="kokoro_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+             </select>
+           </td>
        </tr>
        <tr>
          <tr>
            <td style="border-right:3px solid #777" rowspan="2">
-             アタック<br>
+             アタック/<input id="attack_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
               <select id="attack_list" size="3" style="width: 200px;"onchange="select_ability_list()">
               </select>
-             <br>ラピッド<br>
+             <br>ラピッド/<input id="rapid_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
              <select id="rapid_list" size="3" style="width: 200px;"onchange="select_ability_list()">
              </select>
-             <br>チャージ<br>
+             <br>チャージ/<input id="charge_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
              <select id="charge_list" size="3" style="width: 200px;"onchange="select_ability_list()">
              </select>
-             <br>カスタム<br>
+             <br>カスタム/<input id="custom_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
              <select id="custom_list" size="3" style="width: 200px;"onchange="select_ability_list()">
              </select>
-             <br>メガフォルダー<br>
+             <br>メガフォルダー/<input id="m_folder_list_result" style="font-size:10pt;width: 15px" ></input><br>
              <select id="m_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
              </select>
-             <br>ギガフォルダー<br>
+             <br>ギガフォルダー/<input id="g_folder_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
              <select id="g_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
              </select>
             </td>
            <td colspan="3" style="border-top:3px solid #777; border-right:3px solid #777">
           ピックアップ<textarea cols="50" rows="1" id="pick_tag" style="vertical-align:middle; resize:none;" readonly>未設定</textarea><input type="reset" value="リセット"onclick="mega();"　>
         </td>
-        <td rowspan="2">
-          スーパーアーマー<br>
+        <td style="border-right:3px solid #777" rowspan="2">
+          スーパーアーマー/<input id="super_armor_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="super_armor_list" size="3" style="width: 200px;"onchange="select_ability_list()">
            </select>
-          <br>アンダーシャツ<br>
+          <br>アンダーシャツ/<input id="under_shirt_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
           <select id="under_shirt_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>ステータスガード<br>
+          <br>ステータスガード/<input id="status_guard_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
           <select id="status_guard_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>フロートシューズ<br>
+          <br>フロートシューズ/<input id="float_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
           <select id="float_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>エアーシューズ<br>
+          <br>エアーシューズ/<input id="air_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
           <select id="air_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>ココロバグ<br>
-          <select id="kokoro_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+          <br>ゲージ/<input id="gage_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="gage_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
          </td>
+         <td rowspan="2">
+           移動バグ/<input id="move_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="move_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+            </select>
+           <br>ダメージバグ/<input id="damage_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           <select id="damage_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+           <br>バトルHPバグ/<input id="battle_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           <select id="battle_hp_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+           <br>カスタムHPバグ/<input id="custom_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           <select id="custom_hp_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+           <br>カスタムダメージ/<input id="custom_damage_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           <select id="custom_damage_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+           <br>ステータスバグ/<input id="status_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           <select id="status_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+          </td>
         </tr>
         <td colspan="3" style="vertical-align:top">
 <div style="float:left;">
@@ -1485,7 +1516,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
         var select = document.getElementById("HP_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1509,8 +1542,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         }
         }
-        //選択がなくなったら色を変化させる
+        //選択がなくなったら色を変化させる及び、残り選択数の表示
           if(select.length==2){select.style.background = '#d6d6d6';}
+          document.getElementById("HP_list_result").value = select.length-2
         //
 
         //body選択欄
@@ -1542,7 +1576,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
         var select = document.getElementById("body_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1568,6 +1604,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         //選択がなくなったら色を変化させる
           if(select.length==2){select.style.background = '#d6d6d6';}
+          document.getElementById("body_list_result").value = select.length-2
         //
 
         //attack選択欄
@@ -1593,7 +1630,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
         var select = document.getElementById("attack_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1619,6 +1658,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         //選択がなくなったら色を変化させる
           if(select.length==1){select.style.background = '#d6d6d6';}
+          document.getElementById("attack_list_result").value = select.length-1
         //
 
         //rapid選択欄
@@ -1644,7 +1684,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
         var select = document.getElementById("rapid_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1670,6 +1712,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         //選択がなくなったら色を変化させる
           if(select.length==1){select.style.background = '#d6d6d6';}
+          document.getElementById("rapid_list_result").value = select.length-1
         //
 
         //charge選択欄
@@ -1696,7 +1739,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])
-          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
         var select = document.getElementById("charge_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1722,6 +1767,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         //選択がなくなったら色を変化させる
           if(select.length==1){select.style.background = '#d6d6d6';}
+          document.getElementById("charge_list_result").value = select.length-1
         //
 
         //custom選択欄
@@ -1748,7 +1794,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-          &&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+          &&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
         var select = document.getElementById("custom_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1774,6 +1822,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         //選択がなくなったら色を変化させる
           if(select.length==1){select.style.background = '#d6d6d6';}
+          document.getElementById("custom_list_result").value = select.length-1
         //
 
         //m_folder選択欄
@@ -1799,7 +1848,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
         var select = document.getElementById("m_folder_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1825,6 +1876,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         //選択がなくなったら色を変化させる
           if(select.length==1){select.style.background = '#d6d6d6';}
+          document.getElementById("m_folder_list_result").value = select.length-1
         //
 
         //g_folder選択欄
@@ -1851,7 +1903,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])){
+          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
         var select = document.getElementById("g_folder_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1877,6 +1931,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         }
         //選択がなくなったら色を変化させる
           if(select.length==1){select.style.background = '#d6d6d6';}
+          document.getElementById("g_folder_list_result").value = select.length-1
         //
 
         //アビリティ関係
@@ -1910,7 +1965,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
           &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
           &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+          &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+          &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+          &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
             var select = document.getElementById("b_cs_list");
         var option = document.createElement("option");
         //ダブリ用変数
@@ -1936,6 +1993,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       }
       //選択がなくなったら色を変化させる
         if(select.length==2){select.style.background = '#d6d6d6';}
+        document.getElementById("b_cs_list_result").value = select.length-2
 
       //CS_add欄
       //消去
@@ -1967,7 +2025,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
         &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
         &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-        &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+        &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+        &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+        &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
       var select = document.getElementById("cs_add_list");
       var option = document.createElement("option");
 
@@ -1994,6 +2054,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     }
     //選択がなくなったら色を変化させる
       if(select.length==2){select.style.background = '#d6d6d6';}
+      document.getElementById("cs_add_list_result").value = select.length-2
 
 
     //buster_add欄
@@ -2025,7 +2086,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
       &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
       &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+      &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+      &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
     var select = document.getElementById("buster_add_list");
     var option = document.createElement("option");
     //ダブリ用変数
@@ -2051,6 +2114,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
 }
   //選択がなくなったら色を変化させる
   if(select.length==2){select.style.background = '#d6d6d6';}
+  document.getElementById("buster_add_list_result").value = select.length-2
 
   //b左欄
   //消去
@@ -2081,7 +2145,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("b_left_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2107,6 +2173,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("b_left_list_result").value = select.length-2
 //
 
   //Bボタン欄
@@ -2138,7 +2205,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("b_button_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2164,6 +2233,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("b_button_list_result").value = select.length-2
   ///
 
   //move_panel欄
@@ -2195,7 +2265,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("move_panel_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2221,6 +2293,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("move_panel_list_result").value = select.length-2
   ///
 
   //チップリカバリー欄
@@ -2252,7 +2325,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     &&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])&&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("chip_recovery_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2278,6 +2352,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("chip_recovery_list_result").value = select.length-2
   ///
 
   //バスター空打ち欄
@@ -2309,7 +2384,8 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])&&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("baster_blank_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2335,6 +2411,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("baster_blank_list_result").value = select.length-2
   ///
 
   //スーパーアーマー欄
@@ -2366,7 +2443,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("super_armor_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2392,6 +2471,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("super_armor_list_result").value = select.length-2
   ///
 
   //アンダーシャツ欄
@@ -2423,7 +2503,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("under_shirt_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2449,6 +2531,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("under_shirt_list_result").value = select.length-2
   ///
   //ステータスガード欄
   //消去
@@ -2479,7 +2562,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("status_guard_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2505,6 +2590,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("status_guard_list_result").value = select.length-2
   ///
   //フロートシューズ欄
   //消去
@@ -2535,7 +2621,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("float_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2561,6 +2649,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("float_list_result").value = select.length-2
   ///
 
   //エアシューズ欄
@@ -2592,7 +2681,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("air_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2618,6 +2709,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("air_list_result").value = select.length-2
   ///
 
   //ココロバグ欄
@@ -2641,7 +2733,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択時色を変更する
   if(pick_up_box[13]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
-  //フロートシューズ生成生成
+  //ココロバグ生成生成
   for(let i = 1; i<members.length;i++){
   if(members[i].kokoro_bug==undefined){
   }else{
@@ -2649,7 +2741,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
     &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])
     &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
   var select = document.getElementById("kokoro_bug_list");
   var option = document.createElement("option");
   //ダブリ用変数
@@ -2675,7 +2769,492 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   }
   //選択がなくなったら色を変化させる
     if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("kokoro_bug_list_result").value = select.length-2
   ///
+
+  //ファーストバリア欄
+  //消去
+  for(let i = 1; i<members.length;i++){
+  var select = document.getElementById("f_barier_list");
+  select.remove(0);
+  }
+  //選択解除の欄を追加
+  var select = document.getElementById("f_barier_list");
+  var option = document.createElement("option");
+  option.text = "ピックアップ解除";
+  option.value = "pick_solve_23";
+  select.appendChild(option);
+  //上書きさせない
+  var select = document.getElementById("f_barier_list");
+  var option = document.createElement("option");
+  option.text = "バリアを上書きさせない";
+  option.value = "上書きさせない";
+  select.appendChild(option);
+  //選択時色を変更する
+  if(pick_up_box[22]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
+
+  //ファーストバリア生成生成
+  for(let i = 1; i<members.length;i++){
+  if(members[i].f_barier==undefined){
+  }else{
+    if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])&&(members[i].b_button==pick_up_box[4]||""==pick_up_box[4])&&(members[i].move_panel==pick_up_box[5]||""==pick_up_box[5])&&
+    (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
+    &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
+    &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
+    &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+    &&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+    &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
+  var select = document.getElementById("f_barier_list");
+  var option = document.createElement("option");
+  //ダブリ用変数
+  var items = select.children;
+  var items_daburi = 0;
+  //子の数だけ繰り返す
+    for(let z=1;z<items.length;z++){
+       if(!(items[z].value == members[i].f_barier)){
+          option.text = ""+members[i].f_barier;
+          option.value = members[i].f_barier;
+          select.appendChild(option);
+        }else if(items[z].value == members[i].f_barier){
+          //ダブり数をカウント
+           items_daburi +=1;
+         }
+         //２回以上ダブったら消去
+         if(items_daburi>1){
+           select.remove(z);
+         }
+      }
+  }
+  }
+  }
+  //選択がなくなったら色を変化させる
+    if(select.length==2){select.style.background = '#d6d6d6';}
+    document.getElementById("f_barier_list_result").value = select.length-2
+  ///
+
+
+
+    //ゲージ欄
+    //消去
+    for(let i = 1; i<members.length;i++){
+    var select = document.getElementById("gage_list");
+    select.remove(0);
+    }
+    //選択解除の欄を追加
+    var select = document.getElementById("gage_list");
+    var option = document.createElement("option");
+    option.text = "ピックアップ解除";
+    option.value = "pick_solve_24";
+    select.appendChild(option);
+    //上書きさせない
+    var select = document.getElementById("gage_list");
+    var option = document.createElement("option");
+    option.text = "ゲージを上書きさせない";
+    option.value = "上書きさせない";
+    select.appendChild(option);
+    //選択時色を変更する
+    if(pick_up_box[23]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
+
+    //ファーストバリア生成生成
+    for(let i = 1; i<members.length;i++){
+    if(members[i].gage==undefined){
+    }else{
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])&&(members[i].b_button==pick_up_box[4]||""==pick_up_box[4])&&(members[i].move_panel==pick_up_box[5]||""==pick_up_box[5])&&
+      (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
+      &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
+      &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
+      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+      &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+      &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
+    var select = document.getElementById("gage_list");
+    var option = document.createElement("option");
+    //ダブリ用変数
+    var items = select.children;
+    var items_daburi = 0;
+    //子の数だけ繰り返す
+      for(let z=1;z<items.length;z++){
+         if(!(items[z].value == members[i].gage)){
+            option.text = ""+members[i].gage;
+            option.value = members[i].gage;
+            select.appendChild(option);
+          }else if(items[z].value == members[i].gage){
+            //ダブり数をカウント
+             items_daburi +=1;
+           }
+           //２回以上ダブったら消去
+           if(items_daburi>1){
+             select.remove(z);
+           }
+        }
+    }
+    }
+    }
+    //選択がなくなったら色を変化させる
+      if(select.length==2){select.style.background = '#d6d6d6';}
+      document.getElementById("gage_list_result").value = select.length-2
+    ///
+
+    //移動バグ欄
+    //消去
+    for(let i = 1; i<members.length;i++){
+    var select = document.getElementById("move_bug_list");
+    select.remove(0);
+    }
+    //選択解除の欄を追加
+    var select = document.getElementById("move_bug_list");
+    var option = document.createElement("option");
+    option.text = "ピックアップ解除";
+    option.value = "pick_solve_25";
+    select.appendChild(option);
+    //上書きさせない
+    var select = document.getElementById("move_bug_list");
+    var option = document.createElement("option");
+    option.text = "移動バグを上書きさせない";
+    option.value = "上書きさせない";
+    select.appendChild(option);
+    //選択時色を変更する
+    if(pick_up_box[24]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
+
+    //移動バグ生成生成
+    for(let i = 1; i<members.length;i++){
+    if(members[i].move_bug==undefined){
+    }else{
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])&&(members[i].b_button==pick_up_box[4]||""==pick_up_box[4])&&(members[i].move_panel==pick_up_box[5]||""==pick_up_box[5])&&
+      (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
+      &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
+      &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
+      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+      &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+      &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
+    var select = document.getElementById("move_bug_list");
+    var option = document.createElement("option");
+    //ダブリ用変数
+    var items = select.children;
+    var items_daburi = 0;
+    //子の数だけ繰り返す
+      for(let z=1;z<items.length;z++){
+         if(!(items[z].value == members[i].move_bug)){
+            option.text = ""+members[i].move_bug;
+            option.value = members[i].move_bug;
+            select.appendChild(option);
+          }else if(items[z].value == members[i].move_bug){
+            //ダブり数をカウント
+             items_daburi +=1;
+           }
+           //２回以上ダブったら消去
+           if(items_daburi>1){
+             select.remove(z);
+           }
+        }
+    }
+    }
+    }
+    //選択がなくなったら色を変化させる
+      if(select.length==2){select.style.background = '#d6d6d6';}
+      document.getElementById("move_bug_list_result").value = select.length-2
+    ///
+
+    //ダメージバグ欄
+    //消去
+    for(let i = 1; i<members.length;i++){
+    var select = document.getElementById("damage_bug_list");
+    select.remove(0);
+    }
+    //選択解除の欄を追加
+    var select = document.getElementById("damage_bug_list");
+    var option = document.createElement("option");
+    option.text = "ピックアップ解除";
+    option.value = "pick_solve_26";
+    select.appendChild(option);
+    //上書きさせない
+    var select = document.getElementById("damage_bug_list");
+    var option = document.createElement("option");
+    option.text = "ダメージバグを上書きさせない";
+    option.value = "上書きさせない";
+    select.appendChild(option);
+    //選択時色を変更する
+    if(pick_up_box[25]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
+
+    //ダメージバグ生成生成
+    for(let i = 1; i<members.length;i++){
+    if(members[i].damage_bug==undefined){
+    }else{
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])&&(members[i].b_button==pick_up_box[4]||""==pick_up_box[4])&&(members[i].move_panel==pick_up_box[5]||""==pick_up_box[5])&&
+      (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
+      &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
+      &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
+      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+      &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])
+      &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
+    var select = document.getElementById("damage_bug_list");
+    var option = document.createElement("option");
+    //ダブリ用変数
+    var items = select.children;
+    var items_daburi = 0;
+    //子の数だけ繰り返す
+      for(let z=1;z<items.length;z++){
+         if(!(items[z].value == members[i].damage_bug)){
+            option.text = ""+members[i].damage_bug;
+            option.value = members[i].damage_bug;
+            select.appendChild(option);
+          }else if(items[z].value == members[i].damage_bug){
+            //ダブり数をカウント
+             items_daburi +=1;
+           }
+           //２回以上ダブったら消去
+           if(items_daburi>1){
+             select.remove(z);
+           }
+        }
+    }
+    }
+    }
+    //選択がなくなったら色を変化させる
+      if(select.length==2){select.style.background = '#d6d6d6';}
+      document.getElementById("damage_bug_list_result").value = select.length-2
+    ///
+
+    //battle_hp_bug欄
+    //消去
+    for(let i = 1; i<members.length;i++){
+    var select = document.getElementById("battle_hp_bug_list");
+    select.remove(0);
+    }
+    //選択解除の欄を追加
+    var select = document.getElementById("battle_hp_bug_list");
+    var option = document.createElement("option");
+    option.text = "ピックアップ解除";
+    option.value = "pick_solve_27";
+    select.appendChild(option);
+    //上書きさせない
+    var select = document.getElementById("battle_hp_bug_list");
+    var option = document.createElement("option");
+    option.text = "ﾊﾞﾄﾙHPﾊﾞｸﾞを上書きさせない";
+    option.value = "上書きさせない";
+    select.appendChild(option);
+    //選択時色を変更する
+    if(pick_up_box[26]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
+
+    //battle_hp_bug生成生成
+    for(let i = 1; i<members.length;i++){
+    if(members[i].battle_hp_bug==undefined){
+    }else{
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])&&(members[i].b_button==pick_up_box[4]||""==pick_up_box[4])&&(members[i].move_panel==pick_up_box[5]||""==pick_up_box[5])&&
+      (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
+      &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
+      &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
+      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+      &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+      &&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
+    var select = document.getElementById("battle_hp_bug_list");
+    var option = document.createElement("option");
+    //ダブリ用変数
+    var items = select.children;
+    var items_daburi = 0;
+    //子の数だけ繰り返す
+      for(let z=1;z<items.length;z++){
+         if(!(items[z].value == members[i].battle_hp_bug)){
+            option.text = ""+members[i].battle_hp_bug;
+            option.value = members[i].battle_hp_bug;
+            select.appendChild(option);
+          }else if(items[z].value == members[i].battle_hp_bug){
+            //ダブり数をカウント
+             items_daburi +=1;
+           }
+           //２回以上ダブったら消去
+           if(items_daburi>1){
+             select.remove(z);
+           }
+        }
+    }
+    }
+    }
+    //選択がなくなったら色を変化させる
+      if(select.length==2){select.style.background = '#d6d6d6';}
+      document.getElementById("battle_hp_bug_list_result").value = select.length-2
+    ///
+
+    //custom_hp_bug欄
+    //消去
+    for(let i = 1; i<members.length;i++){
+    var select = document.getElementById("custom_hp_bug_list");
+    select.remove(0);
+    }
+    //選択解除の欄を追加
+    var select = document.getElementById("custom_hp_bug_list");
+    var option = document.createElement("option");
+    option.text = "ピックアップ解除";
+    option.value = "pick_solve_28";
+    select.appendChild(option);
+    //上書きさせない
+    var select = document.getElementById("custom_hp_bug_list");
+    var option = document.createElement("option");
+    option.text = "ｶｽﾀﾑHPﾊﾞｸﾞを上書きさせない";
+    option.value = "上書きさせない";
+    select.appendChild(option);
+    //選択時色を変更する
+    if(pick_up_box[27]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
+
+    //custom_hp_bug生成生成
+    for(let i = 1; i<members.length;i++){
+    if(members[i].custom_hp_bug==undefined){
+    }else{
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])&&(members[i].b_button==pick_up_box[4]||""==pick_up_box[4])&&(members[i].move_panel==pick_up_box[5]||""==pick_up_box[5])&&
+      (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
+      &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
+      &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
+      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+      &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+      &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
+    var select = document.getElementById("custom_hp_bug_list");
+    var option = document.createElement("option");
+    //ダブリ用変数
+    var items = select.children;
+    var items_daburi = 0;
+    //子の数だけ繰り返す
+      for(let z=1;z<items.length;z++){
+         if(!(items[z].value == members[i].custom_hp_bug)){
+            option.text = ""+members[i].custom_hp_bug;
+            option.value = members[i].custom_hp_bug;
+            select.appendChild(option);
+          }else if(items[z].value == members[i].custom_hp_bug){
+            //ダブり数をカウント
+             items_daburi +=1;
+           }
+           //２回以上ダブったら消去
+           if(items_daburi>1){
+             select.remove(z);
+           }
+        }
+    }
+    }
+    }
+    //選択がなくなったら色を変化させる
+      if(select.length==2){select.style.background = '#d6d6d6';}
+      document.getElementById("custom_hp_bug_list_result").value = select.length-2
+    ///
+
+    //custom_damage欄
+    //消去
+    for(let i = 1; i<members.length;i++){
+    var select = document.getElementById("custom_damage_list");
+    select.remove(0);
+    }
+    //選択解除の欄を追加
+    var select = document.getElementById("custom_damage_list");
+    var option = document.createElement("option");
+    option.text = "ピックアップ解除";
+    option.value = "pick_solve_29";
+    select.appendChild(option);
+    //上書きさせない
+    var select = document.getElementById("custom_damage_list");
+    var option = document.createElement("option");
+    option.text = "ｶｽﾀﾑﾀﾞﾒｰｼﾞを上書きさせない";
+    option.value = "上書きさせない";
+    select.appendChild(option);
+    //選択時色を変更する
+    if(pick_up_box[28]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
+
+    //custom_damage生成生成
+    for(let i = 1; i<members.length;i++){
+    if(members[i].custom_damage==undefined){
+    }else{
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])&&(members[i].b_button==pick_up_box[4]||""==pick_up_box[4])&&(members[i].move_panel==pick_up_box[5]||""==pick_up_box[5])&&
+      (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
+      &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
+      &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
+      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+      &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+      &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
+    var select = document.getElementById("custom_damage_list");
+    var option = document.createElement("option");
+    //ダブリ用変数
+    var items = select.children;
+    var items_daburi = 0;
+    //子の数だけ繰り返す
+      for(let z=1;z<items.length;z++){
+         if(!(items[z].value == members[i].custom_damage)){
+            option.text = ""+members[i].custom_damage;
+            option.value = members[i].custom_damage;
+            select.appendChild(option);
+          }else if(items[z].value == members[i].custom_damage){
+            //ダブり数をカウント
+             items_daburi +=1;
+           }
+           //２回以上ダブったら消去
+           if(items_daburi>1){
+             select.remove(z);
+           }
+        }
+    }
+    }
+    }
+    //選択がなくなったら色を変化させる
+      if(select.length==2){select.style.background = '#d6d6d6';}
+      document.getElementById("custom_damage_list_result").value = select.length-2
+    ///
+
+    //status_bug欄
+    //消去
+    for(let i = 1; i<members.length;i++){
+    var select = document.getElementById("status_bug_list");
+    select.remove(0);
+    }
+    //選択解除の欄を追加
+    var select = document.getElementById("status_bug_list");
+    var option = document.createElement("option");
+    option.text = "ピックアップ解除";
+    option.value = "pick_solve_30";
+    select.appendChild(option);
+    //上書きさせない
+    var select = document.getElementById("status_bug_list");
+    var option = document.createElement("option");
+    option.text = "ステータスを上書きさせない";
+    option.value = "上書きさせない";
+    select.appendChild(option);
+    //選択時色を変更する
+    if(pick_up_box[29]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
+
+    //status_bug生成生成
+    for(let i = 1; i<members.length;i++){
+    if(members[i].status_bug==undefined){
+    }else{
+      if(members[i].mb<=mega_math&&(members[i].b_cs==pick_up_box[0]||""==pick_up_box[0])&&(members[i].cs_add==pick_up_box[1]||""==pick_up_box[1])&&(members[i].buster_add==pick_up_box[2]||""==pick_up_box[2])&&(members[i].b_left==pick_up_box[3]||""==pick_up_box[3])&&(members[i].b_button==pick_up_box[4]||""==pick_up_box[4])&&(members[i].move_panel==pick_up_box[5]||""==pick_up_box[5])&&
+      (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
+      &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
+      &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
+      &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+      &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+      &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])){
+    var select = document.getElementById("status_bug_list");
+    var option = document.createElement("option");
+    //ダブリ用変数
+    var items = select.children;
+    var items_daburi = 0;
+    //子の数だけ繰り返す
+      for(let z=1;z<items.length;z++){
+         if(!(items[z].value == members[i].status_bug)){
+            option.text = ""+members[i].status_bug;
+            option.value = members[i].status_bug;
+            select.appendChild(option);
+          }else if(items[z].value == members[i].status_bug){
+            //ダブり数をカウント
+             items_daburi +=1;
+           }
+           //２回以上ダブったら消去
+           if(items_daburi>1){
+             select.remove(z);
+           }
+        }
+    }
+    }
+    }
+    //選択がなくなったら色を変化させる
+      if(select.length==2){select.style.background = '#d6d6d6';}
+      document.getElementById("status_bug_list_result").value = select.length-2
+    ///
+
+
       }
 
       //選択したカードを検索ボックスに入れる
@@ -2728,6 +3307,14 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           select_ability_box[19] = document.getElementById("custom_list").value;
           select_ability_box[20] = document.getElementById("m_folder_list").value;
           select_ability_box[21] = document.getElementById("g_folder_list").value;
+          select_ability_box[22] = document.getElementById("f_barier_list").value;
+          select_ability_box[23] = document.getElementById("gage_list").value;
+          select_ability_box[24] = document.getElementById("move_bug_list").value;
+          select_ability_box[25] = document.getElementById("damage_bug_list").value;
+          select_ability_box[26] = document.getElementById("battle_hp_bug_list").value;
+          select_ability_box[27] = document.getElementById("custom_hp_bug_list").value;
+          select_ability_box[28] = document.getElementById("custom_damage_list").value;
+          select_ability_box[29] = document.getElementById("status_bug_list").value;
           document.getElementById("pick_tag").value ="";
 
           //選択したアビリティを検索させる
@@ -3023,7 +3610,9 @@ console.log(sarch_result.length)
         (members[i].chip_recovery==pick_up_box[6]||""==pick_up_box[6])&&(members[i].baster_blank==pick_up_box[7]||""==pick_up_box[7])&&(members[i].super_armor==pick_up_box[8]||""==pick_up_box[8])&&(members[i].under_shirt==pick_up_box[9]||""==pick_up_box[9])
         &&(members[i].status_guard==pick_up_box[10]||""==pick_up_box[10])&&(members[i].float==pick_up_box[11]||""==pick_up_box[11])&&(members[i].air==pick_up_box[12]||""==pick_up_box[12])&&(members[i].kokoro_bug==pick_up_box[13]||""==pick_up_box[13])
         &&(members[i].hp==pick_up_box[14]||""==pick_up_box[14])&&(members[i].body==pick_up_box[15]||""==pick_up_box[15])&&(members[i].attack==pick_up_box[16]||""==pick_up_box[16])&&(members[i].rapid==pick_up_box[17]||""==pick_up_box[17])&&(members[i].charge==pick_up_box[18]||""==pick_up_box[18])
-        &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])){
+        &&(members[i].custom==pick_up_box[19]||""==pick_up_box[19])&&(members[i].m_folder==pick_up_box[20]||""==pick_up_box[20])&&(members[i].g_folder==pick_up_box[21]||""==pick_up_box[21])
+        &&(members[i].f_barier==pick_up_box[22]||""==pick_up_box[22])&&(members[i].gage==pick_up_box[23]||""==pick_up_box[23])&&(members[i].move_bug==pick_up_box[24]||""==pick_up_box[24])&&(members[i].damage_bug==pick_up_box[25]||""==pick_up_box[25])
+        &&(members[i].battle_hp_bug==pick_up_box[26]||""==pick_up_box[26])&&(members[i].custom_hp_bug==pick_up_box[27]||""==pick_up_box[27])&&(members[i].custom_damage==pick_up_box[28]||""==pick_up_box[28])&&(members[i].status_bug==pick_up_box[29]||""==pick_up_box[29])){
          if(sarch_result.length>0){
             for(let z = 0; z<sarch_result.length;z++){
               if(members[i].id == sarch_result[z].id){
@@ -3471,10 +4060,10 @@ document.getElementById('sarch_input').value = "";
 document.getElementById('ability_sarch').value = "";
 TEST_OBJECT.onSearchFieldChange("");
 
-for(let i =0;i<23;i++){pick_up_box[i] = "";}
+for(let i =0;i<30;i++){pick_up_box[i] = "";}
 
 //ピックアップの初期化
-for(let i =0;i<23;i++){document.getElementById("pick_tag").value = pick_up_box[i];}
+for(let i =0;i<30;i++){document.getElementById("pick_tag").value = pick_up_box[i];}
 //カード説明文初期化
 document.getElementById('kaizo_parametor').value = "";
 document.getElementById('kaizo_ability').value = "";
