@@ -78,22 +78,22 @@
        <th style="background:#d399ff; border-left:3px solid #777" colspan="1">バグ</th>
        <tr>
          <td style="border-right:3px solid #777">
-           HPリスト/<input id="HP_list_result" style="font-size:10pt;width: 15px;" readonly></input><br>
+           HP/<input id="HP_list_result" style="font-size:10pt;width: 15px;" readonly></input><br>
            <select id="HP_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           Bためうちリスト/<input id="b_cs_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           Bためうち/<input id="b_cs_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           CS追加効果リスト/<input id="cs_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           CS追加効果/<input id="cs_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="cs_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           バスター追加効果ﾘｽﾄ/<input id="buster_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           バスター追加効果/<input id="buster_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
@@ -103,34 +103,34 @@
             </select>
           </td>
           <td style="border-right:1px solid #595">
-             バスター空打ちリスト/<input id="baster_blank_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+             バスター空打ち/<input id="baster_blank_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
              <select id="baster_blank_list" size="10" style="width: 200px;"onchange="select_ability_list()">
              </select>
            </td>
        </tr>
        <tr>
          <td style="border-right:3px solid #777" rowspan="2">
-           ボディリスト/<input id="body_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           ボディ/<input id="body_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="body_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           Bボタン変更リスト/<input id="b_button_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           Bボタン変更/<input id="b_button_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="b_button_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           移動で効果リスト/<input id="move_panel_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           移動で効果/<input id="move_panel_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="move_panel_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:1px solid #595">
-           チップリカバリーﾘｽﾄ/<input id="chip_recovery_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           チップリカバリー/<input id="chip_recovery_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
            <select id="chip_recovery_list" size="5" style="width: 200px;"onchange="select_ability_list()">
            </select>
          </td>
          <td style="border-right:3px solid #777">
-            Fバリアーリスト/<input id="f_barier_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            Fバリアー/<input id="f_barier_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
             <select id="f_barier_list" size="5" style="width: 200px;"onchange="select_ability_list()">
             </select>
           </td>
@@ -178,7 +178,7 @@
           <br>フロートシューズ/<input id="float_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
           <select id="float_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>エアーシューズ/<input id="air_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <br>エアシューズ/<input id="air_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
           <select id="air_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
           <br>ゲージ/<input id="gage_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
@@ -1559,7 +1559,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //上書きさせない
         var select = document.getElementById("HP_list");
         var option = document.createElement("option");
-        option.text = "hpを変化させない";
+        option.text = "HPを変化させない";
         option.value = "上書きさせない";
         select.appendChild(option);
         //選択時色を変更する
@@ -1584,7 +1584,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //子の数だけ繰り返す
           for(let z=1;z<items.length;z++){
              if(!(items[z].value == members[i].hp)){
-                option.text = "hp"+members[i].hp;
+                option.text = "HP"+members[i].hp;
                 option.value = members[i].hp;
                 select.appendChild(option);
               }else if(items[z].value == members[i].hp){
@@ -3422,7 +3422,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         {name:'センボン',id:'16',flag:"020006D5:00"+"\n"+"0200505D:43",mb:11,body:"Abody",rapid:"+4",baster_blank:"off"} ,
         {name:'ヒトデスタ',id:'17',flag:"020006D6:00"+"\n"+"0200505E:43",mb:15,body:"Abody",cs_add:"バブル"} ,
         {name:'グラサン',id:'18',flag:"020006D7:00"+"\n"+"0200505F:43",mb:8,super_armor:"off",b_cs:"Fボム"} ,
-        {name:'カカジー',id:'19',flag:"020006D8:00"+"\n"+"02005060:43",mb:14,body:"Ebody",b_cs:"ドールT",chip_recovery:"30",baster_blank:"からうち(30%),CS(12%)"} ,
+        {name:'カカジー',id:'19',flag:"020006D8:00"+"\n"+"02005060:43",mb:14,body:"Ebody",b_cs:"ドールT",chip_recovery:"30",baster_blank:"からうち(25%),CS(12%)"} ,
         {name:'ゼロプレーン',id:'1A',flag:"020006D9:00"+"\n"+"02005061:43",mb:20,hp:"-10%",float:"on",air:"on"} ,
         {name:'レムゴン',id:'1B',flag:"020006DA:00"+"\n"+"02005062:43",mb:19,hp:"+200",under_shirt:"on",damage_bug:"HPバグ"} ,
         {name:'アルマン',id:'1C',flag:"020006DB:00"+"\n"+"02005063:43",mb:12,hp:"+5%",charge:"-3",cs_add:"ブレイク"} ,
@@ -3956,7 +3956,7 @@ if(members[parseInt(valc[i], 10)].air==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "air_" + members[parseInt(valc[i], 10)].air+"\n";
-ability_box[9] = "エアーシューズ" + members[parseInt(valc[i], 10)].air;
+ability_box[9] = "エアシューズ" + members[parseInt(valc[i], 10)].air;
 }
 
 //ゲージ
@@ -4421,7 +4421,7 @@ ability_sarch_process();
             if(members[parseInt(card_id, 10)].air==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "エアーシューズ" + members[parseInt(card_id, 10)].air+"\n";
+            document.getElementById("kaizo_ability").value += "エアシューズ" + members[parseInt(card_id, 10)].air+"\n";
             }
 
             //ゲージ
