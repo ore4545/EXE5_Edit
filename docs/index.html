@@ -246,7 +246,21 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           </td>
         </tr>
       <tr>
-        <td id="kaizo_ran_1">1枚目/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
+        <td id="kaizo_ran_1">
+            <!-- <select id="sounyu_1" onchange="select_sounyu(1);">
+              <option value="1">1枚目</option>
+              <option value="2">2枚目</option>
+              <option value="3">3枚目</option>
+              <option value="4">4枚目</option>
+              <option value="5">5枚目</option>
+              <option value="6">6枚目</option>
+              <option value="7">7枚目</option>
+              <option value="8">8枚目</option>
+              <option value="9">9枚目</option>
+              <option value="10">10枚目</option>
+            </select> -->
+            1枚目
+          /<input type="reset" value="未選択"onclick="select_solve(1);"><br>
           <select id="kaizo_1" onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -364,7 +378,20 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           <br>パラメータ<textarea id="parametor_1" rows="4" cols="6"></textarea>
               アビリティ<textarea id="ablity_1" rows="4" cols="8"></textarea></br>
         </td>
-        <td id="kaizo_ran_2">2枚目/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
+        <td id="kaizo_ran_2">
+          <!-- <select id="sounyu_2" onchange="select_sounyu(2);">
+            <option value="1">1枚目</option>
+            <option value="2" selected>2枚目</option>
+            <option value="3">3枚目</option>
+            <option value="4">4枚目</option>
+            <option value="5">5枚目</option>
+            <option value="6">6枚目</option>
+            <option value="7">7枚目</option>
+            <option value="8">8枚目</option>
+            <option value="9">9枚目</option>
+            <option value="10">10枚目</option>
+          </select> -->
+            2枚目/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
           <select id="kaizo_2"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -482,7 +509,20 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <br>パラメータ<textarea id="parametor_2" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_2" rows="4" cols="8"></textarea></br>
       </td>
-      <td id="kaizo_ran_3">3枚目/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
+      <td id="kaizo_ran_3">
+        <!-- <select id="sounyu_3" onchange="select_sounyu(3);">
+          <option value="1">1枚目</option>
+          <option value="2">2枚目</option>
+          <option value="3"selected>3枚目</option>
+          <option value="4">4枚目</option>
+          <option value="5">5枚目</option>
+          <option value="6">6枚目</option>
+          <option value="7">7枚目</option>
+          <option value="8">8枚目</option>
+          <option value="9">9枚目</option>
+          <option value="10">10枚目</option>
+        </select> -->
+          3枚目/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
         <select id="kaizo_3"onchange="mega()">
           <option value="00">未選択</option>
           <option value="01">7MB/メットール</option>
@@ -3283,6 +3323,38 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       mega();
       }
 
+      //カード挿入用
+      function select_sounyu(select_sounyu_number){
+      let kaizo_value = [];
+      let kaizo_value_Substitution = [];
+      let sounyu_select =   document.getElementById('sounyu_'+[select_sounyu_number]).value;
+      let sounyu_card =   document.getElementById('kaizo_'+[select_sounyu_number]).value;
+      //挿入先より大きい番号の保存
+      for(let i = sounyu_select;i<10;i++){
+        kaizo_value[i] = document.getElementById('kaizo_'+[i]).value;
+      }
+      //代入
+      for(let i = sounyu_select;i<10;i++){
+        let z = parseInt(i ,10)+ 1;
+        if(kaizo_value[i]==00){break;}
+       document.getElementById('kaizo_'+[z]).value = kaizo_value[i] ;
+      }
+
+      document.getElementById('kaizo_'+[sounyu_select]).value = sounyu_card;
+      for(let i = select_sounyu_number;i<10;i++){
+        let z = parseInt(i ,10)+ 1;
+        kaizo_value_Substitution[i] = document.getElementById('kaizo_'+[z]).value;
+      }
+      for(let i = select_sounyu_number;i<10;i++){
+        //if(kaizo_value_Substitution[i]==00){break;}
+      document.getElementById('kaizo_'+[i]).value = kaizo_value_Substitution[i] ;
+      }
+    //  document.getElementById('kaizo_'+[select_sounyu_number]).value = "00";
+
+      document.getElementById('sounyu_'+[select_sounyu_number]).value = select_sounyu_number;
+      mega();
+      }
+
       //選択したカアビリティリストをピックアップに入れる関数
       function select_ability_list(){
 
@@ -3354,9 +3426,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
        {name:'キャンデービル',id:'09',flag:"02001278:00"+"\n"+"02006134:43",mb:9,body:"Fbody",b_left:"off",self_recovery:"on"} ,
        {name:'ダイジャン',id:'0A',flag:"02001279:00"+"\n"+"02006135:43",mb:12,hp:"+130",body:"Wbody",rash:"off",beat:"off",tango:"off"} ,
        {name:'チャマッシュ',id:'0B',flag:"0200127A:00"+"\n"+"02006136:43",mb:15,body:"Wbody",cs_add:"混乱",move_bug:"on"} ,
-       {name:'ガルー',id:'0C',flag:"0200127B:00"+"\n"+"02006137:43",mb:6,body:"Fbody",rapid:"-1",charge:"-1",cd_add:"ヒートS"} ,
+       {name:'ガルー',id:'0C',flag:"0200127B:00"+"\n"+"02006137:43",mb:6,body:"Fbody",rapid:"-1",charge:"-1",b_cs:"ヒートS"} ,
        {name:'バジリコ',id:'0D',flag:"0200127C:00"+"\n"+"02006138:43",mb:16,body:"Wbody",b_cs:"シールド",battle_hp_bug:"Lv4"} ,
-       {name:'ヨーヨット',id:'0E',flag:"0200127D:00"+"\n"+"02006139:43",mb:17,hp:"+30",b_left:"off"} ,
+       {name:'ヨーヨット',id:'0E',flag:"0200127D:00"+"\n"+"02006139:43",mb:17,hp:"+30",b_left:"off",b_cs:"ヨーヨー"} ,
        {name:'カーズ',id:'0F',flag:"0200127E:00"+"\n"+"0200613A:43",mb:18,hp:"-50",b_left:"カースS"} ,
        {name:'ヌール',id:'10',flag:"0200127F:00"+"\n"+"0200613B:43",mb:13,hp:"+150",body:"Abody",super_armor:"off",b_cs:"チャージS",self_recovery:"on"} ,
        {name:'フデロー',id:'11',flag:"02001280:00"+"\n"+"0200613C:43",mb:19,hp:"-30%",buster_add:"毒沼",move_panel:"ホーリー(12%)"} ,
@@ -3463,7 +3535,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     let mega_use = 0;
 
     //CSピックアップ用の変数
-    let pick_up_box = []
+    let pick_up_box = [];
 
     //サーチした結果保存
     let sarch_result =[];
