@@ -2,34 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>ロックマンエグゼ5チートコードジェネレーターVer.C(β)</title>
+    <title>Mega Man Battle Network 6 CheatCodeGenerator Ver.G(β)</title>
   </head>
   <body>
     <style>
   </style>
-    <h1>ロックマンエグゼ5チートコードジェネレーターVer.C(β)</h1>
+    <h1>Mega Man Battle Network 6 CheatCodeGenerator Ver.G(β)</h1>
     <div class="Overview">
-    <h2>概要</h2>
-    ロックマンエグゼ5カーネルのチートコードを生成するジェネレーターです。<br>
-    予め改造カードの画面が出現したセーブデータで行ってください。<br>
-    <font color = "red">一枚目から順にカードを選択して使用してください。順番がずれると生成できないので注意</font>
+    <h2>Overview</h2>
+    This is Mega Man Battle Network 6 Cybeast Gregar<br>
+    Please use the save data on which the screen of the modified card appears in advance.<br>
+    <font color = "red">Please select and use the cards in order from the first card. Note that it cannot be generated if the order is out of order.</font>
     <br></br>
     <a href= "index.html" >ロックマンエグゼ5チートコードジェネレーターVer.B</a><br>
-    ロックマンエグゼ5チートコードジェネレーターVer.C←<br>
+    <a href= "index2.html" >ロックマンエグゼ5チートコードジェネレーターVer.C</a><br>
     <a href= "index3.html" >ロックマンエグゼ6チートコードジェネレーターVer.G</a><br>
     <a href= "index4.html" >ロックマンエグゼ6チートコードジェネレーターVer.F</a><br>
-    <a href= "index3_En.html" >Mega Man Battle Network 6 CheatCodeGenerator Ver.G(β)</a><br>
+    Mega Man Battle Network 6 CheatCodeGenerator Ver.G(β)←<br>
     <a href= "index4_En.html" >Mega Man Battle Network 6 CheatCodeGenerator Ver.F(β)</a>
     <br></br>
-    お知らせ
-    <li>現在β版による試作テスト中です。</li>
-    <li>機能の改修及び、要望はGitまでお願いします。</li>
-    <li>翻訳しました Thnak you for Chocola and N1GP!</li>
+    notice
+    <li>We are currently conducting a prototype test using the beta version.</li>
+    <li>Please contact Git for functional improvements and requests.</li>
+    <li>Translated (Thnak you for Chocola and N1GP!)</li>
     <br>
-    今後付けたい機能
-    <li>改造カードの予想アビリティの表示(誤字脱字の確認中)</li>
-    <li>絞り込み機能(パラメーター、バグ実装)</li>
-    <li>改造カードピックアップ(インターフェースの調整)</li>
+    Functions you want to add in the future
+    <li>Display of expected abilities of modified cards (confirming typographical errors)</li>
+    <li>Mega Man Battle Network 4 CheatCodeGenerator</li>
 
 
     <br>
@@ -74,159 +73,159 @@
     </script>
 
 
-   <table style="width:50%; border-collapse: collapse; border:3px solid #777">
-     <tbody>
-       <th style="background:#f99; border-right:3px solid #777" colspan="1">パラメーター</th>
-       <th style="background:#9f9; border-left:3px solid #777" colspan="4">アビリティ</th>
-       <th style="background:#d399ff; border-left:3px solid #777" colspan="1">バグ</th>
-       <tr>
-         <td style="border-right:3px solid #777">
-           HP/<input id="HP_list_result" style="font-size:10pt;width: 15px;" readonly></input><br>
-           <select id="HP_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-         <td style="border-right:1px solid #595">
-           Bためうち/<input id="b_cs_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-         <td style="border-right:1px solid #595">
-           CS追加効果/<input id="cs_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="cs_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-         <td style="border-right:1px solid #595">
-           バスター追加効果ﾘｽﾄ/<input id="buster_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-         <td style="border-right:3px solid #777">
-            B←/<input id="b_left_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-          </td>
-          <td style="border-right:1px solid #595">
-             バスター空打ち/<input id="baster_blank_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-             <select id="baster_blank_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-             </select>
-           </td>
-       </tr>
-       <tr>
-         <td style="border-right:3px solid #777" rowspan="2">
-           ボディ/<input id="body_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="body_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-         <td style="border-right:1px solid #595">
-           Bボタン変更/<input id="b_button_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="b_button_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-         <td style="border-right:1px solid #595">
-           移動で効果/<input id="move_panel_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="move_panel_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-         <td style="border-right:1px solid #595">
-           チップリカバリーﾘｽﾄ/<input id="chip_recovery_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="chip_recovery_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-         <td style="border-right:3px solid #777">
-            Fバリアー/<input id="f_barier_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="f_barier_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-          </td>
-          <td style="border-right:1px solid #595">
-             ココロバグ/<input id="kokoro_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-             <select id="kokoro_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-             </select>
-           </td>
-       </tr>
-       <tr>
-         <tr>
-           <td style="border-right:3px solid #777" rowspan="2">
-             アタック/<input id="attack_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-              <select id="attack_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-              </select>
-             <br>ラピッド/<input id="rapid_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-             <select id="rapid_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-             </select>
-             <br>チャージ/<input id="charge_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-             <select id="charge_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-             </select>
-             <br>カスタム/<input id="custom_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-             <select id="custom_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-             </select>
-             <br>メガフォルダー/<input id="m_folder_list_result" style="font-size:10pt;width: 15px" ></input><br>
-             <select id="m_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-             </select>
-             <br>ギガフォルダー/<input id="g_folder_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-             <select id="g_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-             </select>
-            </td>
-           <td colspan="3" style="border-top:3px solid #777; border-right:3px solid #777">
-          ピックアップ<textarea cols="50" rows="1" id="pick_tag" style="vertical-align:middle; resize:none;" readonly>未設定</textarea><input type="reset" value="リセット"onclick="mega();"　>
+    <table style="width:50%; border-collapse: collapse; border:3px solid #777">
+    <tbody>
+      <th style="background:#f99; border-right:3px solid #777" colspan="1">Parameters</th>
+      <th style="background:#9f9; border-left:3px solid #777" colspan="4">Abilities</th>
+      <th style="background:#d399ff; border-left:3px solid #777" colspan="1">Bugs</th>
+      <tr>
+        <td style="border-right:3px solid #777">
+          HP/<input id="HP_list_result" style="font-size:10pt;width: 15px;" readonly></input><br>
+          <select id="HP_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+          </select>
         </td>
-        <td style="border-right:3px solid #777" rowspan="2">
-          スーパーアーマー/<input id="super_armor_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="super_armor_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+        <td style="border-right:1px solid #595">
+          Charge Shot Mods/<input id="b_cs_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+        </td>
+        <td style="border-right:1px solid #595">
+          CS Additional Effects/<input id="cs_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="cs_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+        </td>
+        <td style="border-right:1px solid #595">
+          Buster Additional Effects/<input id="buster_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+        </td>
+        <td style="border-right:3px solid #777">
+           B←/<input id="b_left_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
            </select>
-          <br>アンダーシャツ/<input id="under_shirt_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="under_shirt_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+         </td>
+         <td style="border-right:1px solid #595">
+            Buster Blank/<input id="baster_blank_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="baster_blank_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+            </select>
+          </td>
+      </tr>
+      <tr>
+        <td style="border-right:3px solid #777" rowspan="2">
+          Body/<input id="body_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="body_list" size="5" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>ステータスガード/<input id="status_guard_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="status_guard_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+        </td>
+        <td style="border-right:1px solid #595">
+          B Button Modification/<input id="b_button_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="b_button_list" size="5" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>フロートシューズ/<input id="float_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="float_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+        </td>
+        <td style="border-right:1px solid #595">
+          Panel Bug/<input id="move_panel_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="move_panel_list" size="5" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>エアシューズ/<input id="air_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="air_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+        </td>
+        <td style="border-right:1px solid #595">
+          Chip Recovery List/<input id="chip_recovery_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="chip_recovery_list" size="5" style="width: 200px;"onchange="select_ability_list()">
           </select>
-          <br>ゲージ/<input id="gage_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="gage_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+        </td>
+        <td style="border-right:3px solid #777">
+           First Barrier List/<input id="f_barier_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           <select id="f_barier_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+         </td>
+         <td style="border-right:1px solid #595">
+            Emotion Bug/<input id="kokoro_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="kokoro_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+            </select>
+          </td>
+      </tr>
+      <tr>
+        <tr>
+          <td style="border-right:3px solid #777" rowspan="2">
+            Attack/<input id="attack_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+             <select id="attack_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+             </select>
+            <br>Speed/<input id="rapid_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="rapid_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+            </select>
+            <br>Charge/<input id="charge_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="charge_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+            </select>
+            <br>Custom/<input id="custom_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="custom_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+            </select>
+            <br>Mega Folder/<input id="m_folder_list_result" style="font-size:10pt;width: 15px" ></input><br>
+            <select id="m_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+            </select>
+            <br>Giga Folder/<input id="g_folder_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="g_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+            </select>
+           </td>
+          <td colspan="3" style="border-top:3px solid #777; border-right:3px solid #777">
+         Select<textarea cols="50" rows="1" id="pick_tag" style="vertical-align:middle; resize:none;" readonly>Not Selected</textarea><input type="reset" value="Reset"onclick="mega();"　>
+       </td>
+       <td style="border-right:3px solid #777" rowspan="2">
+         SuperArmor/<input id="super_armor_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="super_armor_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+         <br>UnderShirt/<input id="under_shirt_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+         <select id="under_shirt_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+         </select>
+         <br>StatusGuard/<input id="status_guard_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+         <select id="status_guard_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+         </select>
+         <br>FloatShoes/<input id="float_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+         <select id="float_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+         </select>
+         <br>AirShoes/<input id="air_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+         <select id="air_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+         </select>
+         <br>Gauge/<input id="gage_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+         <select id="gage_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+         </select>
+        </td>
+        <td rowspan="2">
+          Movement Bug/<input id="move_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+           <select id="move_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+           </select>
+          <br>Damage Bug/<input id="damage_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="damage_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          <br>Battle HP Bug/<input id="battle_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="battle_hp_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          <br>Custom HP Bug/<input id="custom_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="custom_hp_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          <br>Custom Damage/<input id="custom_damage_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="custom_damage_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          <br>Color Bug/<input id="status_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="status_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
          </td>
-         <td rowspan="2">
-           移動バグ/<input id="move_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="move_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-           <br>ダメージバグ/<input id="damage_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="damage_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-           <br>バトルHPバグ/<input id="battle_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="battle_hp_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-           <br>カスタムHPバグ/<input id="custom_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="custom_hp_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-           <br>カスタムダメージ/<input id="custom_damage_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="custom_damage_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-           <br>ステータスバグ/<input id="status_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="status_bug_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-          </td>
-        </tr>
-        <td colspan="3" style="vertical-align:top">
+       </tr>
+       <td colspan="3" style="vertical-align:top">
 <div style="float:left;">
-      残り使用可能カード<br>
-      <select id="card_list" size="22" style="width: 200px;"onchange="select_card_list()">
-      </select>
+     Remaining Cards<br>
+     <select id="card_list" size="22" style="width: 200px;"onchange="select_card_list()">
+     </select>
 </div>
 <div style="float:left; padding-left:20px">
-  アビリティ名で絞り込み<br><input onchange= "ability_sarch_process();"id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br>
-      <p style="margin-bottom:0; background-color:#f99">パラメータ</p><textarea id="kaizo_parametor" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea><br>
-          <p style="margin-bottom:0; background-color:#9f9">アビリティ</p><textarea id="kaizo_ability" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea>
+ Filter by Ability Name<br><input onchange= "ability_sarch_process();"id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br>
+     <p style="margin-bottom:0; background-color:#f99">Parameters</p><textarea id="kaizo_parametor" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea><br>
+         <p style="margin-bottom:0; background-color:#9f9">Ability</p><textarea id="kaizo_ability" rows="5" cols="23" style="font-size:20pt; resize: none;" readonly></textarea>
 </div>
-        </td>
-    </tr>
- </tbody>
- </table>
- 絞り込み（↓入力した言葉と一致するカードに絞り込みます。ひらがな可）<br>
+       </td>
+   </tr>
+</tbody>
+</table>
+Narrow Search（↓Look up a card name you entered）<br>
 <input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 320px;font-size:16pt;" />
-<input type="reset" value="クリア" onclick="clere_sarch_input();"><br/>
+<input type="reset" value="none" onclick="clere_sarch_input();"><br/>
 <script>
 //検索欄のクリア
 function clere_sarch_input(){document.getElementById("sarch_input").value = "";TEST_OBJECT.onSearchFieldChange("");}
@@ -236,1214 +235,105 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       <tbody>
         <tr>
           <td colspan="1">
-            残りメガバイト
+            Remaining Megabytes
             <input cols="1" rows="1" id="megabite"  style="font-size:20pt;width: 30px;" readonly ></input>
             /80
           </td>
           <td colspan="4">
-            使用メガバイト
+            Megabytes used
               <input cols="1" rows="1" id="megabite_use"  style="font-size:20pt;width: 40px;" readonly ></input>
           </td>
         </tr>
       <tr>
-        <td id="kaizo_ran_1">1枚目/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
+        <td id="kaizo_ran_1">1/<input type="reset" value="Unselected"onclick="select_solve(1);"><br>
           <select id="kaizo_1" onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
+          <option value="00">Unselected</option>
         </select>
-          <br>パラメータ<textarea id="parametor_1" rows="4" cols="6"></textarea>
-              アビリティ<textarea id="ablity_1" rows="4" cols="8"></textarea></br>
+          <br>Parameters<textarea id="parametor_1" rows="4" cols="6"></textarea>
+              Ability<textarea id="ablity_1" rows="4" cols="8"></textarea></br>
         </td>
-        <td id="kaizo_ran_2">2枚目/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
+        <td id="kaizo_ran_2">2/<input type="reset" value="Unselected"onclick="select_solve(2);"><br>
           <select id="kaizo_2"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
+            <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_2" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_2" rows="4" cols="8"></textarea></br>
+        <br>Parameters<textarea id="parametor_2" rows="4" cols="6"></textarea>
+            Ability<textarea id="ablity_2" rows="4" cols="8"></textarea></br>
       </td>
-      <td id="kaizo_ran_3">3枚目/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
+      <td id="kaizo_ran_3">3/<input type="reset" value="Unselected"onclick="select_solve(3);"><br>
         <select id="kaizo_3"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
+          <option value="00">Unselected</option>
 
         </select>
-        <br>パラメータ<textarea id="parametor_3" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_3" rows="4" cols="8"></textarea></br>
+        <br>Parameters<textarea id="parametor_3" rows="4" cols="6"></textarea>
+            Ability<textarea id="ablity_3" rows="4" cols="8"></textarea></br>
       </td>
-        <td id="kaizo_ran_4">4枚目/<input type="reset" value="未選択"onclick="select_solve(4);"><br>
+        <td id="kaizo_ran_4">4/<input type="reset" value="Unselected"onclick="select_solve(4);"><br>
           <select id="kaizo_4"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
+            <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_4" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_4" rows="4" cols="8"></textarea></br>
+        <br>Parameters<textarea id="parametor_4" rows="4" cols="6"></textarea>
+            Ability<textarea id="ablity_4" rows="4" cols="8"></textarea></br>
           </td>
-        <td id="kaizo_ran_5">5枚目/<input type="reset" value="未選択"onclick="select_solve(5);"><br>
+        <td id="kaizo_ran_5">5/<input type="reset" value="Unselected"onclick="select_solve(5);"><br>
           <select id="kaizo_5"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
+            <option value="00">Unselected</option>
+
         </select>
-        <br>パラメータ<textarea id="parametor_5" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_5" rows="4" cols="8"></textarea></br>
+        <br>Parameters<textarea id="parametor_5" rows="4" cols="6"></textarea>
+            Ability<textarea id="ablity_5" rows="4" cols="8"></textarea></br>
       </td>
       </tr>
       <tr>
-        <td id="kaizo_ran_6">6枚目/<input type="reset" value="未選択"onclick="select_solve(6);"><br>
+        <td id="kaizo_ran_6">6/<input type="reset" value="Unselected"onclick="select_solve(6);"><br>
           <select id="kaizo_6"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
+            <option value="00">Unselected</option>
+
         </select>
-        <br>パラメータ<textarea id="parametor_6" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_6" rows="4" cols="8"></textarea></br>
+        <br>Parameters<textarea id="parametor_6" rows="4" cols="6"></textarea>
+            Ability<textarea id="ablity_6" rows="4" cols="8"></textarea></br>
       </td>
-        <td id="kaizo_ran_7">7枚目/<input type="reset" value="未選択"onclick="select_solve(7);"><br>
+        <td id="kaizo_ran_7">7/<input type="reset" value="Unselected"onclick="select_solve(7);"><br>
           <select id="kaizo_7"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
-
+            <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_7" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_7" rows="4" cols="8"></textarea></br>
+        <br>Parameters<textarea id="parametor_7" rows="4" cols="6"></textarea>
+            Ability<textarea id="ablity_7" rows="4" cols="8"></textarea></br>
       </td>
-        <td id="kaizo_ran_8">8枚目/<input type="reset" value="未選択"onclick="select_solve(8);"><br>
+        <td id="kaizo_ran_8">8/<input type="reset" value="Unselected"onclick="select_solve(8);"><br>
           <select id="kaizo_8"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
+            <option value="00">Unselected</option>
 
         </select>
-        <br>パラメータ<textarea id="parametor_8" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_8" rows="4" cols="8"></textarea></br>
+        <br>Parameters<textarea id="parametor_8" rows="4" cols="6"></textarea>
+            Ability<textarea id="ablity_8" rows="4" cols="8"></textarea></br>
       </td>
-        <td id="kaizo_ran_9">9枚目/<input type="reset" value="未選択"onclick="select_solve(9);"><br>
+        <td id="kaizo_ran_9">9/<input type="reset" value="Unselected"onclick="select_solve(9);"><br>
           <select id="kaizo_9"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
-        </select>
-        <br>パラメータ<textarea id="parametor_9" rows="4" cols="6"></textarea>
-            アビリティ<textarea id="ablity_9" rows="4" cols="8"></textarea></br>
-      </td>
-        <td id="kaizo_ran_10">10枚目/<input type="reset" value="未選択"onclick="select_solve(10);"><br>
-          <select id="kaizo_10"onchange="mega()">
-          <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
+            <option value="00">Unselected</option>
 
         </select>
-        <br>パラメータ<textarea id="parametor_10" rows="4" cols="6" readonly></textarea>
-            アビリティ<textarea id="ablity_10" rows="4" cols="8" readonly></textarea></br>
+        <br>Parameters<textarea id="parametor_9" rows="4" cols="6"></textarea>
+            Ability<textarea id="ablity_9" rows="4" cols="8"></textarea></br>
+      </td>
+        <td id="kaizo_ran_10">10/<input type="reset" value="Unselected"onclick="select_solve(10);"><br>
+          <select id="kaizo_10"onchange="mega()">
+            <option value="00">Unselected</option>
+        </select>
+        <br>Parameters<textarea id="parametor_10" rows="4" cols="6" readonly></textarea>
+            Ability<textarea id="ablity_10" rows="4" cols="8" readonly></textarea></br>
       </td>
       </tr>
       <tr>
         <td colspan ="1" style="vertical-align:top"><br>
-          <input type="button" value="コード出力" name="gen" onclick="generate()">
-          <input type="reset" value="リセット"onclick="reset_botton();">
+          <input type="button" value="Code Output" name="gen" onclick="generate()">
+          <input type="reset" value="Reset"onclick="reset_botton();">
           <br>
           <textarea cols="40" rows="16" id="ans" readonly></textarea>
         </td>
         <td colspan ="3 " style="vertical-align:top">
-          <br>総合ステータス</br>
+          <br>Overall Status</br>
 <div style="float:left;">
-          パラメーター</br>
+          Parameters</br>
           body<input id="body_result" style="font-size:17pt;width: 100px;" readonly></input>
           <br>
           HP<input id="hp_result" style="font-size:17pt;width: 100px" readonly></input>
@@ -1456,12 +346,12 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
           GigaFolder<input id="g_folder_result" style="font-size:17pt;width: 30px" readonly></input>
 </div>
 <div style="float:left; padding-left:20px">
-          アビリティ<br>
+          Ability<br>
           <textarea cols="40" rows="9" id="ablity_result" style="font-size:13pt;" readonly></textarea>
 </div>
         </td>
         <td colspan="1" style="vertical-align:top">
-          <br>基礎能力(現在の能力値を入れてください)</br>
+          <br>Basic stats (please enter your current stats)</br>
           HP<textarea cols="5" rows="1" id="hp_nav" style="font-size:15pt;" onchange="mega()">1000</textarea>
           <br>
           Attack<textarea cols="1" rows="1" id="attack_nav" style="font-size:15pt;" onchange="mega()">1</textarea>
@@ -1482,6 +372,16 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       //セッション開始時に読み込み
       window.onload = function() {
         mega();
+        //
+        for(let i = 1; i<members.length;i++){
+          for(let z=1;z<=10;z++){
+          var select = document.getElementById("kaizo_"+[z]);
+          var option = document.createElement("option");
+          option.text = members[i].mb+"MB/"+members[i].name;
+          option.value = parseInt(members[i].id, 16);
+          select.appendChild(option);
+        }
+        }
         //generat_list();
       };
 
@@ -1498,13 +398,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("HP_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_15";
         select.appendChild(option);
         //上書きさせない
         var select = document.getElementById("HP_list");
         var option = document.createElement("option");
-        option.text = "HPを変化させない";
+        option.text = "Does not change HP";
         option.value = "上書きさせない";
         select.appendChild(option);
         //選択時色を変更する
@@ -1558,13 +458,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("body_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_16";
         select.appendChild(option);
         //上書きさせない
         var select = document.getElementById("body_list");
         var option = document.createElement("option");
-        option.text = "bodyを上書きさせない";
+        option.text = "body not overwrite";
         option.value = "上書きさせない";
         select.appendChild(option);
         //選択時色を変更する
@@ -1618,7 +518,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("attack_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_17";
         select.appendChild(option);
         //選択時色を変更する
@@ -1672,7 +572,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("rapid_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_18";
         select.appendChild(option);
         //選択時色を変更する
@@ -1726,7 +626,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("charge_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_19";
         select.appendChild(option);
         //選択時色を変更する
@@ -1781,7 +681,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("custom_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_20";
         select.appendChild(option);
         //選択時色を変更する
@@ -1836,7 +736,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("m_folder_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_21";
         select.appendChild(option);
         //選択時色を変更する
@@ -1890,7 +790,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("g_folder_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_22";
         select.appendChild(option);
         //選択時色を変更する
@@ -1946,13 +846,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //選択解除の欄を追加
         var select = document.getElementById("b_cs_list");
         var option = document.createElement("option");
-        option.text = "ピックアップ解除";
+        option.text = "Pickup Solve";
         option.value = "pick_solve_1";
         select.appendChild(option);
         //上書きさせない
         var select = document.getElementById("b_cs_list");
         var option = document.createElement("option");
-        option.text = "Bためを上書きさせない";
+        option.text = "CS not overwrite";
         option.value = "上書きさせない";
         select.appendChild(option);
 
@@ -1978,7 +878,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //子の数だけ繰り返す
           for(let z=1;z<items.length;z++){
              if(!(items[z].value == members[i].b_cs)){
-                option.text = "ためうち"+members[i].b_cs;
+                option.text = "CS"+members[i].b_cs;
                 option.value = members[i].b_cs;
                 select.appendChild(option);
               }else if(items[z].value == members[i].b_cs){
@@ -2006,13 +906,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       //選択解除の欄を追加
       var select = document.getElementById("cs_add_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_2";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("cs_add_list");
       var option = document.createElement("option");
-      option.text = "CS追加効果を上書きさせない";
+      option.text = "CSADD not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
 
@@ -2039,7 +939,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       //子の数だけ繰り返す
         for(let z=1;z<items.length;z++){
            if(!(items[z].value == members[i].cs_add)){
-              option.text = "CSに"+members[i].cs_add;
+              option.text = "CSAdd"+members[i].cs_add;
               option.value = members[i].cs_add;
               select.appendChild(option);
             }else if(items[z].value == members[i].cs_add){
@@ -2068,13 +968,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //選択解除の欄を追加
     var select = document.getElementById("buster_add_list");
     var option = document.createElement("option");
-    option.text = "ピックアップ解除";
+    option.text = "Pickup Solve";
     option.value = "pick_solve_3";
     select.appendChild(option);
     //上書きさせない
     var select = document.getElementById("buster_add_list");
     var option = document.createElement("option");
-    option.text = "バスター追加効果を上書きさせない";
+    option.text = "Buster not overwrite";
     option.value = "上書きさせない";
     select.appendChild(option);
     //選択時色を変更する
@@ -2099,7 +999,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //子の数だけ繰り返す
       for(let z=1;z<items.length;z++){
          if(!(items[z].value == members[i].buster_add)){
-            option.text = "バスター"+members[i].buster_add;
+            option.text = "Buster"+members[i].buster_add;
             option.value = members[i].buster_add;
             select.appendChild(option);
           }else if(items[z].value == members[i].buster_add){
@@ -2127,13 +1027,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("b_left_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_4";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("b_left_list");
   var option = document.createElement("option");
-  option.text = "B←を上書きさせない";
+  option.text = "B← not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2187,13 +1087,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("b_button_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_5";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("b_button_list");
   var option = document.createElement("option");
-  option.text = "Bを上書きさせない";
+  option.text = "B not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2247,13 +1147,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("move_panel_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_6";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("move_panel_list");
   var option = document.createElement("option");
-  option.text = "移動でを上書きさせない";
+  option.text = "PanelBug not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2278,7 +1178,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //子の数だけ繰り返す
     for(let z=1;z<items.length;z++){
        if(!(items[z].value == members[i].move_panel)){
-          option.text = "移動で"+members[i].move_panel;
+          option.text = "PanelBug"+members[i].move_panel;
           option.value = members[i].move_panel;
           select.appendChild(option);
         }else if(items[z].value == members[i].move_panel){
@@ -2298,7 +1198,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     document.getElementById("move_panel_list_result").value = select.length-2
   ///
 
-  //チップリカバリー欄
+  //ChipRecovery欄
   //消去
   for(let i = 1; i<members.length;i++){
   var select = document.getElementById("chip_recovery_list");
@@ -2307,19 +1207,19 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("chip_recovery_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_7";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("chip_recovery_list");
   var option = document.createElement("option");
-  option.text = "チップリカバリを上書きさせない";
+  option.text = "ChipRecovery not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
   if(pick_up_box[6]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
-  //チップリカバリーリスト生成生成
+  //ChipRecoveryリスト生成生成
   for(let i = 1; i<members.length;i++){
   if(members[i].chip_recovery==undefined){
   }else{
@@ -2337,7 +1237,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //子の数だけ繰り返す
     for(let z=1;z<items.length;z++){
        if(!(items[z].value == members[i].chip_recovery)){
-          option.text = "チップリカバリー"+members[i].chip_recovery;
+          option.text = "ChipRecovery"+members[i].chip_recovery;
           option.value = members[i].chip_recovery;
           select.appendChild(option);
         }else if(items[z].value == members[i].chip_recovery){
@@ -2366,19 +1266,19 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("baster_blank_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_8";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("baster_blank_list");
   var option = document.createElement("option");
-  option.text = "からうちを上書きさせない";
+  option.text = "Buster Blank not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
   if(pick_up_box[7]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
-  //からうちリスト生成生成
+  //Buster Blankリスト生成生成
   for(let i = 1; i<members.length;i++){
   if(members[i].baster_blank==undefined){
   }else{
@@ -2425,13 +1325,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("super_armor_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_9";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("super_armor_list");
   var option = document.createElement("option");
-  option.text = "アーマーを上書きさせない";
+  option.text = "SuperArmor not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2485,13 +1385,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("under_shirt_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_10";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("under_shirt_list");
   var option = document.createElement("option");
-  option.text = "シャツを上書きさせない";
+  option.text = "UnderShirt not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2544,13 +1444,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("status_guard_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_11";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("status_guard_list");
   var option = document.createElement("option");
-  option.text = "ステガを上書きさせない";
+  option.text = "StatusGuard not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2603,13 +1503,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("float_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_12";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("float_list");
   var option = document.createElement("option");
-  option.text = "フロートを上書きさせない";
+  option.text = "Float not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2663,13 +1563,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("air_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_13";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("air_list");
   var option = document.createElement("option");
-  option.text = "エアを上書きさせない";
+  option.text = "AirShoes not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2714,7 +1614,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     document.getElementById("air_list_result").value = select.length-2
   ///
 
-  //ココロバグ欄
+  //Emotionバグ欄
   //消去
   for(let i = 1; i<members.length;i++){
   var select = document.getElementById("kokoro_bug_list");
@@ -2723,19 +1623,19 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("kokoro_bug_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_14";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("kokoro_bug_list");
   var option = document.createElement("option");
-  option.text = "ココロを上書きさせない";
+  option.text = "Emotion not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
   if(pick_up_box[13]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
-  //ココロバグ生成生成
+  //Emotionバグ生成生成
   for(let i = 1; i<members.length;i++){
   if(members[i].kokoro_bug==undefined){
   }else{
@@ -2783,13 +1683,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //選択解除の欄を追加
   var select = document.getElementById("f_barier_list");
   var option = document.createElement("option");
-  option.text = "ピックアップ解除";
+  option.text = "Pickup Solve";
   option.value = "pick_solve_23";
   select.appendChild(option);
   //上書きさせない
   var select = document.getElementById("f_barier_list");
   var option = document.createElement("option");
-  option.text = "バリアを上書きさせない";
+  option.text = "バリア not overwrite";
   option.value = "上書きさせない";
   select.appendChild(option);
   //選択時色を変更する
@@ -2845,13 +1745,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //選択解除の欄を追加
     var select = document.getElementById("gage_list");
     var option = document.createElement("option");
-    option.text = "ピックアップ解除";
+    option.text = "Pickup Solve";
     option.value = "pick_solve_24";
     select.appendChild(option);
     //上書きさせない
     var select = document.getElementById("gage_list");
     var option = document.createElement("option");
-    option.text = "ゲージを上書きさせない";
+    option.text = "Gauge not overwrite";
     option.value = "上書きさせない";
     select.appendChild(option);
     //選択時色を変更する
@@ -2896,7 +1796,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       document.getElementById("gage_list_result").value = select.length-2
     ///
 
-    //移動バグ欄
+    //MovementBug欄
     //消去
     for(let i = 1; i<members.length;i++){
     var select = document.getElementById("move_bug_list");
@@ -2905,19 +1805,19 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //選択解除の欄を追加
     var select = document.getElementById("move_bug_list");
     var option = document.createElement("option");
-    option.text = "ピックアップ解除";
+    option.text = "Pickup Solve";
     option.value = "pick_solve_25";
     select.appendChild(option);
     //上書きさせない
     var select = document.getElementById("move_bug_list");
     var option = document.createElement("option");
-    option.text = "移動バグを上書きさせない";
+    option.text = "MovementBug not overwrite";
     option.value = "上書きさせない";
     select.appendChild(option);
     //選択時色を変更する
     if(pick_up_box[24]==""){select.style.background = '#ffff';}else{select.style.background = '#f5ffcc';}
 
-    //移動バグ生成生成
+    //MovementBug生成生成
     for(let i = 1; i<members.length;i++){
     if(members[i].move_bug==undefined){
     }else{
@@ -2965,13 +1865,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //選択解除の欄を追加
     var select = document.getElementById("damage_bug_list");
     var option = document.createElement("option");
-    option.text = "ピックアップ解除";
+    option.text = "Pickup Solve";
     option.value = "pick_solve_26";
     select.appendChild(option);
     //上書きさせない
     var select = document.getElementById("damage_bug_list");
     var option = document.createElement("option");
-    option.text = "ダメージバグを上書きさせない";
+    option.text = "DamageBug not overwrite";
     option.value = "上書きさせない";
     select.appendChild(option);
     //選択時色を変更する
@@ -3025,13 +1925,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //選択解除の欄を追加
     var select = document.getElementById("battle_hp_bug_list");
     var option = document.createElement("option");
-    option.text = "ピックアップ解除";
+    option.text = "Pickup Solve";
     option.value = "pick_solve_27";
     select.appendChild(option);
     //上書きさせない
     var select = document.getElementById("battle_hp_bug_list");
     var option = document.createElement("option");
-    option.text = "ﾊﾞﾄﾙHPﾊﾞｸﾞを上書きさせない";
+    option.text = "BattleHPBugﾞ not overwrite";
     option.value = "上書きさせない";
     select.appendChild(option);
     //選択時色を変更する
@@ -3085,13 +1985,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //選択解除の欄を追加
     var select = document.getElementById("custom_hp_bug_list");
     var option = document.createElement("option");
-    option.text = "ピックアップ解除";
+    option.text = "Pickup Solve";
     option.value = "pick_solve_28";
     select.appendChild(option);
     //上書きさせない
     var select = document.getElementById("custom_hp_bug_list");
     var option = document.createElement("option");
-    option.text = "ｶｽﾀﾑHPﾊﾞｸﾞを上書きさせない";
+    option.text = "CustomHPBug not overwrite";
     option.value = "上書きさせない";
     select.appendChild(option);
     //選択時色を変更する
@@ -3145,13 +2045,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //選択解除の欄を追加
     var select = document.getElementById("custom_damage_list");
     var option = document.createElement("option");
-    option.text = "ピックアップ解除";
+    option.text = "Pickup Solve";
     option.value = "pick_solve_29";
     select.appendChild(option);
     //上書きさせない
     var select = document.getElementById("custom_damage_list");
     var option = document.createElement("option");
-    option.text = "ｶｽﾀﾑﾀﾞﾒｰｼﾞを上書きさせない";
+    option.text = "CustomDamage not overwrite";
     option.value = "上書きさせない";
     select.appendChild(option);
     //選択時色を変更する
@@ -3205,13 +2105,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //選択解除の欄を追加
     var select = document.getElementById("status_bug_list");
     var option = document.createElement("option");
-    option.text = "ピックアップ解除";
+    option.text = "Pickup Solve";
     option.value = "pick_solve_30";
     select.appendChild(option);
     //上書きさせない
     var select = document.getElementById("status_bug_list");
     var option = document.createElement("option");
-    option.text = "ステータスを上書きさせない";
+    option.text = "ステータス not overwrite";
     option.value = "上書きさせない";
     select.appendChild(option);
     //選択時色を変更する
@@ -3268,7 +2168,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
 
       }
 
-      //未選択を選択したとき、選択を解除
+      //Unselectedを選択したとき、選択を解除
       function select_solve(select_number){
         document.getElementById('kaizo_'+[select_number]).value = "00";
         mega();
@@ -3342,118 +2242,125 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
 
       //改造カードのデータベース
       let members =[
-        {name:'noneカード',id:'',flag:"",mb:0,} ,
-        {name:'メットール',id:'01',flag:"02001270:00"+"\n"+"0200612C:8D",mb:7,hp:"+40",b_left:"メットG",float:"off"} ,
-        {name:'ボルケルギア',id:'02',flag:"02001271:00"+"\n"+"0200612D:8D",mb:12,hp:"+60",body:"Fbody",attack:"+1",baster_blank:"off"} ,
-        {name:'ゴースラー',id:'03',flag:"02001272:00"+"\n"+"0200612E:8D",mb:15,hp:"-80",float:"on",b_cs:"インビジ"} ,
-        {name:'スウォーディン',id:'04',flag:"02001273:00"+"\n"+"0200612F:8D",mb:10,attack:"-1",rapid:"-1",charge:"-1",b_cs:"ロングS"} ,
-        {name:'キオルシン',id:'05',flag:"02001274:00"+"\n"+"02006130:8D",mb:18,float:"on",air:"on",move_bug:"on"} ,
-        {name:'アーバルボーイ',id:'06',flag:"02001275:00"+"\n"+"02006131:8D",mb:10,hp:"+100",body:"Abody",rapid:"+5",tango:"off",mode:"fish"} ,
-        {name:'チュートン',id:'07',flag:"02001276:00"+"\n"+"02006132:8D",mb:10,hp:"-20%",gage:"Quick"} ,
-        {name:'ビリー',id:'08',flag:"02001277:00"+"\n"+"02006133:8D",mb:5,body:"Ebody",under_shirt:"off",b_cs:"サンダーB"} ,
-        {name:'キャンデービル',id:'09',flag:"02001278:00"+"\n"+"02006134:8D",mb:9,body:"Fbody",b_left:"off",self_recovery:"on"} ,
-        {name:'ダイジャン',id:'0A',flag:"02001279:00"+"\n"+"02006135:8D",mb:12,hp:"+130",body:"Wbody",rash:"off",beat:"off",tango:"off"} ,
-        {name:'チャマッシュ',id:'0B',flag:"0200127A:00"+"\n"+"02006136:8D",mb:15,body:"Wbody",cs_add:"混乱",move_bug:"on"} ,
-        {name:'ガルー',id:'0C',flag:"0200127B:00"+"\n"+"02006137:8D",mb:6,body:"Fbody",rapid:"-1",charge:"-1",b_cs:"ヒートS"} ,
-        {name:'バジリコ',id:'0D',flag:"0200127C:00"+"\n"+"02006138:8D",mb:16,body:"Wbody",b_cs:"シールド",battle_hp_bug:"Lv4"} ,
-        {name:'ヨーヨット',id:'0E',flag:"0200127D:00"+"\n"+"02006139:8D",mb:17,hp:"+30",b_left:"off",b_cs:"ヨーヨー"} ,
-        {name:'カーズ',id:'0F',flag:"0200127E:00"+"\n"+"0200613A:8D",mb:18,hp:"-50",b_left:"カースS"} ,
-        {name:'ヌール',id:'10',flag:"0200127F:00"+"\n"+"0200613B:8D",mb:13,hp:"+150",body:"Abody",super_armor:"off",b_cs:"チャージS",self_recovery:"on"} ,
-        {name:'フデロー',id:'11',flag:"02001280:00"+"\n"+"0200613C:8D",mb:19,hp:"-30%",buster_add:"毒沼",move_panel:"ホーリー(12%)"} ,
-        {name:'ドリームビット',id:'12',flag:"02001281:00"+"\n"+"0200613D:8D",mb:20,custom:"-1",f_barier:"バリア100",custom_damage:"200"} ,
-        {name:'スーンハーク',id:'13',flag:"02001282:00"+"\n"+"0200613E:8D",mb:17,hp:"+120",b_cs:"スイコミ",gage:"Heavy"} ,
-        {name:'キラーズアイ',id:'14',flag:"02001283:00"+"\n"+"0200613F:8D",mb:21,body:"Ebody",cs_add:"マヒ",battle_hp_bug:"Lv4"} ,
-        {name:'クエイカー',id:'15',flag:"02001284:00"+"\n"+"02006140:8D",mb:15,hp:"+150",chip_recovery:"off",custom_hp_bug:"off"} ,
-        {name:'ラウンダ',id:'16',flag:"02001285:00"+"\n"+"02006141:8D",mb:18,b_button:"バスター",b_cs:"ブーメラン",b_left:"シールド",custom_hp_bug:"Lv1"} ,
-        {name:'ゲイラーク',id:'17',flag:"02001286:00"+"\n"+"02006142:8D",mb:17,hp:"+100",body:"Abody",b_cs:"Wショット",damage_bug:"盲目"} ,
-        {name:'マルモコ',id:'18',flag:"02001287:00"+"\n"+"02006143:8D",mb:5,cs_add:"off",f_barier:"バリア"} ,
-        {name:'プルメロ',id:'19',flag:"02001288:00"+"\n"+"02006144:8D",mb:15,hp:"+90",super_armor:"off",move_bug:"off"} ,
-        {name:'ザエモン',id:'1A',flag:"02001289:00"+"\n"+"02006145:8D",mb:20,hp:"+60",b_cs:"サムライS",baster_blank:"からうち(25%),CS(12%)"} ,
-        {name:'キャタック',id:'1B',flag:"0200128A:00"+"\n"+"02006146:8D",mb:20,hp:"+100",super_armor:"on",air:"off"} ,
-        {name:'チャンプル',id:'1C',flag:"0200128B:00"+"\n"+"02006147:8D",mb:15,hp:"+100",body:"Fbody",rapid:"+1",charge:"+1",cs_add:"off"} ,
-        {name:'ウズリム',id:'1D',flag:"0200128C:00"+"\n"+"02006148:8D",mb:20,hp:"+80",body:"Abody",buster_add:"みず",move_panel:"水(25%)"} ,
-        {name:'サボテコロン',id:'1E',flag:"0200128D:00"+"\n"+"02006149:8D",mb:16,hp:"+60",body:"Wbody",super_armor:"on",float:"off"} ,
-        {name:'ロール',id:'1F',flag:"0200128E:00"+"\n"+"0200614A:8D",mb:40,hp:"-5%",cs_add:"チップ破壊",f_barier:"バリア",battle_hp_bug:"off"} ,
-        {name:'ガッツマン',id:'20',flag:"0200128F:00"+"\n"+"0200614B:8D",mb:35,hp:"+300",under_shirt:"on",f_barier:"バリアoff"} ,
-        {name:'ファイアマン',id:'21',flag:"02001290:00"+"\n"+"0200614C:8D",mb:43,hp:"+30%",body:"Fbody",buster_add:"off",b_cs:"ファイアアーム"} ,
-        {name:'フォルテ',id:'22',flag:"02001291:00"+"\n"+"0200614D:8D",mb:45,hp:"+200",attack:"+5",rapid:"+5",charge:"+5",soultime:"-2"} ,
-        {name:'クイックマン',id:'23',flag:"02001292:00"+"\n"+"0200614E:8D",mb:38,hp:"-10%",rapid:"+5",charge:"+5",gage:"Quick"} ,
-        {name:'スネークマン',id:'24',flag:"02001293:00"+"\n"+"0200614F:8D",mb:40,hp:"+25%",body:"Wbody",mode:"ミリオネア"} ,
-        {name:'バブルマン',id:'25',flag:"02001294:00"+"\n"+"02006150:8D",mb:37,hp:"-50%",body:"Abody",f_barier:"バブルラップ",mode:"シノビダッシュ"} ,
-        {name:'フレイムマン',id:'26',flag:"02001295:00"+"\n"+"02006151:8D",mb:45,hp:"+10%",body:"Fbody",chip_recovery:"40"} ,
-        {name:'メタルマン',id:'27',flag:"02001296:00"+"\n"+"02006152:8D",mb:46,hp:"300",attack:"×2",custom:"-2",super_armor:"on",cs_add:"ブレイク"} ,
-        {name:'シェードマン',id:'28',flag:"02001297:00"+"\n"+"02006153:8D",mb:43,hp:"-70",soultime:"-1",float:"on",air:"on",b_cs:"パルスB"} ,
-        {name:'スパークマン',id:'29',flag:"02001298:00"+"\n"+"02006154:8D",mb:43,hp:"+140",body:"Ebody",cs_add:"盲目",gage:"Normal"} ,
-        {name:'ジャンクマン',id:'2A',flag:"02001299:00"+"\n"+"02006155:8D",mb:40,hp:"+150",b_cs:"ポルターG",baster_blank:"からうち(25%),CS(25%)"} ,
-        {name:'ジャイロマン',id:'2B',flag:"0200129A:00"+"\n"+"02006156:8D",mb:45,hp:"-5%",float:"on",air:"on",beat:"on"} ,
-        {name:'メディ',id:'2C',flag:"0200129B:00"+"\n"+"02006157:8D",mb:45,chip_recovery:"50",tango:"on",damage_bug:"off",custom_hp_bug:"Lv1"} ,
-        {name:'コスモマン',id:'2D',flag:"0200129C:00"+"\n"+"02006158:8D",mb:44,hp:"-20%",m_folder:"+1",g_folder:"+1"} ,
-        {name:'炎山のカスタマイズ',id:'2E',flag:"0200129D:00"+"\n"+"02006159:8D",mb:35,custom:"+1",b_button:"ソード",b_cs:"ワイドS"} ,
-        {name:'ヒノケンのカスタマイズ',id:'2F',flag:"0200129E:00"+"\n"+"0200615A:8D",mb:35,hp:"+300",body:"Fbody"} ,
-        {name:'エレキはくしゃくのカスタマイズ',id:'30',flag:"0200129F:00"+"\n"+"0200615B:8D",mb:35,hp:"+300",body:"Ebody"} ,
-        {name:'アネッタのカスタマイズ',id:'31',flag:"020012A0:00"+"\n"+"0200615C:8D",mb:47,hp:"+30%",body:"Wbody"} ,
-        {name:'コオリスキーのカスタマイズ',id:'32',flag:"020012A1:00"+"\n"+"0200615D:8D",mb:47,hp:"+30%",body:"Abody"} ,
-        {name:'カブタンク',id:'33',flag:"020012A2:00"+"\n"+"0200615E:8D",mb:7,hp:"+80",b_cs:"ミニボム",custom_damage:"50"} ,
-        {name:'ポワルド',id:'34',flag:"020012A3:00"+"\n"+"0200615F:8D",mb:10,hp:"+50",cs_add:"あな",kokoro_bug:"on"} ,
-        {name:'フロシェル',id:'35',flag:"020012A4:00"+"\n"+"02006160:8D",mb:16,hp:"+140",b_button:"ミニボム",f_barier:"バリアoff"} ,
-        {name:'ハルドボルズ',id:'36',flag:"020012A5:00"+"\n"+"02006161:8D",mb:10,b_cs:"ボウガン",kokoro_bug:"off"} ,
-        {name:'クモンペ',id:'37',flag:"020012A6:00"+"\n"+"02006162:8D",mb:10,body:"Abody",super_armor:"off",custom_damage:"off",custom_hp_bug:"off"} ,
-        {name:'ガイアント',id:'38',flag:"020012A7:00"+"\n"+"02006163:8D",mb:15,hp:"+100",float:"off",air:"off",buster_add:"ヒビ"} ,
-        {name:'ミノゴロモン',id:'39',flag:"020012A8:00"+"\n"+"02006164:8D",mb:20,body:"Wbody",chip_recovery:"30",move_panel:"草むら(12%)"} ,
-        {name:'ファンカー',id:'3A',flag:"020012A9:00"+"\n"+"02006165:8D",mb:15,hp:"-50",b_cs:"トルネード"} ,
-        {name:'チクリート',id:'3B',flag:"020012AA:00"+"\n"+"02006166:8D",mb:18,hp:"-80",chip_recovery:"20",battle_hp_bug:"off"} ,
-        {name:'ラッシュ',id:'3C',flag:"020012AB:00"+"\n"+"02006167:8D",mb:11,rash:"on",beat:"off",tango:"off"} ,
-        {name:'ラビリー',id:'3D',flag:"020012AC:00"+"\n"+"02006168:8D",mb:8,body:"Ebody",super_armor:"off",status_guard:"off",b_cs:"ラビリング"} ,
-        {name:'フレイボー',id:'3E',flag:"020012AD:00"+"\n"+"02006169:8D",mb:20,hp:"+160",body:"Fbody",b_button:"クラック",move_panel:"あな(50%)"} ,
-        {name:'エビロン',id:'3F',flag:"020012AE:00"+"\n"+"0200616A:8D",mb:10,body:"Abody",attack:"-1",b_cs:"バブルS"} ,
-        {name:'ＵＦＯサニー',id:'40',flag:"020012AF:00"+"\n"+"0200616B:8D",mb:20,cs_add:"チップ破壊",chip_recovery:"off",move_bug:"off"} ,
-        {name:'ゲニン',id:'41',flag:"020012B0:00"+"\n"+"0200616C:8D",mb:18,hp:"-10%",b_cs:"クナイ",mode:"シノビダッシュ"} ,
-        {name:'マグマドラゴン',id:'42',flag:"020012B1:00"+"\n"+"0200616D:8D",mb:20,hp:"+150",body:"Fbody",air:"on",f_barier:"バリアoff",move_panel:"あな(25%)"} ,
-        {name:'プロテクト',id:'43',flag:"020012B2:00"+"\n"+"0200616E:8D",mb:23,g_folder:"+1",under_shirt:"off",b_cs:"チャージS",b_left:"off"} ,
-        {name:'ドゴーン',id:'44',flag:"020012B3:00"+"\n"+"0200616F:8D",mb:20,body:"Fbody",attack:"+1",rapid:"-3",cs_add:"あな"} ,
-        {name:'コリペン',id:'45',flag:"020012B4:00"+"\n"+"02006170:8D",mb:18,hp:"+150",body:"Abody",move_panel:"こおり(38%)"} ,
-        {name:'スパークビー',id:'46',flag:"020012B5:00"+"\n"+"02006171:8D",mb:20,body:"Ebody",b_cs:"チャージS",cs_add:"盲目",f_barier:"バリアoff"} ,
-        {name:'プロトバグ',id:'47',flag:"020012B6:00"+"\n"+"02006172:8D",mb:16,chip_recovery:"60",battle_hp_bug:"Lv2"} ,
-        {name:'Ｎ．Ｏ',id:'48',flag:"020012B7:00"+"\n"+"02006173:8D",mb:13,hp:"+100",self_recovery:"on",battle_hp_bug:"off",status_bug:"Lv1"} ,
-        {name:'パラボール',id:'49',flag:"020012B8:00"+"\n"+"02006174:8D",mb:14,body:"Ebody",float:"on",buster_add:"off",mode:"バッテリー"} ,
-        {name:'ダーマ',id:'4A',flag:"020012B9:00"+"\n"+"02006175:8D",mb:22,hp:"-15%",under_shirt:"on",b_cs:"Aホッケー"} ,
-        {name:'ウェザース',id:'4B',flag:"020012BA:00"+"\n"+"02006176:8D",mb:19,buster_add:"クサムラ",cs_add:"マグマ",move_panel:"こおり(50%)"} ,
-        {name:'エレンプラ',id:'4C',flag:"020012BB:00"+"\n"+"02006177:8D",mb:20,buster_add:"off",cs_add:"毒沼"} ,
-        {name:'サーキラー',id:'4D',flag:"020012BC:00"+"\n"+"02006178:8D",mb:18,b_cs:"サークルG",move_bug:"on"} ,
-        {name:'ドリクロール',id:'4E',flag:"020012BD:00"+"\n"+"02006179:8D",mb:17,rapid:"+3",charge:"+3",b_cs:"ドリルA",damage_bug:"混乱"} ,
-        {name:'パルスバット',id:'4F',flag:"020012BE:00"+"\n"+"0200617A:8D",mb:25,hp:"-5%",air:"on",b_cs:"パルスB"} ,
-        {name:'アップルサム',id:'50',flag:"020012BF:00"+"\n"+"0200617B:8D",mb:24,body:"Wbody",status_guard:"on",baster_blank:"からうち(6%)CS(12%)",kokoro_bug:"on"} ,
-        {name:'ウッドマン',id:'51',flag:"020012C0:00"+"\n"+"0200617C:8D",mb:45,hp:"+25%",body:"Wbody",status_guard:"on",buster_add:"off",b_cs:"チャージS"} ,
-        {name:'エレキマン',id:'52',flag:"020012C1:00"+"\n"+"0200617D:8D",mb:35,hp:"+200",body:"Ebody",b_left:"off",self_recovery:"on"} ,
-        {name:'ブルース',id:'53',flag:"020012C2:00"+"\n"+"0200617E:8D",mb:45,hp:"+100",b_cs:"ワイドB",b_left:"シールド"} ,
-        {name:'ボンバーマン',id:'54',flag:"020012C3:00"+"\n"+"0200617F:8D",mb:43,hp:"+150",body:"Fbody",custom:"-1",b_cs:"ブラックボム"} ,
-        {name:'マジックマン',id:'55',flag:"020012C4:00"+"\n"+"02006180:8D",mb:44,hp:"-200",custom:"+1",soultime:"+2"} ,
-        {name:'ヒートマン',id:'56',flag:"020012C5:00"+"\n"+"02006181:8D",mb:45,hp:"+100",body:"Fbody",attack:"+2",b_cs:"チャージS",cs_add:"マグマ"} ,
-        {name:'ゲートマン',id:'57',flag:"020012C6:00"+"\n"+"02006182:8D",mb:46,hp:"+150",custom:"+2",gage:"Normal"} ,
-        {name:'フラッシュマン',id:'58',flag:"020012C7:00"+"\n"+"02006183:8D",mb:46,hp:"+20%",body:"Ebody",cs_add:"マヒ",b_left:"off"} ,
-        {name:'ドリルマン',id:'59',flag:"020012C8:00"+"\n"+"02006184:8D",mb:47,hp:"+200",air:"on",b_cs:"ドリルA",move_panel:"あな(25%)"} ,
-        {name:'キングマン',id:'5A',flag:"020012C9:00"+"\n"+"02006185:8D",mb:45,hp:"-150",custom:"+2",m_folder:"+1"} ,
-        {name:'アクアマン',id:'5B',flag:"020012CA:00"+"\n"+"02006186:8D",mb:40,hp:"+170",body:"Abody",under_shirt:"off",b_cs:"オーシャンS"} ,
-        {name:'ウインドマン',id:'5C',flag:"020012CB:00"+"\n"+"02006187:8D",mb:46,hp:"+120",attack:"-2",air:"on",cs_add:"バリアけし"} ,
-        {name:'レーザーマン',id:'5D',flag:"020012CC:00"+"\n"+"02006188:8D",mb:47,hp:"+250",soultime:"-1",cs_add:"ナビカスオフ"} ,
-        {name:'カーネル',id:'5E',flag:"020012CD:00"+"\n"+"02006189:8D",mb:42,hp:"+280",b_cs:"ｶｰﾈﾙキャノン"} ,
-        {name:'トマホークマン',id:'5F',flag:"020012CE:00"+"\n"+"0200618A:8D",mb:40,hp:"+200",body:"Wbody",attack:"+3",m_folder:"-1",super_armor:"on"} ,
-        {name:'熱斗のカスタマイズ',id:'60',flag:"020012CF:00"+"\n"+"0200618B:8D",mb:25,body:"Nbody",m_folder:"+2",b_button:"バスター",b_cs:"チャージS"} ,
-        {name:'デカオのカスタマイズ',id:'61',flag:"020012D0:00"+"\n"+"0200618C:8D",mb:40,hp:"+150",attack:"+5"} ,
-        {name:'まどいのカスタマイズ',id:'62',flag:"020012D1:00"+"\n"+"0200618D:8D",mb:5,kokoro_bug:"on",status_bug:"Lv2"} ,
-        {name:'マハ・ジャラマのバグしゅうせい',id:'63',flag:"020012D2:00"+"\n"+"0200618E:8D",mb:17,move_bug:"off",move_panel:"off"} ,
-        {name:'虎吉の戦じゅつ',id:'64',flag:"020012D3:00"+"\n"+"0200618F:8D",mb:64,rash:"on",beat:"on",tango:"on"} ,
-        {name:'ドリームウイルス',id:'65',flag:"020012D4:00"+"\n"+"02006190:8D",mb:55,hp:"+10%",f_barier:"ドリームオーラ",custom_damage:"100"} ,
-        {name:'ゴスペル',id:'66',flag:"020012D5:00"+"\n"+"02006191:8D",mb:60,hp:"+600",kokoro_bug:"on",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2",status_bug:"Lv2"} ,
-        {name:'セレナード',id:'67',flag:"020012D6:00"+"\n"+"02006192:8D",mb:50,hp:"-20%",b_cs:"リフレクト",chip_recovery:"100"} ,
-        {name:'プロト',id:'68',flag:"020012D7:00"+"\n"+"02006193:8D",mb:55,hp:"+100",custom:"-3",g_folder:"+2"} ,
-        {name:'フォルテＧＳ',id:'69',flag:"020012D8:00"+"\n"+"02006194:8D",mb:59,hp:"+300",cd_add:"HPバグ",status_bug:"Lv2"} ,
-        {name:'デューオ',id:'6A',flag:"020012D9:00"+"\n"+"02006195:8D",mb:70,hp:"+40%",m_folder:"+1",g_folder:"+1"} ,
-        {name:'フォルテＸＸ',id:'6B',flag:"020012DA:00"+"\n"+"02006196:8D",mb:70,hp:"+400",float:"on",air:"on",f_barier:"バリア200",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
-        {name:'ネビュラグレイ',id:'6C',flag:"020012DB:00"+"\n"+"02006197:8D",mb:70,hp:"-30%",b_cs:"ダークソード",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
-        {name:'パパのしゅうせいプログラム',id:'6D',flag:"020012DC:00"+"\n"+"02006198:8D",mb:50,bug_stoper:"on"} ,
-        {name:'光彩斗',id:'6E',flag:"020012DD:00"+"\n"+"02006199:8D",mb:80,hp:"-50%",attack:"×2",custom:"+3",m_folder:"+2",g_folder:"+1"} ,
-        {name:'フォルテクロスロックマン',id:'6F',flag:"020012DE:00"+"\n"+"0200619A:8D",mb:70,hp:"+20%",body:"Nbody",m_folder:"-2",float:"on",b_button:"トリプルバスター",b_cs:"ヘルズローリング"} ,
+        {name:'none',id:'',flag:"",mb:0,} ,
+         {name:'Canodumb',id:'01',flag:"020006C0:00"+"\n"+"02005048:43",mb:10,hp:"-40",attack:"+1",b_cs:"M-Cannon"} ,
+         {name:'Mollusk/Ammonicule',id:'02',flag:"020006C1:00"+"\n"+"02005049:43",mb:16,hp:"+80",body:"Abody",attack:"-1",f_barier:"BblWrap"} ,
+         {name:'ColdBear',id:'03',flag:"020006C2:00"+"\n"+"0200504A:43",mb:18,hp:"+140",body:"Abody",b_cs:"IceCube",move_panel:"IcePanel(25%)"} ,
+         {name:'Miney',id:'04',flag:"020006C3:00"+"\n"+"0200504B:43",mb:12,attack:"+3",float:"off",air:"off"} ,
+         {name:'Megalian/Heady',id:'05',flag:"020006C4:00"+"\n"+"0200504C:43",mb:20,hp:"-80",charge:"+4",air:"on",f_barier:"Barr100"} ,
+         {name:'MetFire',id:'06',flag:"020006C5:00"+"\n"+"0200504D:43",mb:20,body:"Fbody",b_button:"Meteor1",move_bug:"on"} ,
+         {name:'KillPlant',id:'07',flag:"020006C6:00"+"\n"+"0200504E:43",mb:19,body:"Wbody",air:"off",b_cs:"GrasSeed"} ,
+         {name:'Shadow',id:'08',flag:"020006C7:00"+"\n"+"0200504F:43",mb:6,b_cs:"Invis",b_button:"Sword",status_guard:"off"} ,
+         {name:'Beetle',id:'09',flag:"020006C8:00"+"\n"+"02005050:43",mb:11,hp:"+100",b_button:"MiniBomb",b_cs:"Default CS"} ,
+         {name:'Heavy',id:'0A',flag:"020006C9:00"+"\n"+"02005051:43",mb:15,attack:"+1",super_armor:"on",buster_add:"off"} ,
+         {name:'Viney',id:'0B',flag:"020006CA:00"+"\n"+"02005052:43",mb:24,hp:"-20%",body:"Wbody",status_guard:"on",b_left:"off"} ,
+         {name:'Slimey',id:'0C',flag:"020006CB:00"+"\n"+"02005053:43",mb:12,hp:"+30",body:"Abody",b_cs:"PanelGrab",gage:"Normal"} ,
+         {name:'Volcano',id:'0D',flag:"020006CC:00"+"\n"+"02005054:43",mb:10,body:"Fbody",charge:"+4",b_cs:"BlackBomb",kokoro_bug:"on"} ,
+         {name:'Numbers',id:'0E',flag:"020006CD:00"+"\n"+"02005055:43",mb:17,custom:"+1",m_folder:"+1",g_folder:"+1",b_cs:"Default CS",custom_hp_bug:"Lv2"} ,
+         {name:'MagTect',id:'0F',flag:"020006CE:00"+"\n"+"02005056:43",mb:15,hp:"-5%",body:"Ebody",float:"on",cs_add:"Pull 1(50%)"} ,
+         {name:'Spidey',id:'10',flag:"020006CF:00"+"\n"+"02005057:43",mb:8,hp:"+60",body:"Wbody",move_panel:"GrassPanel(25%)"} ,
+         {name:'Bomboy',id:'11',flag:"020006D0:00"+"\n"+"02005058:43",mb:14,buster_add:"Push 1(12.5%)",cs_add:"off",move_bug:"off",move_panel:"off"} ,
+         {name:'WuNote',id:'12',flag:"020006D1:00"+"\n"+"02005059:43",mb:13,hp:"+60",body:"Wbody",buster_add:"GrassPanel(50%)",damage_bug:"off"} ,
+         {name:'Flashy',id:'13',flag:"020006D2:00"+"\n"+"0200505A:43",mb:11,hp:"+5%",body:"Ebody",attack:"-1",custom_damage:"off"} ,
+         {name:'EleOgre',id:'14',flag:"020006D3:00"+"\n"+"0200505B:43",mb:16,hp:"+50",body:"Ebody",kokoro_bug:"on",status_bug:"off"} ,
+         {name:'OldStove',id:'15',flag:"020006D4:00"+"\n"+"0200505C:43",mb:12,hp:"+130",body:"Fbody",b_cs:"FireBrn1",battle_hp_bug:"Lv1"} ,
+         {name:'Puffy （BN6）',id:'16',flag:"020006D5:00"+"\n"+"0200505D:43",mb:11,body:"Abody",rapid:"+4",baster_blank:"off"} ,
+         {name:'Starfish',id:'17',flag:"020006D6:00"+"\n"+"0200505E:43",mb:15,body:"Abody",cs_add:"Bubbling(50%)"} ,
+         {name:'BigHat',id:'18',flag:"020006D7:00"+"\n"+"0200505F:43",mb:8,super_armor:"off",b_cs:"FlshBom1"} ,
+         {name:'ScareCrow',id:'19',flag:"020006D8:00"+"\n"+"02005060:43",mb:14,body:"Ebody",b_cs:"DolThnd1",chip_recovery:"30",baster_blank:"Blank(25%),CS(12%)"} ,
+         {name:'FighterPlane',id:'1A',flag:"020006D9:00"+"\n"+"02005061:43",mb:20,hp:"-10%",float:"on",air:"on"} ,
+         {name:'Cragger',id:'1B',flag:"020006DA:00"+"\n"+"02005062:43",mb:19,hp:"+200",under_shirt:"on",damage_bug:"HP Bug"} ,
+         {name:'Armadillo',id:'1C',flag:"020006DB:00"+"\n"+"02005063:43",mb:12,hp:"+5%",charge:"-3",cs_add:"BreakBuster"} ,
+         {name:'Kettle',id:'1D',flag:"020006DC:00"+"\n"+"02005064:43",mb:15,b_cs:"Spreadr1",b_left:"Shield",chip_recovery:"20",custom_damage:"40",battle_hp_bug:"off"} ,
+         {name:'EarthDragon',id:'1E',flag:"020006DD:00"+"\n"+"02005065:43",mb:20,hp:"+180",m_folder:"+1",b_cs:"Default CS",status_bug:"Lv1"} ,
+         {name:'NumberMan',id:'1F',flag:"020006DE:00"+"\n"+"02005066:43",mb:35,hp:"-20%",custom:"+3",m_folder:"+1",g_folder:"+1"} ,
+         {name:'IceMan',id:'20',flag:"020006DF:00"+"\n"+"02005067:43",mb:25,hp:"+80",body:"Abody",super_armor:"off",b_cs:"IceSeed",custom_hp_bug:"off"} ,
+         {name:'SkullMan',id:'21',flag:"020006E0:00"+"\n"+"02005068:43",mb:30,hp:"+100",cs_add:"HP Bug",battle_hp_bug:"Lv1",status_bug:"Lv1"} ,
+         {name:'ShadowMan',id:'22',flag:"020006E1:00"+"\n"+"02005069:43",mb:38,hp:"-50",float:"on",b_cs:"Longswrd",b_left:"AntiMagic"} ,
+         {name:'CutMan',id:'23',flag:"020006E2:00"+"\n"+"0200506A:43",mb:32,hp:"-100",attack:"+4",b_cs:"YoYo"} ,
+         {name:'KnightMan',id:'24',flag:"020006E3:00"+"\n"+"0200506B:43",mb:45,hp:"+20%",attack:"×2",super_armor:"on",under_shirt:"on",baster_blank:"Blank(25%),CS(6%)"} ,
+         {name:'ToadMan',id:'25',flag:"020006E4:00"+"\n"+"0200506C:43",mb:34,body:"Abody",attack:"-1",charge:"-3",cs_add:"Paralyze 90i(50%)",baster_blank:"off"} ,
+         {name:'MagnetMan',id:'26',flag:"020006E5:00"+"\n"+"0200506D:43",mb:37,hp:"+240",body:"Ebody",cs_add:"off",b_left:"MagField"} ,
+         {name:'PlanetMan',id:'27',flag:"020006E6:00"+"\n"+"0200506E:43",mb:40,hp:"+300",body:"Wbody",status_guard:"on",air:"off",b_button:"CrakShot"} ,
+         {name:'BeastMan',id:'28',flag:"020006E7:00"+"\n"+"0200506F:43",mb:33,rapid:"+4",under_shirt:"on",b_cs:"StepSwrd",rash:"on",move_bug:"on"} ,
+         {name:'DesertMan',id:'29',flag:"020006E8:00"+"\n"+"02005070:43",mb:36,hp:"+160",charge:"+4",air:"off",damage_bug:"off"} ,
+         {name:'YamatoMan',id:'2A',flag:"020006E9:00"+"\n"+"02005071:43",mb:35,hp:"+10%",attack:"+1",b_left:"Reflect",custom_hp_bug:"Lv2"} ,
+         {name:'VideoMan',id:'2B',flag:"020006EA:00"+"\n"+"02005072:43",mb:32,hp:"-10%",cs_add:"Forward ConveyorPanel",gage:"Fast"} ,
+         {name:'BurnerMan',id:'2C',flag:"020006EB:00"+"\n"+"02005073:43",mb:29,hp:"+120",body:"Fbody",attack:"+2",custom_damage:"40",kokoro_bug:"on"} ,
+         {name:'StarMan',id:'2D',flag:"020006EC:00"+"\n"+"02005074:43",mb:32,attack:"-2",m_folder:"+1",move_panel:"off",kokoro_bug:"off",battle_hp_bug:"off"} ,
+         {name:'BlizzardMan',id:'2E',flag:"020006ED:00"+"\n"+"02005075:43",mb:30,hp:"+60",body:"Abody",float:"off",b_cs:"BlizBall"} ,
+         {name:'LarkMan',id:'2F',flag:"020006EE:00"+"\n"+"02005076:43",mb:36,air:"on",cs_add:"Chip Deletion",beat:"on",damage_bug:"Confuse"} ,
+         {name:'SlashMan',id:'30',flag:"020006EF:00"+"\n"+"02005077:43",mb:31,attack:"+4",b_cs:"WideSwrd",baster_blank:"Blank(25%),CS(6%)"} ,
+         {name:'EraseMan',id:'31',flag:"020006F0:00"+"\n"+"02005078:43",mb:40,hp:"-10%",m_folder:"+1",cs_add:"Erase Bug",battle_hp_bug:"Lv1"} ,
+         {name:'GroundMan',id:'32',flag:"020006F1:00"+"\n"+"02005079:43",mb:43,hp:"+25%",custom:"-1",m_folder:"-1",b_cs:"DrillArm"} ,
+         {name:'DustMan',id:'33',flag:"020006F2:00"+"\n"+"0200507A:43",mb:37,hp:"+140",buster_add:"CrackPanel",b_left:"VacuumFan",move_panel:"CrackPanel(12%)"} ,
+         {name:'BlastMan',id:'34',flag:"020006F3:00"+"\n"+"0200507B:43",mb:28,hp:"-80",body:"Fbody",attack:"+1",float:"on",move_panel:"off"} ,
+         {name:'CircusMan',id:'35',flag:"020006F4:00"+"\n"+"0200507C:43",mb:43,hp:"-200",g_folder:"+1",f_barier:"off",tango:"on"} ,
+         {name:'Handy',id:'36',flag:"020006F5:00"+"\n"+"0200507D:43",mb:16,hp:"+100",b_cs:"TimeBomb",chip_recovery:"off"} ,
+         {name:'Puffy （BN1）',id:'37',flag:"020006F6:00"+"\n"+"0200507E:43",mb:12,body:"Abody",float:"on",b_cs:"BubSpread",b_left:"off"} ,
+         {name:'Jelly',id:'38',flag:"020006F7:00"+"\n"+"0200507F:43",mb:13,hp:"+120",body:"Abody",charge:"+4",gage:"Slow"} ,
+         {name:'Poitton',id:'39',flag:"020006F8:00"+"\n"+"02005080:43",mb:13,hp:"-40",body:"Wbody",under_shirt:"on",f_barier:"Barrier",damage_bug:"off"} ,
+         {name:'Satella',id:'3A',flag:"020006F9:00"+"\n"+"02005081:43",mb:8,rapid:"+4",air:"on",custom_damage:"20"} ,
+         {name:'Twisty & Remobit',id:'3B',flag:"020006FA:00"+"\n"+"02005082:43",mb:9,hp:"+80",body:"Ebody",air:"off",buster_add:"CrackPanel(50%)",move_panel:"Hole"} ,
+         {name:'Sparky/Shakey',id:'3C',flag:"020006FB:00"+"\n"+"02005083:43",mb:8,hp:"-5%",body:"Ebody",float:"on",move_bug:"off",status_bug:"off"},
+         {name:'Octon',id:'3D',flag:"020006FC:00"+"\n"+"02005084:43",mb:14,hp:"+50",body:"Abody",attack:"+3",baster_blank:"Blank(25%),CS(6%)"} ,
+         {name:'ShellGeek',id:'3E',flag:"020006FD:00"+"\n"+"02005085:43",mb:8,body:"Abody",rapid:"+4",b_left:"Shield"} ,
+         {name:'Magneaker',id:'3F',flag:"020006FE:00"+"\n"+"02005086:43",mb:7,hp:"+30",body:"Ebody",buster_add:"off",cs_add:"Back ConveyorPanel(50%)"} ,
+         {name:'Metrid',id:'40',flag:"020006FF:00"+"\n"+"02005087:43",mb:15,hp:"+5%",body:"Fbody",b_left:"Meteor3",move_bug:"on"} ,
+         {name:'Momogra',id:'41',flag:"02000700:00"+"\n"+"02005088:43",mb:6,hp:"-70",b_cs:"Invis",rash:"on"} ,
+         {name:'Needler',id:'42',flag:"02000701:00"+"\n"+"02005089:43",mb:10,attack:"+1",rapid:"+1",charge:"+1",super_armor:"on",kokoro_bug:"off"} ,
+         {name:'Twins',id:'43',flag:"02000702:00"+"\n"+"0200508A:43",mb:15,hp:"+100",attack:"+1",cs_add_list:"off",chip_recovery:"20"} ,
+         {name:'Walla',id:'44',flag:"02000703:00"+"\n"+"0200508B:43",mb:12,hp:"+60",custom:"+1",f_barier:"FstBarr off"} ,
+         {name:'Kilby',id:'45',flag:"02000704:00"+"\n"+"0200508C:43",mb:24,hp:"-20%",body:"Wbody",status_guard:"on",b_cs:"Lance",move_panel:"GrassPanel(25%)"} ,
+         {name:'Totem',id:'46',flag:"02000705:00"+"\n"+"02005043:43",mb:13,body:"Fbody",m_folder:"+1",chip_recovery:"40",custom_hp_bug:"Lv1"} ,
+         {name:'CannonGuard',id:'47',flag:"02000706:00"+"\n"+"0200508E:43",mb:10,float:"off",b_cs:"Cannon",b_left:"Shield"} ,
+         {name:'Skarab',id:'48',flag:"02000707:00"+"\n"+"0200508F:43",mb:7,hp:"-70",cs_add:"Confusion",custom_hp_bug:"off"} ,
+         {name:'Draggin',id:'49',flag:"02000708:00"+"\n"+"02005090:43",mb:11,hp:"+5%",body:"Fbody",status_bug:"Lv1"} ,
+         {name:'Marina',id:'4A',flag:"02000709:00"+"\n"+"02005091:43",mb:14,hp:"+90",body:"Abody",super_armor:"off",f_barier:"BblWrap"} ,
+         {name:'HauntedCandle',id:'4B',flag:"0200070A:00"+"\n"+"02005092:43",mb:12,hp:"+130",body:"Fbody",b_cs:"Default CS",battle_hp_bug:"off"} ,
+         {name:'Gunner',id:'4C',flag:"0200070B:00"+"\n"+"02005093:43",mb:11,hp:"+70",under_shirt:"off",b_cs:"MachGun1"} ,
+         {name:'PulseBulb',id:'4D',flag:"0200070C:00"+"\n"+"02005094:43",mb:13,body:"Ebody",b_cs:"ElcPuls1",kokoro_bug:"on"} ,
+         {name:'BombCorn',id:'4E',flag:"0200070D:00"+"\n"+"02005095:43",mb:16,hp:"+110",body:"Wbody",b_cs:"CornSht1",damage_bug:"Confusion"} ,
+         {name:'Shrubby',id:'4F',flag:"0200070E:00"+"\n"+"02005096:43",mb:6,body:"Wbody",buster_add:"GrassPanel(50%)",b_cs:"Default CS",custom_damage:"off"} ,
+         {name:'HoneyBomber',id:'50',flag:"0200070F:00"+"\n"+"02005097:43",mb:12,hp:"-10%",body:"Wbody",air:"on",b_left:"RskyHny1"} ,
+         {name:'NightMare',id:'51',flag:"02000710:00"+"\n"+"02005098:43",mb:5,hp:"+20",kokoro_bug:"on",status_bug:"Lv1"} ,
+         {name:'SnakeArm',id:'52',flag:"02000711:00"+"\n"+"02005099:43",mb:11,attack:"+3",rapid:"-1",charge:"-1",b_cs:"SandWrm1"} ,
+         {name:'DarkMech',id:'53',flag:"02000712:00"+"\n"+"0200509A:43",mb:22,hp:"+10%",b_left:"MchnSwrd",battle_hp_bug:"Lv2"} ,
+         {name:'StoneMan',id:'54',flag:"02000713:00"+"\n"+"0200509B:43",mb:45,hp:"+360",super_armor:"on",move_panel:"CrackPanel(12%)"} ,
+         {name:'ColorMan',id:'55',flag:"02000714:00"+"\n"+"0200509C:43",mb:32,hp:"+210",cs_add:"Confusion",b_left:"off",status_bug:"Lv1"} ,
+         {name:'SharkMan',id:'56',flag:"02000715:00"+"\n"+"0200509D:43",mb:35,hp:"+180",body:"Abody",attack:"+2",rapid:"+2",charge:"+2"} ,
+         {name:'PharaohMan',id:'57',flag:"02000716:00"+"\n"+"0200509E:43",mb:35,hp:"+5%",g_folder:"+1",float:"on",b_cs:"Default CS"} ,
+         {name:'AirMan',id:'58',flag:"02000717:00"+"\n"+"0200509F:43",mb:34,hp:"+150",buster_add:"Big Push",b_cs:"Tornado",f_barier:"FstBarr off",baster_blank:"off"} ,
+         {name:'FreezeMan',id:'59',flag:"02000718:00"+"\n"+"020050A0:43",mb:30,hp:"-5%",body:"Abody",buster_add:"IcePanel(50%)",f_barier:"Barr200"} ,
+         {name:'ThunderMan',id:'5A',flag:"02000719:00"+"\n"+"020050A1:43",mb:36,body:"Ebody",custom:"-1",b_cs:"ElecSwrd",chip_recovery:"10",battle_hp_bug:"Lv1"} ,
+         {name:'NapalmMan',id:'5B',flag:"0200071A:00"+"\n"+"020050A2:43",mb:39,body:"Fbody",attack:"+1",rapid:"+4",b_cs:"BigBomb",custom_hp_bug:"Lv1"} ,
+         {name:'PlantMan',id:'5C',flag:"0200071B:00"+"\n"+"020050A3:43",mb:42,hp:"-80",body:"Wbody",m_folder:"+2",status_guard:"on",cs_add:"GrassPanel(50%)"} ,
+         {name:'MistMan',id:'5D',flag:"0200071C:00"+"\n"+"020050A4:43",mb:37,hp:"+260",buster_add:"PoisonPanel(50%)",chip_recovery:"off"} ,
+         {name:'BowlMan',id:'5E',flag:"0200071D:00"+"\n"+"020050A5:43",mb:30,hp:"+100",custom:"+1",float:"off",b_cs:"Vulcan3"} ,
+         {name:'DarkMan',id:'5F',flag:"0200071E:00"+"\n"+"020050A6:43",mb:25,b_cs:"VDoll",move_bug:"on",custom_damage:"50"} ,
+         {name:'TopMan',id:'60',flag:"0200071F:00"+"\n"+"020050A7:43",mb:28,hp:"+10%",b_cs:"Default CS",baster_blank:"off",damage_bug:"HP Bug"} ,
+         {name:'KendoMan',id:'61',flag:"02000720:00"+"\n"+"020050A8:43",mb:38,hp:"+20%",b_cs:"BambSwrd",baster_blank:"Blank(25%),CS(6%)"} ,
+         {name:'ColdMan',id:'62',flag:"02000721:00"+"\n"+"020050A9:43",mb:34,body:"Abody",attack:"-1",cs_add:"Freeze(50%)",move_panel:"IcePanel(12%)"} ,
+         {name:'SearchMan',id:'63',flag:"02000722:00"+"\n"+"020050AA:43",mb:37,hp:"+5%",air:"off",b_cs:"CircGun",sarch_shufle:"on"} ,
+         {name:'CloudMan',id:'64',flag:"02000723:00"+"\n"+"020050AB:43",mb:40,hp:"+230",body:"Ebody",m_folder:"-1",b_cs:"Thunder"} ,
+         {name:'GridMan',id:'65',flag:"020007244:00"+"\n"+"020050AC:43",mb:48,hp:"+25%",super_armor:"on",under_shirt:"on",gage:"Slow"} ,
+         {name:'ChargeMan',id:'66',flag:"02000725:00"+"\n"+"020050AD:43",mb:31,attack:"+3",charge:"+4",b_cs:"Default CS",move_panel:"off"} ,
+         {name:'TenguMan',id:'67',flag:"02000726:00"+"\n"+"020050AE:43",mb:34,attack:"-1",air:"on",b_cs:"WindRack",beat:"on"} ,
+         {name:'DiveMan',id:'68',flag:"02000727:00"+"\n"+"020050AF:43",mb:42,hp:"+320",body:"Abody",custom:"-2",m_folder:"+1",b_cs:"WideShot"} ,
+         {name:'JudgeMan',id:'69',flag:"02000728:00"+"\n"+"020050B0:43",mb:38,hp:"-10%",custom:"+2",b_cs:"GrabBnsh",gage:"Normal"} ,
+         {name:'ElementMan',id:'6A',flag:"02000729:00"+"\n"+"020050B1:43",mb:33,hp:"+150",buster_add:"GrassPanel(50%)",b_cs:"Default CS",cs_add:"IcePanel(100%)",move_panel:"off"} ,
+         {name:'Punk',id:'6B',flag:"0200072A:00"+"\n"+"020050B2:43",mb:50,hp:"+400",super_armor:"on",cs_add:"Confusion(50%)",b_left:"Reflect"} ,
+         {name:'Dark MegaMan',id:'6C',flag:"0200072B:00"+"\n"+"020050B3:43",mb:80,attack:"+3",buster_add:"PoisonPanel(50%)",b_cs:"DarkSwrd",kokoro_bug:"on",battle_hp_bug:"Lv4"} ,
+         {name:'Soul Battler’s Customization',id:'6D',flag:"0200072C:00"+"\n"+"020050B4:43",mb:66,attack:"+4",rapid:"+4",charge:"+4",super_armor:"on",b_cs:"SuprVulc"} ,
+         {name:'Famous’ Customization',id:'6E',flag:"0200072D:00"+"\n"+"020050B5:43",mb:69,custom:"+3",m_folder:"+2",g_folder:"+2",f_barier:"LifeAura"} ,
+         {name:'Bass BX',id:'6F',flag:"0200072E:00"+"\n"+"020050B6:43",mb:70,super_armor:"on",float:"on",air:"on",b_button:"TripleBuster",b_cs:"ShootingBuster"} ,
+         {name:'Django',id:'70',flag:"0200072F:00"+"\n"+"020050B7:43",mb:52,hp:"+200",status_guard:"on",under_shirt:"on",b_cs:"GunDelSol"} ,
+         {name:'Count',id:'71',flag:"02000730:00"+"\n"+"020050B8:43",mb:60,m_folder:"+1",b_cs:"BloodRain",status_bug:"Lv2"} ,
+         {name:'Mega Man Zero',id:'72',flag:"02000731:00"+"\n"+"020050B9:43",mb:45,b_button:"Sword",b_cs:"Z-Saber",gage:"Fast"} ,
+         {name:'Cybeast Gregar',id:'73',flag:"02000732:00"+"\n"+"020050BA:43",mb:70,hp:"+600",attack:"+4",rapid:"+4",super_armor:"on",custom_hp_bug:"Lv2"} ,
+         {name:'Cybeast Falzar',id:'74',flag:"02000733:00"+"\n"+"020050BB:43",mb:70,hp:"+40%",float:"on",air:"on",battle_hp_bug:"Lv1"} ,
+         {name:'Bass-Cross MegaMan （G）',id:'75',flag:"02000734:00"+"\n"+"020050BC:43",mb:70,hp:"+200",body:"Nbody",m_folder:"-2",super_armor:"on",b_button:"TripleBuster",b_cs:"ShootingBuster"} ,
+
      ];
 
 
@@ -3477,15 +2384,15 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //存在が確認できたら検索開始を行う
         if(x.b_cs){
             if(x.b_cs.includes(sarch_letter)==true)return x.b_cs.includes(sarch_letter)
-            let font ="ためうち";
+            let font ="CS";
             if(font.includes(sarch_letter)==true)return x.b_cs;
       }  if(x.cs_add){
             if(x.cs_add.includes(sarch_letter)==true)return x.cs_add.includes(sarch_letter)
-            let font ="CSに";
+            let font ="CSAdd";
             if(font.includes(sarch_letter)==true)return x.cs_add;
       }  if(x.buster_add){
             if(x.buster_add.includes(sarch_letter)==true)return x.buster_add.includes(sarch_letter)
-            let font ="バスター追加効果";
+            let font ="BusterAdditionalEffects";
             if(font.includes(sarch_letter)==true)return x.buster_add;
       }  if(x.b_left){
             if(x.b_left.includes(sarch_letter)==true)return x.b_left.includes(sarch_letter)
@@ -3493,46 +2400,46 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
             if(font.includes(sarch_letter)==true)return x.b_left;
       }  if(x.b_button){
             if(x.b_button.includes(sarch_letter)==true)return x.b_button.includes(sarch_letter)
-            let font ="バスターBボタン";
+            let font ="BButtonModification";
             if(font.includes(sarch_letter)==true)return x.b_button;
       }  if(x.move_panel){
             if(x.move_panel.includes(sarch_letter)==true)return x.move_panel.includes(sarch_letter)
-            let font ="移動でいどうで";
+            let font ="PanelBug";
             if(font.includes(sarch_letter)==true)return x.move_panel;
       }  if(x.baster_blank){
             if(x.baster_blank.includes(sarch_letter)==true)return x.baster_blank.includes(sarch_letter)
-            let font ="バスター空打ち";
+            let font ="BusterBlank";
             if(font.includes(sarch_letter)==true)return x.baster_blank;
       }  if(x.under_shirt){
             if(x.under_shirt.includes(sarch_letter)==true)return x.under_shirt.includes(sarch_letter)
-            let font ="アンダーシャツシャツ";
+            let font ="UnderShirtシャツ";
             if(font.includes(sarch_letter)==true)return x.under_shirt;
       }  if(x.super_armor){
             if(x.super_armor.includes(sarch_letter)==true)return x.super_armor.includes(sarch_letter)
-            let font ="スーパーアーマー";
+            let font ="スーパーアーマーSuperArmor";
             if(font.includes(sarch_letter)==true)return x.super_armor;
       }  if(x.status_guard){
             if(x.status_guard.includes(sarch_letter)==true)return x.status_guard.includes(sarch_letter)
-            let font ="ステータスガード";
+            let font ="ステータスガードStatusGuard";
             if(font.includes(sarch_letter)==true)return x.status_guard;
       }  if(x.float){
             if(x.float.includes(sarch_letter)==true)return x.float.includes(sarch_letter)
-            let font ="フロートシューズ";
+            let font ="フロートシューズFloatShoes";
             if(font.includes(sarch_letter)==true)return x.float;
       }  if(x.air){
             if(x.air.includes(sarch_letter)==true)return x.air.includes(sarch_letter)
-            let font ="エアーシューズエアシューズ";
+            let font ="エアーシューズエアシューズAirShoes";
             if(font.includes(sarch_letter)==true)return x.air;
       }  if(x.gage){
-            if(sarch_letter.includes("クイック"))sarch_letter="Quick"
-            if(sarch_letter.includes("ヘビー"))sarch_letter="Heavy"
+            if(sarch_letter.includes("クイック"))sarch_letter="QuickFast"
+            if(sarch_letter.includes("ヘビー"))sarch_letter="HeavySlow"
             if(sarch_letter.includes("ノーマル"))sarch_letter="Normal"
             if(x.gage.includes(sarch_letter)==true)return x.gage.includes(sarch_letter)
-            let font ="ゲージ";
+            let font ="ゲージGauge";
             if(font.includes(sarch_letter)==true)return x.gage;
       }  if(x.f_barier){
             if(x.f_barier.includes(sarch_letter)==true)return x.f_barier.includes(sarch_letter)
-            let font ="Fバリアファーストバリア";
+            let font ="FバリアファーストバリアFirstBarrierList";
             if(font.includes(sarch_letter)==true)return x.f_barier;
       }  if(x.rash){
             if(x.rash.includes(sarch_letter)==true)return x.rash.includes(sarch_letter)
@@ -3548,39 +2455,39 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
             if(font.includes(sarch_letter)==true)return x.tango;
       }   if(x.chip_recovery){
             if(x.chip_recovery.includes(sarch_letter)==true)return x.chip_recovery.includes(sarch_letter)
-            let font ="チップリカバリー";
+            let font ="ChipRecovery";
             if(font.includes(sarch_letter)==true)return x.chip_recovery;
       }  if(x.self_recovery){
             if(x.self_recovery.includes(sarch_letter)==true)return x.self_recovery.includes(sarch_letter)
-            let font ="セルフリカバリー";
+            let font ="セルフリカバリーSelfRecovery";
             if(font.includes(sarch_letter)==true)return x.self_recovery;
       }  if(x.kokoro_bug){
             if(x.kokoro_bug.includes(sarch_letter)==true)return x.kokoro_bug.includes(sarch_letter)
-            let font ="ココロバグ";
+            let font ="EmotionバグEmotionBug";
             if(font.includes(sarch_letter)==true)return x.kokoro_bug;
       }  if(x.move_bug){
             if(x.move_bug.includes(sarch_letter)==true)return x.move_bug.includes(sarch_letter)
-            let font ="移動バグいどうバグ";
+            let font ="MovementBugいどうバグMovementBug";
             if(font.includes(sarch_letter)==true)return x.move_bug;
       }  if(x.damage_bug){
             if(x.damage_bug.includes(sarch_letter)==true)return x.damage_bug.includes(sarch_letter)
-            let font ="ダメージバグ";
+            let font ="ダメージバグDamageBug";
             if(font.includes(sarch_letter)==true)return x.damage_bug;
       }  if(x.battle_hp_bug){
             if(x.battle_hp_bug.includes(sarch_letter)==true)return x.battle_hp_bug.includes(sarch_letter)
-            let font ="バトルHPバグ";
+            let font ="バトルHPバグBattleHPBug";
             if(font.includes(sarch_letter)==true)return x.battle_hp_bug;
       }  if(x.custom_hp_bug){
             if(x.custom_hp_bug.includes(sarch_letter)==true)return x.custom_hp_bug.includes(sarch_letter)
-            let font ="カスタムHPバグ";
+            let font ="カスタムHPバグCustomHPBug";
             if(font.includes(sarch_letter)==true)return x.custom_hp_bug;
       }  if(x.custom_damage){
             if(x.custom_damage.includes(sarch_letter)==true)return x.custom_damage.includes(sarch_letter)
-            let font ="カスタムダメージ";
+            let font ="カスタムダメージCustomDamage";
             if(font.includes(sarch_letter)==true)return x.custom_damage;
       }  if(x.status_bug){
             if(x.status_bug.includes(sarch_letter)==true)return x.status_bug.includes(sarch_letter)
-            let font ="ステータスバグ";
+            let font ="ステータスバグColorBug";
             if(font.includes(sarch_letter)==true)return x.status_bug;
       }  if(x.mode){
             if(x.mode.includes(sarch_letter)==true)return x.mode.includes(sarch_letter)
@@ -3590,6 +2497,10 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
             if(x.bug_stoper.includes(sarch_letter)==true)return x.bug_stoper.includes(sarch_letter)
             let font ="バグストッパー";
             if(font.includes(sarch_letter)==true)return x.bug_stoper;
+      }   if(x.sarch_shufle){
+            if(x.sarch_shufle.includes(sarch_letter)==true)return x.sarch_shufle.includes(sarch_letter)
+            let font ="サーチシャッフルSearchshuffle";
+            if(font.includes(sarch_letter)==true)return x.sarch_shufle;
       }
       })
       cardlist();
@@ -3647,8 +2558,8 @@ console.log(sarch_result.length)
     function mega(){
 
                 //検索ログの表示
-                  document.getElementById("kaizo_parametor").value = "検索中";
-                  document.getElementById("kaizo_ability").value = "検索中";
+                  document.getElementById("kaizo_parametor").value = "Sarch";
+                  document.getElementById("kaizo_ability").value = "Sarch";
                   setTimeout(function() {
 
       //総合ステータス用
@@ -3687,7 +2598,7 @@ console.log(sarch_result.length)
 
 
 
-//パラメーター表示
+//Parametersー表示
 for(let i = 1 ; i<=10;i++){
 
   document.getElementById("parametor_"+[i]).value = "";
@@ -3833,23 +2744,23 @@ if(members[parseInt(valc[i], 10)].b_cs==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "CS" + members[parseInt(valc[i], 10)].b_cs+"\n";
-ability_box[2]= "ためうち" + members[parseInt(valc[i], 10)].b_cs;
+ability_box[2]= "CS" + members[parseInt(valc[i], 10)].b_cs;
 }
 
-//CS追加効果
+//CSADD
 if(members[parseInt(valc[i], 10)].cs_add==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "CSに" + members[parseInt(valc[i], 10)].cs_add+"\n";
-ability_box[3] = "CSに" + members[parseInt(valc[i], 10)].cs_add;
+document.getElementById('ablity_'+[i]).value += "CSAdd" + members[parseInt(valc[i], 10)].cs_add+"\n";
+ability_box[3] = "CSAdd" + members[parseInt(valc[i], 10)].cs_add;
 }
 
 //バスター追加効果
 if(members[parseInt(valc[i], 10)].buster_add==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "バスター" + members[parseInt(valc[i], 10)].buster_add+"\n";
-ability_box[4] = "バスター" + members[parseInt(valc[i], 10)].buster_add;
+document.getElementById('ablity_'+[i]).value += "Buster" + members[parseInt(valc[i], 10)].buster_add+"\n";
+ability_box[4] = "Buster" + members[parseInt(valc[i], 10)].buster_add;
 }
 
 
@@ -3858,7 +2769,7 @@ if(members[parseInt(valc[i], 10)].under_shirt==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "Ushirt_" + members[parseInt(valc[i], 10)].under_shirt + "\n";
-ability_box[5] = "アンダーシャツ" + members[parseInt(valc[i], 10)].under_shirt;
+ability_box[5] = "UnderShirt" + members[parseInt(valc[i], 10)].under_shirt;
 }
 
 //スーパーアーマー装備
@@ -3866,7 +2777,7 @@ if(members[parseInt(valc[i], 10)].super_armor==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "S_Armor_" + members[parseInt(valc[i], 10)].super_armor + "\n";
-ability_box[6] = "スーパーアーマー" + members[parseInt(valc[i], 10)].super_armor;
+ability_box[6] = "SuperArmor" + members[parseInt(valc[i], 10)].super_armor;
 }
 
 //ステータスガード
@@ -3874,7 +2785,7 @@ if(members[parseInt(valc[i], 10)].status_guard==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "S_Guard_" + members[parseInt(valc[i], 10)].status_guard + "\n";
-ability_box[7] = "ステータスガード" + members[parseInt(valc[i], 10)].status_guard;
+ability_box[7] = "StatusGuard" + members[parseInt(valc[i], 10)].status_guard;
 }
 
 //フロート装備
@@ -3882,7 +2793,7 @@ if(members[parseInt(valc[i], 10)].float==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "float_" + members[parseInt(valc[i], 10)].float+"\n";
-ability_box[8] = "フロート" + members[parseInt(valc[i], 10)].float;
+ability_box[8] = "FloatShoes" + members[parseInt(valc[i], 10)].float;
 }
 
 //エアーシューズ装備
@@ -3890,7 +2801,7 @@ if(members[parseInt(valc[i], 10)].air==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "air_" + members[parseInt(valc[i], 10)].air+"\n";
-ability_box[9] = "エアシューズ" + members[parseInt(valc[i], 10)].air;
+ability_box[9] = "AirShoes" + members[parseInt(valc[i], 10)].air;
 }
 
 //ゲージ
@@ -3898,7 +2809,7 @@ if(members[parseInt(valc[i], 10)].gage==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  members[parseInt(valc[i], 10)].gage+"Gage\n";
-ability_box[10] = members[parseInt(valc[i], 10)].gage + "ゲージ";
+ability_box[10] = members[parseInt(valc[i], 10)].gage + "Gauge ";
 }
 
 //ファーストバリア及びオーラ
@@ -3906,7 +2817,7 @@ if(members[parseInt(valc[i], 10)].f_barier==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "F"+members[parseInt(valc[i], 10)].f_barier+"\n";
-ability_box[11] = "ファースト"+members[parseInt(valc[i], 10)].f_barier ;
+ability_box[11] = "First Barrier"+members[parseInt(valc[i], 10)].f_barier ;
 }
 
 //ラッシュサポート装備
@@ -3914,7 +2825,7 @@ if(members[parseInt(valc[i], 10)].rash==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "rash_" + members[parseInt(valc[i], 10)].rash + "\n";
-ability_box[12] = "ラッシュサポート"+members[parseInt(valc[i], 10)].rash ;
+ability_box[12] = "Rash"+members[parseInt(valc[i], 10)].rash ;
 }
 
 //ビートサポート装備
@@ -3922,7 +2833,7 @@ if(members[parseInt(valc[i], 10)].beat==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "beat_" + members[parseInt(valc[i], 10)].beat + "\n";
-ability_box[13] = "ビートサポート"+members[parseInt(valc[i], 10)].beat ;
+ability_box[13] = "Beat"+members[parseInt(valc[i], 10)].beat ;
 }
 
 //タンゴサポート装備
@@ -3930,95 +2841,95 @@ if(members[parseInt(valc[i], 10)].tango==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value +=  "tango_" + members[parseInt(valc[i], 10)].tango + "\n";
-ability_box[14] = "タンゴサポート"+members[parseInt(valc[i], 10)].tango ;
+ability_box[14] = "Tango"+members[parseInt(valc[i], 10)].tango ;
 }
 
 //移動による効果
 if(members[parseInt(valc[i], 10)].move_panel==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "移動で" + members[parseInt(valc[i], 10)].move_panel+"\n";
-ability_box[15] = "移動で"+members[parseInt(valc[i], 10)].move_panel ;
+document.getElementById('ablity_'+[i]).value += "PanelBug " + members[parseInt(valc[i], 10)].move_panel+"\n";
+ability_box[15] = "PanelBug "+members[parseInt(valc[i], 10)].move_panel ;
 }
 
-//チップリカバリー
+//ChipRecovery
 if(members[parseInt(valc[i], 10)].chip_recovery==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "ChipRecovery_" + members[parseInt(valc[i], 10)].chip_recovery+"\n";
-ability_box[16] = "チップリカバリー"+members[parseInt(valc[i], 10)].chip_recovery ;
+document.getElementById('ablity_'+[i]).value += "Chip Recovery_" + members[parseInt(valc[i], 10)].chip_recovery+"\n";
+ability_box[16] = "ChipRecovery"+members[parseInt(valc[i], 10)].chip_recovery ;
 }
 
 //セルフリカバリー（）
 if(members[parseInt(valc[i], 10)].self_recovery==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "SelfRecovery_" + members[parseInt(valc[i], 10)].self_recovery+"\n";
-ability_box[17] = "セルフリカバリー"+members[parseInt(valc[i], 10)].self_recovery ;
+document.getElementById('ablity_'+[i]).value += "Self Recovery_" + members[parseInt(valc[i], 10)].self_recovery+"\n";
+ability_box[17] = "Self Recovery_"+members[parseInt(valc[i], 10)].self_recovery ;
 }
 
-//ココロバグ
+//Emotionバグ
 if(members[parseInt(valc[i], 10)].kokoro_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "ココロバグ" + members[parseInt(valc[i], 10)].kokoro_bug+"\n";
-ability_box[18] = "ココロバグ"+members[parseInt(valc[i], 10)].kokoro_bug ;
+document.getElementById('ablity_'+[i]).value += "Emotion Bug " + members[parseInt(valc[i], 10)].kokoro_bug+"\n";
+ability_box[18] = "Emotion Bug "+members[parseInt(valc[i], 10)].kokoro_bug ;
 }
 
 //バスター空打ち
 if(members[parseInt(valc[i], 10)].baster_blank==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "バスター" + members[parseInt(valc[i], 10)].baster_blank+"\n";
-ability_box[19] = "バスター"+members[parseInt(valc[i], 10)].baster_blank ;
+document.getElementById('ablity_'+[i]).value += "Buster " + members[parseInt(valc[i], 10)].baster_blank+"\n";
+ability_box[19] = "Buster "+members[parseInt(valc[i], 10)].baster_blank ;
 }
 
-//移動バグ
+//MovementBug
 if(members[parseInt(valc[i], 10)].move_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "移動バグ" + members[parseInt(valc[i], 10)].move_bug+"\n";
-ability_box[20] = "移動バグ"+members[parseInt(valc[i], 10)].move_bug ;
+document.getElementById('ablity_'+[i]).value += "Movement Bug " + members[parseInt(valc[i], 10)].move_bug+"\n";
+ability_box[20] = "MovementBug "+members[parseInt(valc[i], 10)].move_bug ;
 }
 
 //ダメージ状態異常バグ
 if(members[parseInt(valc[i], 10)].damage_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "ダメージ" + members[parseInt(valc[i], 10)].damage_bug+"\n";
-ability_box[21] = "ダメージ"+members[parseInt(valc[i], 10)].damage_bug ;
+document.getElementById('ablity_'+[i]).value += "Damage Bug " + members[parseInt(valc[i], 10)].damage_bug+"\n";
+ability_box[21] = "Damage Bug "+members[parseInt(valc[i], 10)].damage_bug ;
 }
 
 //バトルHPバグ
 if(members[parseInt(valc[i], 10)].battle_hp_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "バトルHPバグ" + members[parseInt(valc[i], 10)].battle_hp_bug+"\n";
-ability_box[22] = "バトルHPバグ"+members[parseInt(valc[i], 10)].battle_hp_bug ;
+document.getElementById('ablity_'+[i]).value += "Battle HP Bug " + members[parseInt(valc[i], 10)].battle_hp_bug+"\n";
+ability_box[22] = "BattleHPBug "+members[parseInt(valc[i], 10)].battle_hp_bug ;
 }
 
 //カスタムHPバグ
 if(members[parseInt(valc[i], 10)].custom_hp_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "カスタムHPバグ" + members[parseInt(valc[i], 10)].custom_hp_bug+"\n";
-ability_box[23] = "カスタムHPバグ"+members[parseInt(valc[i], 10)].custom_hp_bug ;
+document.getElementById('ablity_'+[i]).value += "Custom HP Bug " + members[parseInt(valc[i], 10)].custom_hp_bug+"\n";
+ability_box[23] = "Custom HP Bug "+members[parseInt(valc[i], 10)].custom_hp_bug ;
 }
 
 //カスタムダメージ
 if(members[parseInt(valc[i], 10)].custom_damage==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "カスタムダメージ" + members[parseInt(valc[i], 10)].custom_damage+"\n";
-ability_box[24] = "カスタムダメージ"+members[parseInt(valc[i], 10)].custom_damage ;
+document.getElementById('ablity_'+[i]).value += "Custom Damage " + members[parseInt(valc[i], 10)].custom_damage+"\n";
+ability_box[24] = "Custom Damage "+members[parseInt(valc[i], 10)].custom_damage ;
 }
 
 //ステータスバグ
 if(members[parseInt(valc[i], 10)].status_bug==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "ステータスバグ" + members[parseInt(valc[i], 10)].status_bug+"\n";
-ability_box[25] = "ステータスバグ"+members[parseInt(valc[i], 10)].status_bug;
+document.getElementById('ablity_'+[i]).value += "Color Bug " + members[parseInt(valc[i], 10)].status_bug+"\n";
+ability_box[25] = "Color Bug "+members[parseInt(valc[i], 10)].status_bug;
 }
 
 //ウイルス遭遇関係のプログラム（ミリオネアもここに当たる）
@@ -4026,15 +2937,23 @@ if(members[parseInt(valc[i], 10)].mode==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
 document.getElementById('ablity_'+[i]).value += "mode_" + members[parseInt(valc[i], 10)].mode+"\n";
-ability_box[26] = "モード"+members[parseInt(valc[i], 10)].mode;
+ability_box[26] = "mode"+members[parseInt(valc[i], 10)].mode;
 }
 
 //バグストッパー
 if(members[parseInt(valc[i], 10)].bug_stoper==undefined){
   document.getElementById("ablity_"+[i]).value += "";
 }else{
-document.getElementById('ablity_'+[i]).value += "バグストッパー" + members[parseInt(valc[i], 10)].bug_stoper+"\n";
-ability_box[27] = "バグストッパー"+members[parseInt(valc[i], 10)].bug_stoper;
+document.getElementById('ablity_'+[i]).value += "Bugst" + members[parseInt(valc[i], 10)].bug_stoper+"\n";
+ability_box[27] = "Bugstoper "+members[parseInt(valc[i], 10)].bug_stoper;
+}
+
+//サーチシャッフル
+if(members[parseInt(valc[i], 10)].sarch_shufle==undefined){
+  document.getElementById("ablity_"+[i]).value += "";
+}else{
+document.getElementById('ablity_'+[i]).value += "SarchShuffle " + members[parseInt(valc[i], 10)].sarch_shufle+"\n";
+ability_box[28] = "SarchShuffle "+members[parseInt(valc[i], 10)].sarch_shufle;
 }
 
 
@@ -4077,7 +2996,7 @@ ability_sarch_process();
 }
 
           function generate(){
-            console.log("出力中");
+            console.log("Generate");
             //改造カードを何選んだか格納
             valc1 = document.getElementById("kaizo_1").value;
             valc2 = document.getElementById("kaizo_2").value;
@@ -4095,47 +3014,47 @@ ability_sarch_process();
 
 
             //改造カードを出力
-            document.getElementById('ans').value ="020079D0:"+members[parseInt(valc1, 10)].id +"\n"+ members[parseInt(valc1, 10)].flag;
+            document.getElementById('ans').value ="02006620:"+members[parseInt(valc1, 10)].id +"\n"+ members[parseInt(valc1, 10)].flag;
 
             kaizou_math += 1;
 
             if(parseInt(valc2, 10)>0){
-              document.getElementById('ans').value +="\n"+"020079D1:"+members[parseInt(valc2, 10)].id +"\n"+ members[parseInt(valc2, 10)].flag;
+              document.getElementById('ans').value +="\n"+"02006621:"+members[parseInt(valc2, 10)].id +"\n"+ members[parseInt(valc2, 10)].flag;
 
               kaizou_math += 1;
 
               if(parseInt(valc3, 10)>0){
-                document.getElementById('ans').value +="\n"+"020079D2:"+members[parseInt(valc3, 10)].id +"\n"+ members[parseInt(valc3, 10)].flag;
+                document.getElementById('ans').value +="\n"+"02006622:"+members[parseInt(valc3, 10)].id +"\n"+ members[parseInt(valc3, 10)].flag;
 
                 kaizou_math += 1;
 
               if(parseInt(valc4, 10)>0){
-                document.getElementById('ans').value +="\n"+"020079D3:"+members[parseInt(valc4, 10)].id +"\n"+ members[parseInt(valc4, 10)].flag;
+                document.getElementById('ans').value +="\n"+"02006623:"+members[parseInt(valc4, 10)].id +"\n"+ members[parseInt(valc4, 10)].flag;
 
                 kaizou_math += 1;
 
               if(parseInt(valc5, 10)>0){
-                document.getElementById('ans').value +="\n"+"020079D4:"+members[parseInt(valc5, 10)].id +"\n"+ members[parseInt(valc5, 10)].flag;
+                document.getElementById('ans').value +="\n"+"02006624:"+members[parseInt(valc5, 10)].id +"\n"+ members[parseInt(valc5, 10)].flag;
 
                 kaizou_math += 1;
               if(parseInt(valc6, 10)>0){
-                document.getElementById('ans').value +="\n"+"020079D5:"+members[parseInt(valc6, 10)].id +"\n"+ members[parseInt(valc6, 10)].flag;
+                document.getElementById('ans').value +="\n"+"02006625:"+members[parseInt(valc6, 10)].id +"\n"+ members[parseInt(valc6, 10)].flag;
 
                 kaizou_math += 1;
                 if(parseInt(valc7, 10)>0){
-                  document.getElementById('ans').value +="\n"+"020079D6:"+members[parseInt(valc7, 10)].id +"\n"+ members[parseInt(valc7, 10)].flag;
+                  document.getElementById('ans').value +="\n"+"02006626:"+members[parseInt(valc7, 10)].id +"\n"+ members[parseInt(valc7, 10)].flag;
 
                   kaizou_math += 1;
                   if(parseInt(valc8, 10)>0){
-                    document.getElementById('ans').value +="\n"+"020079D7:"+members[parseInt(valc8, 10)].id +"\n"+ members[parseInt(valc8, 10)].flag;
+                    document.getElementById('ans').value +="\n"+"02006627:"+members[parseInt(valc8, 10)].id +"\n"+ members[parseInt(valc8, 10)].flag;
 
                     kaizou_math += 1;
                     if(parseInt(valc9, 10)>0){
-                      document.getElementById('ans').value +="\n"+"020079D8:"+members[parseInt(valc9, 10)].id +"\n"+ members[parseInt(valc9, 10)].flag;
+                      document.getElementById('ans').value +="\n"+"02006628:"+members[parseInt(valc9, 10)].id +"\n"+ members[parseInt(valc9, 10)].flag;
 
                       kaizou_math += 1;
                       if(parseInt(valc10, 10)>0){
-                        document.getElementById('ans').value +="\n"+"020079D9:"+members[parseInt(valc10, 10)].id +"\n"+ members[parseInt(valc10, 10)].flag;
+                        document.getElementById('ans').value +="\n"+"02006629:"+members[parseInt(valc10, 10)].id +"\n"+ members[parseInt(valc10, 10)].flag;
 
                         kaizou_math = "A";
 
@@ -4147,19 +3066,19 @@ ability_sarch_process();
             }
 
 
-            document.getElementById('ans').value += "\n"+"020079A0:0"+ kaizou_math;
+            document.getElementById('ans').value += "\n"+"020065F0:0"+ kaizou_math;
 
             //メガバイトの記入
             if(mega_use>80){
             }else if(mega_use>15){
-            document.getElementById('ans').value += "\n"+"020079CC:"+mega_use.toString(16).toUpperCase();
+            document.getElementById('ans').value += "\n"+"0200661A:"+mega_use.toString(16).toUpperCase();
             }else if(mega_use<=15){
-            document.getElementById('ans').value += "\n"+"020079CC:0"+mega_use.toString(16).toUpperCase();
+            document.getElementById('ans').value += "\n"+"0200661A:0"+mega_use.toString(16).toUpperCase();
             }
 
 
             if(valc1==0){
-              document.getElementById('ans').value ="一枚以上読み込ませてください";
+              document.getElementById('ans').value ="Please load one or more";
             }
 
 
@@ -4227,7 +3146,7 @@ ability_sarch_process();
               if(members[parseInt(card_id, 10)].attack==undefined){
                 document.getElementById("kaizo_parametor").value += "";
               }else{
-              document.getElementById('kaizo_parametor').value += "アタック" + members[parseInt(card_id, 10)].attack+"\n";
+              document.getElementById('kaizo_parametor').value += "Attack" + members[parseInt(card_id, 10)].attack+"\n";
 
 
             }
@@ -4236,13 +3155,13 @@ ability_sarch_process();
               if(members[parseInt(card_id, 10)].rapid==undefined){
               document.getElementById("kaizo_parametor").value += "";
               }else{
-                document.getElementById('kaizo_parametor').value += "ラピッド" + members[parseInt(card_id, 10)].rapid+"\n";
+                document.getElementById('kaizo_parametor').value += "Speed" + members[parseInt(card_id, 10)].rapid+"\n";
               }
               //チャージ表示
               if(members[parseInt(card_id, 10)].charge==undefined){
                 document.getElementById("kaizo_parametor").value += "";
               }else{
-                document.getElementById('kaizo_parametor').value += "チャージ" + members[parseInt(card_id, 10)].charge+"\n";
+                document.getElementById('kaizo_parametor').value += "Charge" + members[parseInt(card_id, 10)].charge+"\n";
 
               }
 
@@ -4275,7 +3194,7 @@ ability_sarch_process();
               if(members[parseInt(card_id, 10)].soultime==undefined){
             document.getElementById("kaizo_parametor").value += "";
             }else{
-              document.getElementById('kaizo_parametor').value += "ソウルタイム" + members[parseInt(card_id, 10)].soultime+"\n";
+              document.getElementById('kaizo_parametor').value += "SoulTime" + members[parseInt(card_id, 10)].soultime+"\n";
             }
 
             //アビリティ関係
@@ -4297,21 +3216,21 @@ ability_sarch_process();
             if(members[parseInt(card_id, 10)].b_cs==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "ためうち" + members[parseInt(card_id, 10)].b_cs+"\n";
+            document.getElementById("kaizo_ability").value += "CS" + members[parseInt(card_id, 10)].b_cs+"\n";
             }
 
-            //CS追加効果
+            //CSADD
             if(members[parseInt(card_id, 10)].cs_add==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "CS追加効果" + members[parseInt(card_id, 10)].cs_add+"\n";
+            document.getElementById("kaizo_ability").value += "CSAdd" + members[parseInt(card_id, 10)].cs_add+"\n";
             }
 
             //バスター追加効果
             if(members[parseInt(card_id, 10)].buster_add==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "バスター追加効果" + members[parseInt(card_id, 10)].buster_add+"\n";
+            document.getElementById("kaizo_ability").value += "Buster" + members[parseInt(card_id, 10)].buster_add+"\n";
             }
 
 
@@ -4319,35 +3238,35 @@ ability_sarch_process();
             if(members[parseInt(card_id, 10)].under_shirt==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value +=  "アンダーシャツ" + members[parseInt(card_id, 10)].under_shirt + "\n";
+            document.getElementById("kaizo_ability").value +=  "UnderShirt " + members[parseInt(card_id, 10)].under_shirt + "\n";
             }
 
             //スーパーアーマー装備
             if(members[parseInt(card_id, 10)].super_armor==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value +=  "スーパーアーマー" + members[parseInt(card_id, 10)].super_armor + "\n";
+            document.getElementById("kaizo_ability").value +=  "SuperArmor " + members[parseInt(card_id, 10)].super_armor + "\n";
             }
 
             //ステータスガード
             if(members[parseInt(card_id, 10)].status_guard==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value +=  "ステータスガード" + members[parseInt(card_id, 10)].status_guard + "\n";
+            document.getElementById("kaizo_ability").value +=  "StatusGuard " + members[parseInt(card_id, 10)].status_guard + "\n";
             }
 
             //フロート装備
             if(members[parseInt(card_id, 10)].float==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "フロートシューズ" + members[parseInt(card_id, 10)].float+"\n";
+            document.getElementById("kaizo_ability").value += "FloatShoes " + members[parseInt(card_id, 10)].float+"\n";
             }
 
             //エアーシューズ装備
             if(members[parseInt(card_id, 10)].air==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "エアシューズ" + members[parseInt(card_id, 10)].air+"\n";
+            document.getElementById("kaizo_ability").value += "AirShoes " + members[parseInt(card_id, 10)].air+"\n";
             }
 
             //ゲージ
@@ -4369,112 +3288,119 @@ ability_sarch_process();
             if(members[parseInt(card_id, 10)].rash==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value +=  "ラッシュサポート" + members[parseInt(card_id, 10)].rash + "\n";
+            document.getElementById("kaizo_ability").value +=  "Rush " + members[parseInt(card_id, 10)].rash + "\n";
             }
 
             //ビートサポート装備
             if(members[parseInt(card_id, 10)].beat==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value +=  "ビートサポート" + members[parseInt(card_id, 10)].beat + "\n";
+            document.getElementById("kaizo_ability").value +=  "Beat " + members[parseInt(card_id, 10)].beat + "\n";
             }
 
             //タンゴサポート装備
             if(members[parseInt(card_id, 10)].tango==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value +=  "タンゴサポート" + members[parseInt(card_id, 10)].tango + "\n";
+            document.getElementById("kaizo_ability").value +=  "Tango " + members[parseInt(card_id, 10)].tango + "\n";
             }
 
             //移動による効果
             if(members[parseInt(card_id, 10)].move_panel==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "移動で" + members[parseInt(card_id, 10)].move_panel+"\n";
+            document.getElementById("kaizo_ability").value += "PanelBug " + members[parseInt(card_id, 10)].move_panel+"\n";
             }
 
-            //チップリカバリー
+            //ChipRecovery
             if(members[parseInt(card_id, 10)].chip_recovery==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "チップリカバリー_" + members[parseInt(card_id, 10)].chip_recovery+"\n";
+            document.getElementById("kaizo_ability").value += "ChipRecovery_" + members[parseInt(card_id, 10)].chip_recovery+"\n";
             }
 
             //セルフリカバリー（）
             if(members[parseInt(card_id, 10)].self_recovery==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "セルフリカバリー_" + members[parseInt(card_id, 10)].self_recovery+"\n";
+            document.getElementById("kaizo_ability").value += "SelfRecovery_" + members[parseInt(card_id, 10)].self_recovery+"\n";
             }
 
-            //ココロバグ
+            //Emotionバグ
             if(members[parseInt(card_id, 10)].kokoro_bug==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "ココロバグ" + members[parseInt(card_id, 10)].kokoro_bug+"\n";
+            document.getElementById("kaizo_ability").value += "Emotion Bug " + members[parseInt(card_id, 10)].kokoro_bug+"\n";
             }
 
             //バスター空打ち
             if(members[parseInt(card_id, 10)].baster_blank==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "バスター" + members[parseInt(card_id, 10)].baster_blank+"\n";
+            document.getElementById("kaizo_ability").value += "Buster Blank " + members[parseInt(card_id, 10)].baster_blank+"\n";
             }
 
-            //移動バグ
+            //MovementBug
             if(members[parseInt(card_id, 10)].move_bug==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "移動バグ" + members[parseInt(card_id, 10)].move_bug+"\n";
+            document.getElementById("kaizo_ability").value += "Movement Bug " + members[parseInt(card_id, 10)].move_bug+"\n";
             }
 
             //ダメージ状態異常バグ
             if(members[parseInt(card_id, 10)].damage_bug==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "ダメージ" + members[parseInt(card_id, 10)].damage_bug+"\n";
+            document.getElementById("kaizo_ability").value += "Damage Bug " + members[parseInt(card_id, 10)].damage_bug+"\n";
             }
 
-            //バトルHPバグ
+            //BattleHPBug
             if(members[parseInt(card_id, 10)].battle_hp_bug==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "バトルHPバグ" + members[parseInt(card_id, 10)].battle_hp_bug+"\n";
+            document.getElementById("kaizo_ability").value += "Battle HP Bug " + members[parseInt(card_id, 10)].battle_hp_bug+"\n";
             }
 
             //カスタムHPバグ
             if(members[parseInt(card_id, 10)].custom_hp_bug==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "カスタムHPバグ" + members[parseInt(card_id, 10)].custom_hp_bug+"\n";
+            document.getElementById("kaizo_ability").value += "Custom HP Bug " + members[parseInt(card_id, 10)].custom_hp_bug+"\n";
             }
 
             //カスタムダメージ
             if(members[parseInt(card_id, 10)].custom_damage==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "カスタムダメージ" + members[parseInt(card_id, 10)].custom_damage+"\n";
+            document.getElementById("kaizo_ability").value += "Custom Damage " + members[parseInt(card_id, 10)].custom_damage+"\n";
             }
 
             //ステータスバグ
             if(members[parseInt(card_id, 10)].status_bug==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "ステータスバグ" + members[parseInt(card_id, 10)].status_bug+"\n";
+            document.getElementById("kaizo_ability").value += "Color Bug " + members[parseInt(card_id, 10)].status_bug+"\n";
             }
 
             //ウイルス遭遇関係のプログラム（ミリオネアもここに当たる）
             if(members[parseInt(card_id, 10)].mode==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "モード" + members[parseInt(card_id, 10)].mode+"\n";
+            document.getElementById("kaizo_ability").value += "mode" + members[parseInt(card_id, 10)].mode+"\n";
             }
 
             //バグストッパー
             if(members[parseInt(card_id, 10)].bug_stoper==undefined){
               document.getElementById("kaizo_ability").value += "";
             }else{
-            document.getElementById("kaizo_ability").value += "バグストッパー" + members[parseInt(card_id, 10)].bug_stoper+"\n";
+            document.getElementById("kaizo_ability").value += "Bug Stoper " + members[parseInt(card_id, 10)].bug_stoper+"\n";
+            }
+
+            //サーチシャッフル
+            if(members[parseInt(card_id, 10)].sarch_shufle==undefined){
+              document.getElementById("kaizo_ability").value += "";
+            }else{
+            document.getElementById("kaizo_ability").value += "SarchShuffle " + members[parseInt(card_id, 10)].sarch_shufle+"\n";
             }
         }
       </script>
