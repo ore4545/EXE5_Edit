@@ -194,17 +194,7 @@
 <table border="1">
   <form name="indv"></form>
   <tbody>
-    <tr>
-      <td colspan="1">
-        残りメガバイト
-        <input cols="1" rows="1" id="megabite"  style="font-size:20pt;width: 30px;" readonly ></input>
-        /80
-      </td>
-      <td colspan="3">
-        使用メガバイト
-        <input cols="1" rows="1" id="megabite_use"  style="font-size:20pt;width: 40px;" readonly ></input>
-      </td>
-    </tr>
+  
     <tr>
       <td id="kaizo_ran_1">0A/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
         <select id="kaizo_1" onchange="mega()">
@@ -1764,9 +1754,6 @@
 
 
 
-            //計算結果を挿入
-            document.getElementById('megabite').value = mega_math;
-            document.getElementById('megabite_use').value = mega_use;
 
             //アビリティリザルト初期化
             document.getElementById("ablity_result").value = "";
