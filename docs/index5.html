@@ -14,7 +14,7 @@
     <font color = "red">予め改造カードの画面が出現＆読み込み済みのセーブデータで行ってください。<br></font>
     改造カード画面出現＆読み込み済みにするには<a href="https://github.com/Prof9/Aio-Kaizou">こちら</a>
     <br></br>
-    ロックマンエグゼ4チートコードジェネレーターVer.R/B(β)←<br>
+    ロックマンエグゼ4チートコードジェネレーターVer.R/B←<br>
     <a href= "index.html" >ロックマンエグゼ5チートコードジェネレーターVer.B</a><br>
     <a href= "index2.html" >ロックマンエグゼ5チートコードジェネレーターVer.C</a><br>
     <a href= "index3.html" >ロックマンエグゼ6チートコードジェネレーターVer.G</a><br>
@@ -31,6 +31,7 @@
     <br>
     今後付けたい機能
     <li>改造カードの予想アビリティの表示(誤字脱字の確認中)</li>
+    <li>能力値の確認</li>
     <li>改造カードピックアップ(インターフェースの調整)</li>
 
 
@@ -194,7 +195,7 @@
 <table border="1">
   <form name="indv"></form>
   <tbody>
-  
+
     <tr>
       <td id="kaizo_ran_1">0A/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
         <select id="kaizo_1" onchange="mega()">
@@ -2016,6 +2017,7 @@
                 document.getElementById('ablity_'+[i]).value += "移動で" + members[parseInt(valc[i], 10)].move_panel+"\n";
                 if(members[parseInt(valc[i], 10)].move_panel=="毒パネル"){
                   move_panel = "移動で"+members[parseInt(valc[i], 10)].move_panel ;
+                  ability_box[15] = move_panel;
                 }else if(move_panel=="移動で毒パネル"){
                   ability_box[15] = move_panel;
 
@@ -2538,7 +2540,7 @@
                 if(members[parseInt(card_id, 10)].battle_hp_bug==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value += "バトルHPバグLv" + members[parseInt(card_id, 10)].battle_hp_bug+"\n";
+                  document.getElementById("kaizo_ability").value += "バトルHPバグ" + members[parseInt(card_id, 10)].battle_hp_bug+"\n";
                 }
 
                 //カスタムHPバグ
