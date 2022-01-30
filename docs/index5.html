@@ -201,29 +201,29 @@
         <select id="kaizo_1" onchange="mega()">
           <option value="00">未選択</option>
         </select>
-        <br>パラメータ<textarea id="parametor_1" rows="4" cols="6"></textarea>
-        アビリティ<textarea id="ablity_1" rows="4" cols="8"></textarea></br>
+        <br>パラメータ<textarea id="parametor_1" rows="4" cols="10"></textarea><br>
+        アビリティ<textarea id="ablity_1" rows="4" cols="20"></textarea></br>
       </td>
       <td id="kaizo_ran_2">0B/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
         <select id="kaizo_2"onchange="mega()">
           <option value="00">未選択</option>
         </select>
-        <br>パラメータ<textarea id="parametor_2" rows="4" cols="6"></textarea>
-        アビリティ<textarea id="ablity_2" rows="4" cols="8"></textarea></br>
+        <br>パラメータ<textarea id="parametor_2" rows="4" cols="10"></textarea><br>
+        アビリティ<textarea id="ablity_2" rows="4" cols="20"></textarea></br>
       </td>
       <td id="kaizo_ran_3">0C/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
         <select id="kaizo_3"onchange="mega()">
           <option value="00">未選択</option>
         </select>
-        <br>パラメータ<textarea id="parametor_3" rows="4" cols="6"></textarea>
-        アビリティ<textarea id="ablity_3" rows="4" cols="8"></textarea></br>
+        <br>パラメータ<textarea id="parametor_3" rows="4" cols="10"></textarea><br>
+        アビリティ<textarea id="ablity_3" rows="4" cols="20"></textarea></br>
       </td>
       <td id="kaizo_ran_4">0D/<input type="reset" value="未選択"onclick="select_solve(4);"><br>
         <select id="kaizo_4"onchange="mega()">
           <option value="00">未選択</option>
         </select>
-        <br>パラメータ<textarea id="parametor_4" rows="4" cols="6"></textarea>
-        アビリティ<textarea id="ablity_4" rows="4" cols="8"></textarea></br>
+        <br>パラメータ<textarea id="parametor_4" rows="4" cols="10"></textarea><br>
+        アビリティ<textarea id="ablity_4" rows="4" cols="20"></textarea></br>
       </td>
     </tr>
     <tr>
@@ -231,15 +231,15 @@
         <select id="kaizo_5"onchange="mega()">
           <option value="00">未選択</option>
         </select>
-        <br>パラメータ<textarea id="parametor_5" rows="4" cols="6"></textarea>
-        アビリティ<textarea id="ablity_5" rows="4" cols="8"></textarea></br>
+        <br>パラメータ<textarea id="parametor_5" rows="4" cols="10"></textarea><br>
+        アビリティ<textarea id="ablity_5" rows="4" cols="20"></textarea></br>
       </td>
       <td id="kaizo_ran_6">0F/<input type="reset" value="未選択"onclick="select_solve(6);"><br>
         <select id="kaizo_6"onchange="mega()">
           <option value="00">未選択</option>
         </select>
-        <br>パラメータ<textarea id="parametor_6" rows="4" cols="6"></textarea>
-        アビリティ<textarea id="ablity_6" rows="4" cols="8"></textarea></br>
+        <br>パラメータ<textarea id="parametor_6" rows="4" cols="10"></textarea><br>
+        アビリティ<textarea id="ablity_6" rows="4" cols="20"></textarea></br>
       </td>
 
     </tr>
@@ -2142,12 +2142,12 @@
               //総合ステータス書き出し
               document.getElementById('body_result').value = body_math;
               document.getElementById('hp_result').value = hp_math;
-              document.getElementById('attack_result').value = attack_math;
-              document.getElementById('rapid_result').value = rapid_math;
-              document.getElementById('charge_result').value = charge_math;
-              document.getElementById('custom_result').value = custom_math;
-              document.getElementById('m_folder_result').value = m_folder_math;
-              document.getElementById('g_folder_result').value = g_folder_math;
+              document.getElementById('attack_result').value = Math.max(1, Math.min(15, attack_math));
+              document.getElementById('rapid_result').value = Math.max(1, Math.min(5,rapid_math));
+              document.getElementById('charge_result').value = Math.max(1, Math.min(5,charge_math));
+              document.getElementById('custom_result').value = Math.max(1, Math.min(8,custom_math));
+              document.getElementById('m_folder_result').value = Math.max(1, Math.min(10,m_folder_math));
+              document.getElementById('g_folder_result').value = Math.max(1, Math.min(5,g_folder_math));
 
             }
 
