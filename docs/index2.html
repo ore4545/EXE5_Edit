@@ -27,7 +27,7 @@
     お知らせ
     <li>現在β版による試作テスト中です。</li>
     <li>機能の改修及び、要望はGitまでお願いします。</li>
-    <li>エグゼ4の実装</li>
+    <li>ランダム生成の実装</li>
     <li>翻訳しました Thnak you for Chocola and N1GP!</li>
     <br>
     今後付けたい機能
@@ -244,126 +244,19 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
             <input cols="1" rows="1" id="megabite"  style="font-size:20pt;width: 30px;" readonly ></input>
             /80
           </td>
-          <td colspan="4">
+          <td colspan="3">
             使用メガバイト
               <input cols="1" rows="1" id="megabite_use"  style="font-size:20pt;width: 40px;" readonly ></input>
+          </td>
+          <td colspan="1">
+
+            <input type="reset" value="ランダム生成"onclick="random_botton();"><br>
           </td>
         </tr>
       <tr>
         <td id="kaizo_ran_1">1枚目/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
           <select id="kaizo_1" onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
         </select>
           <br>パラメータ<textarea id="parametor_1" rows="4" cols="6"></textarea>
               アビリティ<textarea id="ablity_1" rows="4" cols="8"></textarea></br>
@@ -371,117 +264,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <td id="kaizo_ran_2">2枚目/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
           <select id="kaizo_2"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
         </select>
         <br>パラメータ<textarea id="parametor_2" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_2" rows="4" cols="8"></textarea></br>
@@ -489,118 +271,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       <td id="kaizo_ran_3">3枚目/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
         <select id="kaizo_3"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
-
         </select>
         <br>パラメータ<textarea id="parametor_3" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_3" rows="4" cols="8"></textarea></br>
@@ -608,117 +278,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <td id="kaizo_ran_4">4枚目/<input type="reset" value="未選択"onclick="select_solve(4);"><br>
           <select id="kaizo_4"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
         </select>
         <br>パラメータ<textarea id="parametor_4" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_4" rows="4" cols="8"></textarea></br>
@@ -726,117 +285,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <td id="kaizo_ran_5">5枚目/<input type="reset" value="未選択"onclick="select_solve(5);"><br>
           <select id="kaizo_5"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
         </select>
         <br>パラメータ<textarea id="parametor_5" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_5" rows="4" cols="8"></textarea></br>
@@ -846,117 +294,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <td id="kaizo_ran_6">6枚目/<input type="reset" value="未選択"onclick="select_solve(6);"><br>
           <select id="kaizo_6"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
         </select>
         <br>パラメータ<textarea id="parametor_6" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_6" rows="4" cols="8"></textarea></br>
@@ -964,118 +301,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <td id="kaizo_ran_7">7枚目/<input type="reset" value="未選択"onclick="select_solve(7);"><br>
           <select id="kaizo_7"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
-
         </select>
         <br>パラメータ<textarea id="parametor_7" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_7" rows="4" cols="8"></textarea></br>
@@ -1083,118 +308,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <td id="kaizo_ran_8">8枚目/<input type="reset" value="未選択"onclick="select_solve(8);"><br>
           <select id="kaizo_8"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
-
         </select>
         <br>パラメータ<textarea id="parametor_8" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_8" rows="4" cols="8"></textarea></br>
@@ -1202,117 +315,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <td id="kaizo_ran_9">9枚目/<input type="reset" value="未選択"onclick="select_solve(9);"><br>
           <select id="kaizo_9"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
         </select>
         <br>パラメータ<textarea id="parametor_9" rows="4" cols="6"></textarea>
             アビリティ<textarea id="ablity_9" rows="4" cols="8"></textarea></br>
@@ -1320,118 +322,6 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <td id="kaizo_ran_10">10枚目/<input type="reset" value="未選択"onclick="select_solve(10);"><br>
           <select id="kaizo_10"onchange="mega()">
           <option value="00">未選択</option>
-          <option value="01">7MB/メットール</option>
-          <option value="02">12MB/ボルケルギア</option>
-          <option value="03">15MB/ゴースラー</option>
-          <option value="04">10MB/スウォーディン</option>
-          <option value="05">18MB/キオルシン</option>
-          <option value="06">10MB/アーバルボーイ</option>
-          <option value="07">10MB/チュートン</option>
-          <option value="08">5MB/ビリー</option>
-          <option value="09">9MB/キャンデービル</option>
-          <option value="10">12MB/ダイジャン</option>
-          <option value="11">15MB/チャマッシュ</option>
-          <option value="12">6MB/ガルー</option>
-          <option value="13">16MB/バジリコ</option>
-          <option value="14">17MB/ヨーヨット</option>
-          <option value="15">18MB/カーズ</option>
-          <option value="16">13MB/ヌール</option>
-          <option value="17">19MB/フデロー</option>
-          <option value="18">20MB/ドリームビット</option>
-          <option value="19">17MB/スーンハーク</option>
-          <option value="20">21MB/キラーズアイ</option>
-          <option value="21">15MB/クエイカー</option>
-          <option value="22">18MB/ラウンダ</option>
-          <option value="23">17MB/ゲイラーク</option>
-          <option value="24">5MB/マルモコ</option>
-          <option value="25">15MB/プルメロ</option>
-          <option value="26">20MB/ザエモン</option>
-          <option value="27">20MB/キャタック</option>
-          <option value="28">15MB/チャンプル</option>
-          <option value="29">20MB/ウズリム</option>
-          <option value="30">16MB/サボテコロン</option>
-          <option value="31">40MB/ロール</option>
-          <option value="32">35MB/ガッツマン</option>
-          <option value="33">43MB/ファイアマン</option>
-          <option value="34">45MB/フォルテ</option>
-          <option value="35">38MB/クイックマン</option>
-          <option value="36">40MB/スネークマン</option>
-          <option value="37">37MB/バブルマン</option>
-          <option value="38">45MB/フレイムマン</option>
-          <option value="39">46MB/メタルマン</option>
-          <option value="40">43MB/シェードマン</option>
-          <option value="41">43MB/スパークマン</option>
-          <option value="42">40MB/ジャンクマン</option>
-          <option value="43">45MB/ジャイロマン</option>
-          <option value="44">45MB/メディ</option>
-          <option value="45">44MB/コスモマン</option>
-          <option value="46">35MB/炎山のカスタマイズ</option>
-          <option value="47">35MB/ヒノケンのカスタマイズ</option>
-          <option value="48">35MB/エレキはくしゃくのカスタマイズ</option>
-          <option value="49">47MB/アネッタのカスタマイズ</option>
-          <option value="50">47MB/コオリスキーのカスタマイズ</option>
-          <option value="51">7MB/カブタンク</option>
-          <option value="52">10MB/ポワルド</option>
-          <option value="53">16MB/フロシェル</option>
-          <option value="54">10MB/ハルドボルズ</option>
-          <option value="55">10MB/クモンペ</option>
-          <option value="56">15MB/ガイアント</option>
-          <option value="57">20MB/ミノゴロモン</option>
-          <option value="58">15MB/ファンカー</option>
-          <option value="59">18MB/チクリート</option>
-          <option value="60">11MB/ラッシュ</option>
-          <option value="61">8MB/ラビリー</option>
-          <option value="62">20MB/フレイボー</option>
-          <option value="63">10MB/エビロン</option>
-          <option value="64">20MB/ＵＦＯサニー</option>
-          <option value="65">18MB/ゲニン</option>
-          <option value="66">20MB/マグマドラゴン</option>
-          <option value="67">23MB/プロテクト</option>
-          <option value="68">20MB/ドゴーン</option>
-          <option value="69">18MB/コリペン</option>
-          <option value="70">20MB/スパークビー</option>
-          <option value="71">16MB/プロトバグ</option>
-          <option value="72">13MB/Ｎ．Ｏ</option>
-          <option value="73">14MB/パラボール</option>
-          <option value="74">22MB/ダーマ</option>
-          <option value="75">19MB/ウェザース</option>
-          <option value="76">20MB/エレンプラ</option>
-          <option value="77">18MB/サーキラー</option>
-          <option value="78">17MB/ドリクロール</option>
-          <option value="79">25MB/パルスバット</option>
-          <option value="80">24MB/アップルサム</option>
-          <option value="81">45MB/ウッドマン</option>
-          <option value="82">35MB/エレキマン</option>
-          <option value="83">45MB/ブルース</option>
-          <option value="84">43MB/ボンバーマン</option>
-          <option value="85">44MB/マジックマン</option>
-          <option value="86">45MB/ヒートマン</option>
-          <option value="87">46MB/ゲートマン</option>
-          <option value="88">46MB/フラッシュマン</option>
-          <option value="89">47MB/ドリルマン</option>
-          <option value="90">45MB/キングマン</option>
-          <option value="91">40MB/アクアマン</option>
-          <option value="92">46MB/ウインドマン</option>
-          <option value="93">47MB/レーザーマン</option>
-          <option value="94">42MB/カーネル</option>
-          <option value="95">40MB/トマホークマン</option>
-          <option value="96">25MB/熱斗のカスタマイズ</option>
-          <option value="97">40MB/デカオのカスタマイズ</option>
-          <option value="98">5MB/まどいのカスタマイズ</option>
-          <option value="99">17MB/マハ・ジャラマのバグしゅうせい</option>
-          <option value="100">64MB/トラキチの戦じゅつ</option>
-          <option value="101">55MB/ドリームウイルス</option>
-          <option value="102">60MB/ゴスペル</option>
-          <option value="103">50MB/セレナード</option>
-          <option value="104">55MB/プロト</option>
-          <option value="105">59MB/フォルテＧＳ</option>
-          <option value="106">70MB/デューオ</option>
-          <option value="107">70MB/フォルテＸＸ</option>
-          <option value="108">70MB/ネビュラグレイ</option>
-          <option value="109">50MB/パパのしゅうせいプログラム</option>
-          <option value="110">80MB/光彩斗</option>
-          <option value="111">70MB/フォルテクロスロックマン</option>
-
         </select>
         <br>パラメータ<textarea id="parametor_10" rows="4" cols="6" readonly></textarea>
             アビリティ<textarea id="ablity_10" rows="4" cols="8" readonly></textarea></br>
@@ -1486,6 +376,15 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       //セッション開始時に読み込み
       window.onload = function() {
         mega();
+        for(let i = 1; i<members.length;i++){
+          for(let z=1;z<=10;z++){
+          var select = document.getElementById("kaizo_"+[z]);
+          var option = document.createElement("option");
+          option.text = members[i].mb+"MB/"+members[i].name;
+          option.value = parseInt(members[i].id, 16);
+          select.appendChild(option);
+        }
+        }
         //generat_list();
       };
 
@@ -3287,6 +2186,32 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       mega();
       }
 
+      //ランダム選択用
+      function random_botton(){
+
+        //初期化
+        reset_botton();
+        let kaizo_random_list=[];
+          let kaizo_use_list =[];
+
+          //改造カードを生成
+        for(let i=1;i<=10;i++){
+            kaizo_random_list=[];
+          for(let i = 1; i<members.length;i++){
+            //既定のメガバイト以下もしくはダブりは回避する
+            if((members[i].mb<=mega_math)&&(kaizo_use_list[i-1]!=parseInt(members[i].id,16))){
+              kaizo_random_list.push(parseInt(members[i].id,16));
+            }
+          }
+              document.getElementById('kaizo_'+[i]).value = kaizo_random_list[Math.floor(Math.random() * kaizo_random_list.length)];
+              kaizo_use_list[i]=document.getElementById('kaizo_'+[i]).value;
+                  mega();
+        if( mega_math<5){
+        break;
+        }
+      }
+      }
+
       //選択したカアビリティリストをピックアップに入れる関数
       function select_ability_list(){
 
@@ -3451,7 +2376,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         {name:'ゴスペル',id:'66',flag:"020012D5:00"+"\n"+"02006191:8D",mb:60,hp:"+600",kokoro_bug:"on",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2",status_bug:"Lv2"} ,
         {name:'セレナード',id:'67',flag:"020012D6:00"+"\n"+"02006192:8D",mb:50,hp:"-20%",b_cs:"リフレクト",chip_recovery:"100"} ,
         {name:'プロト',id:'68',flag:"020012D7:00"+"\n"+"02006193:8D",mb:55,hp:"+100",custom:"-3",g_folder:"+2"} ,
-        {name:'フォルテＧＳ',id:'69',flag:"020012D8:00"+"\n"+"02006194:8D",mb:59,hp:"+300",cd_add:"HPバグ",status_bug:"Lv2"} ,
+        {name:'フォルテＧＳ',id:'69',flag:"020012D8:00"+"\n"+"02006194:8D",mb:59,hp:"+300",cs_add:"HPバグ",status_bug:"Lv2"} ,
         {name:'デューオ',id:'6A',flag:"020012D9:00"+"\n"+"02006195:8D",mb:70,hp:"+40%",m_folder:"+1",g_folder:"+1"} ,
         {name:'フォルテＸＸ',id:'6B',flag:"020012DA:00"+"\n"+"02006196:8D",mb:70,hp:"+400",float:"on",air:"on",f_barier:"バリア200",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
         {name:'ネビュラグレイ',id:'6C',flag:"020012DB:00"+"\n"+"02006197:8D",mb:70,hp:"-30%",b_cs:"ダークソード",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
@@ -3650,6 +2575,18 @@ console.log(sarch_result.length)
     //選択するたびに実行される関数
     function mega(){
 
+      //毎回導入
+      for(i=1;i<=10;i++){
+      valc[i] = document.getElementById("kaizo_"+[i]).value;
+    }
+
+      //メガバイトの計算（かなり回りくどいことしてます。正直forでなんとかなる）
+      mega_use =(members[parseInt(valc[1], 10)].mb + members[parseInt(valc[2], 10)].mb + members[parseInt(valc[3], 10)].mb + members[parseInt(valc[4], 10)].mb+ members[parseInt(valc[5], 10)].mb + members[parseInt(valc[6], 10)].mb+ members[parseInt(valc[7], 10)].mb+ members[parseInt(valc[8], 10)].mb+ members[parseInt(valc[9], 10)].mb+ members[parseInt(valc[10], 10)].mb);
+
+      //計算結果
+      mega_math = 80 - mega_use;
+
+
                 //検索ログの表示
                   document.getElementById("kaizo_parametor").value = "検索中";
                   document.getElementById("kaizo_ability").value = "検索中";
@@ -3668,16 +2605,6 @@ console.log(sarch_result.length)
       //アビリティ結果用
         let ability_box=[];
 
-      //毎回導入
-      for(i=1;i<=10;i++){
-      valc[i] = document.getElementById("kaizo_"+[i]).value;
-    }
-
-      //メガバイトの計算（かなり回りくどいことしてます。正直forでなんとかなる）
-      mega_use =(members[parseInt(valc[1], 10)].mb + members[parseInt(valc[2], 10)].mb + members[parseInt(valc[3], 10)].mb + members[parseInt(valc[4], 10)].mb+ members[parseInt(valc[5], 10)].mb + members[parseInt(valc[6], 10)].mb+ members[parseInt(valc[7], 10)].mb+ members[parseInt(valc[8], 10)].mb+ members[parseInt(valc[9], 10)].mb+ members[parseInt(valc[10], 10)].mb);
-
-      //計算結果
-      mega_math = 80 - mega_use;
 
       //計算結果を挿入
         document.getElementById('megabite').value = mega_math;

@@ -27,11 +27,12 @@
     notice
     <li>We are currently conducting a prototype test using the beta version.</li>
     <li>Please contact Git for functional improvements and requests.</li>
-    <li>Mega Man Battle Network 4 CheatCodeGenerator(Only Japan)</li>
+    <li>Implementation of random generation</li>
     <li>Translated (Thnak you for Chocola and N1GP!)</li>
     <br>
     Functions you want to add in the future
     <li>Display of expected abilities of modified cards (confirming typographical errors)</li>
+
 
 
     <br>
@@ -242,9 +243,13 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
             <input cols="1" rows="1" id="megabite"  style="font-size:20pt;width: 30px;" readonly ></input>
             /80
           </td>
-          <td colspan="4">
+          <td colspan="3">
             Megabytes used
               <input cols="1" rows="1" id="megabite_use"  style="font-size:20pt;width: 40px;" readonly ></input>
+          </td>
+          <td colspan="1">
+
+            <input type="reset" value="Randomizer"onclick="random_botton();"><br>
           </td>
         </tr>
       <tr>
@@ -2186,6 +2191,32 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       mega();
       }
 
+      //ランダム選択用
+      function random_botton(){
+
+        //初期化
+        reset_botton();
+        let kaizo_random_list=[];
+          let kaizo_use_list =[];
+
+          //改造カードを生成
+        for(let i=1;i<=10;i++){
+            kaizo_random_list=[];
+          for(let i = 1; i<members.length;i++){
+            //既定のメガバイト以下もしくはダブりは回避する
+            if((members[i].mb<=mega_math)&&(kaizo_use_list[i-1]!=parseInt(members[i].id,16))){
+              kaizo_random_list.push(parseInt(members[i].id,16));
+            }
+          }
+              document.getElementById('kaizo_'+[i]).value = kaizo_random_list[Math.floor(Math.random() * kaizo_random_list.length)];
+              kaizo_use_list[i]=document.getElementById('kaizo_'+[i]).value;
+                  mega();
+
+        if( mega_math<5){
+        break;
+        }
+      }
+      }
       //選択したカアビリティリストをピックアップに入れる関数
       function select_ability_list(){
 
@@ -2245,124 +2276,126 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
 
       //改造カードのデータベース
       let members =[
-        {name:'none',id:'',flag:"",mb:0,} ,
-         {name:'Canodumb',id:'01',flag:"020006C0:00"+"\n"+"02005048:43",mb:10,hp:"-40",attack:"+1",b_cs:"M-Cannon"} ,
-         {name:'Mollusk/Ammonicule',id:'02',flag:"020006C1:00"+"\n"+"02005049:43",mb:16,hp:"+80",body:"Abody",attack:"-1",f_barier:"BblWrap"} ,
-         {name:'ColdBear',id:'03',flag:"020006C2:00"+"\n"+"0200504A:43",mb:18,hp:"+140",body:"Abody",b_cs:"IceCube",move_panel:"IcePanel(25%)"} ,
-         {name:'Miney',id:'04',flag:"020006C3:00"+"\n"+"0200504B:43",mb:12,attack:"+3",float:"off",air:"off"} ,
-         {name:'Megalian/Heady',id:'05',flag:"020006C4:00"+"\n"+"0200504C:43",mb:20,hp:"-80",charge:"+4",air:"on",f_barier:"Barr100"} ,
-         {name:'MetFire',id:'06',flag:"020006C5:00"+"\n"+"0200504D:43",mb:20,body:"Fbody",b_button:"Meteor1",move_bug:"on"} ,
-         {name:'KillPlant',id:'07',flag:"020006C6:00"+"\n"+"0200504E:43",mb:19,body:"Wbody",air:"off",b_cs:"GrasSeed"} ,
-         {name:'Shadow',id:'08',flag:"020006C7:00"+"\n"+"0200504F:43",mb:6,b_cs:"Invis",b_button:"Sword",status_guard:"off"} ,
-         {name:'Beetle',id:'09',flag:"020006C8:00"+"\n"+"02005050:43",mb:11,hp:"+100",b_button:"MiniBomb",b_cs:"Default CS"} ,
-         {name:'Heavy',id:'0A',flag:"020006C9:00"+"\n"+"02005051:43",mb:15,attack:"+1",super_armor:"on",buster_add:"off"} ,
-         {name:'Viney',id:'0B',flag:"020006CA:00"+"\n"+"02005052:43",mb:24,hp:"-20%",body:"Wbody",status_guard:"on",b_left:"off"} ,
-         {name:'Slimey',id:'0C',flag:"020006CB:00"+"\n"+"02005053:43",mb:12,hp:"+30",body:"Abody",b_cs:"PanelGrab",gage:"Normal"} ,
-         {name:'Volcano',id:'0D',flag:"020006CC:00"+"\n"+"02005054:43",mb:10,body:"Fbody",charge:"+4",b_cs:"BlackBomb",kokoro_bug:"on"} ,
-         {name:'Numbers',id:'0E',flag:"020006CD:00"+"\n"+"02005055:43",mb:17,custom:"+1",m_folder:"+1",g_folder:"+1",b_cs:"Default CS",custom_hp_bug:"Lv2"} ,
-         {name:'MagTect',id:'0F',flag:"020006CE:00"+"\n"+"02005056:43",mb:15,hp:"-5%",body:"Ebody",float:"on",cs_add:"Pull 1(50%)"} ,
-         {name:'Spidey',id:'10',flag:"020006CF:00"+"\n"+"02005057:43",mb:8,hp:"+60",body:"Wbody",move_panel:"GrassPanel(25%)"} ,
-         {name:'Bomboy',id:'11',flag:"020006D0:00"+"\n"+"02005058:43",mb:14,buster_add:"Push 1(12.5%)",cs_add:"off",move_bug:"off",move_panel:"off"} ,
-         {name:'WuNote',id:'12',flag:"020006D1:00"+"\n"+"02005059:43",mb:13,hp:"+60",body:"Wbody",buster_add:"GrassPanel(50%)",damage_bug:"off"} ,
-         {name:'Flashy',id:'13',flag:"020006D2:00"+"\n"+"0200505A:43",mb:11,hp:"+5%",body:"Ebody",attack:"-1",custom_damage:"off"} ,
-         {name:'EleOgre',id:'14',flag:"020006D3:00"+"\n"+"0200505B:43",mb:16,hp:"+50",body:"Ebody",kokoro_bug:"on",status_bug:"off"} ,
-         {name:'OldStove',id:'15',flag:"020006D4:00"+"\n"+"0200505C:43",mb:12,hp:"+130",body:"Fbody",b_cs:"FireBrn1",battle_hp_bug:"Lv1"} ,
-         {name:'Puffy （BN6）',id:'16',flag:"020006D5:00"+"\n"+"0200505D:43",mb:11,body:"Abody",rapid:"+4",baster_blank:"off"} ,
-         {name:'Starfish',id:'17',flag:"020006D6:00"+"\n"+"0200505E:43",mb:15,body:"Abody",cs_add:"Bubbling(50%)"} ,
-         {name:'BigHat',id:'18',flag:"020006D7:00"+"\n"+"0200505F:43",mb:8,super_armor:"off",b_cs:"FlshBom1"} ,
-         {name:'ScareCrow',id:'19',flag:"020006D8:00"+"\n"+"02005060:43",mb:14,body:"Ebody",b_cs:"DolThnd1",chip_recovery:"30",baster_blank:"Blank(25%),CS(12%)"} ,
-         {name:'FighterPlane',id:'1A',flag:"020006D9:00"+"\n"+"02005061:43",mb:20,hp:"-10%",float:"on",air:"on"} ,
-         {name:'Cragger',id:'1B',flag:"020006DA:00"+"\n"+"02005062:43",mb:19,hp:"+200",under_shirt:"on",damage_bug:"HP Bug"} ,
-         {name:'Armadillo',id:'1C',flag:"020006DB:00"+"\n"+"02005063:43",mb:12,hp:"+5%",charge:"-3",cs_add:"BreakBuster"} ,
-         {name:'Kettle',id:'1D',flag:"020006DC:00"+"\n"+"02005064:43",mb:15,b_cs:"Spreadr1",b_left:"Shield",chip_recovery:"20",custom_damage:"40",battle_hp_bug:"off"} ,
-         {name:'EarthDragon',id:'1E',flag:"020006DD:00"+"\n"+"02005065:43",mb:20,hp:"+180",m_folder:"+1",b_cs:"Default CS",status_bug:"Lv1"} ,
-         {name:'NumberMan',id:'1F',flag:"020006DE:00"+"\n"+"02005066:43",mb:35,hp:"-20%",custom:"+3",m_folder:"+1",g_folder:"+1"} ,
-         {name:'IceMan',id:'20',flag:"020006DF:00"+"\n"+"02005067:43",mb:25,hp:"+80",body:"Abody",super_armor:"off",b_cs:"IceSeed",custom_hp_bug:"off"} ,
-         {name:'SkullMan',id:'21',flag:"020006E0:00"+"\n"+"02005068:43",mb:30,hp:"+100",cs_add:"HP Bug",battle_hp_bug:"Lv1",status_bug:"Lv1"} ,
-         {name:'ShadowMan',id:'22',flag:"020006E1:00"+"\n"+"02005069:43",mb:38,hp:"-50",float:"on",b_cs:"Longswrd",b_left:"AntiMagic"} ,
-         {name:'CutMan',id:'23',flag:"020006E2:00"+"\n"+"0200506A:43",mb:32,hp:"-100",attack:"+4",b_cs:"YoYo"} ,
-         {name:'KnightMan',id:'24',flag:"020006E3:00"+"\n"+"0200506B:43",mb:45,hp:"+20%",attack:"×2",super_armor:"on",under_shirt:"on",baster_blank:"Blank(25%),CS(6%)"} ,
-         {name:'ToadMan',id:'25',flag:"020006E4:00"+"\n"+"0200506C:43",mb:34,body:"Abody",attack:"-1",charge:"-3",cs_add:"Paralyze 90i(50%)",baster_blank:"off"} ,
-         {name:'MagnetMan',id:'26',flag:"020006E5:00"+"\n"+"0200506D:43",mb:37,hp:"+240",body:"Ebody",cs_add:"off",b_left:"MagField"} ,
-         {name:'PlanetMan',id:'27',flag:"020006E6:00"+"\n"+"0200506E:43",mb:40,hp:"+300",body:"Wbody",status_guard:"on",air:"off",b_button:"CrakShot"} ,
-         {name:'BeastMan',id:'28',flag:"020006E7:00"+"\n"+"0200506F:43",mb:33,rapid:"+4",under_shirt:"on",b_cs:"StepSwrd",rash:"on",move_bug:"on"} ,
-         {name:'DesertMan',id:'29',flag:"020006E8:00"+"\n"+"02005070:43",mb:36,hp:"+160",charge:"+4",air:"off",damage_bug:"off"} ,
-         {name:'YamatoMan',id:'2A',flag:"020006E9:00"+"\n"+"02005071:43",mb:35,hp:"+10%",attack:"+1",b_left:"Reflect",custom_hp_bug:"Lv2"} ,
-         {name:'VideoMan',id:'2B',flag:"020006EA:00"+"\n"+"02005072:43",mb:32,hp:"-10%",cs_add:"Forward ConveyorPanel",gage:"Fast"} ,
-         {name:'BurnerMan',id:'2C',flag:"020006EB:00"+"\n"+"02005073:43",mb:29,hp:"+120",body:"Fbody",attack:"+2",custom_damage:"40",kokoro_bug:"on"} ,
-         {name:'StarMan',id:'2D',flag:"020006EC:00"+"\n"+"02005074:43",mb:32,attack:"-2",m_folder:"+1",move_panel:"off",kokoro_bug:"off",battle_hp_bug:"off"} ,
-         {name:'BlizzardMan',id:'2E',flag:"020006ED:00"+"\n"+"02005075:43",mb:30,hp:"+60",body:"Abody",float:"off",b_cs:"BlizBall"} ,
-         {name:'LarkMan',id:'2F',flag:"020006EE:00"+"\n"+"02005076:43",mb:36,air:"on",cs_add:"Chip Deletion",beat:"on",damage_bug:"Confuse"} ,
-         {name:'SlashMan',id:'30',flag:"020006EF:00"+"\n"+"02005077:43",mb:31,attack:"+4",b_cs:"WideSwrd",baster_blank:"Blank(25%),CS(6%)"} ,
-         {name:'EraseMan',id:'31',flag:"020006F0:00"+"\n"+"02005078:43",mb:40,hp:"-10%",m_folder:"+1",cs_add:"Erase Bug",battle_hp_bug:"Lv1"} ,
-         {name:'GroundMan',id:'32',flag:"020006F1:00"+"\n"+"02005079:43",mb:43,hp:"+25%",custom:"-1",m_folder:"-1",b_cs:"DrillArm"} ,
-         {name:'DustMan',id:'33',flag:"020006F2:00"+"\n"+"0200507A:43",mb:37,hp:"+140",buster_add:"CrackPanel",b_left:"VacuumFan",move_panel:"CrackPanel(12%)"} ,
-         {name:'BlastMan',id:'34',flag:"020006F3:00"+"\n"+"0200507B:43",mb:28,hp:"-80",body:"Fbody",attack:"+1",float:"on",move_panel:"off"} ,
-         {name:'CircusMan',id:'35',flag:"020006F4:00"+"\n"+"0200507C:43",mb:43,hp:"-200",g_folder:"+1",f_barier:"off",tango:"on"} ,
-         {name:'Handy',id:'36',flag:"020006F5:00"+"\n"+"0200507D:43",mb:16,hp:"+100",b_cs:"TimeBomb",chip_recovery:"off"} ,
-         {name:'Puffy （BN1）',id:'37',flag:"020006F6:00"+"\n"+"0200507E:43",mb:12,body:"Abody",float:"on",b_cs:"BubSpread",b_left:"off"} ,
-         {name:'Jelly',id:'38',flag:"020006F7:00"+"\n"+"0200507F:43",mb:13,hp:"+120",body:"Abody",charge:"+4",gage:"Slow"} ,
-         {name:'Poitton',id:'39',flag:"020006F8:00"+"\n"+"02005080:43",mb:13,hp:"-40",body:"Wbody",under_shirt:"on",f_barier:"Barrier",damage_bug:"off"} ,
-         {name:'Satella',id:'3A',flag:"020006F9:00"+"\n"+"02005081:43",mb:8,rapid:"+4",air:"on",custom_damage:"20"} ,
-         {name:'Twisty & Remobit',id:'3B',flag:"020006FA:00"+"\n"+"02005082:43",mb:9,hp:"+80",body:"Ebody",air:"off",buster_add:"CrackPanel(50%)",move_panel:"Hole"} ,
-         {name:'Sparky/Shakey',id:'3C',flag:"020006FB:00"+"\n"+"02005083:43",mb:8,hp:"-5%",body:"Ebody",float:"on",move_bug:"off",status_bug:"off"},
-         {name:'Octon',id:'3D',flag:"020006FC:00"+"\n"+"02005084:43",mb:14,hp:"+50",body:"Abody",attack:"+3",baster_blank:"Blank(25%),CS(6%)"} ,
-         {name:'ShellGeek',id:'3E',flag:"020006FD:00"+"\n"+"02005085:43",mb:8,body:"Abody",rapid:"+4",b_left:"Shield"} ,
-         {name:'Magneaker',id:'3F',flag:"020006FE:00"+"\n"+"02005086:43",mb:7,hp:"+30",body:"Ebody",buster_add:"off",cs_add:"Back ConveyorPanel(50%)"} ,
-         {name:'Metrid',id:'40',flag:"020006FF:00"+"\n"+"02005087:43",mb:15,hp:"+5%",body:"Fbody",b_left:"Meteor3",move_bug:"on"} ,
-         {name:'Momogra',id:'41',flag:"02000700:00"+"\n"+"02005088:43",mb:6,hp:"-70",b_cs:"Invis",rash:"on"} ,
-         {name:'Needler',id:'42',flag:"02000701:00"+"\n"+"02005089:43",mb:10,attack:"+1",rapid:"+1",charge:"+1",super_armor:"on",kokoro_bug:"off"} ,
-         {name:'Twins',id:'43',flag:"02000702:00"+"\n"+"0200508A:43",mb:15,hp:"+100",attack:"+1",cs_add_list:"off",chip_recovery:"20"} ,
-         {name:'Walla',id:'44',flag:"02000703:00"+"\n"+"0200508B:43",mb:12,hp:"+60",custom:"+1",f_barier:"FstBarr off"} ,
-         {name:'Kilby',id:'45',flag:"02000704:00"+"\n"+"0200508C:43",mb:24,hp:"-20%",body:"Wbody",status_guard:"on",b_cs:"Lance",move_panel:"GrassPanel(25%)"} ,
-         {name:'Totem',id:'46',flag:"02000705:00"+"\n"+"02005043:43",mb:13,body:"Fbody",m_folder:"+1",chip_recovery:"40",custom_hp_bug:"Lv1"} ,
-         {name:'CannonGuard',id:'47',flag:"02000706:00"+"\n"+"0200508E:43",mb:10,float:"off",b_cs:"Cannon",b_left:"Shield"} ,
-         {name:'Skarab',id:'48',flag:"02000707:00"+"\n"+"0200508F:43",mb:7,hp:"-70",cs_add:"Confusion",custom_hp_bug:"off"} ,
-         {name:'Draggin',id:'49',flag:"02000708:00"+"\n"+"02005090:43",mb:11,hp:"+5%",body:"Fbody",status_bug:"Lv1"} ,
-         {name:'Marina',id:'4A',flag:"02000709:00"+"\n"+"02005091:43",mb:14,hp:"+90",body:"Abody",super_armor:"off",f_barier:"BblWrap"} ,
-         {name:'HauntedCandle',id:'4B',flag:"0200070A:00"+"\n"+"02005092:43",mb:12,hp:"+130",body:"Fbody",b_cs:"Default CS",battle_hp_bug:"off"} ,
-         {name:'Gunner',id:'4C',flag:"0200070B:00"+"\n"+"02005093:43",mb:11,hp:"+70",under_shirt:"off",b_cs:"MachGun1"} ,
-         {name:'PulseBulb',id:'4D',flag:"0200070C:00"+"\n"+"02005094:43",mb:13,body:"Ebody",b_cs:"ElcPuls1",kokoro_bug:"on"} ,
-         {name:'BombCorn',id:'4E',flag:"0200070D:00"+"\n"+"02005095:43",mb:16,hp:"+110",body:"Wbody",b_cs:"CornSht1",damage_bug:"Confusion"} ,
-         {name:'Shrubby',id:'4F',flag:"0200070E:00"+"\n"+"02005096:43",mb:6,body:"Wbody",buster_add:"GrassPanel(50%)",b_cs:"Default CS",custom_damage:"off"} ,
-         {name:'HoneyBomber',id:'50',flag:"0200070F:00"+"\n"+"02005097:43",mb:12,hp:"-10%",body:"Wbody",air:"on",b_left:"RskyHny1"} ,
-         {name:'NightMare',id:'51',flag:"02000710:00"+"\n"+"02005098:43",mb:5,hp:"+20",kokoro_bug:"on",status_bug:"Lv1"} ,
-         {name:'SnakeArm',id:'52',flag:"02000711:00"+"\n"+"02005099:43",mb:11,attack:"+3",rapid:"-1",charge:"-1",b_cs:"SandWrm1"} ,
-         {name:'DarkMech',id:'53',flag:"02000712:00"+"\n"+"0200509A:43",mb:22,hp:"+10%",b_left:"MchnSwrd",battle_hp_bug:"Lv2"} ,
-         {name:'StoneMan',id:'54',flag:"02000713:00"+"\n"+"0200509B:43",mb:45,hp:"+360",super_armor:"on",move_panel:"CrackPanel(12%)"} ,
-         {name:'ColorMan',id:'55',flag:"02000714:00"+"\n"+"0200509C:43",mb:32,hp:"+210",cs_add:"Confusion",b_left:"off",status_bug:"Lv1"} ,
-         {name:'SharkMan',id:'56',flag:"02000715:00"+"\n"+"0200509D:43",mb:35,hp:"+180",body:"Abody",attack:"+2",rapid:"+2",charge:"+2"} ,
-         {name:'PharaohMan',id:'57',flag:"02000716:00"+"\n"+"0200509E:43",mb:35,hp:"+5%",g_folder:"+1",float:"on",b_cs:"Default CS"} ,
-         {name:'AirMan',id:'58',flag:"02000717:00"+"\n"+"0200509F:43",mb:34,hp:"+150",buster_add:"Big Push",b_cs:"Tornado",f_barier:"FstBarr off",baster_blank:"off"} ,
-         {name:'FreezeMan',id:'59',flag:"02000718:00"+"\n"+"020050A0:43",mb:30,hp:"-5%",body:"Abody",buster_add:"IcePanel(50%)",f_barier:"Barr200"} ,
-         {name:'ThunderMan',id:'5A',flag:"02000719:00"+"\n"+"020050A1:43",mb:36,body:"Ebody",custom:"-1",b_cs:"ElecSwrd",chip_recovery:"10",battle_hp_bug:"Lv1"} ,
-         {name:'NapalmMan',id:'5B',flag:"0200071A:00"+"\n"+"020050A2:43",mb:39,body:"Fbody",attack:"+1",rapid:"+4",b_cs:"BigBomb",custom_hp_bug:"Lv1"} ,
-         {name:'PlantMan',id:'5C',flag:"0200071B:00"+"\n"+"020050A3:43",mb:42,hp:"-80",body:"Wbody",m_folder:"+2",status_guard:"on",cs_add:"GrassPanel(50%)"} ,
-         {name:'MistMan',id:'5D',flag:"0200071C:00"+"\n"+"020050A4:43",mb:37,hp:"+260",buster_add:"PoisonPanel(50%)",chip_recovery:"off"} ,
-         {name:'BowlMan',id:'5E',flag:"0200071D:00"+"\n"+"020050A5:43",mb:30,hp:"+100",custom:"+1",float:"off",b_cs:"Vulcan3"} ,
-         {name:'DarkMan',id:'5F',flag:"0200071E:00"+"\n"+"020050A6:43",mb:25,b_cs:"VDoll",move_bug:"on",custom_damage:"50"} ,
-         {name:'TopMan',id:'60',flag:"0200071F:00"+"\n"+"020050A7:43",mb:28,hp:"+10%",b_cs:"Default CS",baster_blank:"off",damage_bug:"HP Bug"} ,
-         {name:'KendoMan',id:'61',flag:"02000720:00"+"\n"+"020050A8:43",mb:38,hp:"+20%",b_cs:"BambSwrd",baster_blank:"Blank(25%),CS(6%)"} ,
-         {name:'ColdMan',id:'62',flag:"02000721:00"+"\n"+"020050A9:43",mb:34,body:"Abody",attack:"-1",cs_add:"Freeze(50%)",move_panel:"IcePanel(12%)"} ,
-         {name:'SearchMan',id:'63',flag:"02000722:00"+"\n"+"020050AA:43",mb:37,hp:"+5%",air:"off",b_cs:"CircGun",sarch_shufle:"on"} ,
-         {name:'CloudMan',id:'64',flag:"02000723:00"+"\n"+"020050AB:43",mb:40,hp:"+230",body:"Ebody",m_folder:"-1",b_cs:"Thunder"} ,
-         {name:'GridMan',id:'65',flag:"020007244:00"+"\n"+"020050AC:43",mb:48,hp:"+25%",super_armor:"on",under_shirt:"on",gage:"Slow"} ,
-         {name:'ChargeMan',id:'66',flag:"02000725:00"+"\n"+"020050AD:43",mb:31,attack:"+3",charge:"+4",b_cs:"Default CS",move_panel:"off"} ,
-         {name:'TenguMan',id:'67',flag:"02000726:00"+"\n"+"020050AE:43",mb:34,attack:"-1",air:"on",b_cs:"WindRack",beat:"on"} ,
-         {name:'DiveMan',id:'68',flag:"02000727:00"+"\n"+"020050AF:43",mb:42,hp:"+320",body:"Abody",custom:"-2",m_folder:"+1",b_cs:"WideShot"} ,
-         {name:'JudgeMan',id:'69',flag:"02000728:00"+"\n"+"020050B0:43",mb:38,hp:"-10%",custom:"+2",b_cs:"GrabBnsh",gage:"Normal"} ,
-         {name:'ElementMan',id:'6A',flag:"02000729:00"+"\n"+"020050B1:43",mb:33,hp:"+150",buster_add:"GrassPanel(50%)",b_cs:"Default CS",cs_add:"IcePanel(100%)",move_panel:"off"} ,
-         {name:'Punk',id:'6B',flag:"0200072A:00"+"\n"+"020050B2:43",mb:50,hp:"+400",super_armor:"on",cs_add:"Confusion(50%)",b_left:"Reflect"} ,
-         {name:'Dark MegaMan',id:'6C',flag:"0200072B:00"+"\n"+"020050B3:43",mb:80,attack:"+3",buster_add:"PoisonPanel(50%)",b_cs:"DarkSwrd",kokoro_bug:"on",battle_hp_bug:"Lv4"} ,
-         {name:'Soul Battler’s Customization',id:'6D',flag:"0200072C:00"+"\n"+"020050B4:43",mb:66,attack:"+4",rapid:"+4",charge:"+4",super_armor:"on",b_cs:"SuprVulc"} ,
-         {name:'Famous’ Customization',id:'6E',flag:"0200072D:00"+"\n"+"020050B5:43",mb:69,custom:"+3",m_folder:"+2",g_folder:"+2",f_barier:"LifeAura"} ,
-         {name:'Bass BX',id:'6F',flag:"0200072E:00"+"\n"+"020050B6:43",mb:70,super_armor:"on",float:"on",air:"on",b_button:"TripleBuster",b_cs:"ShootingBuster"} ,
-         {name:'Django',id:'70',flag:"0200072F:00"+"\n"+"020050B7:43",mb:52,hp:"+200",status_guard:"on",under_shirt:"on",b_cs:"GunDelSol"} ,
-         {name:'Count',id:'71',flag:"02000730:00"+"\n"+"020050B8:43",mb:60,m_folder:"+1",b_cs:"BloodRain",status_bug:"Lv2"} ,
-         {name:'Mega Man Zero',id:'72',flag:"02000731:00"+"\n"+"020050B9:43",mb:45,b_button:"Sword",b_cs:"Z-Saber",gage:"Fast"} ,
-         {name:'Cybeast Gregar',id:'73',flag:"02000732:00"+"\n"+"020050BA:43",mb:70,hp:"+600",attack:"+4",rapid:"+4",super_armor:"on",custom_hp_bug:"Lv2"} ,
-         {name:'Cybeast Falzar',id:'74',flag:"02000733:00"+"\n"+"020050BB:43",mb:70,hp:"+40%",float:"on",air:"on",battle_hp_bug:"Lv1"} ,
-         {name:'Bass-Cross MegaMan （G）',id:'75',flag:"02000734:00"+"\n"+"020050BC:43",mb:70,hp:"+200",body:"Nbody",m_folder:"-2",super_armor:"on",b_button:"TripleBuster",b_cs:"ShootingBuster"} ,
+
+
+    {name:'none',id:'',flag:"",mb:0,} ,
+           {name:'Canodumb',id:'01',flag:"020006C0:00"+"\n"+"02005048:43",mb:10,hp:"-40",attack:"+1",b_cs:"M-Cannon"} ,
+           {name:'Mollusk/Ammonicule',id:'02',flag:"020006C1:00"+"\n"+"02005049:43",mb:16,hp:"+80",body:"Abody",attack:"-1",f_barier:"BblWrap"} ,
+           {name:'ColdBear',id:'03',flag:"020006C2:00"+"\n"+"0200504A:43",mb:18,hp:"+140",body:"Abody",b_cs:"IceCube",move_panel:"IcePanel(25%)"} ,
+           {name:'Miney',id:'04',flag:"020006C3:00"+"\n"+"0200504B:43",mb:12,attack:"+3",float:"off",air:"off"} ,
+           {name:'Megalian/Heady',id:'05',flag:"020006C4:00"+"\n"+"0200504C:43",mb:20,hp:"-80",charge:"+4",air:"on",f_barier:"Barr100"} ,
+           {name:'MetFire',id:'06',flag:"020006C5:00"+"\n"+"0200504D:43",mb:20,body:"Fbody",b_button:"Meteor1",move_bug:"on"} ,
+           {name:'KillPlant',id:'07',flag:"020006C6:00"+"\n"+"0200504E:43",mb:19,body:"Wbody",air:"off",b_cs:"GrasSeed"} ,
+           {name:'Shadow',id:'08',flag:"020006C7:00"+"\n"+"0200504F:43",mb:6,b_cs:"Invis",b_button:"Sword",status_guard:"off"} ,
+           {name:'Beetle',id:'09',flag:"020006C8:00"+"\n"+"02005050:43",mb:11,hp:"+100",b_button:"MiniBomb",b_cs:"Default CS"} ,
+           {name:'Heavy',id:'0A',flag:"020006C9:00"+"\n"+"02005051:43",mb:15,attack:"+1",super_armor:"on",buster_add:"off"} ,
+           {name:'Viney',id:'0B',flag:"020006CA:00"+"\n"+"02005052:43",mb:24,hp:"-20%",body:"Wbody",status_guard:"on",b_left:"off"} ,
+           {name:'Slimey',id:'0C',flag:"020006CB:00"+"\n"+"02005053:43",mb:12,hp:"+30",body:"Abody",b_cs:"PanelGrab",gage:"Normal"} ,
+           {name:'Volcano',id:'0D',flag:"020006CC:00"+"\n"+"02005054:43",mb:10,body:"Fbody",charge:"+4",b_cs:"BlackBomb",kokoro_bug:"on"} ,
+           {name:'Numbers',id:'0E',flag:"020006CD:00"+"\n"+"02005055:43",mb:17,custom:"+1",m_folder:"+1",g_folder:"+1",b_cs:"Default CS",custom_hp_bug:"Lv2"} ,
+           {name:'MagTect',id:'0F',flag:"020006CE:00"+"\n"+"02005056:43",mb:15,hp:"-5%",body:"Ebody",float:"on",cs_add:"Pull 1(50%)"} ,
+           {name:'Spidey',id:'10',flag:"020006CF:00"+"\n"+"02005057:43",mb:8,hp:"+60",body:"Wbody",move_panel:"GrassPanel(25%)"} ,
+           {name:'Bomboy',id:'11',flag:"020006D0:00"+"\n"+"02005058:43",mb:14,buster_add:"Push 1(12.5%)",cs_add:"off",move_bug:"off",move_panel:"off"} ,
+           {name:'WuNote',id:'12',flag:"020006D1:00"+"\n"+"02005059:43",mb:13,hp:"+60",body:"Wbody",buster_add:"GrassPanel(50%)",damage_bug:"off"} ,
+           {name:'Flashy',id:'13',flag:"020006D2:00"+"\n"+"0200505A:43",mb:11,hp:"+5%",body:"Ebody",attack:"-1",custom_damage:"off"} ,
+           {name:'EleOgre',id:'14',flag:"020006D3:00"+"\n"+"0200505B:43",mb:16,hp:"+50",body:"Ebody",kokoro_bug:"on",status_bug:"off"} ,
+           {name:'OldStove',id:'15',flag:"020006D4:00"+"\n"+"0200505C:43",mb:12,hp:"+130",body:"Fbody",b_cs:"FireBrn1",battle_hp_bug:"Lv1"} ,
+           {name:'Puffy （BN6）',id:'16',flag:"020006D5:00"+"\n"+"0200505D:43",mb:11,body:"Abody",rapid:"+4",baster_blank:"off"} ,
+           {name:'Starfish',id:'17',flag:"020006D6:00"+"\n"+"0200505E:43",mb:15,body:"Abody",cs_add:"Bubbling(50%)"} ,
+           {name:'BigHat',id:'18',flag:"020006D7:00"+"\n"+"0200505F:43",mb:8,super_armor:"off",b_cs:"FlshBom1"} ,
+           {name:'ScareCrow',id:'19',flag:"020006D8:00"+"\n"+"02005060:43",mb:14,body:"Ebody",b_cs:"DolThnd1",chip_recovery:"30",baster_blank:"Blank(25%),CS(12%)"} ,
+           {name:'FighterPlane',id:'1A',flag:"020006D9:00"+"\n"+"02005061:43",mb:20,hp:"-10%",float:"on",air:"on"} ,
+           {name:'Cragger',id:'1B',flag:"020006DA:00"+"\n"+"02005062:43",mb:19,hp:"+200",under_shirt:"on",damage_bug:"HP Bug"} ,
+           {name:'Armadillo',id:'1C',flag:"020006DB:00"+"\n"+"02005063:43",mb:12,hp:"+5%",charge:"-3",cs_add:"BreakBuster"} ,
+           {name:'Kettle',id:'1D',flag:"020006DC:00"+"\n"+"02005064:43",mb:15,b_cs:"Spreadr1",b_left:"Shield",chip_recovery:"20",custom_damage:"40",battle_hp_bug:"off"} ,
+           {name:'EarthDragon',id:'1E',flag:"020006DD:00"+"\n"+"02005065:43",mb:20,hp:"+180",m_folder:"+1",b_cs:"Default CS",status_bug:"Lv1"} ,
+           {name:'NumberMan',id:'1F',flag:"020006DE:00"+"\n"+"02005066:43",mb:35,hp:"-20%",custom:"+3",m_folder:"+1",g_folder:"+1"} ,
+           {name:'IceMan',id:'20',flag:"020006DF:00"+"\n"+"02005067:43",mb:25,hp:"+80",body:"Abody",super_armor:"off",b_cs:"IceSeed",custom_hp_bug:"off"} ,
+           {name:'SkullMan',id:'21',flag:"020006E0:00"+"\n"+"02005068:43",mb:30,hp:"+100",cs_add:"HP Bug",battle_hp_bug:"Lv1",status_bug:"Lv1"} ,
+           {name:'ShadowMan',id:'22',flag:"020006E1:00"+"\n"+"02005069:43",mb:38,hp:"-50",float:"on",b_cs:"Longswrd",b_left:"AntiMagic"} ,
+           {name:'CutMan',id:'23',flag:"020006E2:00"+"\n"+"0200506A:43",mb:32,hp:"-100",attack:"+4",b_cs:"YoYo"} ,
+           {name:'KnightMan',id:'24',flag:"020006E3:00"+"\n"+"0200506B:43",mb:45,hp:"+20%",attack:"×2",super_armor:"on",under_shirt:"on",baster_blank:"Blank(25%),CS(6%)"} ,
+           {name:'ToadMan',id:'25',flag:"020006E4:00"+"\n"+"0200506C:43",mb:34,body:"Abody",attack:"-1",charge:"-3",cs_add:"Paralyze 90i(50%)",baster_blank:"off"} ,
+           {name:'MagnetMan',id:'26',flag:"020006E5:00"+"\n"+"0200506D:43",mb:37,hp:"+240",body:"Ebody",cs_add:"off",b_left:"MagField"} ,
+           {name:'PlanetMan',id:'27',flag:"020006E6:00"+"\n"+"0200506E:43",mb:40,hp:"+300",body:"Wbody",status_guard:"on",air:"off",b_button:"CrakShot"} ,
+           {name:'BeastMan',id:'28',flag:"020006E7:00"+"\n"+"0200506F:43",mb:33,rapid:"+4",under_shirt:"on",b_cs:"StepSwrd",rash:"on",move_bug:"on"} ,
+           {name:'DesertMan',id:'29',flag:"020006E8:00"+"\n"+"02005070:43",mb:36,hp:"+160",charge:"+4",air:"off",damage_bug:"off"} ,
+           {name:'YamatoMan',id:'2A',flag:"020006E9:00"+"\n"+"02005071:43",mb:35,hp:"+10%",attack:"+1",b_left:"Reflect",custom_hp_bug:"Lv2"} ,
+           {name:'VideoMan',id:'2B',flag:"020006EA:00"+"\n"+"02005072:43",mb:32,hp:"-10%",cs_add:"Forward ConveyorPanel",gage:"Fast"} ,
+           {name:'BurnerMan',id:'2C',flag:"020006EB:00"+"\n"+"02005073:43",mb:29,hp:"+120",body:"Fbody",attack:"+2",custom_damage:"40",kokoro_bug:"on"} ,
+           {name:'StarMan',id:'2D',flag:"020006EC:00"+"\n"+"02005074:43",mb:32,attack:"-2",m_folder:"+1",move_panel:"off",kokoro_bug:"off",battle_hp_bug:"off"} ,
+           {name:'BlizzardMan',id:'2E',flag:"020006ED:00"+"\n"+"02005075:43",mb:30,hp:"+60",body:"Abody",float:"off",b_cs:"BlizBall"} ,
+           {name:'LarkMan',id:'2F',flag:"020006EE:00"+"\n"+"02005076:43",mb:36,air:"on",cs_add:"Chip Deletion",beat:"on",damage_bug:"Confuse"} ,
+           {name:'SlashMan',id:'30',flag:"020006EF:00"+"\n"+"02005077:43",mb:31,attack:"+4",b_cs:"WideSwrd",baster_blank:"Blank(25%),CS(6%)"} ,
+           {name:'EraseMan',id:'31',flag:"020006F0:00"+"\n"+"02005078:43",mb:40,hp:"-10%",m_folder:"+1",cs_add:"Erase Bug",battle_hp_bug:"Lv1"} ,
+           {name:'GroundMan',id:'32',flag:"020006F1:00"+"\n"+"02005079:43",mb:43,hp:"+25%",custom:"-1",m_folder:"-1",b_cs:"DrillArm"} ,
+           {name:'DustMan',id:'33',flag:"020006F2:00"+"\n"+"0200507A:43",mb:37,hp:"+140",buster_add:"CrackPanel",b_left:"VacuumFan",move_panel:"CrackPanel(12%)"} ,
+           {name:'BlastMan',id:'34',flag:"020006F3:00"+"\n"+"0200507B:43",mb:28,hp:"-80",body:"Fbody",attack:"+1",float:"on",move_panel:"off"} ,
+           {name:'CircusMan',id:'35',flag:"020006F4:00"+"\n"+"0200507C:43",mb:43,hp:"-200",g_folder:"+1",f_barier:"off",tango:"on"} ,
+           {name:'Handy',id:'36',flag:"020006F5:00"+"\n"+"0200507D:43",mb:16,hp:"+100",b_cs:"TimeBomb",chip_recovery:"off"} ,
+           {name:'Puffy （BN1）',id:'37',flag:"020006F6:00"+"\n"+"0200507E:43",mb:12,body:"Abody",float:"on",b_cs:"BubSpread",b_left:"off"} ,
+           {name:'Jelly',id:'38',flag:"020006F7:00"+"\n"+"0200507F:43",mb:13,hp:"+120",body:"Abody",charge:"+4",gage:"Slow"} ,
+           {name:'Poitton',id:'39',flag:"020006F8:00"+"\n"+"02005080:43",mb:13,hp:"-40",body:"Wbody",under_shirt:"on",f_barier:"Barrier",damage_bug:"off"} ,
+           {name:'Satella',id:'3A',flag:"020006F9:00"+"\n"+"02005081:43",mb:8,rapid:"+4",air:"on",custom_damage:"20"} ,
+           {name:'Twisty & Remobit',id:'3B',flag:"020006FA:00"+"\n"+"02005082:43",mb:9,hp:"+80",body:"Ebody",air:"off",buster_add:"CrackPanel(50%)",move_panel:"Hole"} ,
+           {name:'Sparky/Shakey',id:'3C',flag:"020006FB:00"+"\n"+"02005083:43",mb:8,hp:"-5%",body:"Ebody",float:"on",move_bug:"off",status_bug:"off"},
+           {name:'Octon',id:'3D',flag:"020006FC:00"+"\n"+"02005084:43",mb:14,hp:"+50",body:"Abody",attack:"+3",baster_blank:"Blank(25%),CS(6%)"} ,
+           {name:'ShellGeek',id:'3E',flag:"020006FD:00"+"\n"+"02005085:43",mb:8,body:"Abody",rapid:"+4",b_left:"Shield"} ,
+           {name:'Magneaker',id:'3F',flag:"020006FE:00"+"\n"+"02005086:43",mb:7,hp:"+30",body:"Ebody",buster_add:"off",cs_add:"Back ConveyorPanel(50%)"} ,
+           {name:'Metrid',id:'40',flag:"020006FF:00"+"\n"+"02005087:43",mb:15,hp:"+5%",body:"Fbody",b_left:"Meteor3",move_bug:"on"} ,
+           {name:'Momogra',id:'41',flag:"02000700:00"+"\n"+"02005088:43",mb:6,hp:"-70",b_cs:"Invis",rash:"on"} ,
+           {name:'Needler',id:'42',flag:"02000701:00"+"\n"+"02005089:43",mb:10,attack:"+1",rapid:"+1",charge:"+1",super_armor:"on",kokoro_bug:"off"} ,
+           {name:'Twins',id:'43',flag:"02000702:00"+"\n"+"0200508A:43",mb:15,hp:"+100",attack:"+1",cs_add_list:"off",chip_recovery:"20"} ,
+           {name:'Walla',id:'44',flag:"02000703:00"+"\n"+"0200508B:43",mb:12,hp:"+60",custom:"+1",f_barier:"FstBarr off"} ,
+           {name:'Kilby',id:'45',flag:"02000704:00"+"\n"+"0200508C:43",mb:24,hp:"-20%",body:"Wbody",status_guard:"on",b_cs:"Lance",move_panel:"GrassPanel(25%)"} ,
+           {name:'Totem',id:'46',flag:"02000705:00"+"\n"+"02005043:43",mb:13,body:"Fbody",m_folder:"+1",chip_recovery:"40",custom_hp_bug:"Lv1"} ,
+           {name:'CannonGuard',id:'47',flag:"02000706:00"+"\n"+"0200508E:43",mb:10,float:"off",b_cs:"Cannon",b_left:"Shield"} ,
+           {name:'Skarab',id:'48',flag:"02000707:00"+"\n"+"0200508F:43",mb:7,hp:"-70",cs_add:"Confusion",custom_hp_bug:"off"} ,
+           {name:'Draggin',id:'49',flag:"02000708:00"+"\n"+"02005090:43",mb:11,hp:"+5%",body:"Fbody",status_bug:"Lv1"} ,
+           {name:'Marina',id:'4A',flag:"02000709:00"+"\n"+"02005091:43",mb:14,hp:"+90",body:"Abody",super_armor:"off",f_barier:"BblWrap"} ,
+           {name:'HauntedCandle',id:'4B',flag:"0200070A:00"+"\n"+"02005092:43",mb:12,hp:"+130",body:"Fbody",b_cs:"Default CS",battle_hp_bug:"off"} ,
+           {name:'Gunner',id:'4C',flag:"0200070B:00"+"\n"+"02005093:43",mb:11,hp:"+70",under_shirt:"off",b_cs:"MachGun1"} ,
+           {name:'PulseBulb',id:'4D',flag:"0200070C:00"+"\n"+"02005094:43",mb:13,body:"Ebody",b_cs:"ElcPuls1",kokoro_bug:"on"} ,
+           {name:'BombCorn',id:'4E',flag:"0200070D:00"+"\n"+"02005095:43",mb:16,hp:"+110",body:"Wbody",b_cs:"CornSht1",damage_bug:"Confusion"} ,
+           {name:'Shrubby',id:'4F',flag:"0200070E:00"+"\n"+"02005096:43",mb:6,body:"Wbody",buster_add:"GrassPanel(50%)",b_cs:"Default CS",custom_damage:"off"} ,
+           {name:'HoneyBomber',id:'50',flag:"0200070F:00"+"\n"+"02005097:43",mb:12,hp:"-10%",body:"Wbody",air:"on",b_left:"RskyHny1"} ,
+           {name:'NightMare',id:'51',flag:"02000710:00"+"\n"+"02005098:43",mb:5,hp:"+20",kokoro_bug:"on",status_bug:"Lv1"} ,
+           {name:'SnakeArm',id:'52',flag:"02000711:00"+"\n"+"02005099:43",mb:11,attack:"+3",rapid:"-1",charge:"-1",b_cs:"SandWrm1"} ,
+           {name:'DarkMech',id:'53',flag:"02000712:00"+"\n"+"0200509A:43",mb:22,hp:"+10%",b_left:"MchnSwrd",battle_hp_bug:"Lv2"} ,
+           {name:'StoneMan',id:'54',flag:"02000713:00"+"\n"+"0200509B:43",mb:45,hp:"+360",super_armor:"on",move_panel:"CrackPanel(12%)"} ,
+           {name:'ColorMan',id:'55',flag:"02000714:00"+"\n"+"0200509C:43",mb:32,hp:"+210",cs_add:"Confusion",b_left:"off",status_bug:"Lv1"} ,
+           {name:'SharkMan',id:'56',flag:"02000715:00"+"\n"+"0200509D:43",mb:35,hp:"+180",body:"Abody",attack:"+2",rapid:"+2",charge:"+2"} ,
+           {name:'PharaohMan',id:'57',flag:"02000716:00"+"\n"+"0200509E:43",mb:35,hp:"+5%",g_folder:"+1",float:"on",b_cs:"Default CS"} ,
+           {name:'AirMan',id:'58',flag:"02000717:00"+"\n"+"0200509F:43",mb:34,hp:"+150",buster_add:"Big Push",b_cs:"Tornado",f_barier:"FstBarr off",baster_blank:"off"} ,
+           {name:'FreezeMan',id:'59',flag:"02000718:00"+"\n"+"020050A0:43",mb:30,hp:"-5%",body:"Abody",buster_add:"IcePanel(50%)",f_barier:"Barr200"} ,
+           {name:'ThunderMan',id:'5A',flag:"02000719:00"+"\n"+"020050A1:43",mb:36,body:"Ebody",custom:"-1",b_cs:"ElecSwrd",chip_recovery:"10",battle_hp_bug:"Lv1"} ,
+           {name:'NapalmMan',id:'5B',flag:"0200071A:00"+"\n"+"020050A2:43",mb:39,body:"Fbody",attack:"+1",rapid:"+4",b_cs:"BigBomb",custom_hp_bug:"Lv1"} ,
+           {name:'PlantMan',id:'5C',flag:"0200071B:00"+"\n"+"020050A3:43",mb:42,hp:"-80",body:"Wbody",m_folder:"+2",status_guard:"on",cs_add:"GrassPanel(50%)"} ,
+           {name:'MistMan',id:'5D',flag:"0200071C:00"+"\n"+"020050A4:43",mb:37,hp:"+260",buster_add:"PoisonPanel(50%)",chip_recovery:"off"} ,
+           {name:'BowlMan',id:'5E',flag:"0200071D:00"+"\n"+"020050A5:43",mb:30,hp:"+100",custom:"+1",float:"off",b_cs:"Vulcan3"} ,
+           {name:'DarkMan',id:'5F',flag:"0200071E:00"+"\n"+"020050A6:43",mb:25,b_cs:"VDoll",move_bug:"on",custom_damage:"50"} ,
+           {name:'TopMan',id:'60',flag:"0200071F:00"+"\n"+"020050A7:43",mb:28,hp:"+10%",b_cs:"Default CS",baster_blank:"off",damage_bug:"HP Bug"} ,
+           {name:'KendoMan',id:'61',flag:"02000720:00"+"\n"+"020050A8:43",mb:38,hp:"+20%",b_cs:"BambSwrd",baster_blank:"Blank(25%),CS(6%)"} ,
+           {name:'ColdMan',id:'62',flag:"02000721:00"+"\n"+"020050A9:43",mb:34,body:"Abody",attack:"-1",cs_add:"Freeze(50%)",move_panel:"IcePanel(12%)"} ,
+           {name:'SearchMan',id:'63',flag:"02000722:00"+"\n"+"020050AA:43",mb:37,hp:"+5%",air:"off",b_cs:"CircGun",sarch_shufle:"on"} ,
+           {name:'CloudMan',id:'64',flag:"02000723:00"+"\n"+"020050AB:43",mb:40,hp:"+230",body:"Ebody",m_folder:"-1",b_cs:"Thunder"} ,
+           {name:'GridMan',id:'65',flag:"020007244:00"+"\n"+"020050AC:43",mb:48,hp:"+25%",super_armor:"on",under_shirt:"on",gage:"Slow"} ,
+           {name:'ChargeMan',id:'66',flag:"02000725:00"+"\n"+"020050AD:43",mb:31,attack:"+3",charge:"+4",b_cs:"Default CS",move_panel:"off"} ,
+           {name:'TenguMan',id:'67',flag:"02000726:00"+"\n"+"020050AE:43",mb:34,attack:"-1",air:"on",b_cs:"WindRack",beat:"on"} ,
+           {name:'DiveMan',id:'68',flag:"02000727:00"+"\n"+"020050AF:43",mb:42,hp:"+320",body:"Abody",custom:"-2",m_folder:"+1",b_cs:"WideShot"} ,
+           {name:'JudgeMan',id:'69',flag:"02000728:00"+"\n"+"020050B0:43",mb:38,hp:"-10%",custom:"+2",b_cs:"GrabBnsh",gage:"Normal"} ,
+           {name:'ElementMan',id:'6A',flag:"02000729:00"+"\n"+"020050B1:43",mb:33,hp:"+150",buster_add:"GrassPanel(50%)",b_cs:"Default CS",cs_add:"IcePanel(100%)",move_panel:"off"} ,
+           {name:'Punk',id:'6B',flag:"0200072A:00"+"\n"+"020050B2:43",mb:50,hp:"+400",super_armor:"on",cs_add:"Confusion(50%)",b_left:"Reflect"} ,
+           {name:'Dark MegaMan',id:'6C',flag:"0200072B:00"+"\n"+"020050B3:43",mb:80,attack:"+3",buster_add:"PoisonPanel(50%)",b_cs:"DarkSwrd",kokoro_bug:"on",battle_hp_bug:"Lv4"} ,
+           {name:'Soul Battler’s Customization',id:'6D',flag:"0200072C:00"+"\n"+"020050B4:43",mb:66,attack:"+4",rapid:"+4",charge:"+4",super_armor:"on",b_cs:"SuprVulc"} ,
+           {name:'Famous’ Customization',id:'6E',flag:"0200072D:00"+"\n"+"020050B5:43",mb:69,custom:"+3",m_folder:"+2",g_folder:"+2",f_barier:"LifeAura"} ,
+           {name:'Bass BX',id:'6F',flag:"0200072E:00"+"\n"+"020050B6:43",mb:70,super_armor:"on",float:"on",air:"on",b_button:"TripleBuster",b_cs:"ShootingBuster"} ,
+           {name:'Django',id:'70',flag:"0200072F:00"+"\n"+"020050B7:43",mb:52,hp:"+200",status_guard:"on",under_shirt:"on",b_cs:"GunDelSol"} ,
+           {name:'Count',id:'71',flag:"02000730:00"+"\n"+"020050B8:43",mb:60,m_folder:"+1",b_cs:"BloodRain",status_bug:"Lv2"} ,
+           {name:'Mega Man Zero',id:'72',flag:"02000731:00"+"\n"+"020050B9:43",mb:45,b_button:"Sword",b_cs:"Z-Saber",gage:"Fast"} ,
+           {name:'Cybeast Gregar',id:'73',flag:"02000732:00"+"\n"+"020050BA:43",mb:70,hp:"+600",attack:"+4",rapid:"+4",super_armor:"on",custom_hp_bug:"Lv2"} ,
+           {name:'Cybeast Falzar',id:'74',flag:"02000733:00"+"\n"+"020050BB:43",mb:70,hp:"+40%",float:"on",air:"on",battle_hp_bug:"Lv1"} ,
+           {name:'Bass-Cross MegaMan （G）',id:'75',flag:"02000734:00"+"\n"+"020050BC:43",mb:70,hp:"+200",body:"Nbody",m_folder:"-2",super_armor:"on",b_button:"TripleBuster",b_cs:"ShootingBuster"} ,
 
      ];
 
@@ -2370,7 +2403,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //残りメガ数
     let mega_math = 0;
 
-    //仕様メガ数
+    //使用メガ数
     let mega_use = 0;
 
     //CSピックアップ用の変数
@@ -2519,7 +2552,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       var select = document.getElementById("card_list");
       select.remove(0);
     }
-console.log(sarch_result.length)
+
       //生成
       //for(let z = 0; z<pick_up_box.length;z++){}
       for(let i = 1; i<members.length;i++){
@@ -2560,6 +2593,24 @@ console.log(sarch_result.length)
     //選択するたびに実行される関数
     function mega(){
 
+      //毎回導入
+      for(i=1;i<=10;i++){
+      valc[i] = document.getElementById("kaizo_"+[i]).value;
+    }
+
+      //メガバイトの計算（かなり回りくどいことしてます。正直forでなんとかなる）
+      mega_use =(members[parseInt(valc[1], 10)].mb + members[parseInt(valc[2], 10)].mb + members[parseInt(valc[3], 10)].mb + members[parseInt(valc[4], 10)].mb+ members[parseInt(valc[5], 10)].mb + members[parseInt(valc[6], 10)].mb+ members[parseInt(valc[7], 10)].mb+ members[parseInt(valc[8], 10)].mb+ members[parseInt(valc[9], 10)].mb+ members[parseInt(valc[10], 10)].mb);
+
+      //計算結果
+      mega_math = 80 - mega_use;
+
+      //計算結果を挿入
+        document.getElementById('megabite').value = mega_math;
+        document.getElementById('megabite_use').value = mega_use;
+
+
+
+
                 //検索ログの表示
                   document.getElementById("kaizo_parametor").value = "Sarch";
                   document.getElementById("kaizo_ability").value = "Sarch";
@@ -2578,23 +2629,9 @@ console.log(sarch_result.length)
       //アビリティ結果用
         let ability_box=[];
 
-      //毎回導入
-      for(i=1;i<=10;i++){
-      valc[i] = document.getElementById("kaizo_"+[i]).value;
-    }
-
-      //メガバイトの計算（かなり回りくどいことしてます。正直forでなんとかなる）
-      mega_use =(members[parseInt(valc[1], 10)].mb + members[parseInt(valc[2], 10)].mb + members[parseInt(valc[3], 10)].mb + members[parseInt(valc[4], 10)].mb+ members[parseInt(valc[5], 10)].mb + members[parseInt(valc[6], 10)].mb+ members[parseInt(valc[7], 10)].mb+ members[parseInt(valc[8], 10)].mb+ members[parseInt(valc[9], 10)].mb+ members[parseInt(valc[10], 10)].mb);
-
-      //計算結果
-      mega_math = 80 - mega_use;
-
-      //計算結果を挿入
-        document.getElementById('megabite').value = mega_math;
-        document.getElementById('megabite_use').value = mega_use;
-
         //アビリティリザルト初期化
         document.getElementById("ablity_result").value = "";
+
 
         //カード生成関数の発動
         cardlist();
@@ -2999,7 +3036,7 @@ ability_sarch_process();
 }
 
           function generate(){
-            console.log("Generate");
+
             //改造カードを何選んだか格納
             valc1 = document.getElementById("kaizo_1").value;
             valc2 = document.getElementById("kaizo_2").value;

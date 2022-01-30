@@ -27,7 +27,7 @@
     notice
     <li>We are currently conducting a prototype test using the beta version.</li>
     <li>Please contact Git for functional improvements and requests.</li>
-    <li>Mega Man Battle Network 4 CheatCodeGenerator(Only Japan)</li>
+    <li>Implementation of random generation</li>
     <li>Translated (Thnak you for Chocola and N1GP!)</li>
     <br>
     Functions you want to add in the future
@@ -242,9 +242,12 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
             <input cols="1" rows="1" id="megabite"  style="font-size:20pt;width: 30px;" readonly ></input>
             /80
           </td>
-          <td colspan="4">
+          <td colspan="3">
             Megabytes used
               <input cols="1" rows="1" id="megabite_use"  style="font-size:20pt;width: 40px;" readonly ></input>
+          </td>
+          <td colspan="1">
+            <input type="reset" value="Randomizer"onclick="random_botton();"><br>
           </td>
         </tr>
       <tr>
@@ -2186,6 +2189,33 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       mega();
       }
 
+      //ランダム選択用
+      function random_botton(){
+
+        //初期化
+        reset_botton();
+        let kaizo_random_list=[];
+          let kaizo_use_list =[];
+
+          //改造カードを生成
+        for(let i=1;i<=10;i++){
+            kaizo_random_list=[];
+          for(let i = 1; i<members.length;i++){
+            //既定のメガバイト以下もしくはダブりは回避する
+            if((members[i].mb<=mega_math)&&(kaizo_use_list[i-1]!=parseInt(members[i].id,16))){
+              kaizo_random_list.push(parseInt(members[i].id,16));
+            }
+          }
+              document.getElementById('kaizo_'+[i]).value = kaizo_random_list[Math.floor(Math.random() * kaizo_random_list.length)];
+              kaizo_use_list[i]=document.getElementById('kaizo_'+[i]).value;
+                  mega();
+        if( mega_math<5){
+        break;
+        }
+      }
+      }
+
+
       //選択したカアビリティリストをピックアップに入れる関数
       function select_ability_list(){
 
@@ -2350,7 +2380,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
  {name:'Gospel',id:'66',flag:"020012D5:00"+"\n"+"02006191:8D",mb:60,hp:"+600",kokoro_bug:"on",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2",status_bug:"Lv2"} ,
  {name:'Serenade',id:'67',flag:"020012D6:00"+"\n"+"02006192:8D",mb:50,hp:"-20%",b_cs:"Reflect",chip_recovery:"100"} ,
  {name:'Alpha',id:'68',flag:"020012D7:00"+"\n"+"02006193:8D",mb:55,hp:"+100",custom:"-3",g_folder:"+2"} ,
- {name:'Bass GS',id:'69',flag:"020012D8:00"+"\n"+"02006194:8D",mb:59,hp:"+300",cd_add:"HP Bug",status_bug:"Lv2"} ,
+ {name:'Bass GS',id:'69',flag:"020012D8:00"+"\n"+"02006194:8D",mb:59,hp:"+300",cs_add:"HP Bug",status_bug:"Lv2"} ,
  {name:'Duo',id:'6A',flag:"020012D9:00"+"\n"+"02006195:8D",mb:70,hp:"+40%",m_folder:"+1",g_folder:"+1"} ,
  {name:'Bass XX',id:'6B',flag:"020012DA:00"+"\n"+"02006196:8D",mb:70,hp:"+400",float:"on",air:"on",f_barier:"Barr200",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
  {name:'Nebula Gray',id:'6C',flag:"020012DB:00"+"\n"+"02006197:8D",mb:70,hp:"-30%",b_cs:"DarkSword",battle_hp_bug:"Lv2",custom_hp_bug:"Lv2"} ,
@@ -2555,6 +2585,18 @@ console.log(sarch_result.length)
     //選択するたびに実行される関数
     function mega(){
 
+      //毎回導入
+      for(i=1;i<=10;i++){
+      valc[i] = document.getElementById("kaizo_"+[i]).value;
+    }
+
+      //メガバイトの計算（かなり回りくどいことしてます。正直forでなんとかなる）
+      mega_use =(members[parseInt(valc[1], 10)].mb + members[parseInt(valc[2], 10)].mb + members[parseInt(valc[3], 10)].mb + members[parseInt(valc[4], 10)].mb+ members[parseInt(valc[5], 10)].mb + members[parseInt(valc[6], 10)].mb+ members[parseInt(valc[7], 10)].mb+ members[parseInt(valc[8], 10)].mb+ members[parseInt(valc[9], 10)].mb+ members[parseInt(valc[10], 10)].mb);
+
+      //計算結果
+      mega_math = 80 - mega_use;
+
+
                 //検索ログの表示
                   document.getElementById("kaizo_parametor").value = "Sarch";
                   document.getElementById("kaizo_ability").value = "Sarch";
@@ -2573,16 +2615,6 @@ console.log(sarch_result.length)
       //アビリティ結果用
         let ability_box=[];
 
-      //毎回導入
-      for(i=1;i<=10;i++){
-      valc[i] = document.getElementById("kaizo_"+[i]).value;
-    }
-
-      //メガバイトの計算（かなり回りくどいことしてます。正直forでなんとかなる）
-      mega_use =(members[parseInt(valc[1], 10)].mb + members[parseInt(valc[2], 10)].mb + members[parseInt(valc[3], 10)].mb + members[parseInt(valc[4], 10)].mb+ members[parseInt(valc[5], 10)].mb + members[parseInt(valc[6], 10)].mb+ members[parseInt(valc[7], 10)].mb+ members[parseInt(valc[8], 10)].mb+ members[parseInt(valc[9], 10)].mb+ members[parseInt(valc[10], 10)].mb);
-
-      //計算結果
-      mega_math = 80 - mega_use;
 
       //計算結果を挿入
         document.getElementById('megabite').value = mega_math;
