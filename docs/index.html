@@ -2201,7 +2201,7 @@
         kaizo_random_list=[];
         for(let i = 1; i<members.length;i++){
           //既定のメガバイト以下もしくはダブりは回避する
-          if((members[i].mb<=mega_math)&&(kaizo_use_list[i-1]!=parseInt(members[i].id,16))){
+          if((members[i].mb<=mega_math)&&(kaizo_use_list[i]!=parseInt(members[i].id,16))){
             kaizo_random_list.push(parseInt(members[i].id,16));
           }
         }
