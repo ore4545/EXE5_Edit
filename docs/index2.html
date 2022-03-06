@@ -27,7 +27,7 @@
     お知らせ
     <li>現在β版による試作テスト中です。</li>
     <li>機能の改修及び、要望はGitまでお願いします。</li>
-    <li>ランダム生成の実装</li>
+    <li>最大メガバイトを変更出来るように</li>
     <li>翻訳しました Thnak you for Chocola and N1GP!</li>
     <br>
     今後付けたい機能
@@ -241,12 +241,15 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         <tr>
           <td colspan="1">
             残りメガバイト
-            <input cols="1" rows="1" id="megabite"  style="font-size:20pt;width: 30px;" readonly ></input>
-            /80
+            <input cols="1" rows="1" id="megabite"  style="font-size:20pt;width: 45px;" readonly ></input>
           </td>
-          <td colspan="3">
+          <td colspan="2">
             使用メガバイト
-              <input cols="1" rows="1" id="megabite_use"  style="font-size:20pt;width: 40px;" readonly ></input>
+            <input cols="1" rows="1" id="megabite_use"  style="font-size:20pt;width: 45px;" readonly ></input>
+          </td>
+          <td colspan="1">
+            最大メガバイト
+            <input cols="1" rows="1" id="megabite_max"  style="font-size:20pt;width: 45px;" onchange="mega();"></input>
           </td>
           <td colspan="1">
 
@@ -375,6 +378,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
 
       //セッション開始時に読み込み
       window.onload = function() {
+        document.getElementById("megabite_max").value = 80;
         mega();
         for(let i = 1; i<members.length;i++){
           for(let z=1;z<=10;z++){
@@ -2392,6 +2396,9 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //仕様メガ数
     let mega_use = 0;
 
+    //最大メガ数
+    let mega_max ;
+
     //CSピックアップ用の変数
     let pick_up_box = []
 
@@ -2575,6 +2582,8 @@ console.log(sarch_result.length)
     //選択するたびに実行される関数
     function mega(){
 
+      mega_max = document.getElementById("megabite_max").value;
+
       //毎回導入
       for(i=1;i<=10;i++){
       valc[i] = document.getElementById("kaizo_"+[i]).value;
@@ -2584,7 +2593,7 @@ console.log(sarch_result.length)
       mega_use =(members[parseInt(valc[1], 10)].mb + members[parseInt(valc[2], 10)].mb + members[parseInt(valc[3], 10)].mb + members[parseInt(valc[4], 10)].mb+ members[parseInt(valc[5], 10)].mb + members[parseInt(valc[6], 10)].mb+ members[parseInt(valc[7], 10)].mb+ members[parseInt(valc[8], 10)].mb+ members[parseInt(valc[9], 10)].mb+ members[parseInt(valc[10], 10)].mb);
 
       //計算結果
-      mega_math = 80 - mega_use;
+      mega_math = mega_max - mega_use;
 
 
                 //検索ログの表示

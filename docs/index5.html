@@ -27,7 +27,7 @@
     お知らせ
     <li>現在β版による試作テスト中です。</li>
     <li>機能の改修及び、要望はGitまでお願いします。</li>
-    <li>エグゼ4の実装</li>
+    <li>選択に改造IDを表示</li>
     <br>
     今後付けたい機能
     <li>改造カードの予想アビリティの表示(誤字脱字の確認中)</li>
@@ -298,7 +298,7 @@
         for(let z=1;z<=6;z++){
         var select = document.getElementById("kaizo_"+[z]);
         var option = document.createElement("option");
-        option.text = members[i].name;
+        option.text =(parseInt(members[i].id, 16)-1)+"/"+members[i].name;
         option.value = parseInt(members[i].id, 16);
         select.appendChild(option);
       }
