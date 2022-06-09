@@ -2,38 +2,37 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>ロックマンエグゼ4チートコードジェネレーターVer.R/B(β)</title>
+  <title>Mega Man Battle Network 4 CheatCodeGenerator Ver.R/B(β)</title>
 </head>
 <body>
   <style>
   </style>
-  <h1>ロックマンエグゼ4チートコードジェネレーターVer.R/B(β)</h1>
+  <h1>Mega Man Battle Network 4 CheatCodeGenerator Ver.R/B(β)</h1>
   <div class="Overview">
-    <h2>概要</h2>
-    ロックマンエグゼ4レッドサン/ブルームーンのチートコードを生成するジェネレーターです。<br>
-    <font color = "red">予め改造カードの画面が出現＆読み込み済みのセーブデータで行ってください。<br></font>
-    改造カード画面出現＆読み込み済みにするには<a href="https://github.com/Prof9/Aio-Kaizou">こちら</a>
+    <h2>Overview</h2>
+    This is a generator to generate cheat codes for Mega Man Battle Network 4.<br>
+    <font color = "red">Please use saved data that has already been loaded with the modification card screen.<br></font>
+    <a href="https://github.com/Prof9/Aio-Kaizou">Click here</a> to make the modification card screen appear and load.
     <br></br>
-    ロックマンエグゼ4チートコードジェネレーターVer.R/B←<br>
+    <a href= "index5.html" >ロックマンエグゼ4チートコードジェネレーターVer.R/B</a><br>
     <a href= "index.html" >ロックマンエグゼ5チートコードジェネレーターVer.B</a><br>
     <a href= "index2.html" >ロックマンエグゼ5チートコードジェネレーターVer.C</a><br>
     <a href= "index3.html" >ロックマンエグゼ6チートコードジェネレーターVer.G</a><br>
     <a href= "index4.html" >ロックマンエグゼ6チートコードジェネレーターVer.F</a><br>
-    <a href= "index5_En.html">Mega Man Battle Network 4 CheatCodeGenerator Ver.R/B</a><br>
-    <a href= "index_En.html" >Mega Man Battle Network 5 CheatCodeGenerator Ver.P</a><br>
+    Mega Man Battle Network 4 CheatCodeGenerator Ver.R/B←</a><br>
+    <a href= "index_En.html" >Mega Man Battle Network 5 CheatCodeGenerator Ver.P<br>
     <a href= "index2_En.html" >Mega Man Battle Network 5 CheatCodeGenerator Ver.C</a><br>
     <a href= "index3_En.html" >Mega Man Battle Network 6 CheatCodeGenerator Ver.G</a><br>
     <a href= "index4_En.html" >Mega Man Battle Network 6 CheatCodeGenerator Ver.F</a>
     <br></br>
-    お知らせ
-    <li>現在β版による試作テスト中です。</li>
-    <li>機能の改修及び、要望はGit(オレ)までお願いします。</li>
-    <li>選択に改造IDを表示</li>
+    notice
+    <li>We are currently conducting a prototype test using the beta version.</li>
+    <li>Please contact "Ore(オレ)" for functional improvements and requests.</li>
+    <li>Translated (Thnak you for Chocola and N1GP!)</li>
     <br>
-    今後付けたい機能
-    <li>改造カードの予想アビリティの表示(誤字脱字の確認中)</li>
-    <li>能力値の確認</li>
-    <li>改造カードピックアップ(インターフェースの調整)</li>
+    Functions you want to add in the future
+    <li>Translate generator to generate cheat codes for Mega Man Battle Network 4</li>
+    <li>Display of expected abilities of modified cards (confirming typographical errors)</li>
 
 
     <br>
@@ -79,116 +78,117 @@
 
 
   <table style="width:50%; border-collapse: collapse; border:3px solid #777">
-    <tbody>
-      <th style="background:#f99; border-right:3px solid #777" colspan="1">パラメーター</th>
-      <th style="background:#9f9; border-left:3px solid #777" colspan="3">アビリティ</th>
-      <th style="background:#d399ff; border-left:3px solid #777" colspan="1">バグ</th>
-      <tr>
-        <td style="border-right:3px solid #777">
-          HP/<input id="HP_list_result" style="font-size:10pt;width: 15px;" readonly></input><br>
-          <select id="HP_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-          </select>
-        </td>
-        <td style="border-right:1px solid #595">
-          Bためうち/<input id="b_cs_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-          </select>
-        </td>
-        <td style="border-right:1px solid #595">
-          バスター追加効果/<input id="buster_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-          </select>
-        </td>
-        <td style="border-right:1px solid #595">
-          B←/<input id="b_left_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-          </select>
-        </td>
-        <td style="border-right:1px solid #595">
-          移動で効果/<input id="move_panel_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="move_panel_list" size="10" style="width: 200px;"onchange="select_ability_list()">
-          </select>
-        </td>
-      </tr>
+  <tbody>
+    <th style="background:#f99; border-right:3px solid #777" colspan="1">Parameter</th>
+    <th style="background:#9f9; border-left:3px solid #777" colspan="3">Ability</th>
+    <th style="background:#d399ff; border-left:3px solid #777" colspan="1">Bug</th>
+    <tr>
+      <td style="border-right:3px solid #777">
+        HP/<input id="HP_list_result" style="font-size:10pt;width: 15px;" readonly></input><br>
+        <select id="HP_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+        </select>
+      </td>
+      <td style="border-right:1px solid #595">
+        Charge Shot Mods/<input id="b_cs_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+        <select id="b_cs_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+        </select>
+      </td>
+      <td style="border-right:1px solid #595">
+        Buster Additions/<input id="buster_add_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+        <select id="buster_add_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+        </select>
+      </td>
+      <td style="border-right:1px solid #595">
+        B←/<input id="b_left_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+        <select id="b_left_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+        </select>
+      </td>
+      <td style="border-right:1px solid #595">
+        Panel Bug/<input id="move_panel_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+        <select id="move_panel_list" size="10" style="width: 200px;"onchange="select_ability_list()">
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td style="border-right:3px solid #777" rowspan="2">
+        Soul Unison/<input id="soulunison_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+        <select id="soulunison_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+        </select>
+      </td>
+      <td style="border-right:1px solid #595">
+        B Button Change/<input id="b_button_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+        <select id="b_button_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+        </select>
+      </td>
+      <td style="border-right:3px solid #777">
+         First Barrier/<input id="f_barier_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+         <select id="f_barier_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+         </select>
+       </td>
+      <td style="border-right:1px solid #595">
+        Address/<input id="addres_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+        <select id="addres_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+        </select>
+      </td>
+
+
+    </tr>
+    <tr>
       <tr>
         <td style="border-right:3px solid #777" rowspan="2">
-          ソウルユニゾン/<input id="soulunison_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="soulunison_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+
+          Attack/<input id="attack_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="attack_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          <br>Custom/<input id="custom_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="custom_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          <br>MegaFolder/<input id="m_folder_list_result" style="font-size:10pt;width: 15px" ></input><br>
+          <select id="m_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          <br>GigaFolder/<input id="g_folder_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="g_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          Body Color/<input id="body_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="body_list" size="3" style="width: 200px;"onchange="select_ability_list()">
           </select>
         </td>
-        <td style="border-right:1px solid #595">
-          Bボタン変更/<input id="b_button_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="b_button_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-          </select>
-        </td>
-        <td style="border-right:3px solid #777">
-           Fバリアー/<input id="f_barier_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-           <select id="f_barier_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-           </select>
-         </td>
-        <td style="border-right:1px solid #595">
-          アドレス指定/<input id="addres_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-          <select id="addres_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-          </select>
+        <td colspan="3" style="border-top:3px solid #777; border-right:3px solid #777">
+          Choice<textarea cols="50" rows="1" id="pick_tag" style="vertical-align:middle; resize:none;" readonly>Unset</textarea><input type="reset" value="reset"onclick="mega();"　>
         </td>
 
+        <td rowspan="2">
 
-      </tr>
-      <tr>
-        <tr>
-          <td style="border-right:3px solid #777" rowspan="2">
-
-            アタック/<input id="attack_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="attack_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+            Battle HP Bug/<input id="battle_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+            <select id="battle_hp_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
             </select>
-            <br>カスタム/<input id="custom_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="custom_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-            <br>メガフォルダー/<input id="m_folder_list_result" style="font-size:10pt;width: 15px" ></input><br>
-            <select id="m_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-            <br>ギガフォルダー/<input id="g_folder_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="g_folder_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-            ボディの色/<input id="body_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="body_list" size="3" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-          </td>
-          <td colspan="3" style="border-top:3px solid #777; border-right:3px solid #777">
-            ピックアップ<textarea cols="50" rows="1" id="pick_tag" style="vertical-align:middle; resize:none;" readonly>未設定</textarea><input type="reset" value="リセット"onclick="mega();"　>
-          </td>
-
-          <td rowspan="2">
-
-              戦闘中HPバグ/<input id="battle_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-              <select id="battle_hp_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-              </select>
-            カスタムHPバグ/<input id="custom_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="custom_hp_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-            <br>ステータスバグ/<input id="status_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
-            <select id="status_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
-            </select>
-          </td>
-        </tr>
-        <td colspan="3" style="vertical-align:top">
-          <div style="float:left;">
-            残り使用可能カード<br>
-            <select id="card_list" size="22" style="width: 250px;"onchange="select_card_list()">
-            </select>
-          </div>
-          <div style="float:left; padding-left:20px">
-            アビリティ名で絞り込み<br><input onchange= "ability_sarch_process();"id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br>
-            <p style="margin-bottom:0; background-color:#f99">パラメータ</p><textarea id="kaizo_parametor" rows="5" cols="22" style="font-size:20pt; resize: none;" readonly></textarea><br>
-            <p style="margin-bottom:0; background-color:#9f9">アビリティ</p><textarea id="kaizo_ability" rows="5" cols="22" style="font-size:20pt; resize: none;" readonly></textarea>
-          </div>
+          Custom HP Bug/<input id="custom_hp_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="custom_hp_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+          </select>
+          <br>Status Bugs/<input id="status_bug_list_result" style="font-size:10pt;width: 15px" readonly></input><br>
+          <select id="status_bug_list" size="5" style="width: 200px;"onchange="select_ability_list()">
+          </select>
         </td>
       </tr>
-    </tbody>
-  </table>
-  絞り込み（↓入力した言葉と一致するカードに絞り込みます。ひらがな可）<br>
+      <td colspan="3" style="vertical-align:top">
+        <div style="float:left;">
+          Remaining Cards Available<br>
+          <select id="card_list" size="22" style="width: 250px;"onchange="select_card_list()">
+          </select>
+        </div>
+        <div style="float:left; padding-left:20px">
+          Filter by Ability Name<br><input onchange= "ability_sarch_process();"id="ability_sarch" style="font-size:17pt;width: 310px" ></input><br>
+          <p style="margin-bottom:0; background-color:#f99">Parameters</p><textarea id="kaizo_parametor" rows="5" cols="22" style="font-size:20pt; resize: none;" readonly></textarea><br>
+          <p style="margin-bottom:0; background-color:#9f9">Ability</p><textarea id="kaizo_ability" rows="5" cols="22" style="font-size:20pt; resize: none;" readonly></textarea>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Narrow Search（↓Look up a card name you entered）<br>
   <input onchange="TEST_OBJECT.onSearchFieldChange(this.value);" id="sarch_input" style="width: 320px;font-size:16pt;" />
-  <input type="reset" value="クリア" onclick="clere_sarch_input();"><br/>
+  <input type="reset" value="none" onclick="clere_sarch_input();"><br/>
   <script>
   //検索欄のクリア
   function clere_sarch_input(){document.getElementById("sarch_input").value = "";TEST_OBJECT.onSearchFieldChange("");}
@@ -198,68 +198,68 @@
   <tbody>
 
     <tr>
-      <td id="kaizo_ran_1">0A/<input type="reset" value="未選択"onclick="select_solve(1);"><br>
+      <td id="kaizo_ran_1">0A/<input type="reset" value="Unselected"onclick="select_solve(1);"><br>
         <select id="kaizo_1" onchange="mega()">
-          <option value="00">未選択</option>
+          <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_1" rows="4" cols="10"></textarea><br>
-        アビリティ<textarea id="ablity_1" rows="4" cols="20"></textarea></br>
+        <br>Parameters<textarea id="parametor_1" rows="4" cols="10"></textarea><br>
+        Ability<textarea id="ablity_1" rows="4" cols="20"></textarea></br>
       </td>
-      <td id="kaizo_ran_2">0B/<input type="reset" value="未選択"onclick="select_solve(2);"><br>
+      <td id="kaizo_ran_2">0B/<input type="reset" value="Unselected"onclick="select_solve(2);"><br>
         <select id="kaizo_2"onchange="mega()">
-          <option value="00">未選択</option>
+          <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_2" rows="4" cols="10"></textarea><br>
-        アビリティ<textarea id="ablity_2" rows="4" cols="20"></textarea></br>
+        <br>Parameters<textarea id="parametor_2" rows="4" cols="10"></textarea><br>
+        Ability<textarea id="ablity_2" rows="4" cols="20"></textarea></br>
       </td>
-      <td id="kaizo_ran_3">0C/<input type="reset" value="未選択"onclick="select_solve(3);"><br>
+      <td id="kaizo_ran_3">0C/<input type="reset" value="Unselected"onclick="select_solve(3);"><br>
         <select id="kaizo_3"onchange="mega()">
-          <option value="00">未選択</option>
+          <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_3" rows="4" cols="10"></textarea><br>
-        アビリティ<textarea id="ablity_3" rows="4" cols="20"></textarea></br>
+        <br>Parameters<textarea id="parametor_3" rows="4" cols="10"></textarea><br>
+        Ability<textarea id="ablity_3" rows="4" cols="20"></textarea></br>
       </td>
-      <td id="kaizo_ran_4">0D/<input type="reset" value="未選択"onclick="select_solve(4);"><br>
+      <td id="kaizo_ran_4">0D/<input type="reset" value="Unselected"onclick="select_solve(4);"><br>
         <select id="kaizo_4"onchange="mega()">
-          <option value="00">未選択</option>
+          <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_4" rows="4" cols="10"></textarea><br>
-        アビリティ<textarea id="ablity_4" rows="4" cols="20"></textarea></br>
+        <br>Parameters<textarea id="parametor_4" rows="4" cols="10"></textarea><br>
+        Ability<textarea id="ablity_4" rows="4" cols="20"></textarea></br>
       </td>
     </tr>
     <tr>
-      <td id="kaizo_ran_5">0E/<input type="reset" value="未選択"onclick="select_solve(5);"><br>
+      <td id="kaizo_ran_5">0E/<input type="reset" value="Unselected"onclick="select_solve(5);"><br>
         <select id="kaizo_5"onchange="mega()">
-          <option value="00">未選択</option>
+          <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_5" rows="4" cols="10"></textarea><br>
-        アビリティ<textarea id="ablity_5" rows="4" cols="20"></textarea></br>
+        <br>Parameters<textarea id="parametor_5" rows="4" cols="10"></textarea><br>
+        Ability<textarea id="ablity_5" rows="4" cols="20"></textarea></br>
       </td>
-      <td id="kaizo_ran_6">0F/<input type="reset" value="未選択"onclick="select_solve(6);"><br>
+      <td id="kaizo_ran_6">0F/<input type="reset" value="Unselected"onclick="select_solve(6);"><br>
         <select id="kaizo_6"onchange="mega()">
-          <option value="00">未選択</option>
+          <option value="00">Unselected</option>
         </select>
-        <br>パラメータ<textarea id="parametor_6" rows="4" cols="10"></textarea><br>
-        アビリティ<textarea id="ablity_6" rows="4" cols="20"></textarea></br>
+        <br>Parameters<textarea id="parametor_6" rows="4" cols="10"></textarea><br>
+        Ability<textarea id="ablity_6" rows="4" cols="20"></textarea></br>
       </td>
 
     </tr>
     <tr>
       <td colspan ="1" style="vertical-align:top"><br>
-        <input type="button" value="コード出力" name="gen" onclick="generate()">
-        <input type="reset" value="リセット"onclick="reset_botton();">
+        <input type="button" value="Code Output" name="gen" onclick="generate()">
+        <input type="reset" value="Reset"onclick="reset_botton();">
         <br>
         <textarea cols="31" rows="16" id="ans" readonly></textarea>
       </td>
       <td colspan ="2" style="vertical-align:top">
-        <br>総合ステータス</br>
+        <br>Overall Status</br>
         <div style="float:left;">
-          パラメーター</br>
+          Parameters</br>
           body<input id="body_result" style="font-size:17pt;width: 100px;" readonly></input>
           <br>
           HP<input id="hp_result" style="font-size:17pt;width: 100px" readonly></input>
           Attack<input id="attack_result" style="font-size:17pt;width: 30px" readonly></input>
-          Rapid<input id="rapid_result" style="font-size:17pt;width: 30px" readonly></input>
+          Speed<input id="rapid_result" style="font-size:17pt;width: 30px" readonly></input>
           Charge<input id="charge_result" style="font-size:17pt;width: 30px" readonly></input>
           <br>
           Custom<input id="custom_result" style="font-size:17pt;width: 30px" readonly></input>
@@ -267,16 +267,16 @@
           GigaFolder<input id="g_folder_result" style="font-size:17pt;width: 30px" readonly></input>
         </div>
         <div style="float:left; padding-left:20px">
-          アビリティ<br>
+          Ability<br>
           <textarea cols="40" rows="9" id="ablity_result" style="font-size:13pt;" readonly></textarea>
         </div>
       </td>
       <td colspan="1" style="vertical-align:top">
-        <br>基礎能力(現在の能力値を入れてください)</br>
+        <br>Basic stats (please enter your current stats)</br>
         HP<textarea cols="5" rows="1" id="hp_nav" style="font-size:15pt;" onchange="mega()">1000</textarea>
         <br>
         Attack<textarea cols="1" rows="1" id="attack_nav" style="font-size:15pt;" onchange="mega()">1</textarea>
-        Rapid<textarea cols="1" rows="1" id="rapid_nav"  style="font-size:15pt;" onchange="mega()">1</textarea>
+        Speed<textarea cols="1" rows="1" id="rapid_nav"  style="font-size:15pt;" onchange="mega()">1</textarea>
         Charge<textarea cols="1" rows="1" id="charge_nav"  style="font-size:15pt;" onchange="mega()">1</textarea>
         <br>
         Custom<textarea cols="1" rows="1" id="custom_nav"  style="font-size:15pt;" onchange="mega()">5</textarea>
@@ -319,13 +319,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("HP_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_1";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("HP_list");
       var option = document.createElement("option");
-      option.text = "HPを変化させない";
+      option.text = "Does not change HP";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -377,7 +377,7 @@
       //選択解除の欄を追加
       var select = document.getElementById("soulunison_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_3";
       select.appendChild(option);
 
@@ -431,13 +431,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("body_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_6";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("body_list");
       var option = document.createElement("option");
-      option.text = "bodyを上書きさせない";
+      option.text = "body not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -489,7 +489,7 @@
       //選択解除の欄を追加
       var select = document.getElementById("attack_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_9";
       select.appendChild(option);
       //選択時色を変更する
@@ -541,7 +541,7 @@
       //選択解除の欄を追加
       var select = document.getElementById("custom_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_10";
       select.appendChild(option);
       //選択時色を変更する
@@ -595,7 +595,7 @@
       //選択解除の欄を追加
       var select = document.getElementById("m_folder_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_11";
       select.appendChild(option);
       //選択時色を変更する
@@ -647,7 +647,7 @@
       //選択解除の欄を追加
       var select = document.getElementById("g_folder_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_12";
       select.appendChild(option);
       //選択時色を変更する
@@ -701,13 +701,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("b_cs_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_2";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("b_cs_list");
       var option = document.createElement("option");
-      option.text = "Bためを上書きさせない";
+      option.text = "CS not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
 
@@ -731,7 +731,7 @@
             //子の数だけ繰り返す
             for(let z=1;z<items.length;z++){
               if(!(items[z].value == members[i].b_cs)){
-                option.text = "ためうち"+members[i].b_cs;
+                option.text = "CS "+members[i].b_cs;
                 option.value = members[i].b_cs;
                 select.appendChild(option);
               }else if(items[z].value == members[i].b_cs){
@@ -759,13 +759,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("buster_add_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_8";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("buster_add_list");
       var option = document.createElement("option");
-      option.text = "バスター追加効果を上書きさせない";
+      option.text = "Buster not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -788,7 +788,7 @@
             //子の数だけ繰り返す
             for(let z=1;z<items.length;z++){
               if(!(items[z].value == members[i].buster_add)){
-                option.text = "バスター"+members[i].buster_add;
+                option.text = "Buster"+members[i].buster_add;
                 option.value = members[i].buster_add;
                 select.appendChild(option);
               }else if(items[z].value == members[i].buster_add){
@@ -816,13 +816,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("b_left_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_4";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("b_left_list");
       var option = document.createElement("option");
-      option.text = "B←を上書きさせない";
+      option.text = "B← not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -874,13 +874,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("b_button_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_7";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("b_button_list");
       var option = document.createElement("option");
-      option.text = "Bを上書きさせない";
+      option.text = "B not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -903,7 +903,7 @@
             //子の数だけ繰り返す
             for(let z=1;z<items.length;z++){
               if(!(items[z].value == members[i].b_button)){
-                option.text = "B"+members[i].b_button;
+                option.text = "B "+members[i].b_button;
                 option.value = members[i].b_button;
                 select.appendChild(option);
               }else if(items[z].value == members[i].b_button){
@@ -932,13 +932,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("f_barier_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_16";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("f_barier_list");
       var option = document.createElement("option");
-      option.text = "バリアを上書きをさせない";
+      option.text = "Barrier not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -991,7 +991,7 @@
       //選択解除の欄を追加
       var select = document.getElementById("addres_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_17";
       select.appendChild(option);
       //選択時色を変更する
@@ -1045,13 +1045,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("move_panel_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_5";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("move_panel_list");
       var option = document.createElement("option");
-      option.text = "移動で効果を上書きさせない";
+      option.text = "PanelBug not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -1074,7 +1074,7 @@
       //子の数だけ繰り返す
         for(let z=1;z<items.length;z++){
            if(!(items[z].value == members[i].move_panel)){
-              option.text = "移動で"+members[i].move_panel;
+              option.text = "PanelBug "+members[i].move_panel;
               option.value = members[i].move_panel;
               select.appendChild(option);
             }else if(items[z].value == members[i].move_panel){
@@ -1104,13 +1104,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("battle_hp_bug_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_13";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("battle_hp_bug_list");
       var option = document.createElement("option");
-      option.text = "ﾊﾞﾄﾙHPﾊﾞｸﾞを上書きさせない";
+      option.text = "BattleHPBug not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -1162,13 +1162,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("custom_hp_bug_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_14";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("custom_hp_bug_list");
       var option = document.createElement("option");
-      option.text = "ｶｽﾀﾑHPﾊﾞｸﾞを上書きさせない";
+      option.text = "CustomHPBugnot overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -1220,13 +1220,13 @@
       //選択解除の欄を追加
       var select = document.getElementById("status_bug_list");
       var option = document.createElement("option");
-      option.text = "ピックアップ解除";
+      option.text = "Pickup Solve";
       option.value = "pick_solve_15";
       select.appendChild(option);
       //上書きさせない
       var select = document.getElementById("status_bug_list");
       var option = document.createElement("option");
-      option.text = "ステータスを上書きさせない";
+      option.text = "StatusBugs not overwrite";
       option.value = "上書きさせない";
       select.appendChild(option);
       //選択時色を変更する
@@ -1281,7 +1281,7 @@
 
     }
 
-    //未選択を選択したとき、選択を解除
+    //Unselectedを選択したとき、選択を解除
     function select_solve(select_number){
       document.getElementById('kaizo_'+[select_number]).value = "00";
       mega();
@@ -1343,139 +1343,139 @@
     //改造カードのデータベース
     let members =[
       {name:'noneカード',id:'',flag:"",mb:0,} ,
-      {name:'0A/ウェポンチェンジ/ミニボム',id:'01',ad:"0A",mb:10,b_button:"ミニボム"} ,
-      {name:'0A/マックスＨＰを強化/100',id:'02',ad:"0A",mb:14,hp:"+100"} ,
-      {name:'0C/マックスＨＰを強化/100',id:'03',ad:"0C" ,mb:10,hp:"+100"} ,
-      {name:'0B/マックスＨＰを強化/150',id:'04',ad:"0B" ,mb:10,hp:"+150"} ,
-      {name:'0A/マックスＨＰを強化/150',id:'05',ad:"0A" ,mb:10,hp:"+150"} ,
-      {name:'0A/マックスＨＰを強化/200',id:'06',ad:"0A" ,mb:10,hp:"+200"} ,
-      {name:'0B/マックスＨＰを強化/200',id:'07',ad:"0B" ,mb:10,hp:"+200"} ,
-      {name:'0C/マックスＨＰを強化/250',id:'08',ad:"0C" ,mb:10,hp:"+250"} ,
-      {name:'0A/マックスＨＰを強化/250',id:'09',ad:"0A" ,mb:10,hp:"+250"} ,
-      {name:'0A/マックスＨＰを強化/300',id:'0A',ad:"0A" ,mb:10,hp:"+300"} ,
-      {name:'0B/マックスＨＰを強化/300',id:'0B',ad:"0B" ,mb:10,hp:"+300"} ,
-      {name:'0C/ファーストバリア１００',id:'0C',ad:"0C" ,mb:10,f_barier:"バリア100",battle_hp_bug:"Lv1"} ,
-      {name:'0A/バスターを改造/ブランド',id:'0D',ad:"0A" ,mb:10,buster_add:"ブラインド",status_bug:"右に移動"} ,
-      {name:'0A/バスターを改造/クサムラ',id:'0E',ad:"0A" ,mb:10,buster_add:"クサムラ"} ,
-      {name:'0D/パネルチェンジ/メタル',id:'0F',ad:"0D" ,mb:10,move_panel:"メタルパネル"} ,
-      {name:'0D/パネルチェンジ/ひび',id:'10',ad:"0D" ,mb:10,move_panel:"ひびパネル"} ,
-      {name:'0D/パネルチェンジ/穴',id:'11',ad:"0D" ,mb:11,move_panel:"穴パネル"} ,
-      {name:'0A/カスタム２',id:'12',ad:"0A" ,mb:10,custom:"+2",custom_hp_bug:"Lv1"} ,
-      {name:'0D/メガフォルダ２',id:'13',ad:"0D",custom:"-1" ,mb:10,m_folder:"+2"} ,
-      {name:'0A/バスター攻撃力１０',id:'14',ad:"0A" ,mb:10,attack:"+10",battle_hp_bug:"Lv2"} ,
-      {name:'0E/チャージ武器を変更/ガッツマシンガン',id:'15',ad:"0E" ,mb:10,b_cs:"ガッツマシンガン"} ,
-      {name:'0E/チャージ武器を変更/キャノン',id:'16',ad:"0E" ,mb:10,b_cs:"キャノン"} ,
-      {name:'0E/チャージ武器を変更/ミニボム',id:'17',ad:"0E" ,mb:10,b_cs:"ミニボム"} ,
-      {name:'0E/チャージ武器を変更/ヒートショット',id:'18',ad:"0E" ,mb:10,b_cs:"ヒートショット"} ,
-      {name:'0E/チャージ武器を変更/バブルショット',id:'19',ad:"0E" ,mb:10,b_cs:"バブルショット"} ,
-      {name:'0E/チャージ武器を変更/サンダーボール',id:'1A',ad:"0E" ,mb:10,b_cs:"サンダーボール"} ,
-      {name:'0E/チャージ武器を変更/ソード',id:'1B',ad:"0E" ,mb:10,b_cs:"ソード"} ,
-      {name:'0E/チャージ武器を変更/スプレッドガン',id:'1C',ad:"0E" ,mb:10,b_cs:"スプレッドガン"} ,
-      {name:'0F/ＰＥＴ画面カラー変更/青',id:'1D',ad:"0F" ,mb:10,pet_color:"青"} ,
-      {name:'0F/ＰＥＴ画面カラー変更/ピンク',id:'1E',ad:"0F" ,mb:10,pet_color:"ピンク"} ,
-      {name:'0F/ＰＥＴ画面カラー変更/緑',id:'1F',ad:"0F" ,mb:10,pet_color:"緑"} ,
-      {name:'0B/マックスＨＰを強化/350',id:'20',ad:"0B" ,mb:10,hp:"+350"} ,
-      {name:'0C/マックスＨＰを強化/350',id:'21',ad:"0C" ,mb:10,hp:"+350"} ,
-      {name:'0A/マックスＨＰを強化/400',id:'22',ad:"0A" ,mb:10,hp:"+400"} ,
-      {name:'0B/マックスＨＰを強化/400',id:'23',ad:"0B" ,mb:10,hp:"+400"} ,
-      {name:'0B/マックスＨＰを強化/450',id:'24',ad:"0B" ,mb:10,hp:"+450",battle_hp_bug:"Lv1"} ,
-      {name:'0C/マックスＨＰを強化/450',id:'25',ad:"0C" ,mb:10,hp:"+450",status_bug:"混乱"} ,
-      {name:'0E/マックスＨＰを強化/500',id:'26',ad:"0E" ,mb:10,hp:"+500"} ,
-      {name:'0A/マックスＨＰを強化/500',id:'27',ad:"0A" ,mb:10,hp:"+500",battle_hp_bug:"Lv1"} ,
-      {name:'0D/Ｂ＋左で技発動/エアーシュート',id:'28',ad:"0D" ,mb:10,b_left:"エアシュート"} ,
-      {name:'0D/Ｂ＋左で技発動/トラップ',id:'29',ad:"0D" ,mb:10,b_left:"トラップ"} ,
-      {name:'0D/Ｂ＋左で技発動/バグボム',id:'2A',ad:"0D" ,mb:10,b_left:"バグボム"} ,
-      {name:'0D/Ｂ＋左で技発動/クラックアウト',id:'2B',ad:"0D" ,mb:10,b_left:"クラックアウト"} ,
-      {name:'0A/バスターを改造/クラックアウト',id:'2C',ad:"0A" ,mb:10,buster_add:"クラックアウト"} ,
-      {name:'0A/バスターを改造/ポイズン',id:'2D',ad:"0A" ,mb:10,buster_add:"ポイズン"} ,
-      {name:'0C/デフォルトフルシンクロ',id:'2E',ad:"0C" ,mb:10} ,
-      {name:'0C/ファーストバリア２００',id:'2F',ad:"0C" ,mb:10,f_barier:"バリア200",battle_hp_bug:"Lv1"} ,
-      {name:'0A/ウェポンチェンジ/メットガード',ad:"0A",id:'30' ,mb:10,b_button:"メットガード１"} ,
-      {name:'0A/ウェポンチェンジ/クラックアウト',id:'31',ad:"0A" ,mb:10,b_button:"クラックアウト"} ,
-      {name:'0A/バスター攻撃力１５',id:'32',ad:"0A" ,mb:10,attack:"+15",status_bug:"混乱",battle_hp_bug:"Lv1"} ,
-      {name:'0B/ギガフォルダ１',id:'33',ad:"0B",custom_hp_bug:"Lv2",mb:10,g_folder:"+1"} ,
-      {name:'0E/チャージ武器を変更/コピーダメージ',id:'34',ad:"0E" ,mb:10,b_cs:"コピーダメージ"} ,
-      {name:'0E/チャージ武器を変更/ワイドショット1',id:'35',ad:"0E" ,mb:10,b_cs:"ワイドショット１"} ,
-      {name:'0E/チャージ武器を変更/ブリザード',id:'36',ad:"0E" ,mb:10,b_cs:"ブリザード"} ,
-      {name:'0E/チャージ武器を変更/ヒートブレス',id:'37',ad:"0E" ,mb:10,b_cs:"ヒートブレス"} ,
-      {name:'0E/チャージ武器を変更/エレキショック',id:'38',ad:"0E" ,mb:10,b_cs:"エレキショック"} ,
-      {name:'0E/チャージ武器を変更/ウッディパウダー',id:'39',ad:"0E" ,mb:10,b_cs:"ウッディパウダー"} ,
-      {name:'0E/チャージ武器を変更/パネルリターン',id:'3A',ad:"0E" ,mb:10,b_cs:"パネルリターン"} ,
-      {name:'0E/チャージ武器を変更/ワイドソード',id:'3B',ad:"0E" ,mb:10,b_cs:"ワイドソード"} ,
-      {name:'0C/ロックマンカラーを変更/赤',id:'3C',ad:"0C" ,mb:10,body:"赤"} ,
-      {name:'0C/ロックマンカラーを変更/黄色',id:'3D',ad:"0C" ,mb:10,body:"黄色"} ,
-      {name:'0B/マックスＨＰを強化/550',id:'3E',ad:"0B" ,mb:10,hp:"+550"} ,
-      {name:'0D/マックスＨＰを強化/550',id:'3F',ad:"0D" ,mb:10,hp:"+550"} ,
-      {name:'0C/マックスＨＰを強化/600',id:'40',ad:"0C" ,mb:10,hp:"+600"} ,
-      {name:'0A/マックスＨＰを強化/600',id:'41',ad:"0A" ,mb:10,hp:"+600"} ,
-      {name:'0E/マックスＨＰを強化/650',id:'42',ad:"0E" ,mb:10,hp:"+650"} ,
-      {name:'0B/マックスＨＰを強化/650',id:'43',ad:"0B" ,mb:10,hp:"+650",battle_hp_bug:"Lv1"} ,
-      {name:'0A/マックスＨＰを強化/700',id:'44',ad:"0A" ,mb:10,hp:"+700",status_bug:"混乱"} ,
-      {name:'0D/Ｂ＋左で技発動/メガエナジーボム',id:'45',ad:"0D" ,mb:10,b_left:"メガエナジーボム"} ,
-      {name:'0D/Ｂ＋左で技発動/リカバリー10',id:'46',ad:"0D" ,mb:10,b_left:"リカバリー１０"} ,
-      {name:'0D/Ｂ＋左で技発動/パネルリターン',id:'47',ad:"0D" ,mb:10,b_left:"パネルリターン"} ,
-      {name:'0D/Ｂ＋左で技発動/スーパーキタカゼ',id:'48',ad:"0D" ,mb:10,b_left:"スーパーキタカゼ"} ,
-      {name:'0D/Ｂ＋左で技発動/バンブーランス',id:'49',ad:"0D" ,mb:10,b_left:"バンブーランス"} ,
-      {name:'0D/Ｂ＋左で技発動/ダブルクラック',id:'4A',ad:"0D" ,mb:10,b_left:"ダブルクラック"} ,
-      {name:'0B/トリプルサポーター１／２',id:'4B',ad:"0B" ,mb:10,tango:"on",beat:"on",rash:"on"} ,
-      {name:'0C/トリプルサポーター２／２',id:'4C',ad:"0C" ,mb:10,tango:"on",beat:"on",rash:"on"} ,
-      {name:'0C/オールガード１／２',id:'4D',ad:"0C" ,mb:10,all_gurd:"on",battle_hp_bug:"Lv3"} ,
-      {name:'0D/オールガード２／２',id:'4E',ad:"0D" ,mb:10,all_gurd:"on",battle_hp_bug:"Lv3"} ,
-      {name:'0C/ファーストドリームオーラ',id:'4F',ad:"0C" ,mb:10,f_barier:"ﾄﾞﾘｰﾑｵｰﾗ",battle_hp_bug:"Lv1"} ,
-      {name:'0E/チャージ武器を変更/ダークホール',id:'50',ad:"0E" ,mb:10,b_cs:"ダークホール"} ,
-      {name:'0E/チャージ武器を変更/ワイドショット２',id:'51',ad:"0E" ,mb:10,b_cs:"ワイドショット２"} ,
-      {name:'0E/チャージ武器を変更/ラビリング',id:'52',ad:"0E" ,mb:10,b_cs:"ラビリング"} ,
-      {name:'0E/チャージ武器を変更/サンドリング',id:'53',ad:"0E" ,mb:10,b_cs:"サンドリング"} ,
-      {name:'0E/チャージ武器を変更/エナジーボム',id:'54',ad:"0E" ,mb:10,b_cs:"エナジーボム"} ,
-      {name:'0E/チャージ武器を変更/サンダーボール2',id:'55',ad:"0E" ,mb:10,b_cs:"サンダーボール２"} ,
-      {name:'0E/チャージ武器を変更/リペアー',id:'56',ad:"0E" ,mb:10,b_cs:"リペアー"} ,
-      {name:'0E/チャージ武器を変更/トリプルクラック',id:'57',ad:"0E" ,mb:10,b_cs:"トリプルクラック"} ,
-      {name:'0E/チャージ武器を変更/ロングソード',id:'58',ad:"0E" ,mb:10,b_cs:"ロングソード"} ,
-      {name:'0F/ＰＥＴ画面カラー変更/黒',id:'59',ad:"0F" ,mb:10,pet_color:"黒"} ,
-      {name:'0C/ロックマンカラーを変更/白',id:'5A',ad:"0C" ,mb:10,body:"白"} ,
-      {name:'0C/ロックマンカラーを変更/緑色',id:'5B',ad:"0C" ,mb:10,body:"緑色"} ,
-      {name:'0B/マックスＨＰを強化/700',id:'5C',ad:"0B" ,mb:10,hp:"+700",move_panel:"毒パネル"} ,
-      {name:'0A/マックスＨＰを強化/750',id:'5D',ad:"0A" ,mb:10,hp:"+750"} ,
-      {name:'0B/マックスＨＰを強化/750',id:'5E',ad:"0B" ,mb:10,hp:"+750",battle_hp_bug:"Lv1"} ,
-      {name:'0A/マックスＨＰを強化/800',id:'5F',ad:"0A" ,mb:10,hp:"+800"} ,
-      {name:'0B/マックスＨＰを強化/800',id:'60',ad:"0B" ,mb:10,hp:"+800",move_panel:"毒パネル"} ,
-      {name:'0A/マックスＨＰを強化/850',id:'61',ad:"0A" ,mb:10,hp:"+850"} ,
-      {name:'0B/マックスＨＰを強化/850',id:'62',ad:"0B" ,mb:10,hp:"+850",battle_hp_bug:"Lv2"} ,
-      {name:'0E/マックスＨＰを強化/900',id:'63',ad:"0E" ,mb:10,hp:"+900"} ,
-      {name:'0B/マックスＨＰを強化/900',id:'64',ad:"0B" ,mb:10,hp:"+900",battle_hp_bug:"Lv2"} ,
-      {name:'0B/マックスＨＰを強化/950',id:'65',ad:"0B" ,mb:10,hp:"+950",battle_hp_bug:"Lv2"} ,
-      {name:'0E/マックスＨＰを強化/1000',id:'66',ad:"0E" ,mb:10,hp:"+1000"} ,
-      {name:'0A/バスターを改造/アイス',id:'67',ad:"0A" ,mb:10,buster_add:"アイス効果"} ,
-      {name:'0D/チャージフルカスタム１／２',id:'68',ad:"0D" ,mb:10,b_cs:"フルカスタム"} ,
-      {name:'0E/チャージフルカスタム２／２',id:'69',ad:"0E" ,mb:10,b_cs:"フルカスタム"} ,
-      {name:'0D/パネルチェンジ/ホーリーパネル',id:'6A',ad:"0D" ,mb:10,move_panel:"ホーリーパネル",battle_hp_bug:"Lv1",custom_hp_bug:"Lv1"} ,
-      {name:'0A/ウェポンチェンジ/リフレクト',id:'6B',ad:"0A" ,mb:10,b_button:"リフレクト",battle_hp_bug:"Lv2"} ,
-      {name:'0A/ウェポンチェンジ/フラワー',id:'6C',ad:"0A" ,mb:10,b_button:"フラワー"} ,
-      {name:'0A/ウェポンチェンジ/水鉄砲',id:'6D',ad:"0A",mb:10,b_button:"水鉄砲"} ,
-      {name:'0C/メガフォルダ３',id:'6E',ad:"0C" ,custom:"-1" ,mb:10,m_folder:"+3"} ,
-      {name:'0D/カスタム３',id:'6F',ad:"0D" ,mb:10,custom:"+3",custom_hp_bug:"Lv1"} ,
-      {name:'0A/ギガフォルダ１',id:'70',ad:"0A" ,mb:10,g_folder:"+1"} ,
-      {name:'0D/Ｂ＋左で技発動/トリプルクラック',id:'71',ad:"0D" ,mb:10,b_left:"トリプルクラック"} ,
-      {name:'0E/チャージ武器を変更/ワイドショット３',id:'72',ad:"0E" ,mb:10,b_cs:"ワイドショット３"} ,
-      {name:'0E/チャージ武器を変更/サンダーボール３',id:'73',ad:"0E" ,mb:10,b_cs:"サンダーボール３"} ,
-      {name:'0E/チャージ武器を変更/フウジンラケット',id:'74',ad:"0E" ,mb:10,b_cs:"フウジンラケット"} ,
-      {name:'0E/チャージ武器を変更/メガエナジーボム',id:'75',ad:"0E" ,mb:10,b_cs:"メガエナジーボム"} ,
-      {name:'0E/チャージ武器を変更/ボウガン',id:'76',ad:"0E" ,mb:10,b_cs:"ホウガン"} ,
-      {name:'0E/チャージ武器を変更/バグボム',id:'77',ad:"0E" ,mb:10,b_cs:"バグボム"} ,
-      {name:'0E/チャージ武器を変更/ワイドブレード',id:'78',ad:"0E" ,mb:10,b_cs:"ワイドブレード",status_bug:"右に移動"} ,
-      {name:'0E/チャージ武器を変更/ロングブレード',id:'79',ad:"0E" ,mb:10,b_cs:"ロングブレード",status_bug:"右に移動"} ,
-      {name:'0E/ロールソウル',id:'7A',ad:"0E" ,mb:10,soulunison:"ロールソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/ガッツソウル',id:'7B',ad:"0E" ,mb:10,soulunison:"ガッツソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/ウインドソウル',id:'7C',ad:"0E" ,mb:10,soulunison:"ウインドソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/サーチソウル',id:'7D',ad:"0E" ,mb:10,soulunison:"サーチソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/ファイアソウル',id:'7E',ad:"0E" ,mb:10,soulunison:"ファイアソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/サンダーソウル',id:'7F',ad:"0E" ,mb:10,soulunison:"サンダーソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/ブルースソウル',id:'80',ad:"0E" ,mb:10,soulunison:"ブルースソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/ナンバーソウル',id:'81',ad:"0E" ,mb:10,soulunison:"ナンバーソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/メタルソウル',id:'82',ad:"0E" ,mb:10,soulunison:"メタルソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/ジャンクソウル',id:'83',ad:"0E" ,mb:10,soulunison:"ジャンクソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/アクアソウル',id:'84',ad:"0E" ,mb:10,soulunison:"アクアソウル",battle_hp_bug:"Lv2"} ,
-      {name:'0E/ウッドソウル',id:'85',ad:"0E" ,mb:10,soulunison:"ウッドソウル",battle_hp_bug:"Lv2"} ,
+        {name:'0A/Weapon Change/MiniBomb',id:'01',ad:"0A",mb:10,b_button:"MiniBomb"} ,
+        {name:'0A/Enhanced MAX HP/100',id:'02',ad:"0A",mb:14,hp:"+100"} ,
+        {name:'0C/Enhanced MAX HP/100',id:'03',ad:"0C" ,mb:10,hp:"+100"} ,
+        {name:'0B/Enhanced MAX HP/150',id:'04',ad:"0B" ,mb:10,hp:"+150"} ,
+        {name:'0A/Enhanced MAX HP/150',id:'05',ad:"0A" ,mb:10,hp:"+150"} ,
+        {name:'0A/Enhanced MAX HP/200',id:'06',ad:"0A" ,mb:10,hp:"+200"} ,
+        {name:'0B/Enhanced MAX HP/200',id:'07',ad:"0B" ,mb:10,hp:"+200"} ,
+        {name:'0C/Enhanced MAX HP/250',id:'08',ad:"0C" ,mb:10,hp:"+250"} ,
+        {name:'0A/Enhanced MAX HP/250',id:'09',ad:"0A" ,mb:10,hp:"+250"} ,
+        {name:'0A/Enhanced MAX HP/300',id:'0A',ad:"0A" ,mb:10,hp:"+300"} ,
+        {name:'0B/Enhanced MAX HP/300',id:'0B',ad:"0B" ,mb:10,hp:"+300"} ,
+        {name:'0C/First Barrier100',id:'0C',ad:"0C" ,mb:10,f_barier:"Barr100",battle_hp_bug:"Lv1"} ,
+        {name:'0A/Modified Buster/Blind',id:'0D',ad:"0A" ,mb:10,buster_add:"Blind",status_bug:"Auto Move Forward"} ,
+        {name:'0A/Modified Buster/Grass Panel',id:'0E',ad:"0A" ,mb:10,buster_add:"Grass Panel"} ,
+        {name:'0D/Panel Change/Metal Panel',id:'0F',ad:"0D" ,mb:10,move_panel:"Metal Panel"} ,
+        {name:'0D/Panel Change/Cracked Panel',id:'10',ad:"0D" ,mb:10,move_panel:"Cracked Panel"} ,
+        {name:'0D/Panel Change/Broken Panel',id:'11',ad:"0D" ,mb:11,move_panel:"Broken Panel"} ,
+        {name:'0A/Custom2',id:'12',ad:"0A" ,mb:10,custom:"+2",custom_hp_bug:"Lv1"} ,
+        {name:'0D/MegaFolder2',id:'13',ad:"0D",custom:"-1" ,mb:10,m_folder:"+2"} ,
+        {name:'0A/Buster Attack Power 10',id:'14',ad:"0A" ,mb:10,attack:"+10",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Charge Weapon Change/GutsMachineGun',id:'15',ad:"0E" ,mb:10,b_cs:"GutsMachineGun"} ,
+        {name:'0E/Charge Weapon Change/Cannon',id:'16',ad:"0E" ,mb:10,b_cs:"Cannon"} ,
+        {name:'0E/Charge Weapon Change/MiniBomb',id:'17',ad:"0E" ,mb:10,b_cs:"MiniBomb"} ,
+        {name:'0E/Charge Weapon Change/HeatShot',id:'18',ad:"0E" ,mb:10,b_cs:"HeatShot"} ,
+        {name:'0E/Charge Weapon Change/Bubbler',id:'19',ad:"0E" ,mb:10,b_cs:"Bubbler"} ,
+        {name:'0E/Charge Weapon Change/Thunder1',id:'1A',ad:"0E" ,mb:10,b_cs:"Thunder1"} ,
+        {name:'0E/Charge Weapon Change/Sword',id:'1B',ad:"0E" ,mb:10,b_cs:"Sword"} ,
+        {name:'0E/Charge Weapon Change/Spreader',id:'1C',ad:"0E" ,mb:10,b_cs:"Spreader"} ,
+        {name:'0F/PET Menu Color Change/Blue',id:'1D',ad:"0F" ,mb:10,pet_color:"Blue"} ,
+        {name:'0F/PET Menu Color Change/Pink',id:'1E',ad:"0F" ,mb:10,pet_color:"Pink"} ,
+        {name:'0F/PET Menu Color Change/Green',id:'1F',ad:"0F" ,mb:10,pet_color:"Green"} ,
+        {name:'0B/Enhanced MAX HP/350',id:'20',ad:"0B" ,mb:10,hp:"+350"} ,
+        {name:'0C/Enhanced MAX HP/350',id:'21',ad:"0C" ,mb:10,hp:"+350"} ,
+        {name:'0A/Enhanced MAX HP/400',id:'22',ad:"0A" ,mb:10,hp:"+400"} ,
+        {name:'0B/Enhanced MAX HP/400',id:'23',ad:"0B" ,mb:10,hp:"+400"} ,
+        {name:'0B/Enhanced MAX HP/450',id:'24',ad:"0B" ,mb:10,hp:"+450",battle_hp_bug:"Lv1"} ,
+        {name:'0C/Enhanced MAX HP/450',id:'25',ad:"0C" ,mb:10,hp:"+450",status_bug:"Confusion"} ,
+        {name:'0E/Enhanced MAX HP/500',id:'26',ad:"0E" ,mb:10,hp:"+500"} ,
+        {name:'0A/Enhanced MAX HP/500',id:'27',ad:"0A" ,mb:10,hp:"+500",battle_hp_bug:"Lv1"} ,
+        {name:'0D/B+Left Execution /AirShot',id:'28',ad:"0D" ,mb:10,b_left:"AirShot"} ,
+        {name:'0D/B+Left Execution /Random Trap',id:'29',ad:"0D" ,mb:10,b_left:"Random Trap"} ,
+        {name:'0D/B+Left Execution /BugBomb',id:'2A',ad:"0D" ,mb:10,b_left:"BugBomb"} ,
+        {name:'0D/B+Left Execution /CrackOut',id:'2B',ad:"0D" ,mb:10,b_left:"CrackOut"} ,
+        {name:'0A/Modified Buster/Cracked Panels',id:'2C',ad:"0A" ,mb:10,buster_add:"Cracked Panels"} ,
+        {name:'0A/Modified Buster/Poison Panels',id:'2D',ad:"0A" ,mb:10,buster_add:"Poison Panels"} ,
+        {name:'0C/Default Full Synchro',id:'2E',ad:"0C" ,mb:10} ,
+        {name:'0C/First Barrier200',id:'2F',ad:"0C" ,mb:10,f_barier:"Barr200",battle_hp_bug:"Lv1"} ,
+        {name:'0A/Weapon Change/Guard1',ad:"0A",id:'30' ,mb:10,b_button:"Guard1"} ,
+        {name:'0A/Weapon Change/CrackOut',id:'31',ad:"0A" ,mb:10,b_button:"CrackOut"} ,
+        {name:'0A/Buster Attack Power 15',id:'32',ad:"0A" ,mb:10,attack:"+15",status_bug:"Confusion",battle_hp_bug:"Lv1"} ,
+        {name:'0B/GigaFolder1',id:'33',ad:"0B",custom_hp_bug:"Lv2",mb:10,g_folder:"+1"} ,
+        {name:'0E/Charge Weapon Change/CopyDamage',id:'34',ad:"0E" ,mb:10,b_cs:"CopyDamage"} ,
+        {name:'0E/Charge Weapon Change/WideShot1',id:'35',ad:"0E" ,mb:10,b_cs:"WideShot1"} ,
+        {name:'0E/Charge Weapon Change/Blizzard',id:'36',ad:"0E" ,mb:10,b_cs:"Blizzard"} ,
+        {name:'0E/Charge Weapon Change/HeatBreath',id:'37',ad:"0E" ,mb:10,b_cs:"HeatBreath"} ,
+        {name:'0E/Charge Weapon Change/ElecShock',id:'38',ad:"0E" ,mb:10,b_cs:"ElecShock"} ,
+        {name:'0E/Charge Weapon Change/WoodyPowder',id:'39',ad:"0E" ,mb:10,b_cs:"WoodyPowder"} ,
+        {name:'0E/Charge Weapon Change/PanelReturn',id:'3A',ad:"0E" ,mb:10,b_cs:"PanelReturn"} ,
+        {name:'0E/Charge Weapon Change/WideSword',id:'3B',ad:"0E" ,mb:10,b_cs:"WideSword"} ,
+        {name:'0C/MegaMan Color Change/Red',id:'3C',ad:"0C" ,mb:10,body:"Red"} ,
+        {name:'0C/MegaMan Color Change/Yellow',id:'3D',ad:"0C" ,mb:10,body:"Yellow"} ,
+        {name:'0B/Enhanced MAX HP/550',id:'3E',ad:"0B" ,mb:10,hp:"+550"} ,
+        {name:'0D/Enhanced MAX HP/550',id:'3F',ad:"0D" ,mb:10,hp:"+550"} ,
+        {name:'0C/Enhanced MAX HP/600',id:'40',ad:"0C" ,mb:10,hp:"+600"} ,
+        {name:'0A/Enhanced MAX HP/600',id:'41',ad:"0A" ,mb:10,hp:"+600"} ,
+        {name:'0E/Enhanced MAX HP/650',id:'42',ad:"0E" ,mb:10,hp:"+650"} ,
+        {name:'0B/Enhanced MAX HP/650',id:'43',ad:"0B" ,mb:10,hp:"+650",battle_hp_bug:"Lv1"} ,
+        {name:'0A/Enhanced MAX HP/700',id:'44',ad:"0A" ,mb:10,hp:"+700",status_bug:"Confusion"} ,
+        {name:'0D/B+Left Execution /MegaEnergyBomb',id:'45',ad:"0D" ,mb:10,b_left:"MegaEnergyBomb"} ,
+        {name:'0D/B+Left Execution /Recovery10',id:'46',ad:"0D" ,mb:10,b_left:"Recovery10"} ,
+        {name:'0D/B+Left Execution /PanelReturn',id:'47',ad:"0D" ,mb:10,b_left:"PanelReturn"} ,
+        {name:'0D/B+Left Execution /NorthWind',id:'48',ad:"0D" ,mb:10,b_left:"NorthWind"} ,
+        {name:'0D/B+Left Execution /Lance',id:'49',ad:"0D" ,mb:10,b_left:"Lance"} ,
+        {name:'0D/B+Left Execution /DoubleCrack',id:'4A',ad:"0D" ,mb:10,b_left:"DoubleCrack"} ,
+        {name:'0B/Triple Supporter 1/2',id:'4B',ad:"0B" ,mb:10,tango:"on",beat:"on",rash:"on"} ,
+        {name:'0C/Triple Supporter 2/2',id:'4C',ad:"0C" ,mb:10,tango:"on",beat:"on",rash:"on"} ,
+        {name:'0C/All Guard 1/2',id:'4D',ad:"0C" ,mb:10,all_gurd:"on",battle_hp_bug:"Lv3"} ,
+        {name:'0D/All Guard 2/2',id:'4E',ad:"0D" ,mb:10,all_gurd:"on",battle_hp_bug:"Lv3"} ,
+        {name:'0C/First LifeAura',id:'4F',ad:"0C" ,mb:10,f_barier:"LifeAura",battle_hp_bug:"Lv1"} ,
+        {name:'0E/Charge Weapon Change/Hole',id:'50',ad:"0E" ,mb:10,b_cs:"Hole"} ,
+        {name:'0E/Charge Weapon Change/WideShot2',id:'51',ad:"0E" ,mb:10,b_cs:"WideShot2"} ,
+        {name:'0E/Charge Weapon Change/ZapRing',id:'52',ad:"0E" ,mb:10,b_cs:"ZapRing"} ,
+        {name:'0E/Charge Weapon Change/SandRing',id:'53',ad:"0E" ,mb:10,b_cs:"SandRing"} ,
+        {name:'0E/Charge Weapon Change/EnergyBomb',id:'54',ad:"0E" ,mb:10,b_cs:"EnergyBomb"} ,
+        {name:'0E/Charge Weapon Change/Thunder2',id:'55',ad:"0E" ,mb:10,b_cs:"Thunder2"} ,
+        {name:'0E/Charge Weapon Change/Repair',id:'56',ad:"0E" ,mb:10,b_cs:"Repair"} ,
+        {name:'0E/Charge Weapon Change/TripleCrack',id:'57',ad:"0E" ,mb:10,b_cs:"TripleCrack"} ,
+        {name:'0E/Charge Weapon Change/LongSword',id:'58',ad:"0E" ,mb:10,b_cs:"LongSword"} ,
+        {name:'0F/PET Menu Color Change/Black',id:'59',ad:"0F" ,mb:10,pet_color:"Black"} ,
+        {name:'0C/MegaMan Color Change/White',id:'5A',ad:"0C" ,mb:10,body:"White"} ,
+        {name:'0C/MegaMan Color Change/Green',id:'5B',ad:"0C" ,mb:10,body:"Green"} ,
+        {name:'0B/Enhanced MAX HP/700',id:'5C',ad:"0B" ,mb:10,hp:"+700",move_panel:"Poison Panel"} ,
+        {name:'0A/Enhanced MAX HP/750',id:'5D',ad:"0A" ,mb:10,hp:"+750"} ,
+        {name:'0B/Enhanced MAX HP/750',id:'5E',ad:"0B" ,mb:10,hp:"+750",battle_hp_bug:"Lv1"} ,
+        {name:'0A/Enhanced MAX HP/800',id:'5F',ad:"0A" ,mb:10,hp:"+800"} ,
+        {name:'0B/Enhanced MAX HP/800',id:'60',ad:"0B" ,mb:10,hp:"+800",move_panel:"Poison Panel"} ,
+        {name:'0A/Enhanced MAX HP/850',id:'61',ad:"0A" ,mb:10,hp:"+850"} ,
+        {name:'0B/Enhanced MAX HP/850',id:'62',ad:"0B" ,mb:10,hp:"+850",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Enhanced MAX HP/900',id:'63',ad:"0E" ,mb:10,hp:"+900"} ,
+        {name:'0B/Enhanced MAX HP/900',id:'64',ad:"0B" ,mb:10,hp:"+900",battle_hp_bug:"Lv2"} ,
+        {name:'0B/Enhanced MAX HP/950',id:'65',ad:"0B" ,mb:10,hp:"+950",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Enhanced MAX HP/1000',id:'66',ad:"0E" ,mb:10,hp:"+1000"} ,
+        {name:'0A/Modified Buster/Ice Panel',id:'67',ad:"0A" ,mb:10,buster_add:"Ice Panel"} ,
+        {name:'0D/Charge FullCustom 1/2',id:'68',ad:"0D" ,mb:10,b_cs:"FullCustom"} ,
+        {name:'0E/Charge FullCustom 2/2',id:'69',ad:"0E" ,mb:10,b_cs:"FullCustom"} ,
+        {name:'0D/Panel Change/Holy Panel',id:'6A',ad:"0D" ,mb:10,move_panel:"Holy Panel",battle_hp_bug:"Lv1",custom_hp_bug:"Lv1"} ,
+        {name:'0A/Weapon Change/Reflect',id:'6B',ad:"0A" ,mb:10,b_button:"Reflect",battle_hp_bug:"Lv2"} ,
+        {name:'0A/Weapon Change/Flower',id:'6C',ad:"0A" ,mb:10,b_button:"Flower"} ,
+        {name:'0A/Weapon Change/Water Gun',id:'6D',ad:"0A",mb:10,b_button:"Water Gun"} ,
+        {name:'0C/MegaFolder3',id:'6E',ad:"0C" ,custom:"-1" ,mb:10,m_folder:"+3"} ,
+        {name:'0D/Custom3',id:'6F',ad:"0D" ,mb:10,custom:"+3",custom_hp_bug:"Lv1"} ,
+        {name:'0A/GigaFolder1',id:'70',ad:"0A" ,mb:10,g_folder:"+1"} ,
+        {name:'0D/B+Left Execution /TripleCrack',id:'71',ad:"0D" ,mb:10,b_left:"TripleCrack"} ,
+        {name:'0E/Charge Weapon Change/WideShot3',id:'72',ad:"0E" ,mb:10,b_cs:"WideShot3"} ,
+        {name:'0E/Charge Weapon Change/Thunder3',id:'73',ad:"0E" ,mb:10,b_cs:"Thunder3"} ,
+        {name:'0E/Charge Weapon Change/WindRacket',id:'74',ad:"0E" ,mb:10,b_cs:"WindRacket"} ,
+        {name:'0E/Charge Weapon Change/MegaEnergyBomb',id:'75',ad:"0E" ,mb:10,b_cs:"MegaEnergyBomb"} ,
+        {name:'0E/Charge Weapon Change/Ball',id:'76',ad:"0E" ,mb:10,b_cs:"Ball"} ,
+        {name:'0E/Charge Weapon Change/BugBomb',id:'77',ad:"0E" ,mb:10,b_cs:"BugBomb"} ,
+        {name:'0E/Charge Weapon Change/WideBlade',id:'78',ad:"0E" ,mb:10,b_cs:"WideBlade",status_bug:"Move Forward"} ,
+        {name:'0E/Charge Weapon Change/LongBlade',id:'79',ad:"0E" ,mb:10,b_cs:"LongBlade",status_bug:"Move Forward"} ,
+        {name:'0E/Roll Soul',id:'7A',ad:"0E" ,mb:10,soulunison:"Roll Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Guts Soul',id:'7B',ad:"0E" ,mb:10,soulunison:"Guts Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Wind Soul',id:'7C',ad:"0E" ,mb:10,soulunison:"Wind Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Search Soul',id:'7D',ad:"0E" ,mb:10,soulunison:"Search Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Fire Soul',id:'7E',ad:"0E" ,mb:10,soulunison:"Fire Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Thunder Soul',id:'7F',ad:"0E" ,mb:10,soulunison:"Thunder Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Proto Soul',id:'80',ad:"0E" ,mb:10,soulunison:"Proto Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Number Soul',id:'81',ad:"0E" ,mb:10,soulunison:"Number Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Metal Soul',id:'82',ad:"0E" ,mb:10,soulunison:"Metal Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Junk Soul',id:'83',ad:"0E" ,mb:10,soulunison:"Junk Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Aqua Soul',id:'84',ad:"0E" ,mb:10,soulunison:"Aqua Soul",battle_hp_bug:"Lv2"} ,
+        {name:'0E/Wood Soul',id:'85',ad:"0E" ,mb:10,soulunison:"Wood Soul",battle_hp_bug:"Lv2"} ,
 
     ];
 
@@ -1509,7 +1509,7 @@
         //存在が確認できたら検索開始を行う
         if(x.b_cs){
           if(x.b_cs.includes(sarch_letter)==true)return x.b_cs.includes(sarch_letter)
-          let font ="ためうち";
+          let font ="CS";
           if(font.includes(sarch_letter)==true)return x.b_cs;
         }  if(x.cs_add){
           if(x.cs_add.includes(sarch_letter)==true)return x.cs_add.includes(sarch_letter)
@@ -1517,7 +1517,7 @@
           if(font.includes(sarch_letter)==true)return x.cs_add;
         }  if(x.buster_add){
           if(x.buster_add.includes(sarch_letter)==true)return x.buster_add.includes(sarch_letter)
-          let font ="バスター追加効果";
+          let font ="バスター追加効果BusterAdditions";
           if(font.includes(sarch_letter)==true)return x.buster_add;
         }  if(x.b_left){
           if(x.b_left.includes(sarch_letter)==true)return x.b_left.includes(sarch_letter)
@@ -1525,11 +1525,11 @@
           if(font.includes(sarch_letter)==true)return x.b_left;
         }  if(x.b_button){
           if(x.b_button.includes(sarch_letter)==true)return x.b_button.includes(sarch_letter)
-          let font ="バスターBボタン";
+          let font ="バスターBボタンBuster";
           if(font.includes(sarch_letter)==true)return x.b_button;
         }  if(x.move_panel){
           if(x.move_panel.includes(sarch_letter)==true)return x.move_panel.includes(sarch_letter)
-          let font ="移動でいどうで";
+          let font ="移動でいどうでPanelBug";
           if(font.includes(sarch_letter)==true)return x.move_panel;
         }  if(x.baster_blank){
           if(x.baster_blank.includes(sarch_letter)==true)return x.baster_blank.includes(sarch_letter)
@@ -1600,11 +1600,11 @@
           if(font.includes(sarch_letter)==true)return x.damage_bug;
         }  if(x.battle_hp_bug){
           if(x.battle_hp_bug.includes(sarch_letter)==true)return x.battle_hp_bug.includes(sarch_letter)
-          let font ="バトルHPバグ";
+          let font ="バトルHPバグBattleHPBug";
           if(font.includes(sarch_letter)==true)return x.battle_hp_bug;
         }  if(x.custom_hp_bug){
           if(x.custom_hp_bug.includes(sarch_letter)==true)return x.custom_hp_bug.includes(sarch_letter)
-          let font ="カスタムHPバグ";
+          let font ="カスタムHPバグCustomHPBug";
           if(font.includes(sarch_letter)==true)return x.custom_hp_bug;
         }  if(x.custom_damage){
           if(x.custom_damage.includes(sarch_letter)==true)return x.custom_damage.includes(sarch_letter)
@@ -1612,7 +1612,7 @@
           if(font.includes(sarch_letter)==true)return x.custom_damage;
         }  if(x.status_bug){
           if(x.status_bug.includes(sarch_letter)==true)return x.status_bug.includes(sarch_letter)
-          let font ="ステータスバグ";
+          let font ="ステータスバグStatusBugs";
           if(font.includes(sarch_letter)==true)return x.status_bug;
         }  if(x.mode){
           if(x.mode.includes(sarch_letter)==true)return x.mode.includes(sarch_letter)
@@ -1729,8 +1729,8 @@
         function mega(){
 
           //検索ログの表示
-          document.getElementById("kaizo_parametor").value = "検索中";
-          document.getElementById("kaizo_ability").value = "検索中";
+          document.getElementById("kaizo_parametor").value = "Search";
+          document.getElementById("kaizo_ability").value = "Search";
           setTimeout(function() {
 
             //総合ステータス用
@@ -1892,9 +1892,9 @@
               if(members[parseInt(valc[i], 10)].b_button==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "B" + members[parseInt(valc[i], 10)].b_button+"\n";
+                document.getElementById('ablity_'+[i]).value += "B " + members[parseInt(valc[i], 10)].b_button+"\n";
 
-                ability_box[0]= "B" +members[parseInt(valc[i], 10)].b_button;
+                ability_box[0]= "B " +members[parseInt(valc[i], 10)].b_button;
 
               }
 
@@ -1910,15 +1910,15 @@
               if(members[parseInt(valc[i], 10)].b_cs==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "CS" + members[parseInt(valc[i], 10)].b_cs+"\n";
-                ability_box[2]= "ためうち" + members[parseInt(valc[i], 10)].b_cs;
+                document.getElementById('ablity_'+[i]).value += "CS " + members[parseInt(valc[i], 10)].b_cs+"\n";
+                ability_box[2]= "CS " + members[parseInt(valc[i], 10)].b_cs;
               }
 
               //CS追加効果
               if(members[parseInt(valc[i], 10)].cs_add==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "CSに" + members[parseInt(valc[i], 10)].cs_add+"\n";
+                document.getElementById('ablity_'+[i]).value += "CSAdd" + members[parseInt(valc[i], 10)].cs_add+"\n";
                 ability_box[3] = "CSに" + members[parseInt(valc[i], 10)].cs_add;
               }
 
@@ -1926,8 +1926,8 @@
               if(members[parseInt(valc[i], 10)].buster_add==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "バスター" + members[parseInt(valc[i], 10)].buster_add+"\n";
-                ability_box[4] = "バスター" + members[parseInt(valc[i], 10)].buster_add;
+                document.getElementById('ablity_'+[i]).value += "Buster " + members[parseInt(valc[i], 10)].buster_add+"\n";
+                ability_box[4] = "Buster " + members[parseInt(valc[i], 10)].buster_add;
               }
 
 
@@ -2015,15 +2015,15 @@
               if(members[parseInt(valc[i], 10)].move_panel==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "移動で" + members[parseInt(valc[i], 10)].move_panel+"\n";
-                if(members[parseInt(valc[i], 10)].move_panel=="毒パネル"){
-                  move_panel = "移動で"+members[parseInt(valc[i], 10)].move_panel ;
+                document.getElementById('ablity_'+[i]).value += "PanelBug" + members[parseInt(valc[i], 10)].move_panel+"\n";
+                if(members[parseInt(valc[i], 10)].move_panel=="Poison Panel"){
+                  move_panel = "PanelBug "+members[parseInt(valc[i], 10)].move_panel ;
                   ability_box[15] = move_panel;
-                }else if(move_panel=="移動で毒パネル"){
+                }else if(move_panel=="PanelBug Poison Panel"){
                   ability_box[15] = move_panel;
 
                 }else{
-                ability_box[15] = "移動で"+members[parseInt(valc[i], 10)].move_panel ;
+                ability_box[15] = "PanelBug "+members[parseInt(valc[i], 10)].move_panel ;
               }
               }
 
@@ -2055,8 +2055,8 @@
               if(members[parseInt(valc[i], 10)].baster_blank==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "バスター" + members[parseInt(valc[i], 10)].baster_blank+"\n";
-                ability_box[19] = "バスター"+members[parseInt(valc[i], 10)].baster_blank ;
+                document.getElementById('ablity_'+[i]).value += "Buster " + members[parseInt(valc[i], 10)].baster_blank+"\n";
+                ability_box[19] = "Buster "+members[parseInt(valc[i], 10)].baster_blank ;
               }
 
               //移動バグ
@@ -2079,24 +2079,24 @@
               if(members[parseInt(valc[i], 10)].battle_hp_bug==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "バトルHPバグ" + members[parseInt(valc[i], 10)].battle_hp_bug+"\n";
+                document.getElementById('ablity_'+[i]).value += "Battle HP Bug " + members[parseInt(valc[i], 10)].battle_hp_bug+"\n";
 
 
                 battle_hp_bug_calc = members[parseInt(valc[i], 10)].battle_hp_bug
                 var battle_hp_bug_calc = battle_hp_bug_calc.replace(/[^0-9^\.]/g,"");
                 battle_hp_bug_math += parseInt(battle_hp_bug_calc, 10);
-                      ability_box[22] = "バトルHPバグLv"+battle_hp_bug_math ;
+                      ability_box[22] = "Battle HP Bug Lv"+battle_hp_bug_math ;
               }
 
               //カスタムHPバグ
               if(members[parseInt(valc[i], 10)].custom_hp_bug==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "カスタムHPバグ" + members[parseInt(valc[i], 10)].custom_hp_bug+"\n";
+                document.getElementById('ablity_'+[i]).value += "Custom HP Bug " + members[parseInt(valc[i], 10)].custom_hp_bug+"\n";
                 custom_hp_bug_calc = members[parseInt(valc[i], 10)].custom_hp_bug
                 var custom_hp_bug_calc = custom_hp_bug_calc.replace(/[^0-9^\.]/g,"");
                 custom_hp_bug_math += parseInt(custom_hp_bug_calc, 10);
-                ability_box[23] = "カスタムHPバグLv"+custom_hp_bug_math ;
+                ability_box[23] = "Custom HP Bug Lv"+custom_hp_bug_math ;
               }
 
               //カスタムダメージ
@@ -2111,8 +2111,8 @@
               if(members[parseInt(valc[i], 10)].status_bug==undefined){
                 document.getElementById("ablity_"+[i]).value += "";
               }else{
-                document.getElementById('ablity_'+[i]).value += "ステータスバグ" + members[parseInt(valc[i], 10)].status_bug+"\n";
-                ability_box[25] = "ステータスバグ"+members[parseInt(valc[i], 10)].status_bug;
+                document.getElementById('ablity_'+[i]).value += "Status Bugs " + members[parseInt(valc[i], 10)].status_bug+"\n";
+                ability_box[25] = "Status Bugs"+members[parseInt(valc[i], 10)].status_bug;
               }
 
               //ウイルス遭遇関係のプログラム（ミリオネアもここに当たる）
@@ -2196,7 +2196,7 @@
           //改造カードを出力
           if(valc1 ==0){
             document.getElementById('ans').value +="0200464C:00"+"\n";
-            //未選択時
+            //Unselected時
           }else if(valc1 ==-1){}else{
           document.getElementById('ans').value +="0200464C:"+members[parseInt(valc1, 10)].id +"\n";
           }
@@ -2205,7 +2205,7 @@
           //改造カードを出力
           if(valc2 ==0){
             document.getElementById('ans').value +="0200464D:00"+"\n";
-            //未選択時
+            //Unselected時
           }else if(valc2 ==-1){}else{
           document.getElementById('ans').value +="0200464D:"+members[parseInt(valc2, 10)].id +"\n";
           }
@@ -2214,7 +2214,7 @@
           //改造カードを出力
           if(valc3 ==0){
             document.getElementById('ans').value +="0200464E:00"+"\n";
-            //未選択時
+            //Unselected時
           }else if(valc3 ==-1){}else{
           document.getElementById('ans').value +="0200464E:"+members[parseInt(valc3, 10)].id +"\n";
           }
@@ -2223,7 +2223,7 @@
           //改造カードを出力
           if(valc4 ==0){
             document.getElementById('ans').value +="0200464F:00"+"\n";
-            //未選択時
+            //Unselected時
           }else if(valc4 ==-1){}else{
           document.getElementById('ans').value +="0200464F:"+members[parseInt(valc4, 10)].id +"\n";
           }
@@ -2232,7 +2232,7 @@
           //改造カードを出力
           if(valc5 ==0){
             document.getElementById('ans').value +="02004650:00"+"\n";
-            //未選択時
+            //Unselected時
           }else if(valc5 ==-1){}else{
           document.getElementById('ans').value +="02004650:"+members[parseInt(valc5, 10)].id +"\n";
           }
@@ -2241,14 +2241,14 @@
           //改造カードを出力
           if(valc6 ==0){
             document.getElementById('ans').value +="02004651:00"+"\n";
-            //未選択時
+            //Unselected時
           }else if(valc6 ==-1){}else{
           document.getElementById('ans').value +="02004651:"+members[parseInt(valc6, 10)].id +"\n";
           }
 
 
           if(document.getElementById('ans').value ==""){
-            document.getElementById('ans').value +="一枚以上読み込ませてください。";
+            document.getElementById('ans').value +="Please load one or more";
           }
 
                 }
@@ -2332,7 +2332,7 @@
                 if(members[parseInt(card_id, 10)].attack==undefined){
                   document.getElementById("kaizo_parametor").value += "";
                 }else{
-                  document.getElementById('kaizo_parametor').value += "アタック" + members[parseInt(card_id, 10)].attack+"\n";
+                  document.getElementById('kaizo_parametor').value += "Attack" + members[parseInt(card_id, 10)].attack+"\n";
 
 
                 }
@@ -2341,13 +2341,13 @@
                 if(members[parseInt(card_id, 10)].rapid==undefined){
                   document.getElementById("kaizo_parametor").value += "";
                 }else{
-                  document.getElementById('kaizo_parametor').value += "ラピッド" + members[parseInt(card_id, 10)].rapid+"\n";
+                  document.getElementById('kaizo_parametor').value += "Speed" + members[parseInt(card_id, 10)].rapid+"\n";
                 }
                 //チャージ表示
                 if(members[parseInt(card_id, 10)].charge==undefined){
                   document.getElementById("kaizo_parametor").value += "";
                 }else{
-                  document.getElementById('kaizo_parametor').value += "チャージ" + members[parseInt(card_id, 10)].charge+"\n";
+                  document.getElementById('kaizo_parametor').value += "Charge" + members[parseInt(card_id, 10)].charge+"\n";
 
                 }
 
@@ -2377,7 +2377,7 @@
                 if(members[parseInt(card_id, 10)].soultime==undefined){
                   document.getElementById("kaizo_parametor").value += "";
                 }else{
-                  document.getElementById('kaizo_parametor').value += "ソウルタイム" + members[parseInt(card_id, 10)].soultime+"\n";
+                  document.getElementById('kaizo_parametor').value += "SoulTime" + members[parseInt(card_id, 10)].soultime+"\n";
                 }
 
                 //アビリティ関係
@@ -2399,21 +2399,21 @@
                 if(members[parseInt(card_id, 10)].b_cs==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value += "ためうち" + members[parseInt(card_id, 10)].b_cs+"\n";
+                  document.getElementById("kaizo_ability").value += "CS " + members[parseInt(card_id, 10)].b_cs+"\n";
                 }
 
                 //CS追加効果
                 if(members[parseInt(card_id, 10)].cs_add==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value += "CS追加効果" + members[parseInt(card_id, 10)].cs_add+"\n";
+                  document.getElementById("kaizo_ability").value += "CSAdd " + members[parseInt(card_id, 10)].cs_add+"\n";
                 }
 
                 //バスター追加効果
                 if(members[parseInt(card_id, 10)].buster_add==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value += "バスター追加効果" + members[parseInt(card_id, 10)].buster_add+"\n";
+                  document.getElementById("kaizo_ability").value += "BusterAdd " + members[parseInt(card_id, 10)].buster_add+"\n";
                 }
 
 
@@ -2471,28 +2471,28 @@
                 if(members[parseInt(card_id, 10)].rash==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value +=  "ラッシュサポート" + members[parseInt(card_id, 10)].rash + "\n";
+                  document.getElementById("kaizo_ability").value +=  "Rash " + members[parseInt(card_id, 10)].rash + "\n";
                 }
 
                 //ビートサポート装備
                 if(members[parseInt(card_id, 10)].beat==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value +=  "ビートサポート" + members[parseInt(card_id, 10)].beat + "\n";
+                  document.getElementById("kaizo_ability").value +=  "Beat " + members[parseInt(card_id, 10)].beat + "\n";
                 }
 
                 //タンゴサポート装備
                 if(members[parseInt(card_id, 10)].tango==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value +=  "タンゴサポート" + members[parseInt(card_id, 10)].tango + "\n";
+                  document.getElementById("kaizo_ability").value +=  "Tang " + members[parseInt(card_id, 10)].tango + "\n";
                 }
 
                 //移動による効果
                 if(members[parseInt(card_id, 10)].move_panel==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value += "移動で" + members[parseInt(card_id, 10)].move_panel+"\n";
+                  document.getElementById("kaizo_ability").value += "Panel Bug " + members[parseInt(card_id, 10)].move_panel+"\n";
                 }
 
                 //チップリカバリー
@@ -2541,14 +2541,14 @@
                 if(members[parseInt(card_id, 10)].battle_hp_bug==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value += "バトルHPバグ" + members[parseInt(card_id, 10)].battle_hp_bug+"\n";
+                  document.getElementById("kaizo_ability").value += "Battle HP Bug " + members[parseInt(card_id, 10)].battle_hp_bug+"\n";
                 }
 
                 //カスタムHPバグ
                 if(members[parseInt(card_id, 10)].custom_hp_bug==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value += "カスタムHPバグ" + members[parseInt(card_id, 10)].custom_hp_bug+"\n";
+                  document.getElementById("kaizo_ability").value += "Custom HP Bug " + members[parseInt(card_id, 10)].custom_hp_bug+"\n";
                 }
 
                 //カスタムダメージ
@@ -2562,7 +2562,7 @@
                 if(members[parseInt(card_id, 10)].status_bug==undefined){
                   document.getElementById("kaizo_ability").value += "";
                 }else{
-                  document.getElementById("kaizo_ability").value += "ステータスバグ" + members[parseInt(card_id, 10)].status_bug+"\n";
+                  document.getElementById("kaizo_ability").value += "Status Bugs " + members[parseInt(card_id, 10)].status_bug+"\n";
                 }
 
                 //ウイルス遭遇関係のプログラム（ミリオネアもここに当たる）

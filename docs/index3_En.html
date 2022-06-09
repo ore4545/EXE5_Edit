@@ -19,6 +19,7 @@
     <a href= "index2.html" >ロックマンエグゼ5チートコードジェネレーターVer.C</a><br>
     <a href= "index3.html" >ロックマンエグゼ6チートコードジェネレーターVer.G</a><br>
     <a href= "index4.html" >ロックマンエグゼ6チートコードジェネレーターVer.F</a><br>
+    <a href= "index5_En.html">Mega Man Battle Network 4 CheatCodeGenerator Ver.R/B</a><br>
     <a href= "index_En.html" >Mega Man Battle Network 5 CheatCodeGenerator Ver.P</a><br>
     <a href= "index2_En.html" >Mega Man Battle Network 5 CheatCodeGenerator Ver.C</a><br>
     Mega Man Battle Network 6 CheatCodeGenerator Ver.G←<br>
@@ -26,11 +27,12 @@
     <br></br>
     notice
     <li>We are currently conducting a prototype test using the beta version.</li>
-    <li>Please contact Git for functional improvements and requests.</li>
+    <li>Please contact "Ore(オレ)"for functional improvements and requests.</li>
     <li>Implementation of random generation</li>
     <li>Translated (Thnak you for Chocola and N1GP!)</li>
     <br>
     Functions you want to add in the future
+    <li>Translate generator to generate cheat codes for Mega Man Battle Network 4</li>
     <li>Display of expected abilities of modified cards (confirming typographical errors)</li>
 
 
@@ -886,7 +888,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
         //子の数だけ繰り返す
           for(let z=1;z<items.length;z++){
              if(!(items[z].value == members[i].b_cs)){
-                option.text = "CS"+members[i].b_cs;
+                option.text = "CS "+members[i].b_cs;
                 option.value = members[i].b_cs;
                 select.appendChild(option);
               }else if(items[z].value == members[i].b_cs){
@@ -947,7 +949,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
       //子の数だけ繰り返す
         for(let z=1;z<items.length;z++){
            if(!(items[z].value == members[i].cs_add)){
-              option.text = "CSAdd"+members[i].cs_add;
+              option.text = "CSAdd "+members[i].cs_add;
               option.value = members[i].cs_add;
               select.appendChild(option);
             }else if(items[z].value == members[i].cs_add){
@@ -1007,7 +1009,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
     //子の数だけ繰り返す
       for(let z=1;z<items.length;z++){
          if(!(items[z].value == members[i].buster_add)){
-            option.text = "Buster"+members[i].buster_add;
+            option.text = "Buster "+members[i].buster_add;
             option.value = members[i].buster_add;
             select.appendChild(option);
           }else if(items[z].value == members[i].buster_add){
@@ -1186,7 +1188,7 @@ function clere_sarch_input(){document.getElementById("sarch_input").value = "";T
   //子の数だけ繰り返す
     for(let z=1;z<items.length;z++){
        if(!(items[z].value == members[i].move_panel)){
-          option.text = "PanelBug"+members[i].move_panel;
+          option.text = "PanelBug "+members[i].move_panel;
           option.value = members[i].move_panel;
           select.appendChild(option);
         }else if(items[z].value == members[i].move_panel){
